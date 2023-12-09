@@ -1,4 +1,4 @@
-# dimzakki.com
+# Hugo-blog
 Hugoブログ
 
 ## command
