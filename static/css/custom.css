@@ -1,0 +1,159 @@
+:root {
+  --border: #0095d9 solid 0.09375rem;
+}
+
+body {
+  color: #333333;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: #ecf5ff;
+}
+
+.content h2 {
+  border-bottom: var(--border);
+}
+
+.content h3 {
+  border-bottom: #0095d9 dashed 0.09375rem;
+}
+
+.content figcaption {
+  font-size: x-small;
+  text-align: center;
+}
+
+.content table {
+  width: auto;
+  font-size: smaller;
+}
+
+.content table:not(.trophy-table) {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content .trophy-table {
+  margin-right: auto;
+}
+
+.content .trophy {
+  margin: 0 0 5px;
+}
+
+.post__tags {
+  margin: 0.625rem 0 0;
+}
+
+.box {
+  position: relative;
+  top: 0.625rem;
+  padding: 1rem 1rem 0.625rem;
+  border: var(--border);
+  border-radius: 0.3125rem;
+  margin: 0 0 1.875rem;
+}
+
+.box .title {
+  position: absolute;
+  padding: 0 0.3125rem;
+  top: -0.625rem;
+  background-color: #fff;
+}
+
+.box ul,
+.box ol {
+  margin: 0 0 0 1.875rem;
+}
+
+.box li {
+  margin: 0;
+}
+
+.logo__text,
+.widget-taglist__link,
+.tags__item {
+  text-transform: none;
+}
+
+.product-link-box {
+  border: #e5e7eb 0.09375rem solid;
+  border-radius: 0.9375rem;
+  margin: 1.25rem 0;
+  display: flex;
+}
+
+.product-link-info {
+  border-left: #e5e7eb 0.09375rem solid;
+}
+
+.product-link-image {
+  text-align: center;
+  padding: 1.25rem;
+}
+
+.product-link-title {
+  padding: 1.25rem;
+}
+
+.product-link-title a {
+  font-weight: normal;
+}
+
+.profile-icon {
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.profile-name {
+  margin: 0.625rem 0;
+  text-align: center
+}
+
+.profile-detail {
+  padding: 0 0.625rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .lum-lightbox-inner img {
+    max-width: 160vw !important;
+  }
+}
+
+.widget-taglist__link.btn {
+  font-weight: normal;
+  padding: 0.0625rem 0.3125rem;
+  color: #333333;
+  background: #ecf5ff;
+  border-radius: 0.9375rem;
+}
+
+.menu__link {
+  font-weight: normal;
+}
+
+.img {
+  border: solid 0.00625rem #777777;
+}
+
+.xCodeBlock_title {
+  display: inline-block;
+  font-size: smaller;
+  border-radius: 0.5em 0.5em 0 0;
+  padding: 0.3em 0.8em;
+  background: #272822;
+  color: white;
+  margin-left: 1px;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.xCodeBlock_code {
+  margin-top: -1.9px;
+}
+
+.xCodeBlock_code pre {
+  padding: 0.5em;
+  margin-top: 0;
+  border-top: 0;
+}

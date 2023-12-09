@@ -1,0 +1,18 @@
+{{- $url := .Get "url" -}}
+{{- $image := .Get "image" -}}
+{{- $title := .Get "title" -}}
+
+<div class="product-link-box">
+  <div class="product-link-image">
+    <a href="{{ $url }}" target="_blank">
+      <img src="{{ $image }}" alt="{{ $title }}" />
+    </a>
+  </div>
+  <div class="product-link-info">
+    <p class="product-link-title">
+      <a href="{{ $url }}" target="_blank">
+        {{ $title }}
+      </a>
+    </p>
+  </div>
+</div>

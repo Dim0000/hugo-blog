@@ -1,0 +1,10 @@
+{{- $src := .Get "src" -}}
+{{- $caption := .Get "caption" -}}
+
+<a href="{{ $src }}" class="luminous">
+  <figure><img class="img" src="{{ $src }}" alt="{{ $caption }}">
+    <figcaption>
+      <p>{{ $caption }}</p>
+    </figcaption>
+  </figure>
+</a>

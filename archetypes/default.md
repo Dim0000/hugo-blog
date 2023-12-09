@@ -1,0 +1,12 @@
+---
+title: 
+description: 
+date: {{ .Date | time.Format "2006-01-02"}}
+lastmod: 
+categories: 
+tags: 
+archives: 
+thumbnail: /images/{{.File.BaseFileName}}.png
+# draft: false
+---
+

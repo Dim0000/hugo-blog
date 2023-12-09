@@ -1,0 +1,64 @@
+baseURL = "https://dimzakki.com/"
+title = "Dim雑記"
+DefaultContentLanguage = "ja"
+languageCode = "ja-JP"
+theme = "mainroad"
+hasCJKLanguage = true
+summarylength = 120
+googleAnalytics = "G-YZ8ZTS9C8C" # アナリティクスのトラッキングID
+
+[permalinks]
+  post = "/:filename/"
+
+[Params]
+  Subtitle = "ITエンジニアが運営する雑記ブログ"
+  description = "ITエンジニアが運営する雑記ブログ"
+  post_meta = ["date", "categories"]
+  highlightColor = "#0095d9"
+  mathjax = true
+  dateformat = "2006-01-02"
+  customCSS = ["/css/custom.css"]
+  toc = true
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = "right"
+  widgets = ["categories", "taglist", "recent", "archives", "social", "search"]
+[Params.widgets]
+  recent_num = 5
+  categories_counter = true
+  tags_counter = true
+  
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  archive = "archives"
+
+[related]
+  includeNewer = true
+[[related.indices]]
+  name = "tags"
+  weight = 80
+[[related.indices]]
+  name = "categories"
+  weight = 60
+
+[[Menus.main]]
+  Name = "このサイトについて"
+  URL = "/about"
+  weight = 10
+[[Menus.main]]
+  Name = "プロフィール"
+  URL = "/profile"
+  weight = 20
+[[Menus.main]]
+  Name = "IT資格の部屋"
+  URL = "/it-qualification"
+  weight = 40
+[[Menus.main]]
+  Name = "お問い合わせ"
+  URL = "/contact"
+  weight = 50
+[[Menus.footer]]
+  Name = "プライバシーポリシー"
+  URL = "/privacy-policy"

@@ -1,0 +1,14 @@
+{{- if .Params.tags }}
+<div class="post__tags tags clearfix">
+  {{ partial "svg/tag.svg" (dict "class" "meta__icon") }}
+  <span class="tags__list">
+    {{- range $tag := .Params.tags }}
+      {{- $url := urls.Parse ($tag | urlize) -}}
+      {{- $path := $url.Path -}}
+      {{- with $.Site.GetPage (printf "/tags/%s" $path) }}
+          <a class="widget-taglist__link widget__link btn" href="{{ .RelPermalink }}" rel="tag">{{ .Title }}</a>
+      {{- end }}
+    {{- end }}
+  </span>
+</div>
+{{- end }}

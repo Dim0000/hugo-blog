@@ -1,0 +1,38 @@
+{{ define "main" }}
+<main class="main" role="main">
+  <article class="post">
+    <header class="post__header">
+      <h1 class="post__title">{{ .Title }}</h1>
+      {{- with .Params.lead }}
+      <p class="post__lead">{{ . }}</p>
+      {{- end }}
+      {{ with partial "post_meta.html" . -}}
+      <div class="post__meta meta">{{ . }}</div>
+      {{- end }}
+      {{- if .Params.tags }}
+      {{ partial "post_tags.html" . }}
+      {{- end }}
+    </header>
+    {{ partial "post_thumbnail.html" (dict "class" "post" "page" .) }}
+    <div class="content post__content clearfix">
+      {{ $first_h2 := index (findRE "<h2 id.*?>" .Content 1) 0 }}
+        {{ .Scratch.Set "first_h2" $first_h2}}
+        {{ if and (.Scratch.Get "first_h2") }}
+          {{ $toc_and_h2 := printf "%s\n%s\n%s" (partial "post_toc.html" . ) (partial "google-adsense1.html" . ) (.Scratch.Get "first_h2")}}
+          {{ replace .Content (.Scratch.Get "first_h2") $toc_and_h2 | safeHTML }}
+        {{ else }}
+          {{ .Content }}
+        {{ end }}
+        {{ partial "related.html" . }}
+    </div>
+  </article>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js"></script>
+  <script>
+    new LuminousGallery(document.querySelectorAll('.luminous'));
+  </script>
+</main>
+{{ partial "authorbox.html" . }}
+{{ partial "pager.html" . }}
+{{ partial "comments.html" . }}
+{{ end }}

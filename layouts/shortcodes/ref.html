@@ -1,0 +1,5 @@
+{{- $slug := .Get 0 -}}
+{{- $url := ref . $slug -}}
+{{- $page := .Site.GetPage $slug -}}
+{{- $title := $page.Title -}}
+<a href={{ $url }} target="_blank">{{ $title }}</a>

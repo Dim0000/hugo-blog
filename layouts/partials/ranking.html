@@ -1,0 +1,17 @@
+{{ $ranking := slice }}
+{{ range $item := sort .Site.Data.ranking.items "pv" "desc" }}
+  {{ $ranking = $ranking | append (dict "page" $item.pagePath) }}
+{{ end }}
+
+<div class="widget-recent widget">
+  <h4 class="widget__title">人気記事</h4>
+  <div class="widget__content">
+    <ul class="widget__list">
+      {{ range first 5 $ranking }}
+        {{ $url := replace .page "/" ""}}
+        {{ $page := $.Site.GetPage $url }}
+        <li class="widget__item"><a class="widget__link" href="{{ $page.Permalink  }}" target="_blank">{{ $page.Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</div>

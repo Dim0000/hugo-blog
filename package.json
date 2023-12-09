@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@google-analytics/data": "^4.0.1",
+    "dayjs": "^1.11.10"
+  },
+  "scripts": {
+    "create-ranking": "node scripts/create-ranking.js"
+  }
+}
