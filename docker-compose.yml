@@ -5,7 +5,7 @@ volumes:
 
 services:
   hugo:
-    container_name: hugo
+    container_name: Hugo-blog
     image: peaceiris/hugo:latest
     ports:
       - 1313:1313
