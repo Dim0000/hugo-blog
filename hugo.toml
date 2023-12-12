@@ -6,13 +6,14 @@ theme = "mainroad"
 hasCJKLanguage = true
 summarylength = 120
 googleAnalytics = "G-YZ8ZTS9C8C" # アナリティクスのトラッキングID
+enableGitInfo = "true" # 最終更新日をgitから取得
 
 [permalinks]
   post = "/:filename/"
 
 [Params]
-  Subtitle = "ITエンジニアが運営する雑記ブログ"
-  description = "ITエンジニアが運営する雑記ブログ"
+  Subtitle = "ITエンジニアが運営する雑記ブログです"
+  description = "ITエンジニアが運営する雑記ブログです"
   post_meta = ["date", "categories"]
   highlightColor = "#0095d9"
   mathjax = true
