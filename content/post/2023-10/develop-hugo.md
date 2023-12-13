@@ -2,7 +2,6 @@
 title: 【Hugo】ローカルにブログを構築する【Docker対応】
 description: 今回はローカルにHugoでブログサイトを構築し、WordPressから記事を移行するまでの流れを書いていきます。
 date: 2023-10-10
-lastmod: 2023-11-24
 categories: 
   - ブログ運営
 tags: 
@@ -12,7 +11,6 @@ tags:
 archives: 
   - 2023/10
 thumbnail: /images/hugo.png
-# draft: false
 ---
 
 今回はローカルに**Hugo**でブログサイトを構築し、WordPressから記事を移行するまでを書いていきます。環境はWindows10になります。
@@ -39,19 +37,19 @@ Hugoのフォルダは`C:\Hugo\bin`とします。ZIPファイルを解凍し、
 
 `C:\Hugo`内にブログ用のフォルダを作成して初期サイトを構築します。サイトはGitHubで管理するので、Gitリポジトリの初期化もしておきます。
 
-{{< code lang="plaintext" title="ターミナル" >}}
-cd C:\Hugo\
-hugo new site dimzakki.com
-cd C:\Hugo\dimzakki.com
-git init
+{{< code lang="powershell" title="ターミナル" >}}
+$ cd C:\Hugo\
+$ hugo new site dimzakki.com
+$ cd C:\Hugo\dimzakki.com
+$ git init
 {{< /code >}}
 
 サイト名は`dimzakki.com`としていますが、自分の好きな名前に変えて下さい。
 
 続いてテーマを導入します。Hugoには豊富なテーマプラグインがあります。当サイトでは、シンプルかつ今までのブログに近かった『[Mainroad](https://github.com/vimux/mainroad)』を採用しました。今回はgitのサブモジュールとしてインストールします。
 
-{{< code lang="plaintext" title="ターミナル" >}}
-git submodule add https://github.com/vimux/mainroad themes/mainroad
+{{< code lang="powershell" title="ターミナル" >}}
+$ git submodule add https://github.com/vimux/mainroad themes/mainroad
 {{< /code >}}
 
 `hugo.toml`の設定ファイルの記述を追加してMainroadテーマを有効にします。
@@ -62,15 +60,15 @@ theme = "mainroad"
 
 ローカルでサイトを確認したい場合は`serverコマンド`を実行し、`http://localhost:1313/`でサイトプレビューを確認できます。
 
-{{< code lang="plaintext" title="ターミナル" >}}
-hugo server
+{{< code lang="powershell" title="ターミナル" >}}
+$ hugo server -D # draft:trueの下書き記事も表示する
 {{< /code >}}
 
 Hugoでの記事の作成方法などはここでは割愛します。
 
 ## Dockerでサイトをビルドする場合
 
-上にある手順以外では、Dockerを使うことで`hugo.exe`を配置しなくてもHugoを動かせます。Dockerイメージは『[peaceiris/hugo-extended-docker | GitHub](https://github.com/peaceiris/hugo-extended-docker)』を使います。（Dockerの環境構築については割愛します）ブログ用フォルダ内で`docker-compose.yml`に以下を記述し実行することで、サーバを立ち上げることができます。
+上にある手順以外では、Dockerを使うことで`hugo.exe`を配置しなくてもHugoを動かせます。Dockerイメージは『[peaceiris/hugo-extended-docker | GitHub](https://github.com/peaceiris/hugo-extended-docker)』を使います。（Dockerの環境構築については割愛します）ブログ用フォルダ内で`docker-compose.yml`に以下を記述し実行することで、Hugoコマンドを実行することができます。
 
 {{< code lang="yml" title="docker-compose.yml" >}}
 version: '3'
@@ -89,8 +87,10 @@ services:
       - --buildDrafts
 {{< /code >}}
 
-{{< code lang="plaintext" title="ターミナル" >}}
-docker-compose up hugo
+{{< code lang="powershell" title="ターミナル" >}}
+$ docker-compose run hugo version # version確認
+
+$ docker-compose up hugo # hugo serverを実行
 {{< /code >}}
 
 上と同様に、`http://localhost:1313/`を開くことでサイトプレビューを確認できます。
@@ -108,6 +108,7 @@ theme = "mainroad"
 hasCJKLanguage = true
 summarylength = 120
 googleAnalytics = "G-XXXXXXXXXX" # アナリティクスのトラッキングID
+enableGitInfo = "true" # 最終更新日をgitから取得
 
 [permalinks]
   post = "/:filename/"
