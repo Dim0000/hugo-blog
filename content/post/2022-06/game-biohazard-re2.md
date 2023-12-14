@@ -17,48 +17,7 @@ PS5版の**BIOHAZARD RE:2**を、PS4版のセーブデータを引き継いで�
 
 ## トロフィー概要
 
-今作はBIOHAZARD 2のリメイク版です。こちらはPS4版を持っていれば、PS5版はPS storeで100円で購入できます。
-
-{{< rawhtml >}}
-<table>
-<tbody>
-<tr>
-<td>プラットフォーム</td>
-<td>PS5・PS4</td>
-</tr>
-<tr>
-<td>トロフィー構成（本編）
-<br>The Ghost Survivors
-<br>Another Survivor</td>
-<td>{{< platinum >}}1{{< gold >}}4{{< silver >}}9{{< bronze >}}28
-<br>{{< gold >}}0{{< silver >}}1{{< bronze >}}1
-<br>{{< gold >}}0{{< silver >}}0{{< bronze >}}1</td>
-</tr>
-<tr>
-<td>トロコン難易度</td>
-<td>★★★☆☆（普通）</td>
-</tr>
-<tr>
-<td>トロコン時間</td>
-<td>20時間~</td>
-</tr>
-<tr>
-<td>オンライントロフィー</td>
-<td>なし</td>
-</tr>
-<tr>
-<td>時限トロフィー</td>
-<td>あり</td>
-</tr>
-<tr>
-<td>PS Store</td>
-<td>『<a href="https://store.playstation.com/ja-jp/product/JP0102-PPSA04291_00-BH2R000000000001" target="_blank">BIOHAZARD RE:2</a>』</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
-PS4版は既にトロコン済みでした。
+今作はBIOHAZARD 2のリメイク版です。こちらはPS4版を持っていれば、PS5版はPS storeで100円で購入できます。PS4版は既にトロコン済みでした。
 
 プラチナトロフィー自体の難易度はそこそこ高めですが、有料DLCで『[ゲーム内報酬全解放](https://store.playstation.com/ja-jp/product/JP0102-PPSA04291_00-BH20000OPNDLC001)』というものがあるので、それを使うことでプラチナトロフィー取得は比較的簡単になります。トロコンまで目指すとなると、DLC「The Ghost Survivors」のトロフィーである「**No Way Out**」のクリアが条件の【**保安官の意地**】の取得が少し厄介になります。
 
@@ -73,18 +32,6 @@ PS4版は既にトロコン済みでした。
 攻略には以下のサイトの動きが参考になりました。
 
 『[ダニエル（保安官）編の攻略のコツ｜「No Way Out」](https://kamigame.jp/%E3%83%90%E3%82%A4%E3%82%AARE2/%E6%94%BB%E7%95%A5%E3%82%AC%E3%82%A4%E3%83%89/%E3%83%80%E3%83%8B%E3%82%A8%E3%83%AB.html)』
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>保安官の意地</strong></td>
-<td>シナリオ「No Way Out」をクリアする(「難易度：リハーサル」不可)</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ## PS5版にセーブデータを引き継いでトロコンする方法
 
