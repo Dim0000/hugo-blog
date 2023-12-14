@@ -2,7 +2,6 @@
 title: 【CoD:MW2】プラチナトロフィー攻略【MODERN WARFARE II】
 description: 今回はCoD:MW2（Modern Warfare II）のキャンペーンと協力プレイモードのプラチナトロフィー攻略についてまとめていきます。
 date: 2022-10-23
-lastmod: 2023-10-26
 categories: 
   - ITエンジニアの雑記
 tags: 
@@ -10,7 +9,6 @@ tags:
 archives: 
   - 2022/10
 thumbnail: /images/game.png
-# draft: false
 ---
 
 今回は**CoD:MW2**（Call of Duty : Modern Warfare II）のキャンペーンと協力プレイモードのプラチナトロフィー攻略についてまとめていきます。
@@ -23,41 +21,6 @@ thumbnail: /images/game.png
 
 ## トロフィー概要
 
-{{< rawhtml >}}
-<table>
-<tbody>
-<tr>
-<td>プラットフォーム</td>
-<td>PS5・PS4</td>
-</tr>
-<tr>
-<td>トロフィー構成（本編+通常マップ）</td>
-<td>{{< platinum >}}1{{< gold >}}6{{< silver >}}14{{< bronze >}}4</td>
-</tr>
-<tr>
-<td>トロコン難易度</td>
-<td>★★★☆☆（普通）</td>
-</tr>
-<tr>
-<td>トロコン時間</td>
-<td>15時間~</td>
-</tr>
-<tr>
-<td>オンライントロフィー</td>
-<td>あり</td>
-</tr>
-<tr>
-<td>時限トロフィー</td>
-<td>なし</td>
-</tr>
-<tr>
-<td>PS Store</td>
-<td>『<a href="https://store.playstation.com/ja-jp/concept/10001130" target="_blank">Call of Duty®: Modern Warfare® II - クロスジェンバンドル</a>』</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 トロフィーとしては大きく分けると、**キャンペーン**・**協力プレイ**（COOPモード）の2つのモードに分けられます（マルチプレイは無し）。協力プレイはオンライン必須です。
 
 プラチナの難易度は、キャンペーンは簡単で、協力プレイモードが若干面倒なものもありますが、総合すると普通レベルでした。協力プレイモードのチェックポイントの仕様が現在から変更されれば難易度は上がると思います。
@@ -68,35 +31,11 @@ thumbnail: /images/game.png
 
 キャンペーンでは難易度ベテラン・リアルのどちらかで全ステージをクリアするトロフィー【**完全勝利**】があります。難易度リアリズムはクリアがかなり難しいので**ベテラン推奨**。ベテランでは2発撃たれると死んでしまいますが、チェックポイントから何度かやり直して死にポイントを覚えれば無理なくクリアできる程度の難しさになっています。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< gold >}}</td>
-<td><strong>完全勝利</strong></td>
-<td>全てのキャンペーンミッションを難易度「ベテラン」または「リアリズム」で完了</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 それ以外では各ステージ毎のトロフィー等あるので、難易度ルーキーで狙っていきましょう。
 
 ### トロフィー:【クロコダイル】
 
 「**暗殺**」の最序盤で、敵からハンドガンを拾い、水中からハンドガンで3人キルすれば獲得できます。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>クロコダイル</strong></td>
-<td>「暗殺」で、水中から敵を3人射撃</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【神出鬼没】
 
@@ -106,51 +45,15 @@ thumbnail: /images/game.png
 
 2回目の狙撃では敵兵がアーマーを着ており、全てヘッドショットで倒さなければならないので慎重に。ヘッドショットで2人貫通しなければならない敵がいるので位置取りも気を付けましょう。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>神出鬼没</strong></td>
-<td>「威力偵察」で、警報を作動させない</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【冷静かつ迅速】
 
 「**カウントダウン**」最序盤で、ビルをロープでラベリングしながら敵を排除する所が計3ヶ所あり、その全てで敵に発砲されずに制圧しましょう。敵の人数は2人→4人→5人と増えていきます。敵が2人重なった箇所を撃つと効果的です。ミスってもチェックポイントやり直し可能です。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< gold >}}</td>
-<td><strong>冷静かつ迅速</strong></td>
-<td>「カウントダウン」で、敵が銃撃を行うことなく人質を救出</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【丸腰】
 
 「**孤軍奮闘**」で銃を撃たずにステージをクリアで獲得できます。使えないのは銃だけでナイフやトラップ爆弾等は使用可です。低難易度なら強行突破しても簡単。難易度ベテランでも伏せていれば以外とに敵に見つからないのでなんとかなる場面も多いです。
 
 バグりやすいのか、特定の場面でエラー落ちが発生することがあるステージなので、詰んだら最初からやり直しましょう。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< gold >}}</td>
-<td><strong>丸腰</strong></td>
-<td>銃を発射することなく「孤軍奮闘」を完了</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【試運転】
 
@@ -165,18 +68,6 @@ thumbnail: /images/game.png
 <li>アーマー兵が頭出ししている装甲車</li>
 </ul>
 {{< /box >}}
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< bronze >}}</td>
-<td><strong>試運転</strong></td>
-<td>「火力とタイミング」で、5種類の異なる乗り物を運転</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【ゴーストからの指示】
 
@@ -195,49 +86,13 @@ thumbnail: /images/game.png
 
 {{< youtube FF_ELAVi-BU >}}
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< gold >}}</td>
-<td><strong>ゴーストからの指示</strong></td>
-<td>「エル・シン・ノンブレ」で、誰もキルせず警報もならさずにペントハウスに到達</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【デッキに触れるな！】
 
 「**嵐の予感**」で小型ボートから2つ目の船に乗り込んだ後、デッキ（甲板）に触れずに階段を登った所まで（3階部分に当たる所）到達すると獲得できます。どうやら船の地面部分に触れなければ良いみたいで、動くコンテナと左右のへりや高台の部分は歩いてもトロフィーを獲得できました。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>デッキに触れるな！</strong></td>
-<td>「嵐の予感」で、デッキに触れることなく船の前方へ90メートル進む</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【乗り捨て厳禁】
 
 「**火力とタイミング**」で、最初にハイジャックした車両を乗り換えずプライス大尉と合流する所（地雷兵を倒す所）まで行く必要があります。ロープを切り離す場面のトラックをハイジャックした方が耐久値が高いのでおすすめです。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>乗り捨て厳禁</strong></td>
-<td>最初にハイジャックした車両でプライスの元へ到達</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【怪盗】
 
@@ -259,49 +114,13 @@ thumbnail: /images/game.png
 
 {{< luminous src="/images/game-codmw2-trophy-03.jpg" alt="「孤軍奮闘」の金庫2" caption="「孤軍奮闘」の金庫2">}}
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< gold >}}</td>
-<td><strong>怪盗</strong></td>
-<td>キャンペーンで金庫を3つ開ける</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【負けず嫌い】
 
 フラッシュバンが装備できるステージで、自分のフラッシュを喰らってその間に2キルできればOKです。自分は「**脱獄**」の大食堂の戦闘で取れました。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< bronze >}}</td>
-<td><strong>負けず嫌い</strong></td>
-<td>キャンペーンまたは協力プレイで、フラッシュバン1発の影響を受けている間に敵を2人キル</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【Shield of Duty】
 
 ライオットシールドが拾えるステージで、3人の敵をシールドで殴り倒すことで獲得できます。「**カウントダウン**」のサーバールームでの戦闘は狭くて殴りやすいのでおすすめ。シールドは難易度ベテランでもアーマー兵を2回殴りで倒せるため結構強いです。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< bronze >}}</td>
-<td><strong>Shield of Duty</strong></td>
-<td>キャンペーンまたは協力プレイで、ライオットシールドを使用して敵を3人キル</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【訓練の成果】
 
@@ -311,81 +130,21 @@ thumbnail: /images/game.png
 
 死ぬと戦車戦の最初からやり直しになるので注意。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>訓練の成果</strong></td>
-<td>「ゴーストチーム」で、訓練場のターゲットを全て撃つ</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【クソみたいな最期】
 
 「**嵐の予感**」で最初に階段を上った後の仮設トイレ内の敵を倒すと取得できます。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< bronze >}}</td>
-<td><strong>クソみたいな最期</strong></td>
-<td>仮設トイレ内で敵をキル</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【ネッシー】
 
 「**暗殺**」のミッション開始地点から荷船に侵入するまで敵に発見されずに敵を全滅させましょう。おすすめのやり方は、投げナイフで見つからないように敵を排除＆ナイフを回収していくやり方です。敵に見られないように後ろから投げナイフを当てていきしょう。画面上部のインジケーターが黄色の内は敵の視界に入っていてもセーフ扱いになります。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>ネッシー</strong></td>
-<td>「暗殺」で、敵に見つかることなく本船に到達</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【効率主義】
 
 「**脱獄**」で、CCTVのパート（ゴーストに指示を与えるパート）を4分以内でクリアが条件です。クリアのタイミングは3つ目の爆弾を車両に仕掛けるまでになります。
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>効率主義</strong></td>
-<td>CCTVのパートを4分で完了</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【用意周到】
 
 「**脱獄**」で、フラッシュバン・ガスグレネードを喰らっている敵にフラググレネード・セムテックス・モロトフでキルことで獲得できます。アレハンドロを救出した後の大食堂での戦闘時に狙うのがおすすめです。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>用意周到</strong></td>
-<td>「脱獄」で、モロトフ、セムテックス、フラグを使用して視界不良またはガスの影響下にある敵をキル</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ## 協力プレイ
 
@@ -399,18 +158,6 @@ thumbnail: /images/game.png
 
 {{< luminous src="/images/game-codmw2-trophy-04.jpg" alt="「隠密」のクリア画面" caption="「隠密」のクリア画面">}}
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>夜間飛行</strong></td>
-<td>「隠密」でスターを3個獲得</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【過酷な道のり】
 
 「**立入禁止**」でスター3つでクリアのトロフィーです。**16分以内にクリア**が条件になります。普通プレイなら多分このトロフィーが一番難しいと思います。マップが広くタイムが厳しいので、敵を倒すのはそこそこにSAMターレットの爆弾は即設置しに行き、車両で次へと移動しどんどん進めていかないと間に合いません。B・C・D地点のSAMターレットを爆破するとチェックポイントが更新され、そのタイミングでダウンしリトライすると車両の近くにリスポーンするので有効活用しましょう。
@@ -421,18 +168,6 @@ RPG兵とグレネードランチャー兵はうざいですがスルーでき�
 
 {{< luminous src="/images/game-codmw2-trophy-05.jpg" alt="「立入禁止」のクリア画面" caption="「立入禁止」のクリア画面">}}
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>過酷な道のり</strong></td>
-<td>「立入禁止」でスターを3個獲得</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【山の王者】
 
 「**ディフェンダー:ザヤ山**」でスター3つでクリアのトロフィーです。**設置された爆弾が3個以下でクリア**が条件になります。後半のウェーブは防衛地点と敵が多くなるので、初期地点にあるショップからセントリーターレットや巡航ミサイルなどを購入し活用しないとキツいです。
@@ -441,33 +176,9 @@ RPG兵とグレネードランチャー兵はうざいですがスルーでき�
 
 {{< luminous src="/images/game-codmw2-trophy-06.jpg" alt="「ディフェンダー:ザヤ山」のクリア画面" caption="「ディフェンダー:ザヤ山」のクリア画面">}}
 
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>山の王者</strong></td>
-<td>「ディフェンダー:ザヤ山」でスターを3個獲得</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
-
 ### トロフィー:【潜入開始】
 
 「隠密」で警報を鳴らさずに（ステルスで）クリアする必要があります。これも普通プレイならかなり面倒なトロフィーだと思われます。バグっている可能性がありますが、何回かリトライしてプレイしていたら、敵に見つかって撃たれている状況にもかかわらず、3つ目のボムを入手した時点でトロフィーが獲得できました。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>潜入開始</strong></td>
-<td>警報を鳴らさずに「隠密」を完了</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
 
 ### トロフィー:【徹底調査】
 
@@ -476,15 +187,3 @@ RPG兵とグレネードランチャー兵はうざいですがスルーでき�
 {{< youtube 1UYiUJJtTyk >}}
 
 各マップで10~20個の機密情報アイテムがあります。
-
-{{< rawhtml >}}
-<table class="trophy-table">
-<tbody>
-<tr>
-<td>{{< silver >}}</td>
-<td><strong>徹底調査</strong></td>
-<td>協力プレイで、情報の断片を20個発見</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
