@@ -2,7 +2,6 @@
 title: WordPressをHugo・AWS S3・CloudFrontに移行した
 description: レンタルサーバーへ立てたWordPressのブログをHugo + AWS S3 + CloudFrontへ移行してみましたので、移行の理由や感想等を書いていきます。
 date: 2023-07-16
-lastmod: 2023-10-25
 categories: 
   - ブログ運営
 tags: 
@@ -13,7 +12,6 @@ tags:
 archives: 
   - 2023/07
 thumbnail: /images/hugo.png
-# draft: true
 ---
 
 レンタルサーバーへ立てたWordPressのブログを**Hugo**・**AWS S3**・**CloudFront**へ移行してみましたので、移行の理由や感想等を書いていきます。
@@ -28,14 +26,12 @@ thumbnail: /images/hugo.png
   <figure>
     <div class="mermaid">
     graph LR
-      subgraph インターネット
-      訪問者
-      end
-      訪問者 ---> WordPress
+      A((訪問者))
+      A ---> B(WordPress)
       subgraph レンタルサーバー
-      WordPress <---> DB
+      B <---> C(DB)
       end
-      管理者 --->|サイト管理| WordPress
+      D((管理者)) --->|サイト管理| B
     </div>
     <figcaption>
       <p>レンタルサーバー・WordPressの構成</p>
@@ -55,18 +51,17 @@ thumbnail: /images/hugo.png
   <figure>
     <div class="mermaid">
     graph LR
-      subgraph インターネット
-      訪問者
-      end
-      訪問者 ---> A
+      A((訪問者)) ---> B(CloudFront)
       subgraph AWS
-      A[Route 53] <---> CloudFront
-      CloudFront <--->|SSL| ACM
-      CloudFront <---> S3
+      C(Route 53)
+      D(ACM)
+      B ---> E(S3)
       end
-      管理者 --->|Push| GitHub
-      GitHub ---> B[GitHub Actions]
-      B --->|デプロイ| S3
+      subgraph GitHub
+      F(リポジトリ) ---> G(GitHub Actions)
+      end
+      H((管理者)) --->|Push| F
+      G --->|デプロイ| E
     </div>
     <figcaption>
       <p>Hugo + AWS構成</p>
@@ -117,29 +112,21 @@ Hugo + AWS構成を選択したのは、静的サイトジェネレータの中�
 
 以下に、手順の全てではありませんが、WordPressからHugoに移行した際のメモを記事としてまとめます。
 
-{{< box "1. レンタルサーバーのドメインをRoute 53に移管する" >}}
-<ul>
-<li>{{< ref "/domain-to-route53" >}}</li>
-</ul>
-{{< /box >}}
+1.レンタルサーバーのドメインをRoute 53に移管する
 
-{{< box "2. Hugoをローカルに構築してコンテンツを移す" >}}
-<ul>
-<li>{{< ref "/develop-hugo" >}}</li>
-</ul>
-{{< /box >}}
+  * {{< ref "/domain-to-route53" >}}
 
-{{< box "3. HugoをS3にデプロイし、CloudFrontで配信する" >}}
-<ul>
-<li>{{< ref "/hugo-deploy" >}}</li>
-</ul>
-{{< /box >}}
+2.Hugoをローカルに構築してコンテンツを移す
 
-{{< box "4. GitHubで自動デプロイを設定する" >}}
-<ul>
-<li>近日公開予定</li>
-</ul>
-{{< /box >}}
+  * {{< ref "/develop-hugo" >}}
+
+3.HugoをS3にデプロイし、CloudFrontで配信する
+
+  * {{< ref "/hugo-deploy" >}}
+
+4.GitHubで自動デプロイを設定する
+
+  * {{< ref "/hugo-github" >}}
 
 ## ブログの引っ越しをした感想
 
