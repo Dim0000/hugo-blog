@@ -2,7 +2,6 @@
 title: 【AWS】HugoブログをS3・CloudFrontにデプロイする
 description: 今回はローカルで構築したHugoのブログサイトをAWS S3にデプロイし、CloudFrontで配信するまでの流れをまとめていきます。
 date: 2023-10-15
-lastmod: 2023-10-19
 categories: 
   - ブログ運営
 tags: 
@@ -11,14 +10,13 @@ tags:
 archives: 
   - 2023/10
 thumbnail: /images/aws.png
-# draft: false
 ---
 
 今回はローカルで構築した**Hugo**のブログサイトをAWS S3にデプロイし、CloudFrontで配信するまでの流れをまとめていきます。Hugoサイトの作成と、Route 53での独自ドメイン取得は出来ている前提で話を進めていきます。
 
 {{< box "関連記事" >}}
 <ul>
-<li>『{{< ref "/wordpress-to-hugo" >}}』</li>
+<li>{{< ref "/wordpress-to-hugo" >}}</li>
 </ul>
 {{< /box >}}
 
@@ -71,11 +69,9 @@ Hugoのビルド時に生成されたファイルが`publicフォルダ`内に�
 }
 {{< /code >}}
 
-{{< luminous src="/images/hugo-deploy-08.png" caption="静的ウェブサイトホスティングの設定4">}}
-
 ここまでで、静的ウェブサイトホスティングが完了するので、「プロパティ」で発行されたURLからアクセスし、サイトが表示されるかを確認しましょう。
 
-{{< luminous src="/images/hugo-deploy-09.png" caption="静的ウェブサイトホスティングの設定5">}}
+{{< luminous src="/images/hugo-deploy-09.png" caption="静的ウェブサイトホスティングの設定4">}}
 
 ## ACMでSSL証明書を発行する
 
