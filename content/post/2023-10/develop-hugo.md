@@ -23,7 +23,9 @@ thumbnail: /images/hugo.png
 
 ## Hugoのインストール
 
-公式のGitHubのリリースページ『[Releases · gohugoio/hugo | GitHub](https://github.com/gohugoio/hugo/releases)』からZIPファイルをダウンロードします。筆者はWindowsの`windows-amd64版`をダウンロードしました。
+公式のGitHubのリリースページからZIPファイルをダウンロードします。筆者はWindowsの`windows-amd64版`をダウンロードしました。
+
+* [Releases · gohugoio/hugo | GitHub](https://github.com/gohugoio/hugo/releases)
 
 Hugoのフォルダは`C:\Hugo\bin`とします。ZIPファイルを解凍し、`hugo.exe`をbinフォルダに配置します。
 
@@ -46,7 +48,11 @@ $ git init
 
 サイト名は`dimzakki.com`としていますが、自分の好きな名前に変えて下さい。
 
-続いてテーマを導入します。Hugoには豊富なテーマプラグインがあります。当サイトでは、シンプルかつ今までのブログに近かった『[Mainroad](https://github.com/vimux/mainroad)』を採用しました。今回はgitのサブモジュールとしてインストールします。
+続いてテーマを導入します。Hugoには豊富なテーマプラグインがあります。当サイトでは、シンプルかつ今までのブログに近かった**Mainroad**を採用しました。
+
+* [Mainroad | GitHub](https://github.com/vimux/mainroad)
+
+今回はgitのサブモジュールとしてインストールします。
 
 {{< code lang="powershell" title="ターミナル" >}}
 $ git submodule add https://github.com/vimux/mainroad themes/mainroad
@@ -68,7 +74,11 @@ Hugoでの記事の作成方法などはここでは割愛します。
 
 ## Dockerでサイトをビルドする場合
 
-上にある手順以外では、Dockerを使うことで`hugo.exe`を配置しなくてもHugoを動かせます。Dockerイメージは『[peaceiris/hugo-extended-docker | GitHub](https://github.com/peaceiris/hugo-extended-docker)』を使います。（Dockerの環境構築については割愛します）ブログ用フォルダ内で`docker-compose.yml`に以下を記述し実行することで、Hugoコマンドを実行することができます。
+上にある手順以外では、Dockerを使うことで`hugo.exe`を配置しなくてもHugoを動かせます。Dockerイメージは**hugo-extended-docker**を使います。（Dockerの環境構築については割愛します）
+
+* [peaceiris/hugo-extended-docker | GitHub](https://github.com/peaceiris/hugo-extended-docker)
+
+ブログ用フォルダ内で`docker-compose.yml`に以下を記述し実行することで、Hugoコマンドを実行することができます。
 
 {{< code lang="yml" title="docker-compose.yml" >}}
 version: '3'
@@ -88,7 +98,7 @@ services:
 {{< /code >}}
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker-compose run hugo version # version確認
+$ docker-compose run --rm hugo version # version確認
 
 $ docker-compose up hugo # hugo serverを実行
 {{< /code >}}
@@ -165,7 +175,9 @@ enableGitInfo = "true" # 最終更新日をgitから取得
 
 ## 記事のデータの移行
 
-記事のデータ移行には『[wordpress-to-hugo-exporter | GitHub](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)』というWordPressプラグインがあるので、それが使えれば簡単に移行ができると思います。
+記事のデータ移行には**wordpress-to-hugo-exporter**というWordPressプラグインがあるので、それが使えれば簡単に移行ができると思います。
+
+* [wordpress-to-hugo-exporter | GitHub](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)
 
 GitHubの「Download ZIP」からダウンロードし、ZIPファイルをWordpressのプラグインページからアップロードすることで、WordPressのツールからエクスポートが可能になります。
 
