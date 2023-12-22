@@ -1,9 +1,7 @@
 ---
-title: 【Oracle MASTER Silver SQL】試験の申し込みを格安で行う方法
-description: 今回はOracle MASTER Silver SQL（1Z0-071-JPN）の試験を割引価格で申し込む方法と試験結果を確認する方法についてまとめていきます。受験形式はテストセンターでのCBT方式の受験を想定しています。
-
+title: 【Oracle MASTER Silver DBA/SQL】試験の申し込みを格安で行う方法
+description: 今回はOracle MASTER Silver DBA（1Z0-082-JPN）/SQL（1Z0-071-JPN）の試験を割引価格で申し込む方法と試験結果を確認する方法についてまとめていきます。受験形式はテストセンターでのCBT方式の受験を想定しています。
 date: 2023-03-05
-lastmod: 2023-10-24
 categories: 
   - IT資格
 tags: 
@@ -11,10 +9,9 @@ tags:
 archives: 
   - 2023/03
 thumbnail: /images/oracle.png
-# draft: false
 ---
 
-今回は**Oracle MASTER Silver SQL**（1Z0-071-JPN）の試験を割引価格で申し込む方法と試験結果を確認する方法についてまとめていきます。受験形式はテストセンターでのCBT方式の受験を想定しています。
+今回は**Oracle MASTER Silver** DBA（1Z0-082-JPN）/SQL（1Z0-071-JPN）の試験を割引価格で申し込む方法と試験結果を確認する方法についてまとめていきます。受験形式はテストセンターでのCBT方式の受験を想定しています。
 
 {{< box "関連記事" >}}
 <ul>
@@ -35,13 +32,13 @@ thumbnail: /images/oracle.png
 
 ## 楽天市場でチケットの購入をする
 
-試験のチケットはOracleの公式ページからでも購入できますが、**楽天市場**で試験番号「1Z0-071-JPN」に対応している受験チケットを買うと、**2,000円以上安く入手できます**。また、楽天ポイントも結構ついてくるため更にお得です。チケットは下記URLから購入できます。
+試験のチケットはOracleの公式ページからでも購入できますが、**楽天市場**で試験番号「1Z0-082-JPN」もしくは「1Z0-071-JPN」に対応している受験チケットを買うと、**2,000円以上安く入手できます**。また、楽天ポイントも結構ついてくるため更にお得です。チケットは下記URLから購入できます。
 
 * [【ピアソンVUE専用】OracleピアソンVUE配信監督付き試験用受験チケット(電子チケット)](https://af.moshimo.com/af/c/click?a_id=2758487&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fit-test%2F137327%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fit-test%2Fi%2F10000192%2F)
 
 {{< product_link title="【ピアソンVUE専用】OracleピアソンVUE配信監督付き試験用受験チケット(電子チケット)" image="//thumbnail.image.rakuten.co.jp/@0_mall/it-test/cabinet/bk_ora2.jpg?_ex=300x300" url="//af.moshimo.com/af/c/click?a_id=2758487&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fit-test%2F137327%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fit-test%2Fi%2F10000192%2F">}}
 
-対象試験「1Z0-071-JPN」に対応しているかを確認しておきましょう。
+対象試験「1Z0-082-JPN」もしくは「1Z0-071-JPN」に対応しているかを確認しておきましょう。
 
 {{< luminous src="/images/oraclemastersilver-sql-application-01.png" caption="楽天市場の商品ページ画面">}}
 
@@ -49,27 +46,29 @@ thumbnail: /images/oracle.png
 
 ## 試験の予約を行う
 
-次に試験の予約を行います。下記URLから予約を行いましょう。今回はスマホのブラウザから予約を行います。
+次に試験の予約を行います。下記URLから予約を行いましょう。今回は「1Z0-071-JPN」の予約を行います。
 
 * [Oracle University | CertView](https://catalog-education.oracle.com/pls/apex/f?p=1010:26:564432523336)
 
 CertViewでは右上メニューから言語を日本語に変更できます。メニューから試験の予約サイトである「ピアソンVUE」へ遷移します。 
 
-{{< luminous src="/images/oraclemastersilver-sql-application-02.jpg" caption="試験の予約方法1">}}
+{{< luminous src="/images/oraclemasterbronze-application-02.png" caption="試験の予約方法1">}}
 
-{{< luminous src="/images/oraclemastersilver-sql-application-03.jpg" caption="試験の予約方法2">}}
+{{< luminous src="/images/oraclemasterbronze-application-03.png" caption="試験の予約方法2">}}
+
+{{< luminous src="/images/oraclemasterbronze-application-04.png" caption="試験の予約方法3">}}
 
 後は、試験の予約から「1Z0-071-JPN」を選択し、日付と場所を選んで、先ほどのメールに記載されたチケット番号を入力することで申し込みが完了します（画像の受験料は受験時の価格になります）。
 
-{{< luminous src="/images/oraclemastersilver-sql-application-04.jpg" caption="試験の予約方法3">}}
+{{< luminous src="/images/oraclemastersilver-sql-application-02.png" caption="試験の予約方法4">}}
 
-{{< luminous src="/images/oraclemastersilver-sql-application-05.jpg" caption="試験の予約方法4">}}
+「**テストセンター**」を選択すると、認定プログラムのポリシーの画面になります。「**同意する**」をクリックしましょう。試験会場の選択画面になります。会場と日時を選択すると受験コードの入力画面になります。ここに先ほどのコード（メールに記載されているチケット番号）を入力しましょう。画像では、受験料は2021年当時の値段になっています。
 
-{{< luminous src="/images/oraclemastersilver-sql-application-06.jpg" caption="試験の予約方法5">}}
+{{< luminous src="/images/javasilver-se11-application-06.png" caption="試験の予約画面5">}}
 
-{{< luminous src="/images/oraclemastersilver-sql-application-07.jpg" caption="試験の予約方法6">}}
+コードを入力後代金の合計が0円になり、このような画面になるのを確認したら「次へ」をクリックします。
 
-{{< luminous src="/images/oraclemastersilver-sql-application-08.jpg" caption="試験の予約方法7">}}
+{{< luminous src="/images/javasilver-se11-application-07.png" caption="試験の予約画面6">}}
 
 ## 試験結果の確認
 
