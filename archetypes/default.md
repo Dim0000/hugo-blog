@@ -4,7 +4,8 @@ description:
 date: {{ .Date | time.Format "2006-01-02"}}
 categories: 
 tags: 
-archives: 
+archives:
+    - {{ now.Format "2006/01" }}
 thumbnail: /images/{{.File.BaseFileName}}.png
 ---
 
