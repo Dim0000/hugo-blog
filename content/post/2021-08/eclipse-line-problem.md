@@ -4,7 +4,7 @@ description: 今回は統合開発環境（IDE）であるEclipseに関する記
 date: 2021-08-09
 lastmod: 2023-11-03
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
 archives: 
   - 2021/08

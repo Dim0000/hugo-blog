@@ -4,7 +4,7 @@ description: ワイヤレスイヤホンのAVIOT TE-D01vを購入しました。
 date: 2022-10-16
 lastmod: 2023-11-01
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - 商品レビュー
   - イヤホン

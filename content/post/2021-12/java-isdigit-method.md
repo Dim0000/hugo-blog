@@ -4,7 +4,7 @@ description: CharacterクラスのisDigitメソッドを使うことで、文字
 date: 2021-12-15
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

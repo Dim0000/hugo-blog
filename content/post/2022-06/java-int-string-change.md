@@ -4,7 +4,7 @@ description: 今回はint型とString型の変換の方法について紹介し�
 date: 2022-06-30
 lastmod: 2023-10-31
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

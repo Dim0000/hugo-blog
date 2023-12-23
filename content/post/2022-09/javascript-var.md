@@ -4,7 +4,7 @@ description: 今回はJavaScriptの変数型var・let・constについて、var�
 date: 2022-09-05
 lastmod: 2023-10-27
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - JavaScript
 archives: 

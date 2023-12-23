@@ -4,7 +4,7 @@ description: 今回はJavaの小数を扱う変数型のfloat型とdouble型の�
 date: 2022-03-27
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

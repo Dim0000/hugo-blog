@@ -4,7 +4,7 @@ description: 「CoD:Warzone Pacific」のおすすめのゲーム設定をまと
 date: 2022-01-31
 lastmod: 2023-11-02
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
   - MixAmp

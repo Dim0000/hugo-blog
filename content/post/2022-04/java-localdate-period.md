@@ -4,7 +4,7 @@ description: 今回はLocalDateクラスの日付の期間を計算する方法�
 date: 2022-04-23
 lastmod: 2023-11-01
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

@@ -2,16 +2,16 @@
 title: 【MathJax】サイトに簡単に数式を表示させる方法
 description: JavaScriptプラグインであるMathJaxを使い、プラグイン無しでWordPressやHugoで簡単に数式を表示させる方法について解説していきます。
 date: 2023-04-30
-lastmod: 2023-10-23
 categories: 
-  - ブログ運営
+  - 技術記事
 tags: 
+  - ブログ運営
+  - JavaScript
   - Wordpress
   - Hugo
 archives:
   - 2023/04 
 thumbnail: /images/mathjax.png
-# draft: false
 ---
 
 JavaScriptプラグインである**MathJax**を使い、プラグイン無しでWordPressやHugoで簡単に数式を表示させる方法について解説していきます。

@@ -4,7 +4,7 @@ description: 今回はJavaのLocalDateクラスで日付の加算と減算を行
 date: 2022-04-07
 lastmod: 2023-11-01
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

@@ -4,7 +4,7 @@ description: 今回はJavaでランダムな文字列（パスワード）を生
 date: 2022-05-18
 lastmod: 2023-11-01
 categories:
-  - IT制作物
+  - 技術記事
 tags: 
   - Java
 archives: 

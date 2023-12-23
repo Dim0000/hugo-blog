@@ -4,7 +4,7 @@ description: Javaでべき乗（累乗）を求めるには、Mathクラスのpo
 date: 2022-12-20
 lastmod: 2023-10-19
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

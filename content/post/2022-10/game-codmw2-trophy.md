@@ -3,7 +3,7 @@ title: 【CoD:MW2】プラチナトロフィー攻略【MODERN WARFARE II】
 description: 今回はCoD:MW2（Modern Warfare II）のキャンペーンと協力プレイモードのプラチナトロフィー攻略についてまとめていきます。
 date: 2022-10-23
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
 archives: 

@@ -4,7 +4,7 @@ description: 今回はプログラミングを始めたい人向けにブラウ�
 date: 2021-08-28
 lastmod: 2023-11-03
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
   - C言語

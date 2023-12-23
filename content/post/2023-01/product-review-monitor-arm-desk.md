@@ -4,7 +4,7 @@ description: 今回は勉強机にモニターアームを設置しモニター�
 date: 2023-01-03
 lastmod: 2023-10-25
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - 商品レビュー
 archives: 

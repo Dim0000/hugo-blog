@@ -4,7 +4,7 @@ description: double型などの変数で小数点以下を丸めて整数にす�
 date: 2022-08-04
 lastmod: 2023-10-29
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

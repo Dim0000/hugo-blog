@@ -4,7 +4,7 @@ description: PS5版のBIOHAZARD RE:2を、PS4版のセーブデータを引き�
 date: 2022-06-18
 lastmod: 2023-10-31
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
 archives: 

@@ -4,7 +4,7 @@ description: 今回はJavaを使って、数学的に有名な数列であるフ
 date: 2021-08-07
 lastmod: 2023-11-03
 categories: 
-  - IT制作物
+  - 技術記事
 tags: 
   - Java
 archives: 

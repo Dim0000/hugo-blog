@@ -4,7 +4,7 @@ description: JavaのRandomクラスで乱数を生成する方法を紹介しま
 date: 2021-07-31
 lastmod: 2023-11-04
 categories:
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

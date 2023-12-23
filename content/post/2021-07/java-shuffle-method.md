@@ -4,7 +4,7 @@ description: Javaでコレクションの要素をランダムでシャッフル
 date: 2021-07-23
 lastmod: 2023-11-04
 categories:
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

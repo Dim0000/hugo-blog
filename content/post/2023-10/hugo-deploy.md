@@ -3,8 +3,9 @@ title: 【AWS】HugoブログをS3・CloudFrontにデプロイする
 description: 今回はローカルで構築したHugoのブログサイトをAWS S3にデプロイし、CloudFrontで配信するまでの流れをまとめていきます。
 date: 2023-10-15
 categories: 
-  - ブログ運営
+  - 技術記事
 tags: 
+  - ブログ運営
   - Hugo
   - AWS
 archives: 

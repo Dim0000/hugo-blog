@@ -4,7 +4,7 @@ description: 2つの配列の違いを探す時には、Arraysクラスのmismat
 date: 2021-08-13
 lastmod: 2023-11-03
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

@@ -4,7 +4,7 @@ description: 文字列から文字を削除するにはStringBuilderクラス/St
 date: 2022-04-30
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

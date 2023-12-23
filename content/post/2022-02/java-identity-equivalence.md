@@ -4,7 +4,7 @@ description: 今回はJavaの変数における同一性と同値性の違いに
 date: 2022-02-25
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

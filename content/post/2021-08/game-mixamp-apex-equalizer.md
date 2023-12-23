@@ -4,7 +4,7 @@ description: 今回はゲーミングデバイスのMixAmpについて紹介し�
 date: 2021-08-14
 lastmod: 2023-11-03
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
   - 商品レビュー

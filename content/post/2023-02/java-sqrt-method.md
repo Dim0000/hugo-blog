@@ -4,7 +4,7 @@ description: Javaで平方根を求めるにはMathクラスのsqrtメソッド�
 date: 2023-02-11
 lastmod: 2023-10-25
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

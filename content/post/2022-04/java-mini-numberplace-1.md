@@ -4,7 +4,7 @@ description: 今回はJavaを使って4×4のミニナンプレをランダム�
 date: 2022-04-02
 lastmod: 2023-11-02
 categories: 
-  - IT制作物
+  - 技術記事
 tags: 
   - Java
 archives: 

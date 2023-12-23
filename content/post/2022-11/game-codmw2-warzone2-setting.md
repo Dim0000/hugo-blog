@@ -4,7 +4,7 @@ description: CoD:MW2及びWarzone 2のおすすめゲーム内設定をまとめ
 date: 2022-11-03
 lastmod: 2023-10-26
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
   - MixAmp

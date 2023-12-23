@@ -4,7 +4,7 @@ description: 今回は、Javaを使って4行4列の16マス魔方陣（1～16�
 date: 2021-07-22
 lastmod: 2023-11-04
 categories: 
-  - IT制作物
+  - 技術記事
 tags: 
   - Java
 archives: 

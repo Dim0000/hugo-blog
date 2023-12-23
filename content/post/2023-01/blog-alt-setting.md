@@ -2,15 +2,15 @@
 title: 【WordPress】alt属性を自動で記事タイトルに設定する【プラグインなし】
 description: 今回はWordPressで画像のalt属性（代替テキスト）をプラグインを使わずに一括で記事タイトルに変更する方法を紹介します。
 date: 2023-01-14
-lastmod: 2023-10-25 
 categories:
-  - ブログ運営
+  - 技術記事
 tags: 
+  - ブログ運営
   - Wordpress
+  - PHP
 archives:
   - 2023/01 
 thumbnail: /images/wordpress.png
-# draft: false
 ---
 
 今回は**WordPress**で画像の**alt属性**（代替テキスト）をプラグインを使わずに一括で記事タイトルに変更する方法を紹介します。

@@ -3,8 +3,9 @@ title: WordPressをHugo・AWS S3・CloudFrontに移行した
 description: レンタルサーバーへ立てたWordPressのブログをHugo + AWS S3 + CloudFrontへ移行してみましたので、移行の理由や感想等を書いていきます。
 date: 2023-07-16
 categories: 
-  - ブログ運営
+  - 技術記事
 tags: 
+  - ブログ運営
   - Hugo
   - AWS
   - GitHub

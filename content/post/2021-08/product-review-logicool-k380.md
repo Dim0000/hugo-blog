@@ -4,7 +4,7 @@ description: 今回は無線キーボードのLogicool k380の商品レビュー
 date: 2021-08-24
 lastmod: 2023-11-03
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - 商品レビュー
 archives: 

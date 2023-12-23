@@ -4,7 +4,7 @@ description: 今回はGitHub Actionsを使い、毎日自動でコミットと�
 date: 2023-05-20
 lastmod: 2023-10-21
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - GitHub
 archives: 

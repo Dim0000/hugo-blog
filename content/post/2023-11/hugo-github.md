@@ -2,17 +2,16 @@
 title: 【Hugo】Github ActionでS3に自動でデプロイする
 description: 今回はHugoをGithubにプッシュした際に自動でS3にデプロイする
 date: 2023-11-24
-lastmod: 2023-12-09
 categories: 
-  - ブログ運営
+  - 技術記事
 tags: 
+  - ブログ運営
   - Hugo
   - AWS
   - GitHub
 archives: 
   - 2023/11
 thumbnail: /images/hugo.png
-# draft: false
 ---
 
 今回はHugoをGithubにプッシュした際に自動でS3にデプロイする方法を紹介します。

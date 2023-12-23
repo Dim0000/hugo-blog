@@ -4,7 +4,7 @@ description: 今回は僕の趣味であるゲームとPlayStationのトロフ�
 date: 2021-07-25
 lastmod: 2023-11-04
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
 archives: 

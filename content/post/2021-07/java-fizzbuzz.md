@@ -4,7 +4,7 @@ description: プログラムのアルゴリズム問題で有名なFizzBuzzに�
 date: 2021-07-27
 lastmod: 2023-11-04
 categories:
-  - IT制作物
+  - 技術記事
 tags: 
   - Java
 archives: 

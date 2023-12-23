@@ -4,7 +4,7 @@ description: 今回はStringクラスのinternメソッドについて、その�
 date: 2022-09-11
 lastmod: 2023-10-27
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

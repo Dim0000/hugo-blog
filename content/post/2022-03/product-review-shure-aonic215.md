@@ -4,7 +4,7 @@ description: ゲーミングイヤホンであるSHURE AONIC 215をゲーム（F
 date: 2022-03-09
 lastmod: 2023-11-02
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
   - 商品レビュー

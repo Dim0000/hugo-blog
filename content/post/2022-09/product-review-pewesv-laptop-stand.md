@@ -4,7 +4,7 @@ description: 今回は、Pewesvというメーカのノートパソコンスタ�
 date: 2022-09-24
 lastmod: 2023-10-27
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - 商品レビュー
 archives: 

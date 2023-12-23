@@ -2,15 +2,14 @@
 title: 【WordPress】PageSpeed Insightsで90点以上取る方法解説
 description: 今回はWordPress（cocoonテーマ使用）でPageSpeed Insightsの測定をモバイル・デスクトップ共に90点以上を取る方法について紹介します。
 date: 2022-08-21
-lastmod: 2023-10-29
 categories: 
-  - ブログ運営
+  - 雑記
 tags: 
+  - ブログ運営
   - WordPress
 archives: 
   - 2022/08
 thumbnail: /images/wordpress.png
-# draft: false
 ---
 
 今回はWordPress（cocoonテーマ使用）で**PageSpeed Insights**の測定をモバイル・デスクトップ共に**90点**以上を取る方法について紹介します。

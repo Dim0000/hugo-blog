@@ -4,7 +4,7 @@ description: 今回は、C言語をこれから学びたい人へ向けたおす
 date: 2021-09-24
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - C言語
 archives: 

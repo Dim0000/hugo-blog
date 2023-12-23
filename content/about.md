@@ -2,12 +2,12 @@
 title: このサイトについて
 description: このページでは当サイトについて、ブログの目的などを紹介したいと思います。
 date: 2021-07-21
-lastmod: 2023-10-27
 url: /about
 categories:
+  - 雑記
+tags: 
   - ブログ運営
 thumbnail: /images/blog.png
-# draft: false
 ---
 
 このページでは当サイトについて、ブログの目的などを紹介したいと思います。

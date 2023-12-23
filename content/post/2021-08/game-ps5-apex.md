@@ -4,7 +4,7 @@ description: PlayStation 5（ノーマルエディション）で「Apex Legends
 date: 2021-08-03
 lastmod: 2023-12-09
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
   - 商品レビュー

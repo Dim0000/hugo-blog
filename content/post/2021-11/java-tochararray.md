@@ -4,7 +4,7 @@ description: 今回はJavaのtoCharArrayメソッドを使って、String型の�
 date: 2021-11-13
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

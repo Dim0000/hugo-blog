@@ -4,7 +4,7 @@ description: CharacterクラスのisAlphabeticメソッドを使うことで、�
 date: 2023-01-24
 lastmod: 2023-10-25
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

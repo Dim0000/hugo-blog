@@ -4,7 +4,7 @@ description: 今回は数独に使われる9×9の魔方陣をランダムに出
 date: 2021-10-06
 lastmod: 2023-11-02
 categories: 
-  - IT制作物
+  - 技術記事
 tags: 
   - Java
 archives: 

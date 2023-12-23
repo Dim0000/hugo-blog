@@ -4,7 +4,7 @@ description: このページは当ブログ管理人のプロフィール（運�
 date: 2021-09-07
 url: profile
 categories:
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
 thumbnail: images/blog.png
 ---

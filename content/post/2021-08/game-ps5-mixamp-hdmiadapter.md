@@ -4,7 +4,7 @@ description: 今回はPS5とPS4とでのMixAmpの接続方法の違い（光デ�
 date: 2021-08-19
 lastmod: 2023-11-03
 categories: 
-  - ITエンジニアの雑記
+  - 雑記
 tags: 
   - ゲーム
   - 商品レビュー

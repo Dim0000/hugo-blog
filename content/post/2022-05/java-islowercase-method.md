@@ -4,7 +4,7 @@ description: CharacterクラスのisLowerCaseメソッドを使うことで、�
 date: 2022-05-04
 lastmod: 2023-11-01
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

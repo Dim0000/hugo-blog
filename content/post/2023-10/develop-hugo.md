@@ -3,8 +3,9 @@ title: 【Hugo】ローカルにブログを構築する【Docker対応】
 description: 今回はローカルにHugoでブログサイトを構築し、WordPressから記事を移行するまでの流れを書いていきます。
 date: 2023-10-10
 categories: 
-  - ブログ運営
+  - 技術記事
 tags: 
+  - ブログ運営
   - Hugo
   - WordPress
   - Docker

@@ -4,7 +4,7 @@ description: 配列の中身を文字列に置き換えるには、Arrayクラ�
 date: 2022-07-01
 lastmod: 2023-10-31
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
 archives: 

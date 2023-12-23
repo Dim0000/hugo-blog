@@ -4,7 +4,7 @@ description: 今回はプログラミングにおけるメソッドと関数と�
 date: 2021-10-19
 lastmod: 2023-11-02
 categories: 
-  - IT知識
+  - 技術記事
 tags: 
   - Java
   - C言語
