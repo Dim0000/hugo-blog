@@ -16,6 +16,12 @@ thumbnail: /images/hugo.png
 
 今回はHugoをGithubにプッシュした際に自動でS3にデプロイする方法を紹介します。
 
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/wordpress-to-hugo" >}}</li>
+</ul>
+{{< /box >}}
+
 ## IAMロールの設定
 
 まずは、IAMコンソールのIDプロバイダから、OIDCプロバイダの設定を以下の様に行います。プロバイダのタイプは`OpenID Connect`で、プロバイダのURLは`https://token.actions.githubusercontent.com`、対象者は`sts.amazonaws.com`を入力します。
