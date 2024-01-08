@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/game-ps5-apex/",
-            "pv": "211"
+            "pv": "208"
         },
         {
             "pagePath": "/product-review-monitor-arm-desk/",
@@ -10,27 +10,27 @@
         },
         {
             "pagePath": "/game-codmw2-trophy/",
-            "pv": "49"
+            "pv": "42"
         },
         {
             "pagePath": "/game-codmw2-warzone2-setting/",
-            "pv": "37"
+            "pv": "40"
         },
         {
-            "pagePath": "/qualification-ip-fe-ap-pass/",
+            "pagePath": "/game-ps5-mixamp-hdmiadapter/",
             "pv": "34"
         },
         {
             "pagePath": "/java-localdate-addition-subtraction/",
-            "pv": "32"
-        },
-        {
-            "pagePath": "/game-ps5-mixamp-hdmiadapter/",
-            "pv": "31"
+            "pv": "33"
         },
         {
             "pagePath": "/game-biohazard-re2/",
-            "pv": "26"
+            "pv": "31"
+        },
+        {
+            "pagePath": "/qualification-ip-fe-ap-pass/",
+            "pv": "30"
         },
         {
             "pagePath": "/game-mixamp-apex-equalizer/",
@@ -45,39 +45,51 @@
             "pv": "20"
         },
         {
-            "pagePath": "/eclipse-line-problem/",
-            "pv": "18"
-        },
-        {
-            "pagePath": "/blog-access-problem/",
-            "pv": "15"
-        },
-        {
             "pagePath": "/java-tochararray/",
-            "pv": "15"
+            "pv": "20"
         },
         {
             "pagePath": "/qualification-oraclemastersilversql/",
-            "pv": "15"
+            "pv": "20"
         },
         {
-            "pagePath": "/java-int-string-change/",
-            "pv": "14"
+            "pagePath": "/eclipse-line-problem/",
+            "pv": "19"
         },
         {
             "pagePath": "/qualification-sg-pass/",
-            "pv": "13"
+            "pv": "17"
+        },
+        {
+            "pagePath": "/java-int-string-change/",
+            "pv": "15"
+        },
+        {
+            "pagePath": "/qualification-ap-book/",
+            "pv": "15"
         },
         {
             "pagePath": "/qualification-aws-saa/",
-            "pv": "12"
+            "pv": "14"
+        },
+        {
+            "pagePath": "/blog-access-problem/",
+            "pv": "13"
         },
         {
             "pagePath": "/blog-alt-setting/",
-            "pv": "11"
+            "pv": "13"
         },
         {
-            "pagePath": "/oracle-pearsonvue/",
+            "pagePath": "/java-ceil-floor-round/",
+            "pv": "13"
+        },
+        {
+            "pagePath": "/qualification-javasilverse11/",
+            "pv": "12"
+        },
+        {
+            "pagePath": "/java-deletecharat-method/",
             "pv": "11"
         },
         {
@@ -85,15 +97,11 @@
             "pv": "11"
         },
         {
-            "pagePath": "/qualification-javasilverse11/",
-            "pv": "11"
-        },
-        {
             "pagePath": "/domain-to-route53/",
             "pv": "10"
         },
         {
-            "pagePath": "/java-ceil-floor-round/",
+            "pagePath": "/github-actions-autocommit/",
             "pv": "10"
         },
         {
@@ -101,15 +109,7 @@
             "pv": "10"
         },
         {
-            "pagePath": "/product-review-shure-aonic215/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/java-deletecharat-method/",
-            "pv": "9"
-        },
-        {
-            "pagePath": "/java-float-double/",
+            "pagePath": "/",
             "pv": "9"
         },
         {
@@ -117,19 +117,43 @@
             "pv": "9"
         },
         {
-            "pagePath": "/qualification-ap-book/",
+            "pagePath": "/javasilver-se11-application/",
             "pv": "9"
         },
         {
-            "pagePath": "/qualification-ap-pm/",
+            "pagePath": "/oracle-pearsonvue/",
             "pv": "9"
         },
         {
-            "pagePath": "/",
+            "pagePath": "/qualification-fe-kayanoki/",
+            "pv": "9"
+        },
+        {
+            "pagePath": "/qualification-ip-newsyllabus/",
+            "pv": "9"
+        },
+        {
+            "pagePath": "/hitman2-expansion-pass/",
             "pv": "8"
         },
         {
-            "pagePath": "/javasilver-se11-application/",
+            "pagePath": "/java-float-double/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/java-islowercase-method/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/product-review-shure-aonic215/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/qualification-ap-pass/",
+            "pv": "8"
+        },
+        {
+            "pagePath": "/qualification-ap-pm/",
             "pv": "8"
         },
         {
@@ -141,6 +165,10 @@
             "pv": "8"
         },
         {
+            "pagePath": "/qualification-oraclemastersilversql-measures/",
+            "pv": "8"
+        },
+        {
             "pagePath": "/warzone-setting/",
             "pv": "8"
         },
@@ -149,15 +177,7 @@
             "pv": "7"
         },
         {
-            "pagePath": "/hitman2-expansion-pass/",
-            "pv": "7"
-        },
-        {
             "pagePath": "/java-intern/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/java-islowercase-method/",
             "pv": "7"
         },
         {
@@ -165,15 +185,7 @@
             "pv": "7"
         },
         {
-            "pagePath": "/qualification-ap-pass/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/qualification-fe-kayanoki/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/github-actions-autocommit/",
+            "pagePath": "/c-language-compiler/",
             "pv": "6"
         },
         {
@@ -181,7 +193,11 @@
             "pv": "6"
         },
         {
-            "pagePath": "/c-language-compiler/",
+            "pagePath": "/product-review-logicool-k380/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/java-fibonacci-sequence/",
             "pv": "5"
         },
         {
@@ -197,11 +213,19 @@
             "pv": "5"
         },
         {
+            "pagePath": "/qualification-sc/",
+            "pv": "5"
+        },
+        {
             "pagePath": "/tags/game/",
             "pv": "5"
         },
         {
-            "pagePath": "/java-fibonacci-sequence/",
+            "pagePath": "/java-browser-compile/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/java-identity-equivalence/",
             "pv": "4"
         },
         {
@@ -209,23 +233,11 @@
             "pv": "4"
         },
         {
-            "pagePath": "/product-review-logicool-k380/",
-            "pv": "4"
-        },
-        {
             "pagePath": "/qualification-fe-pm-selection/",
             "pv": "4"
         },
         {
-            "pagePath": "/qualification-ip-newsyllabus/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/qualification-oraclemastersilversql-measures/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/qualification-sc/",
+            "pagePath": "/qualification-ip-merit/",
             "pv": "4"
         },
         {
@@ -233,11 +245,7 @@
             "pv": "3"
         },
         {
-            "pagePath": "/java-browser-compile/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/java-identity-equivalence/",
+            "pagePath": "/develop-hugo/",
             "pv": "3"
         },
         {
@@ -257,7 +265,7 @@
             "pv": "3"
         },
         {
-            "pagePath": "/qualification-ip-merit/",
+            "pagePath": "/product-review-pewesv-laptop-stand/",
             "pv": "3"
         },
         {
@@ -266,10 +274,6 @@
         },
         {
             "pagePath": "/aws-clf-measures/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/develop-hugo/",
             "pv": "2"
         },
         {
@@ -283,14 +287,6 @@
         {
             "pagePath": "/oraclemastersilver-sql-application/",
             "pv": "2"
-        },
-        {
-            "pagePath": "/product-review-pewesv-laptop-stand/",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/blog-pagespeed/",
-            "pv": "1"
         },
         {
             "pagePath": "/categories/it-qualification/",
@@ -337,5 +333,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2024-01-07T00:43:46.743Z"
+    "createdAt": "2024-01-08T02:40:22.310Z"
 }
