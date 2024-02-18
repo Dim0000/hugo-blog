@@ -57,7 +57,7 @@ jobs:
           hugo-version: "latest"
           extended: true     
       - name: Build Hugo
-        run: hugo          
+        run: hugo --minify --buildFuture
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
