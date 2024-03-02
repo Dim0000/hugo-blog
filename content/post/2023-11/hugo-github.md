@@ -1,5 +1,5 @@
 ---
-title: 【Hugo】Github ActionでS3に自動でデプロイする
+title: 【Hugo】Github ActionsでS3に自動でデプロイする
 description: 今回はHugoをGithubにプッシュした際に自動でS3にデプロイする
 date: 2023-11-24
 categories: 
@@ -14,7 +14,7 @@ archives:
 thumbnail: /images/hugo.png
 ---
 
-今回はHugoをGithubにプッシュした際に自動でS3にデプロイする方法を紹介します。
+今回は**Hugo**を**Github**にプッシュした際に自動でS3にデプロイする方法を紹介します。必要な手順としては、IAMロールの設定と、Github Actionsの設定のみになります。
 
 {{< box "関連記事" >}}
 <ul>
@@ -55,11 +55,9 @@ thumbnail: /images/hugo.png
 
 {{< luminous src="/images/hugo-github-03.png" caption="OIDCプロバイダの設定3">}}
 
-## Github Actionの設定
+## Github Actionsの設定
 
-GitHubリポジトリに`s3_upload.yml`を配置します。`distribution-id`には自分の環境でのディストリビューションIDを設定する必要があります。
-
-また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントIDと`S3_BUCKET`にバケット名を入れます。
+続いて、Github Actionsの設定です。GitHubリポジトリに以下の様に`s3_upload.yml`を配置します。`distribution-id`には自分の環境でのディストリビューションIDを設定する必要があります。
 
 {{< code lang="yml" title="s3_upload.yml" >}}
 name: s3_upload
@@ -85,7 +83,7 @@ jobs:
           hugo-version: "latest"
           extended: true     
       - name: Build Hugo
-        run: hugo          
+        run: hugo --minify --buildFuture
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
@@ -126,9 +124,17 @@ jobs:
           expire-in: 0
 {{< /code >}}
 
+また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントIDと`S3_BUCKET`にバケット名を入れます。
+
+{{< luminous src="/images/hugo-github-04.png" caption="GitHubのSecrets設定">}}
+
+これで設定は完了ですので、実際にGitHubにプッシュし、All workflowsの画面から処理が実行されているのを確認できたら成功です。
+
+{{< luminous src="/images/hugo-github-04.png" caption="GitHubのSecrets設定">}}
+
 * * *
 
-これでプッシュ時に自動でS3にデプロイすることができました。以上で記事を終わりにします。
+これでプッシュ時に自動でS3にデプロイできるようになりました。以上で記事を終わりにします。
 
 ## 参考文献
 
