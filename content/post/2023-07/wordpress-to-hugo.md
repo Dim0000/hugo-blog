@@ -1,6 +1,6 @@
 ---
-title: WordPressをHugo・AWS S3・CloudFrontに移行した
-description: レンタルサーバーへ立てたWordPressのブログをHugo + AWS S3 + CloudFrontへ移行してみましたので、移行の理由や感想等を書いていきます。
+title: 【Hugo】WordPressブログをHugo（AWS）に移行した
+description: この度、レンタルサーバーへ立てたWordPressのブログを**Hugo**に乗り換え、ホスティングもAWS S3・CloudFrontに変更しましたので、移行の理由や感想等を書いていきます。
 date: 2023-07-16
 categories: 
   - 技術記事
@@ -15,7 +15,7 @@ archives:
 thumbnail: /images/hugo.png
 ---
 
-レンタルサーバーへ立てたWordPressのブログを**Hugo**・**AWS S3**・**CloudFront**へ移行してみましたので、移行の理由や感想等を書いていきます。
+この度、レンタルサーバーへ立てた**WordPress**のブログを**Hugo**に乗り換え、ホスティングも**AWS S3**・**CloudFront**に変更しましたので、移行の理由や感想等を書いていきます。
 
 ## ブログの構成について
 
@@ -54,15 +54,14 @@ thumbnail: /images/hugo.png
     graph LR
       A((訪問者)) ---> B(CloudFront)
       subgraph AWS
-      C(Route 53)
-      D(ACM)
-      B ---> E(S3)
+      C(Route 53・ACM)
+      B ---> D(S3)
       end
       subgraph GitHub
-      F(リポジトリ) ---> G(GitHub Actions)
+      E(リポジトリ・GitHub Actions)
       end
-      H((管理者)) --->|Push| F
-      G --->|デプロイ| E
+      F((管理者)) --->|Push| E
+      E --->|デプロイ| D
     </div>
     <figcaption>
       <p>Hugo + AWS構成</p>
