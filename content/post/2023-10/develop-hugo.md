@@ -1,6 +1,6 @@
 ---
-title: 【Hugo】ローカルにブログを構築する【Docker対応】
-description: 今回はローカルにHugoでブログサイトを構築し、WordPressから記事を移行するまでの流れを書いていきます。
+title: 【Hugo】ブログサイトをDockerで構築する【ブログ移行②】
+description: 今回はHugoのブログサイトをDockerで構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
 date: 2023-10-10
 categories: 
   - 技術記事
@@ -14,15 +14,18 @@ archives:
 thumbnail: /images/hugo.png
 ---
 
-今回はローカルに**Hugo**でブログサイトを構築し、WordPressから記事を移行するまでを書いていきます。環境はWindows10になります。
+今回は**Hugo**のブログサイトをDockerで構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
 
 {{< box "関連記事" >}}
 <ul>
 <li>{{< ref "/wordpress-to-hugo" >}}</li>
+<li>{{< ref "/domain-to-route53" >}}</li>
+<li>{{< ref "/hugo-deploy" >}}</li>
+<li>{{< ref "/hugo-github" >}}</li>
 </ul>
 {{< /box >}}
 
-## Hugoのインストール
+## Hugoのインストール（Dockerを使わない場合）
 
 公式のGitHubのリリースページからZIPファイルをダウンロードします。筆者はWindowsの`windows-amd64版`をダウンロードしました。
 
@@ -32,9 +35,11 @@ Hugoのフォルダは`C:\Hugo\bin`とします。ZIPファイルを解凍し、
 
 続いて、環境変数のパスを通します。Windowsの設定から、「システム」→左側一番下の「詳細情報」→右側の「システムの詳細設定」→一番下の「環境変数」を開きます。そこから、「ユーザーの環境変数」→「Path」を編集し、`C:\Hugo\bin`を設定します。
 
+{{< luminous src="/images/develop-hugo-01.png" caption="Hugoの環境変数">}}
+
 コマンドプロンプトで`hugo help`を実行し、ヘルプ一覧が表示されたらインストール完了です。
 
-なお、Hugoのバージョンアップデートについては、`hugo.exe`を新しい物へ差し替えればOKです。
+なお、Hugoのバージョンアップデートについては、新しいバージョンのZIPファイルをダウンロードし、`C:\Hugo\bin`に配置した`hugo.exe`を新しい物へ差し替えればOKです。
 
 ### ローカルに初期サイトを構築
 
@@ -75,7 +80,7 @@ Hugoでの記事の作成方法などはここでは割愛します。
 
 ## Dockerでサイトをビルドする場合
 
-上にある手順以外では、Dockerを使うことで`hugo.exe`を配置しなくてもHugoを動かせます。Dockerイメージは**hugo-extended-docker**を使います。（Dockerの環境構築については割愛します）
+Dockerを使うことで、`hugo.exe`のダウンロードや環境変数の設定をしなくてもHugoを動かせます。Dockerイメージは**hugo-extended-docker**を使います。（Dockerの環境構築については割愛します）
 
 * [peaceiris/hugo-extended-docker | GitHub](https://github.com/peaceiris/hugo-extended-docker)
 
@@ -185,7 +190,7 @@ enableGitInfo = "true" # 最終更新日をgitから取得
 
 GitHubの「Download ZIP」からダウンロードし、ZIPファイルをWordpressのプラグインページからアップロードすることで、WordPressのツールからエクスポートが可能になります。
 
-筆者の場合は「Export to Hugo」ZIPファイルが何故かエラーでダウンロード出来なかったので、手動でコピペして記事を移しました…。
+筆者の場合は「Export to Hugo」のエクスポートのZIPファイルが、何故かエラーでダウンロード出来なかったので、手動でコピペして記事を移しました…。
 
 移行作業としては記事内容のコピペが主で、それをマークダウン形式に書き換える作業が殆どでした。
 
