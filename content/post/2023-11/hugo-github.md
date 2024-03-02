@@ -1,5 +1,5 @@
 ---
-title: 【Hugo】Github ActionsでS3に自動でデプロイする
+title: 【Hugo】Github ActionsでS3に自動でデプロイする【ブログ移行④】
 description: 今回はHugoをGithubにプッシュした際に自動でS3にデプロイする
 date: 2023-11-24
 categories: 
@@ -19,6 +19,8 @@ thumbnail: /images/hugo.png
 {{< box "関連記事" >}}
 <ul>
 <li>{{< ref "/wordpress-to-hugo" >}}</li>
+<li>{{< ref "/domain-to-route53" >}}</li>
+<li>{{< ref "/develop-hugo" >}}</li>
 <li>{{< ref "/hugo-deploy" >}}</li>
 </ul>
 {{< /box >}}
@@ -129,7 +131,7 @@ jobs:
 
 * * *
 
-これでプッシュ時に自動でS3にデプロイできるようになりました。以上で記事を終わりにします。
+これでプッシュ時に自動でS3にデプロイできるようになりました。ここまでで、Hugoブログの構築が完了となります。以上で記事を終わりにします。
 
 ## 参考文献
 
