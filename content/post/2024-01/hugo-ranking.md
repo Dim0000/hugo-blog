@@ -1,6 +1,6 @@
 ---
-title: 【Hugo】PV数の人気記事のランキングを取得する方法
-description: 今回はHugoとGoogle Analyticsで各記事のPV数のランキングを取得する方法を紹介します。
+title: 【Hugo】PV数の人気記事のランキングを取得する
+description: 今回はHugoとGoogle Analyticsで各記事のPV数のランキングを取得する方法を紹介します。なお、ランキング取得スクリプトはDockerで動かす想定です。
 date: 2024-01-03
 categories: 
   - 技術記事
@@ -8,14 +8,14 @@ tags:
   - ブログ運営
   - Hugo
   - GitHub
-  - JavaScript
+  - Node.js
   - Docker
 archives:
     - 2024/01
 thumbnail: /images/hugo.png
 ---
 
-今回はHugoとGoogle Analyticsで各記事のPV数のランキングを取得する方法を紹介します。
+今回は**Hugo**と**Google Analytics**で各記事のPV数のランキングを取得する方法を紹介します。なお、ランキング取得スクリプトは**Docker**で動かす想定です。
 
 {{< box "関連記事" >}}
 <ul>
@@ -195,12 +195,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Setup npm
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: '18.x'
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
@@ -230,7 +230,7 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0 # enableGitInfoでの取得用
@@ -242,10 +242,11 @@ jobs:
       - name: Build Hugo
         run: hugo --minify --buildFuture
       - name: upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: public
+          retention-days: 1 # artifactsの保存期間
   deploy: # S3にデプロイ
     needs: build
     runs-on: ubuntu-latest
@@ -253,14 +254,14 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download artifacts for build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: my-artifact
           path: public
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@master
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-northeast-1
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role
@@ -270,18 +271,11 @@ jobs:
         run: |
           echo "uploding to s3 ..."
           aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
-          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id XXXXXXXXXXXXX --paths "/*"        
-  delete-artifacts: # artifacts削除
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kolpav/purge-artifacts-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          expire-in: 0
+          aws cloudfront create-invalidation --region ap-northeast-1 
+          --distribution-id XXXXXXXXXXXXX --paths "/*"        
 {{< /code >}}
 
-これでpush時にランキングを取得するようしています。
+`distribution-id`は自環境でのディストリビューションIDに置き換えて下さい。これで、GitHubへのプッシュ時にランキングを取得してからデプロイするようになります。
 
 * * *
 
