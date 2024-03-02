@@ -63,6 +63,7 @@ jobs:
         with:
           name: my-artifact
           path: public
+          retention-days: 1 # artifactsの保存期間
   deploy: # S3にデプロイ
     needs: build
     runs-on: ubuntu-latest
@@ -87,12 +88,4 @@ jobs:
         run: |
           echo "uploding to s3 ..."
           aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
-          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id E1H0JCD0XE54TR --paths "/*"        
-  delete-artifacts: # artifacts削除
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kolpav/purge-artifacts-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          expire-in: 0
+          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id E1H0JCD0XE54TR --paths "/*"
