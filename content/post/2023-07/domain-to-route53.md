@@ -1,5 +1,5 @@
 ---
-title: 【AWS】Route 53に他サービスで取得した独自ドメインを移管する
+title: 【AWS】Route 53に他サービスの独自ドメインを移管する【ブログ移行①】
 description: 今回、ムームードメインで取得した独自ドメインをAmazon Route 53へ移管しましたので、移管の流れを備忘録として残します。
 date: 2023-07-29
 categories: 
@@ -17,6 +17,9 @@ thumbnail: /images/aws.png
 {{< box "関連記事" >}}
 <ul>
 <li>{{< ref "/wordpress-to-hugo" >}}</li>
+<li>{{< ref "/develop-hugo" >}}</li>
+<li>{{< ref "/hugo-deploy" >}}</li>
+<li>{{< ref "/hugo-github" >}}</li>
 </ul>
 {{< /box >}}
 
