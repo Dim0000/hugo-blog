@@ -96,6 +96,9 @@ services:
       - server
       - --bind=0.0.0.0
       - --buildDrafts
+      - --minify
+      - --buildFuture
+      - -v
 {{< /code >}}
 
 {{< code lang="powershell" title="ターミナル" >}}
