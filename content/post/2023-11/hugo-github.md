@@ -19,6 +19,7 @@ thumbnail: /images/hugo.png
 {{< box "関連記事" >}}
 <ul>
 <li>{{< ref "/wordpress-to-hugo" >}}</li>
+<li>{{< ref "/hugo-deploy" >}}</li>
 </ul>
 {{< /box >}}
 
@@ -74,9 +75,10 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: true
+          fetch-depth: 0 # enableGitInfoでの取得用
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -85,10 +87,11 @@ jobs:
       - name: Build Hugo
         run: hugo --minify --buildFuture
       - name: upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: my-artifact
           path: public
+          retention-days: 1 # artifactsの保存期間
   deploy: # S3にデプロイ
     needs: build
     runs-on: ubuntu-latest
@@ -96,14 +99,14 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Download artifacts for build
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: my-artifact
           path: public
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@master
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-northeast-1
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role
@@ -113,15 +116,7 @@ jobs:
         run: |
           echo "uploding to s3 ..."
           aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
-          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id XXXXXXXXXXXXX --paths "/*"        
-  delete-artifacts: # artifacts削除
-    needs: deploy
-    runs-on: ubuntu-latest
-    steps:
-      - uses: kolpav/purge-artifacts-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          expire-in: 0
+          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id XXXXXXXXXXXXX --paths "/*"
 {{< /code >}}
 
 また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントIDと`S3_BUCKET`にバケット名を入れます。
