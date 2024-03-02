@@ -170,7 +170,7 @@ Hugo上では以下の様にしてPVデータを取得できます。例とし�
 {{ end }}
 {{< /code >}}
 
-## Github Actionの設定
+## Github Actionsの設定
 
 {{< box "関連記事" >}}
 <ul>
@@ -178,7 +178,7 @@ Hugo上では以下の様にしてPVデータを取得できます。例とし�
 </ul>
 {{< /box >}}
 
-Github Actionでランキング取得を行いたいので、`s3_upload.yml`を以下の様に書き換えます。
+Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ランキング取得処理も行いたいので、`s3_upload.yml`を以下の様に書き換えます。
 
 {{< code lang="yml" title="s3_upload.yml" >}}
 name: s3_upload
@@ -240,7 +240,7 @@ jobs:
           hugo-version: "latest"
           extended: true     
       - name: Build Hugo
-        run: hugo          
+        run: hugo --minify --buildFuture
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
