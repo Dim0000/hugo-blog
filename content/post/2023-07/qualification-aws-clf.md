@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/aws.png
 ---
 
-**AWS Certified Cloud Practitioner（クラウドプラクティショナー）試験**（CLF-C01）を2022年6月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
+**AWS Certified Cloud Practitioner（クラウドプラクティショナー）試験**（CLF-C01）を2023年6月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 
 {{< box "関連記事" >}}
 <ul>
