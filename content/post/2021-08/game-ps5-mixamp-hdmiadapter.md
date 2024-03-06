@@ -2,7 +2,6 @@
 title: 【PS5】ASTRO HDMIアダプターでMixAmpを使う方法【解説】
 description: 今回はPS5とPS4とでのMixAmpの接続方法の違い（光デジタル端子の有無について）と、PS5にMixAmpをHDMIアダプターを使って接続する方法について紹介します。
 date: 2021-08-19
-lastmod: 2023-11-03
 categories: 
   - 雑記
 tags: 
@@ -12,7 +11,6 @@ tags:
 archives: 
   - 2021/08
 thumbnail: /images/game.png
-# draft: false
 ---
 
 今回はPS5とPS4とでの**MixAmpの接続方法の違い**（光デジタル端子の有無について）と、PS5に**MixAmpをHDMIアダプターを使って接続する方法**について紹介します。
@@ -58,7 +56,7 @@ MixAmpは光デジタル端子を使わないと性能を発揮できません�
 
 どのように接続するかというと、「[ASTRO Gaming アストロ HDMI アダプター](https://amzn.to/3DflvWO)」と呼ばれる機器を使います。これ一つでMixAmpとPS5を接続できます。
 
-{{< amazon_link title="ロジクールG ASTRO Gaming HDMI アダプター" asin="B08LP8HRZQ" url="https://amzn.to/3DflvWO">}}
+{{< product_link title="ロジクールG ASTRO Gaming HDMI アダプター" image="https://m.media-amazon.com/images/I/41G1BQgF+kL._SL160_.jpg" url="https://amzn.to/3DflvWO">}}
 
 流石にMixAmpが使えないのはストレスなので、僕もHDMIアダプターを買ってみることにしました。
 
@@ -80,8 +78,8 @@ HDMIアダプターは結構小さいです。MixAmpの半分もありません�
     graph LR
       PS5 ---|HDMI| HDMIアダプター
       HDMIアダプター ---|HDMI| モニター
-      HDMIアダプター ---|光デジタルケーブル<br>ゲーム音声用| MixAmp
-      PS5 ---|USB<br>VC音声用| MixAmp
+      HDMIアダプター ---|光デジタルケーブル<br>（ゲーム音声用）| MixAmp
+      PS5 ---|USB<br>（VC音声用）| MixAmp
       MixAmp ---|3.5mm| ヘッドセット
     </div>
     <figcaption>
@@ -104,9 +102,13 @@ PS5本体の設定は以下の箇所を確認すればOKです。
 <ul>
 <li>「サウンド」→「マイク」→「入力機器」→「USBヘッドセット（Astro MixAmp Pro）」</li>
 <li>「サウンド」→「音声出力」→「出力機器」→「USBヘッドセット（Astro MixAmp Pro）」</li>
-<li>「サウンド」→「音声出力」→「ヘッドフォンへの出力」→「チャット音声」</li>
+<li>「サウンド」→「音声出力」→「ヘッドフォンへの出力」→「ボイスチャット音声」</li>
 </ul>
 {{< /box >}}
+
+{{< luminous src="/images/game-ps5-mixamp-hdmiadapter-02.jpg" caption="PS5本体の設定1">}}
+
+{{< luminous src="/images/game-ps5-mixamp-hdmiadapter-03.jpg" caption="PS5本体の設定2">}}
 
 また、3.5mm端子対応の外部スピーカーを繋げてそこへ音声を出力したい場合は、MixAmpにある**stream端子**に3.5mm端子を差し込めば出力されるようになります。
 
