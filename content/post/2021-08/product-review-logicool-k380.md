@@ -2,7 +2,6 @@
 title: 【無線キーボード】Logicool k380をレビュー【マルチデバイス対応】
 description: 今回は無線キーボードのLogicool k380の商品レビューを行っていきます。商品の特徴や、実際にテレワークと私用で使った感想、スクリーンショットのショートカットが効かない問題の対処方法などについてまとめていきます。
 date: 2021-08-24
-lastmod: 2023-11-03
 categories: 
   - 雑記
 tags: 
@@ -10,7 +9,6 @@ tags:
 archives: 
   - 2021/08
 thumbnail: /images/review.png
-# draft: false
 ---
 
 今回は**無線キーボード**の**Logicool k380**の商品レビューを行っていきます。
@@ -33,7 +31,7 @@ thumbnail: /images/review.png
 
 そんな中で購入した無線キーボードが「[Logicool ワイヤレスキーボード k380](https://amzn.to/3XSssGH)」でした。
 
-{{< amazon_link title="ロジクール ワイヤレスキーボード K380BK" asin="B016XLGJJA" url="https://amzn.to/3XSssGH">}}
+{{< product_link title="ロジクール ワイヤレスキーボード K380BK" image="https://m.media-amazon.com/images/I/41D2iHpd3TL._SL160_.jpg" url="https://amzn.to/3XSssGH">}}
 
 複数デバイスに接続可能なものを選んだのは、テレワークを行う場合に追加で接続できたら便利そうだと思ったからです。色はブラックを買いました。
 
@@ -55,7 +53,7 @@ thumbnail: /images/review.png
 
 ## 実際に使用した感想
 
-|得点|詳細|
+|項目|評価|
 | :---: | :---: |
 |総合得点|★★★★☆|
 |打鍵感|★★★★☆|
