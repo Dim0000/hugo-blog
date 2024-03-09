@@ -2,7 +2,6 @@
 title: 【Java Silver SE11】試験対策用備忘録メモ【黒本ベース】
 description: この記事はJava Silver SE11の受験にあたって、自分用にややこしかった点を備忘録としてまとめたメモです。全ての事項を網羅してる訳では無く、個人的に分かりにくかったところをピックアップしています。
 date: 2021-09-23
-lastmod: 2023-11-02
 categories: 
   - IT資格
 tags: 
@@ -11,12 +10,11 @@ tags:
 archives: 
   - 2021/09
 thumbnail: /images/java.png
-# draft: false
 ---
 
 この記事は**Java Silver SE11**の受験にあたって、自分用にややこしかった点を備忘録としてまとめたメモです。全ての事項を網羅してる訳では無く、個人的に分かりにくかったところをピックアップしています。
 
-内容のカテゴライズは、Java Silverの参考書である『[徹底攻略Java SE 11 Silver問題集](https://amzn.to/3rwQATi)』（黒本）の章ごとで分類してまとめました。内容については、随時更新予定です。
+内容のカテゴライズは、Java Silverの参考書である「{{< product_link id="4295007625" type="text" >}}」（黒本）の章ごとで分類してまとめました。内容については、随時更新予定です。
 
 {{< box "関連記事" >}}
 <ul>

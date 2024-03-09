@@ -2,7 +2,6 @@
 title: 【Oracle MASTER Silver SQL】合格体験記【難易度・勉強時間】
 description: Oracle MASTER Silver SQL（1Z0-071-JPN）を2023年3月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2023-04-08
-lastmod: 2023-10-29
 categories: 
   - IT資格
 tags: 
@@ -11,7 +10,6 @@ tags:
 archives: 
   - 2023/04
 thumbnail: /images/oracle.png
-# draft: false
 ---
 
 **Oracle MASTER Silver SQL**（1Z0-071-JPN）を2023年3月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
@@ -108,9 +106,9 @@ thumbnail: /images/oracle.png
 
 ### 参考書（黒本）
 
-参考書は黒本と呼ばれる物がおすすめです。黒本とは『[オラクルマスター教科書 Silver SQL Oracle Database SQL](https://amzn.to/3Obrli7)』という参考書のことです。
+参考書は黒本と呼ばれる物がおすすめです。黒本とは「{{< product_link id="4798172367" type="text" >}}」という参考書のことです。
 
-{{< product_link title="オラクルマスター教科書 Silver SQL Oracle Database SQL" image="https://m.media-amazon.com/images/I/51gLA8E15GL._SL160_.jpg" url="https://amzn.to/3Obrli7">}}
+{{< product_link id="4798172367" >}}
 
 黒本は試験問題に近い形式の問題とその解説がテーマごとにまとまっている問題集になっています。こちらを3周程度やって、試験範囲の知識をまんべんなく取得しましょう。ただ、この問題集だけでは、試験を合格するレベルには若干足りないと思います。
 

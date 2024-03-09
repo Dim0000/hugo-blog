@@ -27,9 +27,9 @@ thumbnail: /images/java.png
 
 試験のチケットはOracleの公式ページからでも購入できますが、**楽天市場**で試験番号「1Z0-818-JPN」に対応している受験チケットを買うと、定価より安く受験ができます。また、楽天ポイントも結構ついてくるため更にお得です。チケットは下記URLから購入できます。
 
-* [【ピアソンVUE専用】OracleピアソンVUE配信監督なし試験用受験チケット(電子チケット)](https://af.moshimo.com/af/c/click?a_id=2758487&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fit-test%2F137325%2F)
+* {{< product_link id="it-test:10000178" type="text" >}}
 
-{{< product_link title="【ピアソンVUE専用】OracleピアソンVUE配信監督なし試験用受験チケット(電子チケット)" image="//thumbnail.image.rakuten.co.jp/@0_mall/it-test/cabinet/bk_ora2.jpg?_ex=300x300" url="//af.moshimo.com/af/c/click?a_id=2758487&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fit-test%2F137325%2F">}}
+{{< product_link id="it-test:10000178" >}}
 
 チケットを購入するとチケット番号が記載されたメールが来るので、その番号を使って試験の予約を行います。
 

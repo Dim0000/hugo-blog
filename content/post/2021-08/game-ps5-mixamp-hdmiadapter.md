@@ -54,9 +54,9 @@ MixAmpは光デジタル端子を使わないと性能を発揮できません�
 
 僕自身、PS5でUSB接続でMixAmpを使ってみましたが、PS4で光デジタルケーブルを使ってプレイした時より音の聞こえ加減が悪いので、音質面での違和感が凄い。また、ゲーム音とVC音の個別の調整もできません。どのようにしたら使えるのか…。ちゃんと使えるようにするには、光デジタルをアダプターでHDMI接続に変換する必要があります。
 
-どのように接続するかというと、「[ASTRO Gaming アストロ HDMI アダプター](https://amzn.to/3DflvWO)」と呼ばれる機器を使います。これ一つでMixAmpとPS5を接続できます。
+どのように接続するかというと、「{{< product_link id="B08LP8HRZQ" type="text" >}}」と呼ばれる機器を使います。これ一つでMixAmpとPS5を接続できます。
 
-{{< product_link title="ロジクールG ASTRO Gaming HDMI アダプター" image="https://m.media-amazon.com/images/I/41G1BQgF+kL._SL160_.jpg" url="https://amzn.to/3DflvWO">}}
+{{< product_link id="B08LP8HRZQ" >}}
 
 流石にMixAmpが使えないのはストレスなので、僕もHDMIアダプターを買ってみることにしました。
 

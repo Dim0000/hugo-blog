@@ -14,7 +14,7 @@ thumbnail: /images/game.png
 
 **PlayStation 5**（ノーマルエディション）で「**Apex Legends**」をプレイしてPS4と比較した感想と、**DualSense Edge**を使用した感想について書いていきます。
 
-{{< product_link title="PlayStation 5 (CFI-1200A01)" image="https://m.media-amazon.com/images/I/31Rb7+NaqzL._SL160_.jpg" url="https://amzn.to/44HEvIV">}}
+{{< product_link id="B0CKYM15RJ" >}}
 
 ## PS5の設置
 
@@ -50,7 +50,7 @@ PS5の性能的には120FPS出るみたいですが、Apex側が対応してな�
 
 自分はPS4純正コントローラーでずっとプレイしているのですが、APEXでもPS4の純正コントローラー（DS4）でプレイ出来ます。PS5にUSBケーブルをつなげる必要がありますが、自分は特に繋いでて困らないので良かったです。
 
-DS4でやりたかった理由は、右スティックにフリーク『[KontrolFreek FPSフリーク Vortex](https://amzn.to/3rtC2Uk)』を付けているので、フリーク付きのコントローラーでやりたかったこと、PS5のコントローラー（**DualSense**）が壊れやすいという話を知り合いから聞いていたことの2つです。
+DS4でやりたかった理由は、右スティックにフリーク「[KontrolFreek FPSフリーク Vortex]({{< product_link id="B00ISW0TGW" type="url" >}})」のオレンジ色を付けているので、フリーク付きのコントローラーでやりたかったこと、PS5のコントローラー（**DualSense**）が壊れやすいという話を知り合いから聞いていたことの2つです。
 
 要するに貧乏性なのでDS4を使いつぶしたいって感じです（笑）
 
@@ -88,9 +88,9 @@ MixAmpの接続以外で特に不満に感じたことはありませんでし�
 
 ## 「DualSense Edge」を使用した感想
 
-追記になりますが、背面ボタン付きコントローラーの「[DualSense Edge](https://amzn.to/3QoLfGb)」も購入しましたので、この記事で併せて紹介したいと思います。
+追記になりますが、背面ボタン付きコントローラーの「[DualSense Edge]({{< product_link id="B0BJTJNQFD" type="url" >}})」も購入しましたので、この記事で併せて紹介したいと思います。
 
-{{< product_link title="【純正品】DualSense Edge ワイヤレスコントローラー(CFI-ZCP1J)" image="https://m.media-amazon.com/images/I/31fuoLNwlsL._SL160_.jpg" url="https://amzn.to/3QoLfGb">}}
+{{< product_link id="B0BJTJNQFD" >}}
 
 {{< luminous src="/images/game-ps5-apex-05.jpg" caption="DualSense Edgeの外箱">}}
 

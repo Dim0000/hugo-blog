@@ -2,7 +2,6 @@
 title: 【SHURE AONIC 215】FPSで使用した感想【ゲーミングイヤホン】
 description: ゲーミングイヤホンであるSHURE AONIC 215をゲーム（FPS）で使用した感想や、おすすめMixAmpのイコライザ設定などをレビューしていきます。
 date: 2022-03-09
-lastmod: 2023-11-02
 categories: 
   - 雑記
 tags: 
@@ -13,18 +12,17 @@ tags:
 archives: 
   - 2022/03
 thumbnail: /images/review.png
-# draft: false
 ---
 
 ゲーミングイヤホンである**SHURE AONIC 215**をゲーム（FPS）で使用した感想や、おすすめMixAmpのイコライザ設定などをレビューしていきます。
 
 ## 「SHURE AONIC 215」の概要
 
-**SHURE AONIC 215**は、いわゆる「SHURE掛け」で有名なイヤホンメーカー**SHURE**が出しているイヤホンのロングセラー商品となります。SHURE SE 215と同様の商品です。特徴として、イヤホン本体とケーブルが着脱式（リケーブル可能）であることが挙げられます。
+「[SHURE AONIC 215]({{< product_link id="B08G4KPZHQ" type="url">}})」は、いわゆる「SHURE掛け」で有名なイヤホンメーカー**SHURE**が出しているイヤホンのロングセラー商品となります。SHURE SE 215と同様の商品です。特徴として、イヤホン本体とケーブルが着脱式（リケーブル可能）であることが挙げられます。
 
 今回購入した物は「SE215DYWH+UNI-A スペシャルエディション ホワイト : カナル型/マイク・リモコン付」になります。
 
-{{< amazon_link title="SHURE シュア AONIC 215" asin="B08G4KPZHQ" url="https://amzn.to/3XOgzS5">}}
+{{< product_link id="B08G4KPZHQ" >}}
 
 ### 基本スペック
 

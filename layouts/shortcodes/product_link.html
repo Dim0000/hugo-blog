@@ -1,25 +1,36 @@
-{{- $url := .Get "url" -}}
-{{- $image := .Get "image" -}}
-{{- $title := .Get "title" -}}
+{{- $id := .Get "id" -}}
+{{- $type := .Get "type" -}}
 
+{{- range $.Site.Data.products.info -}}
+{{- if eq .itemid $id -}}
+{{- if eq $type "text" -}}
+<a href="{{ .url }}" target="_blank">
+  {{- .title -}}
+</a>
+{{- else if eq $type "url" -}}
+{{- .url -}}
+{{- else -}}
 <div class="product-link-box">
   <div class="product-link-image">
-    <a href="{{ $url }}" target="_blank">
-      <img src="{{ $image }}" alt="{{ $title }}" />
+    <a href="{{ .url }}" target="_blank">
+      <img src="{{ .image }}" alt="{{ .title }}" />
     </a>
   </div>
   <div class="product-link-info">
     <p class="product-link-title">
-      <a href="{{ $url }}" target="_blank">
-        {{- $title -}}
+      <a href="{{ .url }}" target="_blank">
+        {{- .title -}}
       </a>
-      {{- if strings.Contains $image "m.media-amazon.com" -}}
+      {{- if eq .type "amazon" -}}
       <br><img src="https://www.amazon.co.jp/favicon.ico" width="15px" />
       amazon.co.jp
-      {{- else if strings.Contains $image "rakuten.co.jp" -}}
+      {{- else if eq .type "rakuten" -}}
       <br><img src="https://www.rakuten.co.jp/favicon.ico" width="15px" />
       rakuten.co.jp
       {{- end -}}
     </p>
   </div>
 </div>
+{{- end -}}
+{{- end -}}
+{{- end -}}

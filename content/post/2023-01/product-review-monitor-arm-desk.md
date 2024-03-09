@@ -47,9 +47,9 @@ thumbnail: /images/review.png
 </ol>
 {{< /box >}}
 
-1の狭い奥行きでも設置できるモニターアームに関しては、探してみると「[エルゴトロン MXV](https://amzn.to/46NeUjK)」という製品がありました。
+1の狭い奥行きでも設置できるモニターアームに関しては、探してみると「[エルゴトロン MXV]({{< product_link id="B07TK9JN5B" type="url">}})」という製品がありました。
 
-{{< product_link title="エルゴトロン MXV デスク モニターアーム スリムタイプ マットブラック" image="https://m.media-amazon.com/images/I/31sR9SWOMcL._SL160_.jpg" url="https://amzn.to/46NeUjK">}}
+{{< product_link id="B07TK9JN5B" >}}
 
 この製品はクランプ下端が短く、下側の奥行きが5㎝未満の机でも取り付け可能ですが価格が**2万円以上**と高価格です。お金があれば選択肢に入りましたが…今回は断念。
 
@@ -63,11 +63,11 @@ thumbnail: /images/review.png
 
 ここからが本題になります。結論として採用したのは、**突っ張り棒**と**支柱取り付けタイプのモニターアーム**でした。突っ張り棒を机と天井に突っ張らせ、突っ張り棒を支柱としてモニターアームを取り付けます。採用した主な理由は購入費用がそれ程掛からないこと、取り付け作業がお手軽であることでした。
 
-実際に購入したのが「[突っ張り棒 強力 3m](https://amzn.to/46Gecom)」と「[イーサプライ モニターアーム ポール取付](https://amzn.to/3Odejk9)」の2つ。
+実際に購入したのが「{{< product_link id="B08T97TMHL" type="text" >}}」と「{{< product_link id="B082XBG5QP" type="text" >}}」の2つ。
 
-{{< product_link title="突っ張り棒 強力 3m" image="https://m.media-amazon.com/images/I/31iRXM0m6yL._SL160_.jpg" url="https://amzn.to/46Gecom">}}
+{{< product_link id="B08T97TMHL" >}}
 
-{{< product_link title="イーサプライ モニターアーム ポール取付" image="https://m.media-amazon.com/images/I/41pG+YRIV8L._SL160_.jpg" url="https://amzn.to/3Odejk9">}}
+{{< product_link id="B082XBG5QP" >}}
 
 このモニターアームは直径28mm以上のポールに取り付け可能ですので、直径32mmの突っ張り棒を購入しました。取り付けの画像がこんな感じになります。突っ張り棒を設置する前に、モニターアームを棒に通しておかなければならないので注意。
 

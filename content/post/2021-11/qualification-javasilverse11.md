@@ -2,7 +2,6 @@
 title: 【Java Silver SE11】合格体験記【難易度・勉強時間】
 description: Oracle Certified Java Programmer Silver SE 11 認定資格（Java Silver）を2021年10月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2021-11-03
-lastmod: 2023-11-02
 categories: 
   - IT資格
 tags: 
@@ -11,7 +10,6 @@ tags:
 archives: 
   - 2021/11
 thumbnail: /images/java.png
-# draft: false
 ---
 
 **Oracle Certified Java Programmer Silver SE 11 認定資格**（Java Silver）を2021年10月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
@@ -52,7 +50,7 @@ Java Silver試験はOracle社が提供しているベンダー資格「Oracle Ce
 </tr>
 <tr>
 <td>受験料</td>
-<td>税込30,000円～（変動有り）</td>
+<td>税込37,730 円（2024/03/09現在）</td>
 </tr>
 </tbody>
 </table>
@@ -109,17 +107,9 @@ Java自体、触れるようになったのは7月からだったので、Java�
 
 次に試験対策についてです。他サイトでも同様のことが言われていますが、Java Silver合格には**参考書で問題を解いていくことが一番**だと思います。有名どころな参考書は3冊（黒本・紫本・白本）があります。
 
-{{< box "Java Silverの参考書" >}}
-<ul>
-<li><a href="https://amzn.to/3rwQATi" target="_blank">徹底攻略Java SE 11 Silver問題集</a>（黒本）</li>
-<li><a href="https://amzn.to/3Qma6KL" target="_blank">オラクル認定資格教科書 Javaプログラマ Silver SE11</a>（紫本）</li>
-<li><a href="https://amzn.to/3sh4BVL" target="_blank">オラクル認定資格教科書 Javaプログラマ Silver SE11 スピードマスター問題集</a>（白本）</li>
-</ul>
-{{< /box >}}
+この中で一番おすすめな参考書は黒本（表紙の色が黒いので黒本）と言われる「{{< product_link id="4295007625" type="text" >}}」です。どれか一冊のみ使うつもりなら**黒本**を選択しましょう。僕は試験対策には黒本のみを使いました。
 
-この中で一番おすすめな参考書は黒本（表紙の色が黒いので黒本）です。どれか一冊のみ使うつもりなら**黒本**を選択しましょう。僕は試験対策には黒本のみを使いました。
-
-{{< amazon_link title="徹底攻略Java SE 11 Silver問題集[1Z0-815]対応" asin="4295007625" url="https://amzn.to/3rwQATi">}}
+{{< product_link id="4295007625" >}}
 
 黒本は試験問題に近い形式の問題とその解説をテーマごとにまとめた問題集になっています。試験本番でも黒本で解いた問題が出題されていたので、黒本をやり込むことが合格への近道でしょう。
 
@@ -140,3 +130,7 @@ Java自体、触れるようになったのは7月からだったので、Java�
 * {{< ref "/qualification-javasilverse11-measures" >}}
 
 試験を受ける方の参考になれば幸いです。以上で記事を終わりにします。
+
+## 参考文献
+
+* [Java SE 11 Programmer I (1Z0-815-JPN) 試験 | Oracle University](https://www.oracle.com/jp/education/certification/1z0-815-jpn-48261-ja.html)
