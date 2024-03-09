@@ -109,7 +109,7 @@ services:
 {{< code lang="powershell" title="ターミナル" >}}
 $ docker-compose run --rm hugo version # version確認
 
-$ docker-compose up hugo # hugo serverを実行
+$ docker-compose up # hugo serverを実行
 {{< /code >}}
 
 上と同様に、`http://localhost:1313/`を開くことでサイトプレビューを確認できます。
