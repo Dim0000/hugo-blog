@@ -59,14 +59,15 @@ thumbnail: /images/hugo.png
 
 ## PVランキングを取得するスクリプトの作成
 
-ここからPVランキングを取得するスクリプトの作成していきます。今回はDockerを使用しますので、`docker-compose.yml`に以下を記述しておきます。
+ここからPVランキングを取得するスクリプトの作成していきます。今回はDockerを使用しますので、新たに`docker-compose.create-ranking.yml`を作成します。
 
-{{< code lang="yml" title="docker-compose.yml" >}}
+{{< code lang="yml" title="docker-compose.create-ranking.yml" >}}
 version: '3'
 
 volumes:
   node-modules:
-      
+
+services:
   node:
     image: node:latest
     working_dir: /node
@@ -79,7 +80,8 @@ volumes:
     command: >
       bash -c "npm install &&
       npm install @google-analytics/data &&
-      npm install dayjs"
+      npm install dayjs &&
+      npm run create-ranking"
 {{< /code >}}
 
 実際にPVランキングを取得するスクリプトを`scripts/create-ranking.js`に配置します。
@@ -153,21 +155,42 @@ async function runReport() {
 runReport();
 {{< /code >}}
 
+続いて、`package.json`のscriptsに以下を追記します。
+
+{{< code lang="json" title="package.json" >}}
+  "scripts": {
+    "create-ranking": "node scripts/create-ranking.js"
+  }
+{{< /code >}}
+
 PVデータの取得は以下のコマンドで実行できます。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker-compose run node npm run create-ranking # PVランキング取得
+$ docker-compose -f docker-compose.create-ranking.yml run node # PVランキング取得
 {{< /code >}}
 
 ## Hugoでランキングを表示
 
-Hugo上では以下の様にしてPVデータを取得できます。例としてメニューバーに表示
+Hugo上では以下の様にしてPVデータを取得できます。例として、当ブログのメニューバーに表示させているpartialを紹介します。
 
 {{< code lang="html" title="ranking.html" >}}
 {{ $ranking := slice }}
 {{ range $item := sort .Site.Data.ranking.items "pv" "desc" }}
   {{ $ranking = $ranking | append (dict "page" $item.pagePath) }}
 {{ end }}
+
+<div class="widget-recent widget">
+  <h4 class="widget__title">人気記事</h4>
+  <div class="widget__content">
+    <ul class="widget__list">
+      {{ range first 5 $ranking }}
+        {{ $url := replace .page "/" ""}}
+        {{ $page := $.Site.GetPage $url }}
+        <li class="widget__item"><a class="widget__link" href="{{ $page.Permalink  }}" target="_blank">{{ $page.Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
 {{< /code >}}
 
 ## Github Actionsの設定
@@ -178,17 +201,16 @@ Hugo上では以下の様にしてPVデータを取得できます。例とし�
 </ul>
 {{< /box >}}
 
-Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ランキング取得処理も行いたいので、`s3_upload.yml`を以下の様に書き換えます。
+Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ランキング取得処理も行いたいので、`.github/workflows/`ディレクトリに`create-ranking.yml`を作成します。
 
-{{< code lang="yml" title="s3_upload.yml" >}}
-name: s3_upload
+{{< code lang="yml" title="s3-upload.yml" >}}
+name: create-ranking
 
 on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 0 * * 0'
+  workflow_call:
+    secrets:
+      GOOGLE_ANALYTICS_CREDENTIALS:
+        required: true
 
 jobs:
   create-ranking: # ランキング生成
@@ -199,7 +221,7 @@ jobs:
       - name: Setup npm
         uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: 20
       - uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -223,6 +245,25 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "Create Ranking"
           git push origin HEAD
+{{< /code >}}
+
+自動デプロイ処理の前にランキング取得処理を実行したいので、併せて`s3-upload.yml`を以下の様に書き換えます。
+
+{{< code lang="yml" title="s3-upload.yml" >}}
+name: s3-upload
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0'
+
+jobs:
+  create-ranking: # ランキング生成
+    uses: ./.github/workflows/create-ranking.yml
+    secrets:
+      GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
   build: # Hugoビルド
     needs: create-ranking
     runs-on: ubuntu-latest
@@ -271,15 +312,14 @@ jobs:
         run: |
           echo "uploding to s3 ..."
           aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
-          aws cloudfront create-invalidation --region ap-northeast-1 
-          --distribution-id XXXXXXXXXXXXX --paths "/*"        
+          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 {{< /code >}}
 
-`distribution-id`は自環境でのディストリビューションIDに置き換えて下さい。これで、GitHubへのプッシュ時にランキングを取得してからデプロイするようになります。
+これで、GitHubへのプッシュ時にランキングを取得してからデプロイするようになります。
 
 * * *
 
-今回はHugoでPVランキングを取得する方法を紹介しました。以上で記事を終わりにします。
+今回はHugoでPVランキングを取得する方法を紹介しました。やはり、人気記事の一覧はブログサイトとしてはあった方が見栄えが良い気がしますね。以上で記事を終わりにします。
 
 ## 参考文献
 
