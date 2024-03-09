@@ -17,4 +17,4 @@ services:
       bash -c "npm install &&
       npm install @google-analytics/data &&
       npm install dayjs &&
-      node scripts/create-ranking.js"
+      npm run create-ranking"
