@@ -10,6 +10,8 @@ on:
 jobs:
   create-ranking: # ランキング生成
     uses: ./.github/workflows/create-ranking.yml
+    secrets:
+      GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
   build: # Hugoビルド
     needs: create-ranking
     runs-on: ubuntu-latest
