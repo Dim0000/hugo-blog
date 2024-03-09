@@ -2,6 +2,9 @@ name: create-ranking
 
 on:
   workflow_call:
+    secrets:
+      GOOGLE_ANALYTICS_CREDENTIALS:
+        required: true
 
 jobs:
   create-ranking: # ランキング生成
