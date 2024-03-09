@@ -9,7 +9,7 @@ on:
 
 jobs:
   create-ranking: # ランキング生成
-    uses: .github\workflows\create-ranking.yml
+    uses: ./.github/workflows/create-ranking.yml
   build: # Hugoビルド
     needs: create-ranking
     runs-on: ubuntu-latest
