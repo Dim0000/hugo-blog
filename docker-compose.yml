@@ -1,8 +1,5 @@
 version: '3'
 
-volumes:
-  node-modules:
-
 services:
   hugo:
     container_name: Hugo-blog
@@ -18,17 +15,3 @@ services:
       - --minify
       - --buildFuture
       - -v
-      
-  node:
-    image: node:latest
-    working_dir: /node
-    tty: true
-    ports: 
-    - '3000:3000'
-    volumes:
-      - .:/node
-      - node-modules:/node/node_modules
-    command: >
-      bash -c "npm install &&
-      npm install @google-analytics/data &&
-      npm install dayjs"

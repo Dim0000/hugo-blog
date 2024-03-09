@@ -6,6 +6,6 @@ Hugoで作成した雑記ブログです
 
 ## command
 
-* `docker-compose up hugo --ローカルでビルド` 
+* `docker-compose up --ローカルでビルド` 
 
-* `docker-compose run node npm run create-ranking --PVランキング取得`
+* `docker-compose -f docker-compose.create-ranking.yml run node --PVランキング取得`
