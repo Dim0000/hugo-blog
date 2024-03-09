@@ -60,10 +60,10 @@ thumbnail: /images/hugo.png
 
 ## Github Actionsの設定
 
-続いて、Github Actionsの設定です。GitHubリポジトリに以下の様に`s3_upload.yml`を配置します。`distribution-id`には自分の環境でのディストリビューションIDを設定する必要があります。
+続いて、Github Actionsの設定です。GitHubリポジトリの`.github/workflows/`ディレクトリに`s3-upload.yml`を配置します。
 
-{{< code lang="yml" title="s3_upload.yml" >}}
-name: s3_upload
+{{< code lang="yml" title="s3-upload.yml" >}}
+name: s3-upload
 
 on:
   push:
@@ -118,16 +118,16 @@ jobs:
         run: |
           echo "uploding to s3 ..."
           aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
-          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id XXXXXXXXXXXXX --paths "/*"
+          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 {{< /code >}}
 
-また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントIDと`S3_BUCKET`にバケット名を入れます。
+また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントID、`S3_BUCKET`にS3バケット名、`DISTRIBUTION_ID`にはディストリビューションIDを設定します。
 
 {{< luminous src="/images/hugo-github-04.png" caption="GitHubのSecrets設定">}}
 
 これで設定は完了ですので、実際にGitHubにプッシュし、All workflowsの画面から処理が実行されているのを確認できたら成功です。
 
-{{< luminous src="/images/hugo-github-04.png" caption="GitHubのSecrets設定">}}
+{{< luminous src="/images/hugo-github-05.png" caption="GitHubのSecrets設定">}}
 
 * * *
 
