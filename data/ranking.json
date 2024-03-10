@@ -18,7 +18,7 @@
         },
         {
             "pagePath": "/java-tochararray/",
-            "pv": "49"
+            "pv": "50"
         },
         {
             "pagePath": "/java-isdigit-method/",
@@ -29,12 +29,12 @@
             "pv": "37"
         },
         {
-            "pagePath": "/qualification-oraclemastersilversql/",
+            "pagePath": "/javasilver-se11-application/",
             "pv": "33"
         },
         {
-            "pagePath": "/javasilver-se11-application/",
-            "pv": "32"
+            "pagePath": "/qualification-oraclemastersilversql/",
+            "pv": "33"
         },
         {
             "pagePath": "/java-ceil-floor-round/",
@@ -165,6 +165,10 @@
             "pv": "9"
         },
         {
+            "pagePath": "/warzone-setting/",
+            "pv": "9"
+        },
+        {
             "pagePath": "/blog-alt-setting/",
             "pv": "8"
         },
@@ -182,10 +186,6 @@
         },
         {
             "pagePath": "/qualification-oraclemastersilversql-measures/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/warzone-setting/",
             "pv": "8"
         },
         {
@@ -341,5 +341,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2024-03-09T23:54:40.893Z"
+    "createdAt": "2024-03-10T00:41:48.026Z"
 }
