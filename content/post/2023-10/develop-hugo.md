@@ -1,6 +1,6 @@
 ---
-title: 【Hugo】ブログサイトをDockerで構築する【ブログ移行②】
-description: 今回はHugoのブログサイトをDockerで構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
+title: 【Hugo】ローカルにHugo環境を構築する【ブログ移行②】
+description: 今回はHugoのブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
 date: 2023-10-10
 categories: 
   - 技術記事
@@ -8,13 +8,12 @@ tags:
   - ブログ運営
   - Hugo
   - WordPress
-  - Docker
 archives: 
   - 2023/10
 thumbnail: /images/hugo.png
 ---
 
-今回は**Hugo**のブログサイトをDockerで構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
+今回は**Hugo**のブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
 
 {{< box "関連記事" >}}
 <ul>
@@ -25,7 +24,7 @@ thumbnail: /images/hugo.png
 </ul>
 {{< /box >}}
 
-## Hugoのインストール（Dockerを使わない場合）
+## Hugoのインストール
 
 公式のGitHubのリリースページからZIPファイルをダウンロードします。筆者はWindowsの`windows-amd64版`をダウンロードしました。
 
@@ -76,43 +75,11 @@ theme = "mainroad"
 $ hugo server -D # draft:trueの下書き記事も表示する
 {{< /code >}}
 
-Hugoでの記事の作成方法などはここでは割愛します。
-
-## Dockerでサイトをビルドする場合
-
-Dockerを使うことで、`hugo.exe`のダウンロードや環境変数の設定をしなくてもHugoを動かせます。Dockerイメージは**hugo-extended-docker**を使います。（Dockerの環境構築については割愛します）
-
-* [peaceiris/hugo-extended-docker | GitHub](https://github.com/peaceiris/hugo-extended-docker)
-
-ブログ用フォルダ内で`docker-compose.yml`に以下を記述し実行することで、Hugoコマンドを実行することができます。
-
-{{< code lang="yml" title="docker-compose.yml" >}}
-version: '3'
-
-services:
-  hugo:
-    container_name: hugo
-    image: peaceiris/hugo:latest
-    ports:
-      - 1313:1313
-    volumes:
-      - .:/src
-    command:
-      - server
-      - --bind=0.0.0.0
-      - --buildDrafts
-      - --minify
-      - --buildFuture
-      - -v
-{{< /code >}}
+また、新規記事の作成については`newコマンド`で行います。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker-compose run --rm hugo version # version確認
-
-$ docker-compose up # hugo serverを実行
+$ hugo new test.md # 新規記事を作成する
 {{< /code >}}
-
-上と同様に、`http://localhost:1313/`を開くことでサイトプレビューを確認できます。
 
 ## Hugoの設定
 
@@ -196,7 +163,15 @@ GitHubの「Download ZIP」からダウンロードし、ZIPファイルをWordp
 
 * * *
 
-今回は、ローカルでブログを構築する所まで紹介しました。以上で記事を終わりにします。
+今回は、ローカルでブログを構築する所まで紹介しました。また、Dockerで環境構築をする方法についても、別の記事にまとめていますので参考にしてみてください。
+
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/hugo-docker" >}}</li>
+</ul>
+{{< /box >}}
+
+以上で記事を終わりにします。
 
 ## 参考文献
 

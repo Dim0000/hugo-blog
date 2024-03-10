@@ -14,7 +14,7 @@ Hugoで作成した雑記ブログです
 
 ## 記事作成
 
-* `docker compose exec hugo hugo new <file> --新規ファイル作成`
+* `docker compose exec hugo hugo new <file> --コンテナ内に新規ファイル作成`
 
 * `docker compose cp hugo:/src/content/<file> . --コンテナからローカルにコピー`
 
