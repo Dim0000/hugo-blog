@@ -1,7 +1,7 @@
 {{- $id := .Get "id" -}}
 {{- $type := .Get "type" -}}
 
-{{- range $.Site.Data.products.info -}}
+{{- range $.Site.Data.products.items -}}
 {{- if eq .itemid $id -}}
 {{- if eq $type "text" -}}
 <a href="{{ .url }}" target="_blank">

@@ -29,7 +29,7 @@ thumbnail: /images/review.png
 </ul>
 {{< /box >}}
 
-そんな中で購入した無線キーボードが「{{< product_link id="B016XLGJJA" type="text" >}}」でした。
+そんな中で購入した無線キーボードが「[ロジクール ワイヤレスキーボード K380]({{< product_link id="B016XLGJJA" type="url" >}})」でした。
 
 {{< product_link id="B016XLGJJA" >}}
 

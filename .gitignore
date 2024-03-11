@@ -5,3 +5,4 @@ data/ranking.json
 .gcp
 .hugo_build.lock
 static/images/desktop.ini
+.env

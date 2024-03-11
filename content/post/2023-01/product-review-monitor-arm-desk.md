@@ -63,7 +63,7 @@ thumbnail: /images/review.png
 
 ここからが本題になります。結論として採用したのは、**突っ張り棒**と**支柱取り付けタイプのモニターアーム**でした。突っ張り棒を机と天井に突っ張らせ、突っ張り棒を支柱としてモニターアームを取り付けます。採用した主な理由は購入費用がそれ程掛からないこと、取り付け作業がお手軽であることでした。
 
-実際に購入したのが「{{< product_link id="B08T97TMHL" type="text" >}}」と「{{< product_link id="B082XBG5QP" type="text" >}}」の2つ。
+実際に購入したのが「[Umimile 突っ張り棒 3m]({{< product_link id="B08T97TMHL" type="url" >}})」と「[イーサプライ モニターアーム ポール取付 4関節]({{< product_link id="B082XBG5QP" type="url" >}})」の2つ。
 
 {{< product_link id="B08T97TMHL" >}}
 
