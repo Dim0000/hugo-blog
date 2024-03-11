@@ -2,7 +2,7 @@
     "items": [
         {
             "pagePath": "/java-localdate-addition-subtraction/",
-            "pv": "118"
+            "pv": "119"
         },
         {
             "pagePath": "/game-ps5-apex/",
@@ -14,11 +14,11 @@
         },
         {
             "pagePath": "/product-review-monitor-arm-desk/",
-            "pv": "73"
+            "pv": "74"
         },
         {
             "pagePath": "/java-tochararray/",
-            "pv": "50"
+            "pv": "51"
         },
         {
             "pagePath": "/java-isdigit-method/",
@@ -45,11 +45,11 @@
             "pv": "30"
         },
         {
-            "pagePath": "/game-ps5-mixamp-hdmiadapter/",
-            "pv": "27"
+            "pagePath": "/oracle-pearsonvue/",
+            "pv": "28"
         },
         {
-            "pagePath": "/oracle-pearsonvue/",
+            "pagePath": "/game-ps5-mixamp-hdmiadapter/",
             "pv": "27"
         },
         {
@@ -65,11 +65,11 @@
             "pv": "22"
         },
         {
-            "pagePath": "/game-biohazard-re2/",
-            "pv": "21"
+            "pagePath": "/qualification-sg-pass/",
+            "pv": "22"
         },
         {
-            "pagePath": "/qualification-sg-pass/",
+            "pagePath": "/game-biohazard-re2/",
             "pv": "21"
         },
         {
@@ -149,15 +149,15 @@
             "pv": "11"
         },
         {
+            "pagePath": "/qualification-javasilverse11/",
+            "pv": "11"
+        },
+        {
             "pagePath": "/oraclemastersilver-sql-application/",
             "pv": "10"
         },
         {
             "pagePath": "/qualification-ip-newsyllabus/",
-            "pv": "10"
-        },
-        {
-            "pagePath": "/qualification-javasilverse11/",
             "pv": "10"
         },
         {
@@ -341,5 +341,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2024-03-10T00:41:48.026Z"
+    "createdAt": "2024-03-10T09:21:37.068Z"
 }
