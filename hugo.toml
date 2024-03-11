@@ -55,6 +55,10 @@ enableGitInfo = "true" # 最終更新日をgitから取得
 [[Menus.main]]
   Name = "IT資格の部屋"
   URL = "/it-qualification"
+  weight = 30
+[[Menus.main]]
+  Name = "サイト内全文検索"
+  URL = "/search"
   weight = 40
 [[Menus.main]]
   Name = "お問い合わせ"
