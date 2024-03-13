@@ -1,5 +1,3 @@
-version: '3'
-
 volumes:
   node-modules:
 
@@ -16,5 +14,4 @@ services:
     command: >
       bash -c "npm install &&
       npm install @google-analytics/data &&
-      npm install dayjs &&
-      npm run create-ranking"
+      node scripts/create-ranking.js"

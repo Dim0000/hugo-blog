@@ -1,66 +1,37 @@
-/**
- * TODO(developer): Uncomment this variable and replace with your
- *   Google Analytics 4 property ID before running the sample.
- */
-propertyId = '283573149';
+const { runReport } = require('./analytics-api.js');
 
-// Imports the Google Analytics Data API client library.
-const { BetaAnalyticsDataClient } = require('@google-analytics/data');
-process.env.GOOGLE_APPLICATION_CREDENTIALS = `.gcp/google-analytics_credentials.json`
+const fs = require('fs');
+const currentDate = new Date().toISOString();
 
-// Using a default constructor instructs the client to use the credentials
-// specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
-const analyticsDataClient = new BetaAnalyticsDataClient();
+async function main() {
+  const propertyId = 'YOUR_PROPERTY_ID'; // プロパティIDを適切な値に置き換える
 
-// Runs a simple report.
+  // analyticsDataClient などのクライアントを適切に初期化する
 
-const dayjs = require('dayjs')
-const utc = require('dayjs/plugin/utc.js')
-const timezone = require('dayjs/plugin/timezone.js')
-const fs = require('fs')
-dayjs.extend(timezone)
-dayjs.extend(utc)
-dayjs.tz.setDefault('Asia/Tokyo')
+  try {
+    const response = await runReport();
 
-async function runReport() {
-  const [response] = await analyticsDataClient.runReport({
-    property: `properties/${propertyId}`,
-    dateRanges: [
-      {
-        startDate: '8daysAgo',
-        endDate: '1daysAgo',
-      },
-    ],
-    dimensions: [
-      {
-        name: 'pagePath',
-      },
-    ],
-    metrics: [
-      {
-        name: 'screenPageViews',
-      },
-    ],
-  });
-
-  let rankings = []
-  response.rows.forEach((row) => {
-    rankings.push({
-      pagePath: row.dimensionValues[0].value,
-      pv: row.metricValues[0].value,
+    let rankings = []
+    response.rows.forEach((row) => {
+      rankings.push({
+        pagePath: row.dimensionValues[0].value,
+        pv: row.metricValues[0].value,
+      })
     })
-  })
-  fs.writeFileSync(
-    'data/ranking.json',
-    JSON.stringify(
-      {
-        items: rankings,
-        createdAt: dayjs().toISOString(),
-      },
-      null,
-      4
+    fs.writeFileSync(
+      'data/ranking.json',
+      JSON.stringify(
+        {
+          items: rankings,
+          createdAt: currentDate
+        },
+        null,
+        4
+      )
     )
-  )
+  } catch (error) {
+    console.error('Error running report:', error);
+  }
 }
 
-runReport();
+main();
