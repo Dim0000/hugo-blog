@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir .gcp
           echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
-          npm run create-ranking          
+          node scripts/create-ranking.js          
       - name: Commit and Push
         run: |
           git branch
