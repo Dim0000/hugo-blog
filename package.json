@@ -5,9 +5,5 @@
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
     "paapi5-nodejs-sdk": "^1.1.0"
-  },
-  "scripts": {
-    "create-ranking": "node scripts/create-ranking.js",
-    "create-products-json": "node scripts/create-products-json.js"
   }
 }
