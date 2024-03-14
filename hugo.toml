@@ -67,3 +67,6 @@ enableGitInfo = "true" # 最終更新日をgitから取得
 [[Menus.footer]]
   Name = "プライバシーポリシー"
   URL = "/privacy-policy"
+
+[markup.goldmark.renderer]
+  unsafe = true
