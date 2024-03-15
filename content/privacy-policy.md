@@ -2,12 +2,8 @@
 title: プライバシーポリシー
 description: 『Dim雑記』（以下「当サイト」）のプライバシーポリシー・免責事項を次の通り記載します。
 date: 2021-08-03
-lastmod: 2022-10-16
 url: /privacy-policy
-categories: 
-tags: 
-# thumbnail: /images/privacy-policy.png
-# draft: false
+toc: false
 ---
 
 『{{< ref "/" >}}』（以下「当サイト」）のプライバシーポリシー・免責事項を次の通り記載します。
