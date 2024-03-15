@@ -2,7 +2,6 @@
 title: 【初心者向け】ブラウザ上でプログラムを書く方法【環境構築不要】
 description: 今回はプログラミングを始めたい人向けにブラウザ上でコードを書く方法について紹介します。プログラミングサイトのpaiza.ioなどについて紹介します。これからプログラミングをやってみたい人向けの記事になります。
 date: 2021-08-28
-lastmod: 2023-11-03
 categories: 
   - 技術記事
 tags: 
@@ -11,7 +10,6 @@ tags:
 archives: 
   - 2021/08
 thumbnail: /images/java.png
-# draft: false
 ---
 
 今回はプログラミングを始めたい人向けに**ブラウザ上でコードを書く方法**について紹介します。プログラミングサイトの**paiza.io**などについて紹介します。これからプログラミングをやってみたい人向けの記事になります。
@@ -67,9 +65,7 @@ public class Main {
 
 その他にも、書いたコードをブログ等のWebページに埋め込みを行うこともできます。先ほどのコードをこのページに埋め込んでみます。
 
-{{< rawhtml >}}
 <iframe src="https://paiza.io/projects/e/wZD4Q2IAc4Yneb_N59qHTg?theme=twilight" width="100%" height="300" scrolling="no" seamless="seamless"></iframe>
-{{< /rawhtml >}}
 
 埋め込みも手軽に実行環境を埋め込むことができて便利ですね。
 
