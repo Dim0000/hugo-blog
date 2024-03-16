@@ -24,7 +24,7 @@ enableGitInfo = "true" # 最終更新日をgitから取得
   home = "right"
   list = "right"
   single = "right"
-  widgets = ["categories", "taglist", "recent", "archives", "social", "search"]
+  widgets = ["categories", "taglist", "recent", "archives", "social"]
 [Params.widgets]
   recent_num = 5
   categories_counter = true
