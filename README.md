@@ -1,23 +1,35 @@
 # Hugo-blog
 
-[Dim雑記](https://dimzakki.com/)
+[https://dimzakki.com/](https://dimzakki.com/)
 
-Hugoで作成した雑記ブログです
+This is a miscellaneous blog created with Hugo.
 
-## ビルド
+Hugoで作成した雑記ブログです。
 
-* `docker compose up -d --コンテナ起動・ローカルでビルド` 
+## Docker command
 
-* `docker compose watch --ホットリロード`
+### Build Docker images
 
-* `docker compose down --コンテナ削除`
+* `docker compose build`
 
-## 記事作成
+### Start Hugo server
 
-* `docker compose exec hugo hugo new <file> --コンテナ内に新規ファイル作成`
+* `docker compose up -d # start Docker containers` 
 
-* `docker compose cp hugo:/src/content/<file> . --コンテナからローカルにコピー`
+* `docker compose watch # hot reload`
 
-## PVランキング取得
+* `docker compose down # stop and remove containers`
 
-* `docker-compose -f docker-compose.create-ranking.yml run node --PVランキング取得`
+### Create new content
+
+* `docker compose exec hugo hugo new <file> # create new content file in Docker container`
+
+* `docker compose cp hugo:/src/content/<file> . # copy file from Docker container to local directory`
+
+### Obtain PV ranking
+
+* `docker compose -f compose.create-ranking.yml run --rm node # create JSON data for PV ranking`
+
+### Obtain product data
+
+* `docker compose -f compose.create-products-json.yml run --rm node # create JSON data for product data`
