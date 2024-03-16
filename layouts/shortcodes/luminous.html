@@ -1,10 +1,16 @@
 {{- $src := .Get "src" -}}
 {{- $caption := .Get "caption" -}}
+{{- $image := resources.Get $src }}
 
-<a href="{{ $src }}" class="luminous">
-  <figure><img class="img" src="{{ $src }}" alt="{{ $caption }}">
+{{ with $image }}
+{{- $webp := .Process "webp" }}
+<a href="{{ $webp.RelPermalink  }}" class="luminous">
+  <figure><img class="img" src="{{ $webp.RelPermalink  }}" alt="{{ $caption }}">
     <figcaption>
       <p>{{ $caption }}</p>
     </figcaption>
   </figure>
 </a>
+{{ else }}
+<span style="color: red; font-weight: bold;">画像 {{ $src }} が見つかりませんでした</span>
+{{ end }}
