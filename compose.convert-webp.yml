@@ -1,0 +1,19 @@
+volumes:
+  node-modules:
+
+services:
+  node:
+    image: node:latest
+    working_dir: /node
+    tty: true
+    ports: 
+    - '3000:3000'
+    volumes:
+      - .:/node
+      - node-modules:/node/node_modules
+    command: >
+      bash -c "npm install &&
+      npm install sharp &&
+      npm install mkdirp &&
+      npm install glob &&
+      node scripts/convert-webp.js"

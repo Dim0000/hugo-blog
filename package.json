@@ -4,6 +4,9 @@
     "crypto-js": "^4.2.0",
     "dayjs": "^1.11.10",
     "dotenv": "^16.4.5",
-    "paapi5-nodejs-sdk": "^1.1.0"
+    "glob": "^10.3.10",
+    "mkdirp": "^3.0.1",
+    "paapi5-nodejs-sdk": "^1.1.0",
+    "sharp": "^0.33.2"
   }
 }
