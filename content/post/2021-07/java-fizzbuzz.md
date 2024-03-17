@@ -1,19 +1,19 @@
 ---
 title: 【Java】FizzBuzzを色々な方法で書いてみる
-description: プログラムのアルゴリズム問題で有名なFizzBuzzについて書いていきます。ノーマルな実装方法と、応用として拡張性を意識した実装方法を紹介します。
+description: Javaでプログラムのアルゴリズム問題で有名なFizzBuzzを書いてみます。ノーマルな実装方法と、応用として拡張性を意識した実装方法を紹介します。
 date: 2021-07-27
-lastmod: 2023-11-04
 categories:
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/07
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
-プログラムのアルゴリズム問題で有名な**FizzBuzz**について書いていきます。ノーマルな実装方法と、応用として拡張性を意識した実装方法を紹介します。
+**Java**でプログラムのアルゴリズム問題で有名な**FizzBuzz**を書いてみます。ノーマルな実装方法と、応用として拡張性を意識した実装方法を紹介します。
+
+<!--more-->
 
 ## FizzBuzzとは
 
@@ -36,8 +36,8 @@ FizzBuzzプログラムは、プログラミングを始めたばかりの人に
 
 色々と解答方法があるかと思いますが、一番ノーマルな書き方で実装してみます。
 
-{{< code lang="java" title="サンプルコード" >}}
-public class FizzBuzzTest_1 {
+{{< code lang="java" title="FizzBuzzTest1.java" >}}
+public class FizzBuzzTest1 {
   public static void main(String[] args) {
     for (int num = 1; num <= 20; num++) {
       // 15で割り切れる時FizzBuzzと出力する
@@ -84,7 +84,7 @@ Fizz
 Buzz
 {{< /code >}}
 
-このアルゴリズムでは**if文と%演算子を使って倍数の判定ができるか**がポイントになります。その他、注意する点として**倍数判定の順番**があります。最初に15の倍数判定をしないと、3もしくは5の倍数判定に通ってしまうため、ルールを満たさない結果が返ってきます。
+このアルゴリズムでは`if文`と`%演算子`を使って**倍数の判定**ができるかがポイントになります。その他、注意する点として**倍数の判定の順番**があります。最初に15の倍数判定をしないと、3もしくは5の倍数判定に通ってしまうため、ルールを満たさない結果が返ってきます。
 
 ## 拡張性を考えて実装してみる
 
@@ -94,20 +94,18 @@ Buzz
 
 コードの書き換えが簡単になるような実装にしてみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="FizzBuzzTest2.java" >}}
 import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class FizzBuzzTest_2 {
+public class FizzBuzzTest2 {
   public static void main(String[] args) {
-
     // 条件（倍数と文字列）の指定
     Map<Integer, String> fizzbuzzMap = new TreeMap<>(Collections.reverseOrder());
     fizzbuzzMap.put(3, "fizz");
     fizzbuzzMap.put(5, "buzz");
     fizzbuzzMap.put(15, "buzzfizz");
-
     // 表示を行う
     for (int num = 1; num <= 20; num++) {
       System.out.println(getString(num, fizzbuzzMap));
