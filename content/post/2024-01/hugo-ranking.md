@@ -12,10 +12,12 @@ tags:
   - Docker
 archives:
     - 2024/01
-thumbnail: /images/hugo.png
+thumbnail: /images/hugo.webp
 ---
 
 今回は**Hugo**と**Google Analytics**で各記事のPV数のランキングを取得する方法を紹介します。なお、ランキング取得スクリプトは**Docker**で動かす想定です。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -37,33 +39,43 @@ thumbnail: /images/hugo.png
 
 {{< luminous src="/images/hugo-ranking-04.png" caption="Google Analytics Data APIの設定4">}}
 
+サービスアカウント名とサービスアカウントIDを入力し、完了ボタンをクリックします。
+
 {{< luminous src="/images/hugo-ranking-05.png" caption="Google Analytics Data APIの設定5">}}
 
 {{< luminous src="/images/hugo-ranking-06.png" caption="Google Analytics Data APIの設定6">}}
 
-続いて、鍵のダウンロードを行います。ダウンロードしたファイルはデータ取得で使用するので、ブログフォルダ内の`.gcp`内に配置します。
+サービスアカウントを作成後、秘密鍵のjsonファイルのダウンロードを行います。サービスアカウントの画面から鍵を追加していきます。
 
 {{< luminous src="/images/hugo-ranking-07.png" caption="Google Analytics Data APIの設定7">}}
 
 {{< luminous src="/images/hugo-ranking-08.png" caption="Google Analytics Data APIの設定8">}}
 
+ダウンロードしたファイルはデータ取得で使用するので、ブログフォルダ内の`.gcp`内に配置します。Gitで管理している場合は、間違って公開してしまわないよう`.gitignore`に追記しておく必要があります。
+
+{{< code lang="plaintext" title=".gitignore" >}}
+.gcp
+{{< /code >}}
+
 ## Google Analytics
 
-ここから、Google Analyticsで権限の設定を行います。
+ここから、Google Analyticsでサービスアカウントの権限設定を行います。管理画面の「プロパティのアクセス管理」をクリックします。
 
 {{< luminous src="/images/hugo-ranking-09.png" caption="Google Analyticsの設定1">}}
 
+右上の「+」ボタンからユーザーを追加をクリックします。
+
 {{< luminous src="/images/hugo-ranking-10.png" caption="Google Analyticsの設定2">}}
+
+作成したサービスアカウントIDをメールアドレス欄に入力し、標準の役割は閲覧者に設定します。
 
 {{< luminous src="/images/hugo-ranking-11.png" caption="Google Analyticsの設定3">}}
 
 ## PVランキングを取得するスクリプトの作成
 
-ここからPVランキングを取得するスクリプトの作成していきます。今回はDockerを使用しますので、新たに`docker-compose.create-ranking.yml`を作成します。
+ここからPVランキングを取得するスクリプトの作成していきます。今回はDockerを使用しますので、新たに`compose.create-ranking.yml`を作成します。
 
-{{< code lang="yml" title="docker-compose.create-ranking.yml" >}}
-version: '3'
-
+{{< code lang="yml" title="compose.create-ranking.yml" >}}
 volumes:
   node-modules:
 
@@ -80,38 +92,24 @@ services:
     command: >
       bash -c "npm install &&
       npm install @google-analytics/data &&
-      npm install dayjs &&
-      npm run create-ranking"
+      node scripts/create-ranking.js"
 {{< /code >}}
 
-実際にPVランキングを取得するスクリプトを`scripts/create-ranking.js`に配置します。
+実際にPVデータを取得する`analytics-api.js`と表示用にjsonファイルを作成する`create-ranking.js`とを`scripts`フォルダ内に配置します。
 
-{{< code lang="JavaScript" title="scripts/create-ranking.js" >}}
-/**
- * TODO(developer): Uncomment this variable and replace with your
- *   Google Analytics 4 property ID before running the sample.
- */
+{{< code lang="JavaScript" title="scripts/analytics-api.js" >}}
+// Google Analytics 4 property ID
 propertyId = 'XXXXXXXXX'; //プロパティID
 
 // Imports the Google Analytics Data API client library.
 const { BetaAnalyticsDataClient } = require('@google-analytics/data');
-process.env.GOOGLE_APPLICATION_CREDENTIALS = `.gcp/google-analytics_credentials.json`
+process.env.GOOGLE_APPLICATION_CREDENTIALS = `.gcp/google-analytics_credentials.json`;
 
 // Using a default constructor instructs the client to use the credentials
 // specified in GOOGLE_APPLICATION_CREDENTIALS environment variable.
 const analyticsDataClient = new BetaAnalyticsDataClient();
 
-// Runs a simple report.
-
-const dayjs = require('dayjs')
-const utc = require('dayjs/plugin/utc.js')
-const timezone = require('dayjs/plugin/timezone.js')
-const fs = require('fs')
-dayjs.extend(timezone)
-dayjs.extend(utc)
-dayjs.tz.setDefault('Asia/Tokyo')
-
-async function runReport() {
+exports.runReport = async function () {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [
@@ -131,42 +129,50 @@ async function runReport() {
       },
     ],
   });
-
-  let rankings = []
-  response.rows.forEach((row) => {
-    rankings.push({
-      pagePath: row.dimensionValues[0].value,
-      pv: row.metricValues[0].value,
-    })
-  })
-  fs.writeFileSync(
-    'data/ranking.json',
-    JSON.stringify(
-      {
-        items: rankings,
-        createdAt: dayjs().toISOString(),
-      },
-      null,
-      4
-    )
-  )
+  return response;
 }
-
-runReport();
 {{< /code >}}
 
-続いて、`package.json`のscriptsに以下を追記します。
+{{< code lang="JavaScript" title="scripts/create-ranking.js" >}}
+const { runReport } = require('./analytics-api.js');
 
-{{< code lang="json" title="package.json" >}}
-  "scripts": {
-    "create-ranking": "node scripts/create-ranking.js"
+const fs = require('fs');
+const currentDate = new Date().toISOString();
+
+async function main() {
+  try {
+    const response = await runReport();
+
+    let rankings = []
+    response.rows.forEach((row) => {
+      rankings.push({
+        pagePath: row.dimensionValues[0].value,
+        pv: row.metricValues[0].value,
+      })
+    })
+    fs.writeFileSync(
+      'data/ranking.json',
+      JSON.stringify(
+        {
+          items: rankings,
+          createdAt: currentDate
+        },
+        null,
+        4
+      )
+    )
+  } catch (error) {
+    console.error('Error running report:', error);
   }
+}
+
+main();
 {{< /code >}}
 
 PVデータの取得は以下のコマンドで実行できます。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker-compose -f docker-compose.create-ranking.yml run node # PVランキング取得
+$ docker compose -f compose.create-ranking.yml run --rm node # PVランキング取得
 {{< /code >}}
 
 ## Hugoでランキングを表示
@@ -195,13 +201,13 @@ Hugo上では以下の様にしてPVデータを取得できます。例とし�
 
 ## Github Actionsの設定
 
+Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ランキング取得処理も行いたいので、`.github/workflows/`ディレクトリに`create-ranking.yml`を作成します。
+
 {{< box "関連記事" >}}
 <ul>
 <li>{{< ref "/hugo-github" >}}</li>
 </ul>
 {{< /box >}}
-
-Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ランキング取得処理も行いたいので、`.github/workflows/`ディレクトリに`create-ranking.yml`を作成します。
 
 {{< code lang="yml" title="s3-upload.yml" >}}
 name: create-ranking
@@ -270,50 +276,12 @@ jobs:
     permissions:
       id-token: write
       contents: read
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-          fetch-depth: 0 # enableGitInfoでの取得用
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "latest"
-          extended: true     
-      - name: Build Hugo
-        run: hugo --minify --buildFuture
-      - name: upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: public
-          retention-days: 1 # artifactsの保存期間
-  deploy: # S3にデプロイ
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - name: Download artifacts for build
-        uses: actions/download-artifact@v4
-        with:
-          name: my-artifact
-          path: public
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-region: ap-northeast-1
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role
-          role-session-name: GitHubActions-${{ github.run_id }}
-          role-duration-seconds: 900
-      - name: Upload files to the production website with the AWS CLI
-        run: |
-          echo "uploding to s3 ..."
-          aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
-          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
+      ...（省略）
 {{< /code >}}
+
+また、GitHubのSecrets設定で、`GOOGLE_ANALYTICS_CREDENTIALS`に先ほどダウンロードした鍵の内容を設定します。
+
+{{< luminous src="/images/hugo-github-02.png" caption="GitHubのSecrets設定">}}
 
 これで、GitHubへのプッシュ時にランキングを取得してからデプロイするようになります。
 
