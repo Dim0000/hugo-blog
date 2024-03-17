@@ -9,10 +9,12 @@ tags:
   - AWS
 archives: 
   - 2023/07
-thumbnail: /images/aws.png
+thumbnail: /images/aws.webp
 ---
 
 今回、ムームードメインで取得した**独自ドメイン**を**Amazon Route 53**へ移管しましたので、移管の流れを備忘録として残します。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
