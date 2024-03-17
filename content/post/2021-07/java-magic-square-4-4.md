@@ -1,23 +1,25 @@
 ---
 title: 【Java】ランダムな4×4の魔方陣をプログラミングで作ってみる
-description: 今回は、Javaを使って4行4列の16マス魔方陣（1～16の数字を1つずつ使ったもの）をランダムで生成するコードを作成してみたいと思います。
+description: 今回は、Javaを使って4行4列の16マスの魔方陣（1～16の数字を1つずつ使ったもの）をランダムで生成するコードを作成してみたいと思います。
 date: 2021-07-22
-lastmod: 2023-11-04
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/07
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 mathjax: true
 ---
 
-皆さんは**魔方陣**と言われるものをご存知でしょうか？今回は、Javaを使って**4行4列の16マス魔方陣**（1～16の数字を1つずつ使ったもの）をランダムで生成するコードを作成してみたいと思います。
+今回は、**Java**を使って4行4列の16マスの**魔方陣**（1～16の数字を1つずつ使ったもの）をランダムで生成するコードを作成してみたいと思います。
+
+<!--more-->
 
 ## 魔方陣の概要
-魔方陣とは、以下のような**縦・横・斜めの全ての列について、合計が同じ数になる数字の表**のことをいいます。今回は1～16の数字を一つずつ使ったものを作っていきます。下に魔方陣の一例を示します。
+
+皆さんは「魔方陣」と言われるものをご存知でしょうか？魔方陣とは、以下のような**縦・横・斜めの全ての列の合計が同じになる数表**のことをいいます。今回は1～16の数字を一つずつ使ったものを作っていきます。下に魔方陣の一例を示します。
+
 $$
 \large\begin{array}{|c|c|c|c|}
   \hline
@@ -31,17 +33,18 @@ $$
   \hline
 \end{array}
 $$
+
 画像の魔方陣では、縦・横・斜めのどの列も合計が**34**になっていることが分かります。この性質を利用して、段階を踏みながらこのような表を出力してみます。
 
 ## 魔方陣の性質を利用して生成してみる
-『[４次魔方陣を求めるプログラム | 大同大学](https://www.daido-it.ac.jp/~oishi/TH5/ms4/ms4prg.html)』にある情報を参考にして、Javaで実装してみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+『[４次魔方陣を求めるプログラム | 大同大学](https://www.daido-it.ac.jp/~oishi/TH5/ms4/ms4prg.html)』にあるアルゴリズムを参考にして、Javaで実装してみます。
+
+{{< code lang="java" title="MakeMagicSquare44.java" >}}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/** 4×4の魔方陣を生成するクラス */
 public class MakeMagicSquare44 {
 
   /** 1から16までを格納するArrayList */
@@ -50,7 +53,6 @@ public class MakeMagicSquare44 {
   /** 完成した魔方陣の数表を格納する配列 */
   int array[] = new int[16];
 
-  /** 実行用mainメソッド */
   public static void main(String[] args) {
     MakeMagicSquare44 mMagicSquare = new MakeMagicSquare44();
     mMagicSquare.execute();
@@ -154,126 +156,6 @@ public class MakeMagicSquare44 {
 
 魔方陣の性質を利用して順に数字を求めていくことで、比較的簡単に生成することができました。
 
-## ArrayListのシャッフルで強引に求める
-おまけで、ゴリ押しで魔方陣を作成してみます。具体的なアルゴリズムについては以下になります。
+* * *
 
-{{< box "アルゴリズム" >}}
-<ol>
-<li>1~16までの数字が格納された<code>ArrayList</code>をシャッフルする</li>
-<li><code>ArrayList</code>を4×4の数表と見立てて、横の4列の合計値が34か1列ずつチェックする
-<ul><li>合計値が34以外ならその列をシャッフルしてチェックを繰り返す</li></ul>
-</li>
-<li>縦の4列と斜めの2列の合計値が全て34かチェックする
-<ul><li>合計値が34以外の列があるなら1に戻る</li></ul>
-</li>
-<li>数表として出力する</li>
-</ol>
-{{< /box >}}
-
-実際に、上のアルゴリズムをJavaで実装してみましょう。最終的に何回シャッフルするかを確認する変数も入れてあります。
-
-{{< code lang="java" title="サンプルコード" >}}
-import java.util.ArrayList;
-import java.util.Collections;
-
-public class MakeMagicSquare44 {
-
-  // 魔方陣となる数字を格納するArrayList
-  ArrayList<Integer> OriginalList = new ArrayList<Integer>();
-
-  // 合計値チェック用のArrayList
-  ArrayList<Integer> checkList = new ArrayList<Integer>();
-
-  // シャッフル回数カウント用の変数
-  int count = 0;
-
-  public static void main(String[] args) {
-    MakeMagicSquare44 mMagicSquare = new MakeMagicSquare44();
-    mMagicSquare.generateList();
-    mMagicSquare.checkMagicSquare();
-    mMagicSquare.showMagicSquare();
-  }
-
-  // ArrayListに1～16を格納しシャッフルする
-  private void generateList() {
-    for (int i = 1; i <= 16; i++) {
-      OriginalList.add(i);
-    }
-    Collections.shuffle(OriginalList);
-  }
-
-  // ArrayListを数表として出力する
-  private void showMagicSquare() {
-    int num = 0;
-    for (int i = 0; i < 4; i++) {
-      for (int j = 0; j < 4; j++) {
-        System.out.printf("%3d", OriginalList.get(num++));
-      }
-      System.out.println();
-    }
-    System.out.println("シャッフル回数:" + count);
-  }
-
-  // 魔方陣かどうかチェックする
-  private void checkMagicSquare() {
-    while (true) {
-      checkRowMagicSquare();
-      if (checkColumnMagicSquare() && checkDiagonalRowMagicSquare()) {
-        break;
-      } else {
-        Collections.shuffle(OriginalList);
-        count++;
-      }
-    }
-  }
-
-  // 横の4列の合計値が34か判定
-  private void checkRowMagicSquare() {
-    checkList.addAll(OriginalList);
-    OriginalList.clear();
-    int checkCount = 0;
-    while (checkCount < 4) {
-      if (sumCheck(checkList.get(0), checkList.get(1), checkList.get(2), checkList.get(3))) {
-        for (int i = 0; i < 4; i++) {
-          OriginalList.add(checkList.get(0));
-          checkList.remove(0);
-        }
-        checkCount++;
-      } else {
-        Collections.shuffle(checkList);
-        count++;
-      }
-    }
-  }
-
-  // 縦の4列の合計値が34か判定
-  private boolean checkColumnMagicSquare() {
-    return sumCheck(OriginalList.get(0), OriginalList.get(4), OriginalList.get(8), OriginalList.get(12))
-        && sumCheck(OriginalList.get(1), OriginalList.get(5), OriginalList.get(9), OriginalList.get(13))
-        && sumCheck(OriginalList.get(2), OriginalList.get(6), OriginalList.get(10), OriginalList.get(14))
-        && sumCheck(OriginalList.get(3), OriginalList.get(7), OriginalList.get(11), OriginalList.get(15));
-  }
-
-  // 斜めの2列の合計値が34か判定
-  private boolean checkDiagonalRowMagicSquare() {
-    return sumCheck(OriginalList.get(0), OriginalList.get(5), OriginalList.get(10), OriginalList.get(15))
-        && sumCheck(OriginalList.get(3), OriginalList.get(6), OriginalList.get(9), OriginalList.get(12));
-  }
-
-  // 引数の合計値が34か判定
-  private boolean sumCheck(int num1, int num2, int num3, int num4) {
-    return (num1 + num2 + num3 + num4 == 34);
-  }
-}
-{{< /code >}}
-
-{{< code lang="plaintext" title="出力結果（一例）" >}}
-  1 12  7 14
- 15  6  9  4
- 10  3 16  5
-  8 13  2 11
-シャッフル回数:28385946
-{{< /code >}}
-これで4×4の魔方陣の完成です。解が見つかるまでループするため、シャッフル回数は28385946回と多いですね。もっと少ない計算で生成するやり方もありそうですね。  
-
-以上で記事を終わりにします。
+今回は、Javaで16マス魔方陣を作成してみました。以上で記事を終わりにします。
