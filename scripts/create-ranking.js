@@ -4,10 +4,6 @@ const fs = require('fs');
 const currentDate = new Date().toISOString();
 
 async function main() {
-  const propertyId = 'YOUR_PROPERTY_ID'; // プロパティIDを適切な値に置き換える
-
-  // analyticsDataClient などのクライアントを適切に初期化する
-
   try {
     const response = await runReport();
 
