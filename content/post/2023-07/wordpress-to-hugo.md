@@ -12,33 +12,33 @@ tags:
   - WordPress
 archives: 
   - 2023/07
-thumbnail: /images/hugo.png
+thumbnail: /images/hugo.webp
 ---
 
 この度、レンタルサーバーへ立てた**WordPress**のブログを**Hugo**に乗り換え、ホスティングも**AWS S3**・**CloudFront**に変更しましたので、移行の理由や感想等を書いていきます。
+
+<!--more-->
 
 ## ブログの構成について
 
 まず、当ブログの構成についてですが、これまでは**レンタルサーバー**（ロリポップ）に**WordPress**をインストールし、ドメイン取得サービス（ムームドメイン）で取得した独自ドメイン`dimzakki.com`でサイトを運営していました。
 
-{{< rawhtml >}}
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({startOnLoad: true});</script>
-  <figure>
-    <div class="mermaid">
-    graph LR
-      A((訪問者))
-      A ---> B(WordPress)
-      subgraph レンタルサーバー
-      B <---> C(DB)
-      end
-      D((管理者)) --->|サイト管理| B
-    </div>
-    <figcaption>
-      <p>レンタルサーバー・WordPressの構成</p>
-    </figcaption>
-  </figure>
-{{< /rawhtml >}}
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad: true});</script>
+<figure>
+  <div class="mermaid">
+  graph LR
+    A((訪問者))
+    A ---> B(WordPress)
+    subgraph レンタルサーバー
+    B <---> C(DB)
+    end
+    D((管理者)) --->|サイト管理| B
+  </div>
+  <figcaption>
+    <p>レンタルサーバー・WordPressの構成</p>
+  </figcaption>
+</figure>
 
 レンタルサーバー + WordPressのサイト構成では、あくまで趣味としてのブログ運営であることから、なるべく低コストで運営することを重視していました。サーバーは一番安いプランにし、ドメインはロリポップの無料キャンペーン取得したものを維持してきました。ですので、運営で掛かっていた費用は**年間6,000円未満のサーバー代のみ**でした。
 
@@ -48,26 +48,24 @@ thumbnail: /images/hugo.png
 
 ブログ更新時のS3へのデプロイはGitHub Actionsで自動的に行っています。
 
-{{< rawhtml >}}
-  <figure>
-    <div class="mermaid">
-    graph LR
-      A((訪問者)) ---> B(CloudFront)
-      subgraph AWS
-      C(Route 53・ACM)
-      B ---> D(S3)
-      end
-      subgraph GitHub
-      E(リポジトリ・GitHub Actions)
-      end
-      F((管理者)) --->|Push| E
-      E --->|デプロイ| D
-    </div>
-    <figcaption>
-      <p>Hugo + AWS構成</p>
-    </figcaption>
-  </figure>
-{{< /rawhtml >}}
+<figure>
+  <div class="mermaid">
+  graph LR
+    A((訪問者)) ---> B(CloudFront)
+    subgraph AWS
+    C(Route 53・ACM)
+    B ---> D(S3)
+    end
+    subgraph GitHub
+    E(リポジトリ・GitHub Actions)
+    end
+    F((管理者)) --->|Push| E
+    E --->|デプロイ| D
+  </div>
+  <figcaption>
+    <p>Hugo + AWS構成</p>
+  </figcaption>
+</figure>
 
 ## WordPressと比較したHugoの利点・欠点
 
