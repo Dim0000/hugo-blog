@@ -9,10 +9,12 @@ tags:
   - 商品レビュー
 archives: 
   - 2021/08
-thumbnail: /images/game.png
+thumbnail: /images/game.webp
 ---
 
 **PlayStation 5**（ノーマルエディション）で「**Apex Legends**」をプレイしてPS4と比較した感想と、**DualSense Edge**を使用した感想について書いていきます。
+
+<!--more-->
 
 {{< product_link id="B0CKYM15RJ" >}}
 
