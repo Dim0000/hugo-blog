@@ -10,10 +10,14 @@ tags:
   - AWS
 archives: 
   - 2023/10
-thumbnail: /images/aws.png
+thumbnail: /images/aws.webp
 ---
 
-今回はローカルで構築した**Hugo**のブログサイトを**AWS S3**にデプロイし、**CloudFront**で配信するまでの流れをまとめていきます。なお、Hugoサイトの作成と、Route 53での独自ドメイン取得が出来ている前提で話を進めていきます。
+今回はローカルで構築した**Hugo**のブログサイトを**AWS S3**にデプロイし、**CloudFront**で配信するまでの流れをまとめていきます。
+
+<!--more-->
+
+なお、Hugoサイトの作成と、Route 53での独自ドメイン取得が出来ている前提で話を進めていきます。
 
 {{< box "関連記事" >}}
 <ul>
