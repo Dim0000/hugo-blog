@@ -1,4 +1,4 @@
-const export_function = require('./paapi');
+const export_function = require('./pa-api');
 const fs = require('fs');
 
 const products = [];
