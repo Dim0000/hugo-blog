@@ -2,30 +2,31 @@
 title: 【Java】shuffleメソッドでコレクションをシャッフルする方法
 description: Javaでコレクションの要素をランダムでシャッフルするには、Collectionsクラスのshuffleメソッドが便利です。メソッドの使い方についてまとめていきます。
 date: 2021-07-23
-lastmod: 2023-11-04
 categories:
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/07
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
-Javaで**コレクションの要素をランダムでシャッフルする**には、`Collectionsクラス`の`shuffleメソッド`が便利です。メソッドの使い方についてまとめていきます。
+**Java**でコレクションの要素をランダムでシャッフルするには、`Collectionsクラス`の`shuffleメソッド`が便利です。メソッドの使い方についてまとめていきます。
+
+<!--more-->
 
 ## shuffleメソッドとは
+
 `shuffleメソッド`とは、`List`などのコレクションをシャッフルするためのメソッドです。内部で生成された乱数を使って、コレクションがシャッフルされます。
 
 {{< code lang="java" title="shuffleメソッドの書式例" >}}
-Collections.shuffle(コレクション);
-Collections.shuffle(コレクション, Randomクラス);
+Collections.shuffle(List<?> list);
+Collections.shuffle(List<?> list, Random rnd);
 {{< /code >}}
 
-引数はシャッフルしたいコレクションの他、`Randomクラス`を第2引数に指定することができます。その場合はシャッフルするための乱数を指定することができます。
+引数はシャッフルしたいコレクションの他、`Randomクラス`のオブジェクトを第2引数に指定することができます。その場合はシャッフルするための乱数を指定することができます。
 
-また、ランダムに数字を出力したい場合には、`Randomクラス`を使うことができます。こちらは数字の範囲を指定して、ランダムに出力させることができますが、数字が重複する可能性があります。
+また、ランダムに数字を出力したい場合にも、`Randomクラス`を使うことができます。こちらは数字の範囲を指定して、ランダムに出力させることができますが、数字が重複する可能性があります。
 
 {{< box "関連記事" >}}
 <ul>
@@ -39,11 +40,11 @@ Collections.shuffle(コレクション, Randomクラス);
 
 `ArrayList`を使って、1から10が格納されたコレクションを作りシャッフルしてみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="ShuffleTest1.java" >}}
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ShuffleTest_1 {
+public class ShuffleTest1 {
 
   public static void main(String[] args) {
 
@@ -73,15 +74,17 @@ public class ShuffleTest_1 {
 [6, 3, 8, 1, 9, 5, 10, 2, 7, 4]
 {{< /code >}}
 
+1～10の数字がシャッフルされていることが分かります。
+
 ## shuffleメソッドで文字列をシャッフルする
 
 先ほどは数値型のリストをシャッフルしてみました。今度は文字列の配列をシャッフルしてみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="ShuffleTest2.java" >}}
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class ShuffleTest_2 {
+public class ShuffleTest2 {
 
   public static void main(String[] args) {
 
@@ -111,16 +114,18 @@ public class ShuffleTest_2 {
 [three, two, five, four, one]
 {{< /code >}}
 
+文字列の配列がシャッフルされていることが分かります。
+
 ## shuffleメソッドのシャッフルをRandomクラスを指定する
 
-次に、`Randomクラス`を第2引数に指定してシャッフルしてみます。
+次に、`Randomクラス`のオブジェクトを第2引数に指定してシャッフルしてみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="ShuffleTest3.java" >}}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-public class ShuffleTest_3 {
+public class ShuffleTest3 {
   public static void main(String[] args) {
 
     // listに1～10を順番に格納し表示
