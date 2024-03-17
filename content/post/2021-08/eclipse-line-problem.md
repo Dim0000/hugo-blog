@@ -1,18 +1,19 @@
 ---
 title: 【Eclipse】赤線や緑線が出る問題の原因と解決方法【カバレッジ】
-description: 今回は統合開発環境（IDE）であるEclipseに関する記事です。この前発生した、Eclipseのソースコードがハイライトされる現象（赤線や緑線が出る問題）に関する備忘録です。
+description: 今回はEclipseのソースコードが赤線や緑線でハイライトされる現象に関する備忘録になります。
 date: 2021-08-09
-lastmod: 2023-11-03
 categories: 
   - 技術記事
 tags: 
 archives: 
   - 2021/08
-thumbnail: /images/eclipse.png
-# draft: false
+thumbnail: /images/eclipse.webp
 ---
 
-今回は統合開発環境（IDE）である**Eclipse**に関する記事です。この前発生した、Eclipseのソースコードがハイライトされる現象（赤線や緑線が出る問題）に関する備忘録です。
+今回は**Eclipse**のソースコードが赤線や緑線でハイライトされる現象に関する備忘録になります。
+
+<!--more-->
+
 
 ## 突然出現した赤と緑のハイライト
 
