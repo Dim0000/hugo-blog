@@ -16,14 +16,16 @@ const ORIGINAL_IMG_DIR = glob.sync('/node/assets/images/thumbnails');
 const changeWebpImages = (imgPath, outputDir, outputFilePath) => {
   const fileName = outputFilePath.split('/').reverse()[0]; // 拡張子を含む画像ファイル名
   const imgName = fileName.split('.')[0]; // 拡張子を除く画像ファイル名
-  sharp(imgPath)
-    .webp({
-      quality: 75
-    })
-    .toFile(`${outputDir}${imgName}.webp`, (err) => { // 画像ファイル名.webpで出力
-      if (err) console.error(err);
-      return;
-    });
+  if (!fs.existsSync(`${outputDir}${imgName}.webp`)) {
+    sharp(imgPath)
+      .webp({
+        quality: 75
+      })
+      .toFile(`${outputDir}${imgName}.webp`, (err) => { // 画像ファイル名.webpで出力
+        if (err) console.error(err);
+        return;
+      });
+  }
 };
 
 /**
