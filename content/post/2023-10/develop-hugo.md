@@ -10,10 +10,12 @@ tags:
   - WordPress
 archives: 
   - 2023/10
-thumbnail: /images/hugo.png
+thumbnail: /images/hugo.webp
 ---
 
 今回は**Hugo**のブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -86,8 +88,8 @@ $ hugo new test.md # 新規記事を作成する
 Hugoの設定は`hugo.toml`（古いバージョンだと`config.toml`）で設定します。参考までに、当サイトでは以下の様な感じにしてます。
 
 {{< code lang="toml" title="hugo.toml" >}}
-baseURL = "https://xxxxxxxxx/" # サイトURL
-title = "xxxxx" # サイトタイトル
+baseURL = "https://dimzakki.com/"
+title = "Dim雑記"
 DefaultContentLanguage = "ja"
 languageCode = "ja-JP"
 theme = "mainroad"
@@ -100,8 +102,8 @@ enableGitInfo = "true" # 最終更新日をgitから取得
   post = "/:filename/"
 
 [Params]
-  Subtitle = "xxxxx" # サブタイトル
-  description = "xxxxx" # meta description
+  Subtitle = "ITエンジニアが運営する雑記ブログです"
+  description = "ITエンジニアが運営する雑記ブログです"
   post_meta = ["date", "categories"]
   highlightColor = "#0095d9"
   mathjax = true
@@ -112,7 +114,7 @@ enableGitInfo = "true" # 最終更新日をgitから取得
   home = "right"
   list = "right"
   single = "right"
-  widgets = ["categories", "taglist", "recent", "archives", "social", "search"]
+  widgets = ["categories", "taglist", "recent", "archives", "social"]
 [Params.widgets]
   recent_num = 5
   categories_counter = true
@@ -141,12 +143,23 @@ enableGitInfo = "true" # 最終更新日をgitから取得
   URL = "/profile"
   weight = 20
 [[Menus.main]]
+  Name = "IT資格の部屋"
+  URL = "/it-qualification"
+  weight = 30
+[[Menus.main]]
+  Name = "サイト内全文検索"
+  URL = "/search"
+  weight = 40
+[[Menus.main]]
   Name = "お問い合わせ"
   URL = "/contact"
   weight = 50
 [[Menus.footer]]
   Name = "プライバシーポリシー"
   URL = "/privacy-policy"
+
+[markup.goldmark.renderer]
+  unsafe = true
 {{< /code >}}
 
 ## 記事のデータの移行
