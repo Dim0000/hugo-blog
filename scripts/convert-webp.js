@@ -5,7 +5,8 @@ const glob = require('glob');
 const path = require('path');
 const mkdirp = require('mkdirp');
 
-const ORIGINAL_IMG_DIR = glob.sync('/node/assets/images/thumbnails');
+const ORIGINAL_IMG_DIR = glob.sync('/node/static/images');
+const WEBP_IMG_DIR = '/node/static/images'; // WebP変換後のディレクトリ
 
 /**
  * 画像をWebP形式に変換
@@ -37,7 +38,7 @@ async function writeFiles() {
     fsPromise.readdir(resolvedPath)
       .then((files) => {
         files.forEach((file) => {
-          changeWebpImages(`${resolvedPath}/${file}`, `${resolvedPath}/`, `${resolvedPath}/${file}`);
+          changeWebpImages(`${resolvedPath}/${file}`, `${path.resolve(WEBP_IMG_DIR)}/`, `${path.resolve(WEBP_IMG_DIR)}/${file}`);
         });
       })
       .catch((err) => {
