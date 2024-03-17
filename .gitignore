@@ -4,5 +4,6 @@ node_modules/
 data/ranking.json
 .gcp
 .hugo_build.lock
+assets/images/desktop.ini
 static/images/desktop.ini
 .env
