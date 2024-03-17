@@ -1,6 +1,6 @@
 ---
 title: 【Hugo】Docker上でHugo環境を構築する【Compose Watch】
-description: 今回は、Hugo環境をDocker上で構築する手順についてまとめました。
+description: 今回は、Hugo環境をDocker上で構築・実行する手順についてまとめました。
 date: 2024-03-10
 categories: 
   - 技術記事
@@ -10,10 +10,12 @@ tags:
   - Docker
 archives:
     - 2024/03
-thumbnail: /images/hugo.png
+thumbnail: /images/hugo.webp
 ---
 
-今回は、Hugo環境をDocker上で構築する手順についてまとめました。
+今回は、**Hugo**環境を**Docker**上で構築・実行する手順についてまとめました。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -37,7 +39,7 @@ EXPOSE 1313
 ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--port", "1313", "-D", "-F"]
 {{< /code >}}
 
-{{< code lang="yml" title="docker-compose.yml" >}}
+{{< code lang="yml" title="compose.yml" >}}
 version: '3'
 
 services:
@@ -55,9 +57,9 @@ services:
 コンテナ起動時は、ターミナルで以下のコマンドを実行します。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker compose up -d --コンテナ起動・ローカルでビルド
+$ docker compose up -d # コンテナ起動・ローカルでビルド
 
-$ docker compose watch --ホットリロード
+$ docker compose watch # ホットリロード
 {{< /code >}}
 
 ローカルでの構築時と同様に、`http://localhost:1313/`を開くことでサイトプレビューを確認できます。
@@ -65,9 +67,9 @@ $ docker compose watch --ホットリロード
 新規記事を作成する際は以下のコマンドを実行します。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker compose exec hugo hugo new <file> --コンテナ内に新規ファイル作成
+$ docker compose exec hugo hugo new <file> # コンテナ内に新規ファイル作成
 
-$ docker compose cp hugo:/src/content/<file> . --コンテナからローカルにコピー
+$ docker compose cp hugo:/src/content/<file> . # コンテナからローカルにコピー
 {{< /code >}}
 
 * * *
