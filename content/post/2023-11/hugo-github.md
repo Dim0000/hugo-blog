@@ -1,6 +1,6 @@
 ---
 title: 【Hugo】Github ActionsでS3に自動でデプロイする【ブログ移行④】
-description: 今回はHugoをGithubにプッシュした際に自動でS3にデプロイする
+description: 今回はHugoをGithubにプッシュした際に、自動でS3にデプロイする方法を紹介します。
 date: 2023-11-24
 categories: 
   - 技術記事
@@ -11,10 +11,14 @@ tags:
   - GitHub
 archives: 
   - 2023/11
-thumbnail: /images/hugo.png
+thumbnail: /images/hugo.webp
 ---
 
-今回は**Hugo**を**Github**にプッシュした際に自動でS3にデプロイする方法を紹介します。必要な手順としては、IAMロールの設定と、Github Actionsの設定のみになります。
+今回は**Hugo**を**Github**にプッシュした際に、自動でS3にデプロイする方法を紹介します。
+
+<!--more-->
+
+必要な手順としては、IAMロールの設定と、Github Actionsの設定のみになります。
 
 {{< box "関連記事" >}}
 <ul>
@@ -29,11 +33,11 @@ thumbnail: /images/hugo.png
 
 まずは、IAMコンソールのIDプロバイダから、OIDCプロバイダの設定を以下の様に行います。プロバイダのタイプは`OpenID Connect`で、プロバイダのURLは`https://token.actions.githubusercontent.com`、対象者は`sts.amazonaws.com`を入力します。
 
-{{< luminous src="/images/hugo-github-01.png" caption="OIDCプロバイダの設定1">}}
+{{< luminous src="/images/hugo-github-01.png" caption="OIDCプロバイダの設定">}}
 
-続いてIAMロールを作成します。ポリシー名は適当に設定し、ポリシーの内容は以下の様に設定します。
+続いてIAMロールを作成します。作成したロールの信頼ポリシーの編集で、ポリシーを以下の様に設定します。
 
-{{< code lang="json" title="ポリシー" >}}
+{{< code lang="json" title="信頼ポリシー" >}}
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -52,11 +56,6 @@ thumbnail: /images/hugo.png
   ]
 }
 {{< /code >}}
-
-
-{{< luminous src="/images/hugo-github-02.png" caption="OIDCプロバイダの設定2">}}
-
-{{< luminous src="/images/hugo-github-03.png" caption="OIDCプロバイダの設定3">}}
 
 ## Github Actionsの設定
 
@@ -123,11 +122,11 @@ jobs:
 
 また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントID、`S3_BUCKET`にS3バケット名、`DISTRIBUTION_ID`にはディストリビューションIDを設定します。
 
-{{< luminous src="/images/hugo-github-04.png" caption="GitHubのSecrets設定">}}
+{{< luminous src="/images/hugo-github-02.png" caption="GitHubのSecrets設定">}}
 
 これで設定は完了ですので、実際にGitHubにプッシュし、All workflowsの画面から処理が実行されているのを確認できたら成功です。
 
-{{< luminous src="/images/hugo-github-05.png" caption="GitHubのSecrets設定">}}
+{{< luminous src="/images/hugo-github-03.png" caption="GitHubのSecrets設定">}}
 
 * * *
 
