@@ -1,6 +1,7 @@
 ---
 title: IT資格の部屋
-description: こちらはITの資格に関する記事をまとめたページです。
+description: こちらはIT資格に関する記事をまとめたページです。
+date: 2021-07-22
 categories: 
   - IT資格
 tags: 
@@ -13,13 +14,12 @@ tags:
   - Oracle Silver
   - AWS CLF
   - AWS SAA
-date: 2021-07-22
-lastmod: 2023-10-19
-thumbnail: /images/qualification.png
-# draft: false
+thumbnail: /images/qualification.webp
 ---
 
-こちらは**ITの資格**に関する記事をまとめたページです。
+こちらは**IT資格**に関する記事をまとめたページです。
+
+<!--more-->
 
 ## 合格したIT資格一覧
 
@@ -29,19 +29,77 @@ thumbnail: /images/qualification.png
 
 ### 情報処理技術者試験
 
-|資格名|受験時期|関連記事|
-| :---: | :---: | :---: |
-|[ITパスポート試験]({{< relref  "/tags/ITパスポート試験" >}})|2021/01|{{< ref "/qualification-ip-pass" >}}|
-|[基本情報技術者試験]({{< relref  "/tags/基本情報技術者試験" >}})|2021/02|{{< ref "/qualification-fe-pass" >}}|
-|[応用情報技術者試験]({{< relref  "/tags/応用情報技術者試験" >}})|2021/04|{{< ref "/qualification-ap-pass" >}}|
-|[情報セキュリティマネジメント試験]({{< relref  "/tags/情報セキュリティマネジメント試験" >}})|2021/07|{{< ref "/qualification-sg-pass" >}}|
-|[情報処理安全確保支援士試験]({{< relref  "/tags/情報処理安全確保支援士試験" >}})|2022/04|{{< ref "/qualification-sc" >}}|
+情報処理推進機構（IPA）が実施する試験一覧になります。
+
+<table>
+<thead>
+<tr>
+<th bgcolor="#ecf5ff">資格名</th>
+<th bgcolor="#ecf5ff">受験時期</th>
+<th bgcolor="#ecf5ff">合格体験記</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/tags/ip/" target="_blank">ITパスポート試験</a></td>
+<td>2021/01</td>
+<td><a href="/qualification-ip-pass/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/fe/" target="_blank">基本情報技術者試験</a></td>
+<td>2021/02</td>
+<td><a href="/qualification-fe-pass/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/ap/" target="_blank">応用情報技術者試験</a></td>
+<td>2021/04</td>
+<td><a href="/qualification-ap-pass/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/sg/" target="_blank">情報セキュリティマネジメント試験</a></td>
+<td>2021/07</td>
+<td><a href="/qualification-sg-pass/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/sc/" target="_blank">情報処理安全確保支援士試験</a></td>
+<td>2022/04</td>
+<td><a href="/qualification-sc/" target="_blank">合格体験記</a></td>
+</tr>
+</tbody>
+</table>
 
 ### ベンダー資格
 
-|資格名|受験時期|関連記事|
-| :---: | :---: | :---: |
-|[Java Silver SE11]({{< relref  "/tags/java-silver/" >}})|2021/10|{{< ref "/qualification-javasilverse11" >}}|
-|[Oracle MASTER Silver SQL]({{< relref  "/tags/oracle-silver" >}})|2023/03|{{< ref "/qualification-oraclemastersilversql" >}}|
-|[AWS Certified Cloud Practitioner]({{< relref  "/tags/aws-clf" >}})|2023/06|{{< ref "/qualification-aws-clf" >}}|
-|[AWS Solutions Architect Associate]({{< relref  "/tags/aws-saa" >}})|2023/08|{{< ref "/qualification-aws-saa" >}}|
+Oracle等のベンダー資格の一覧になります。
+
+<table>
+<thead>
+<tr>
+<th bgcolor="#ecf5ff">資格名</th>
+<th bgcolor="#ecf5ff">受験時期</th>
+<th bgcolor="#ecf5ff">合格体験記</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/tags/java-silver/" target="_blank">Java Silver SE11</a></td>
+<td>2021/01</td>
+<td><a href="/qualification-javasilverse11/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/oracle-silver/" target="_blank">Oracle MASTER Silver SQL</a></td>
+<td>2021/02</td>
+<td><a href="/qualification-oraclemastersilversql/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/aws-clf/" target="_blank">AWS Certified Cloud Practitioner</a></td>
+<td>2021/04</td>
+<td><a href="/qualification-aws-clf/" target="_blank">合格体験記</a></td>
+</tr>
+<tr>
+<td><a href="/tags/aws-saa/" target="_blank">AWS Solutions Architect Associate</a></td>
+<td>2021/07</td>
+<td><a href="/qualification-aws-saa/" target="_blank">合格体験記</a></td>
+</tr>
+</tbody>
+</table>
