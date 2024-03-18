@@ -42,7 +42,7 @@ $$ F_{n+2}=F_{n}+F_{n+1}\ \small(n\ge0) $$
 </ul>
 {{< /box >}}
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="FibonacciSequence.java" >}}
 import java.util.Arrays;
 
 public class FibonacciSequence {
@@ -102,7 +102,7 @@ public class FibonacciSequence {
 
 `JavaScript`で書いた場合だと以下の様になります。あまり違いはありませんね。
 
-{{< code lang="javascript" title="サンプルコード" >}}
+{{< code lang="javascript" title="fibonacciSequence.js" >}}
 function fibonacciSequence(num) {
   let array = new Array(num);
   array[0] = 0;
