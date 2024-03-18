@@ -2,18 +2,18 @@
 title: 【基本情報】CBT方式導入から合格率が上がった話【受かりやすい?】
 description: 基本情報技術者試験のCBT方式と合格率について触れていきたいと思います。主に、CBT方式導入から大幅上昇した試験の合格率について、試験のデータなどから考えてみます。
 date: 2021-08-06
-lastmod: 2023-11-03
 categories: 
   - IT資格
 tags: 
   - 基本情報技術者試験
 archives: 
   - 2021/08
-thumbnail: /images/ipa.png
-# draft: false
+thumbnail: /images/ipa.webp
 ---
 
 **基本情報技術者試験**の**CBT方式**と**合格率**について触れていきたいと思います。主に、CBT方式導入から大幅上昇した試験の合格率について、試験のデータなどから考えてみます。
+
+<!--more-->
   
 {{< box "関連記事" >}}
 <ul>
