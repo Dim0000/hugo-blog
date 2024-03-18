@@ -8,10 +8,12 @@ tags:
   - ブログ運営
 archives: 
   - 2021/08
-thumbnail: /images/blog.png
+thumbnail: /images/blog.webp
 ---
 
 昨日（2021年8月15日）に当サイトで**DNS_PROBE_FINISHED_NXDOMAINエラー**によりアクセスできなくなってしまってました。その後復旧できたので、サイトにアクセスできなくなった原因（ドメイン認証）と対処法について書きます。
+
+<!--more-->
 
 ## 突然「アクセスできません」と表示される
 
