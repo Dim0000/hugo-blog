@@ -1,29 +1,27 @@
 ---
 title: 【Java】mismatchメソッドで2つの配列の違いを探す方法
-description: 2つの配列の違いを探す時には、Arraysクラスのmismatchメソッドを使うことができます。今回はmismatchメソッドの使い方を解説します。
+description: Javaで2つの配列の違いを探す時には、Arraysクラスのmismatchメソッドを使うことができます。今回はmismatchメソッドの使い方を解説します。
 date: 2021-08-13
-lastmod: 2023-11-03
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/08
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
-**2つの配列の違いを探す**時には、`Arraysクラス`の`mismatchメソッド`を使うことができます。今回は`mismatchメソッド`の使い方を解説します。
+Javaで2つの配列の違いを探す時には、`Arraysクラス`の`mismatchメソッド`を使うことができます。今回は`mismatchメソッド`の使い方を解説します。
 
 ## mismatchメソッドの書式
 
 `mismatchメソッド`は以下の様に記述します。
 
 {{< code lang="java" title="mismatchメソッドの書式例" >}}
-Arrays.mismatch(配列1,配列2);
+Arrays.mismatch(Array a, Array b);
 {{< /code >}}
 
-配列1と配列2を比較して、**最初に一致しなかった要素の添え字**を戻します。一致した場合は`‐1`を返します。また、配列の添え字は`int型`なので、返り値の型も`int型`になります。
+配列aと配列bを比較して、**最初に一致しなかった要素の添え字**を戻します。一致した場合は`‐1`を返します。また、配列の添え字は`int型`なので、返り値の型も`int型`になります。
 
 また、`mismatchメソッド`は`equalsメソッド`とは違い、違っている最初の箇所を戻してくれます。
 
@@ -33,10 +31,10 @@ Arrays.mismatch(配列1,配列2);
 
 使用例をサンプルコードによって紹介します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="MismatchTest1.java" >}}
 import java.util.Arrays;
 
-public class MismatchTest_1 {
+public class MismatchTest1 {
 
   public static void main(String[] args) {
 
@@ -62,10 +60,10 @@ public class MismatchTest_1 {
 
 このメソッドを普通に使うと最初に出てきた文字の位置しか返ってきません。そこでfor文を使って全ての文字を検索する方法を作ってみます。以下にサンプルコードを示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="MismatchTest2.java" >}}
 import java.util.Arrays;
 
-public class MismatchTest_2 {
+public class MismatchTest2 {
 
   public static void main(String[] args) {
     int[] num1 = { 1, 2, 3, 4, 5, 6 };
@@ -105,7 +103,7 @@ public class MismatchTest_2 {
 
 * * *
 
-今回は`mismatchメソッド`の使い方を紹介しました。このメソッドは**Java Silver**でも出題されているメソッドになります。 以上で記事を終わりにします。
+今回は`mismatchメソッド`の使い方を紹介しました。以上で記事を終わりにします。
 
 ## 参考文献
 
