@@ -13,6 +13,8 @@ thumbnail: /images/java.webp
 
 Javaで2つの配列の違いを探す時には、`Arraysクラス`の`mismatchメソッド`を使うことができます。今回は`mismatchメソッド`の使い方を解説します。
 
+<!--more-->
+
 ## mismatchメソッドの書式
 
 `mismatchメソッド`は以下の様に記述します。
