@@ -2,18 +2,18 @@
 title: 【Java】Randomクラスで乱数を生成する方法【数値・真理値】
 description: JavaのRandomクラスで乱数を生成する方法を紹介します。Randomクラスで数値（整数・小数）と真理値について乱数を生成してみます。
 date: 2021-07-31
-lastmod: 2023-11-04
 categories:
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/07
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 Javaの`Randomクラス`で**乱数を生成する**方法を紹介します。`Randomクラス`で数値（整数・小数）と真理値について乱数を生成してみます。
+
+<!--more-->
 
 ## Randomクラスのインスタンス生成
 
@@ -42,10 +42,10 @@ random.nextInt(); // int型の範囲で乱数を生成する
 
 0も範囲に入るので注意しましょう。0を入れたくない時は、戻り値を+1することで1以上の数値を生成できます。また、数字を入れなかった場合は`int型`が取り得る範囲での乱数を取得します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="RandomTest1.java" >}}
 import java.util.Random;
 
-public class RandomTest_1 {
+public class RandomTest1 {
 
   public static void main(String[] args) {
 
@@ -72,6 +72,8 @@ public class RandomTest_1 {
 int型の範囲:-1021826723
 {{< /code >}}
 
+整数の乱数が生成されました。
+
 ## double型の乱数を生成する
 
 `double型`の乱数を生成したい時は`nextDoubleメソッド`が便利です。
@@ -85,10 +87,10 @@ Math.random(); // 同じく、0から1.0未満の範囲で乱数を生成する
 
 また、`Mathクラス`の`randomメソッド`も同じ機能を持ちます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="RandomTest2.java" >}}
 import java.util.Random;
 
-public class RandomTest_2 {
+public class RandomTest2 {
 
   public static void main(String[] args) {
 
@@ -110,6 +112,8 @@ public class RandomTest_2 {
 0から1.0未満の範囲（Mathクラス）:0.3652517356882634
 {{< /code >}}
 
+小数の乱数が生成されました。
+
 ## boolean型の乱数を生成する
 
 `boolean型`の乱数を生成したい時は`nextBoolean()メソッド`が便利です。
@@ -119,10 +123,10 @@ Random random = new Random();
 random.nextBoolean(); // trueかfalseを生成する
 {{< /code >}}
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="RandomTest3.java" >}}
 import java.util.Random;
 
-public class RandomTest_3 {
+public class RandomTest3 {
   public static void main(String[] args) {
 
     Random random = new Random();
@@ -137,6 +141,8 @@ public class RandomTest_3 {
 {{< code lang="plaintext" title="出力結果（一例）" >}}
 boolean型の乱数:true
 {{< /code >}}
+
+真偽値の乱数が生成されました。
 
 * * *
 
