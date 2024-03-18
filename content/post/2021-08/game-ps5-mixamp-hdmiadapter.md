@@ -10,10 +10,12 @@ tags:
   - MixAmp
 archives: 
   - 2021/08
-thumbnail: /images/game.png
+thumbnail: /images/game.webp
 ---
 
-今回はPS5とPS4とでの**MixAmpの接続方法の違い**（光デジタル端子の有無について）と、PS5に**MixAmpをHDMIアダプターを使って接続する方法**について紹介します。
+今回はPS5とPS4とでの**MixAmp**の接続方法の違い（光デジタル端子の有無について）と、PS5にMixAmpを**HDMIアダプター**を使って接続する方法について紹介します。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -42,8 +44,9 @@ MixAmpは光デジタル端子を使わないと性能を発揮できません�
   <figure>
     <div class="mermaid">
     graph LR
+    classDef blue fill:#87CEEB
       PS5 ---|HDMI| モニター
-      PS5 ---|USB| MixAmp
+      PS5 ---|USB| MixAmp:::blue
       MixAmp ---|3.5mm| ヘッドセット
     </div>
     <figcaption>
@@ -76,11 +79,12 @@ HDMIアダプターは結構小さいです。MixAmpの半分もありません�
   <figure>
     <div class="mermaid">
     graph LR
-      PS5 ---|HDMI| HDMIアダプター
-      HDMIアダプター ---|HDMI| モニター
-      HDMIアダプター ---|光デジタルケーブル<br>（ゲーム音声用）| MixAmp
-      PS5 ---|USB<br>（VC音声用）| MixAmp
-      MixAmp ---|3.5mm| ヘッドセット
+    classDef blue fill:#87CEEB
+      A[PS5] ---|HDMI| B[HDMIアダプター]:::blue
+      B ---|HDMI| C[モニター]
+      B ---|光デジタルケーブル<br>（ゲーム音声用）| D[MixAmp]
+      A ---|USB<br>（VC音声用）| D
+      D:::blue ---|3.5mm| E[ヘッドセット]
     </div>
     <figcaption>
       <p>PS5とMixAmpをHDMIアダプターで繋げる場合の配線</p>
