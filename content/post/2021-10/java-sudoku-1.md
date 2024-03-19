@@ -1,19 +1,19 @@
 ---
 title: 【Java】数独に使われる魔方陣をプログラミングで作る
-description: 今回は数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
+description: 今回はJavaで数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
 date: 2021-10-06
-lastmod: 2023-11-02
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/10
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
-今回は数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
+今回はJavaで数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -75,7 +75,7 @@ $$
 
 サンプルコードを以下に示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="MakeSudoku.java" >}}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
