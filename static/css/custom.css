@@ -189,3 +189,7 @@ input {
   color: #0095d9;
   background: #ecf5ff;
 }
+
+th {
+  background-color: #ecf5ff;
+}
