@@ -8,10 +8,12 @@ tags:
   - ゲーム
 archives: 
   - 2022/10
-thumbnail: /images/game.png
+thumbnail: /images/game.webp
 ---
 
 今回は**CoD:MW2**（Call of Duty : Modern Warfare II）のキャンペーンと協力プレイモードのプラチナトロフィー攻略についてまとめていきます。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
