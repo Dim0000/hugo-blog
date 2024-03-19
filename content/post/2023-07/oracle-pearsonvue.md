@@ -2,17 +2,17 @@
 title: 【IT資格】OracleアカウントとCertViewアカウントの登録方法
 description: 今回はOracleの認定資格を初めて受験する際に必要なアカウントの登録方法について解説していきます。
 date: 2023-07-05
-lastmod: 2023-10-21
 categories: 
   - IT資格
 tags: 
 archives: 
   - 2023/07
-thumbnail: /images/oracle.png
-# draft: false
+thumbnail: /images/oracle.webp
 ---
 
 今回は**Oracle**の認定資格を初めて受験する際に必要なアカウントの登録方法について解説していきます。
+
+<!--more-->
 
 ## 受験に必要なもの
 
