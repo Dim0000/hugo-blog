@@ -2,18 +2,18 @@
 title: 【AWS SAA】試験対策用備忘録メモ
 description: AWS Certified Solutions Architect（ソリューションアーキテクトアソシエイト）試験（SAA-C03）の試験対策用の備忘録メモになります。
 date: 2023-08-14
-lastmod: 2023-10-21
 categories: 
   - IT資格
 tags: 
   - AWS SAA
 archives: 
   - 2023/08
-thumbnail: /images/aws.png
-# draft: false
+thumbnail: /images/aws.webp
 ---
 
 **AWS Certified Solutions Architect（ソリューションアーキテクトアソシエイト）試験**（SAA-C03）の試験対策用の備忘録メモになります。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
