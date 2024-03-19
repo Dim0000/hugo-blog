@@ -9,10 +9,12 @@ tags:
   - WordPress
 archives: 
   - 2022/08
-thumbnail: /images/wordpress.png
+thumbnail: /images/wordpress.webp
 ---
 
 今回はWordPress（cocoonテーマ使用）で**PageSpeed Insights**の測定をモバイル・デスクトップ共に**90点**以上を取る方法について紹介します。
+
+<!--more-->
 
 当ブログでは無料のcocoonテーマやGoogleアドセンスを導入しているのでそれに関連した設定方法も紹介していますが、それ以外の方でも高速化の参考になる内容となっています。
 
