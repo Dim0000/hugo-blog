@@ -11,10 +11,12 @@ tags:
   - イヤホン
 archives: 
   - 2022/03
-thumbnail: /images/review.png
+thumbnail: /images/review.webp
 ---
 
 ゲーミングイヤホンである**SHURE AONIC 215**をゲーム（FPS）で使用した感想や、おすすめMixAmpのイコライザ設定などをレビューしていきます。
+
+<!--more-->
 
 ## 「SHURE AONIC 215」の概要
 
@@ -26,28 +28,12 @@ thumbnail: /images/review.png
 
 ### 基本スペック
 
-{{< rawhtml >}}
-<table>
-<tbody>
-<tr>
-<td>メーカー</td>
-<td>SHURE</td>
-</tr>
-<tr>
-<td>価格</td>
-<td>13,000円～（変動有り）</td>
-</tr>
-<tr>
-<td>タイプ</td>
-<td>カナル型</td>
-</tr>
-<tr>
-<td>接続端子</td>
-<td>4極3.5mmプラグ</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
+|項目|詳細|
+| :---: | :---: |
+|メーカー|SHURE|
+|価格|13,000円～（変動有り）|
+|タイプ|カナル型|
+|接続端子|4極3.5mmプラグ|
 
 付属品には専用ケース、イヤーピースが数種類と、謎の棒（先端に針金みたいなものが付いている）があります。調べてみたところ、謎の棒はイヤーピースについた汚れを落とすクリーニング用の棒らしいです。
 
