@@ -9,12 +9,14 @@ tags:
   - Java
 archives: 
   - 2021/09
-thumbnail: /images/java.png
+thumbnail: /images/java.webp
 ---
 
 この記事は**Java Silver SE11**の受験にあたって、自分用にややこしかった点を備忘録としてまとめたメモです。全ての事項を網羅してる訳では無く、個人的に分かりにくかったところをピックアップしています。
 
-内容のカテゴライズは、Java Silverの参考書である「{{< product_link id="4295007625" type="text" >}}」（黒本）の章ごとで分類してまとめました。内容については、随時更新予定です。
+<!--more-->
+
+なお、内容のカテゴライズは、Java Silverの参考書である「{{< product_link id="4295007625" type="text" >}}」（黒本）の章に準拠しまとめました。内容については、随時更新予定です。
 
 {{< box "関連記事" >}}
 <ul>
@@ -23,7 +25,7 @@ thumbnail: /images/java.png
 </ul>
 {{< /box >}}
 
-## 第1章:Javaの特徴と簡単なJavaプログラムの作成
+## 第1章:Javaの特徴とJavaプログラムの作成
 
 ### Javaの特徴
 
@@ -71,12 +73,12 @@ public static void main(String[] args) {// {String... args}も可能
 
 * Javaプログラムを実行するには`Javaコマンド`を使う
 
-{{< code lang="java" title="Javaコマンド" >}}
+{{< code lang="bash" title="Javaコマンド" >}}
 java Sample
 java Sample.java
 {{< /code >}}
 
-## 第2章:基本データ型と文字列操作
+## 第2章:基本データ型・文字列操作
 
 ### 識別子の命名規則
 
@@ -90,8 +92,8 @@ java Sample.java
 * アンダースコア`_`は先頭と末尾と記号の前後にはつけられない
 
 {{< code lang="java" title="整数リテラル" >}}
-int a = 123_456;// OK
-int b = _123:// NG
+int a = 123_456; // OK
+int b = _123; // NG
 {{< /code >}}
 
 ### int型
@@ -110,8 +112,8 @@ int b = _123:// NG
   * 配列の初期化式もエラーになる
 
 {{< code lang="java" title="var型" >}}
-var a;// エラー
-var b = {1,2};// エラー
+var a; // エラー
+var b = {1,2}; // エラー
 {{< /code >}}
 
 * `var型`はローカル変数のみ使える
@@ -119,14 +121,14 @@ var b = {1,2};// エラー
 * `var型`は変数を同時に宣言できない
 
 {{< code lang="java" title="var型" >}}
-var a = 1, b = 2;// エラー
+var a = 1, b = 2; // エラー
 {{< /code >}}
 
-### StringBuilder
+### StringBuilderクラス
 
-* `StringBuilderオブジェクト`は参照情報になるため、比較しても同一の参照値が参照される
+* `StringBuilderクラス`のオブジェクトは参照情報になるため、比較しても同一の参照値が参照される
 
-## 第3章:演算子と判定構造
+## 第3章:演算子・判定構造
 
 ### 型変換
 
@@ -134,7 +136,7 @@ var a = 1, b = 2;// エラー
 * 浮動小数点数は`double型`がデフォルト
 
 {{< code lang="java" title="float型" >}}
-float f = 1.0;// floatだとコンパイルエラーになる
+float f = 1.0; // floatだとコンパイルエラーになる
 {{< /code >}}
 
 ### 同値性と同一性
@@ -367,7 +369,7 @@ Algo a = name -> "ABC";
 
 * `jdepsコマンド`はクラスファイルの依存関係をパッケージレベルかクラスレベルで表示することができるアナライザ
 
-{{< code lang="java" title="jdepsコマンド" >}}
+{{< code lang="bash" title="jdepsコマンド" >}}
 jdeps --check
 {{< /code >}}
 
@@ -375,7 +377,7 @@ jdeps --check
 
 * モジュール化されたアプリケーションをコンパイルするには、モジュールの検索パスを指定するオプションが必要
 
-{{< code lang="java" title="" >}}
+{{< code lang="bash" title="" >}}
 -p
 
 --module-path
@@ -383,7 +385,7 @@ jdeps --check
 
 * 他にもディレクトリ配下のモジュールを一括してコンパイルするオプションがある
 
-{{< code lang="java" title="" >}}
+{{< code lang="bash" title="" >}}
 --module-source-path
 {{< /code >}}
 
