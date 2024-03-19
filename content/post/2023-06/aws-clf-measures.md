@@ -2,18 +2,18 @@
 title: 【AWS CLF】試験対策用備忘録メモ【クラウドプラクティショナー】
 description: AWS Certified Cloud Practitioner（クラウドプラクティショナー）試験（CLF-C01）の試験対策用の備忘録メモになります。試験の範囲である、AWSの各サービス・セキュリティ・料金等についてまとめています。
 date: 2023-06-04
-lastmod: 2023-10-21
 categories: 
   - IT資格
 tags: 
   - AWS CLF
 archives: 
   - 2023/06
-thumbnail: /images/aws.png
-# draft: false
+thumbnail: /images/aws.webp
 ---
 
 **AWS Certified Cloud Practitioner（クラウドプラクティショナー）試験**（CLF-C01）の試験対策用の備忘録メモになります。試験の範囲である、AWSの各サービス・セキュリティ・料金等についてまとめています。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
