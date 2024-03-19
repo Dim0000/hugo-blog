@@ -2,18 +2,18 @@
 title: 【BIOHAZARD RE:2】セーブデータを引き継いでトロコン【PS5】
 description: PS5版のBIOHAZARD RE:2を、PS4版のセーブデータを引き継いでトロコンしたので方法などを紹介していきます。また、引き継ぎが上手くいかない場合の対処方法についても書いておきます。
 date: 2022-06-18
-lastmod: 2023-10-31
 categories: 
   - 雑記
 tags: 
   - ゲーム
 archives: 
   - 2022/06 
-thumbnail: /images/game.png
-# draft: false
+thumbnail: /images/game.webp
 ---
 
 PS5版の**BIOHAZARD RE:2**を、PS4版のセーブデータを引き継いでトロコンしたので方法などを紹介していきます。また、引き継ぎが上手くいかない場合の対処方法についても書いておきます。
+
+<!--more-->
 
 ## トロフィー概要
 
@@ -23,7 +23,7 @@ PS5版の**BIOHAZARD RE:2**を、PS4版のセーブデータを引き継いで�
 
 トロフィー攻略の内容については既に他サイト等に豊富に存在しているので、ここでは割愛します。筆者は以下のサイトを参考にしました。
 
-『[バイオハザードRE2（バイオRE2）攻略Wiki](https://kamigame.jp/%E3%83%90%E3%82%A4%E3%82%AARE2/index.html)』
+* [バイオハザードRE2（バイオRE2）攻略Wiki](https://kamigame.jp/%E3%83%90%E3%82%A4%E3%82%AARE2/index.html)
 
 ### トロフィー【保安官の意地】について
 
@@ -31,7 +31,7 @@ PS5版の**BIOHAZARD RE:2**を、PS4版のセーブデータを引き継いで�
 
 攻略には以下のサイトの動きが参考になりました。
 
-『[ダニエル（保安官）編の攻略のコツ｜「No Way Out」](https://kamigame.jp/%E3%83%90%E3%82%A4%E3%82%AARE2/%E6%94%BB%E7%95%A5%E3%82%AC%E3%82%A4%E3%83%89/%E3%83%80%E3%83%8B%E3%82%A8%E3%83%AB.html)』
+* [ダニエル（保安官）編の攻略のコツ｜「No Way Out」](https://kamigame.jp/%E3%83%90%E3%82%A4%E3%82%AARE2/%E6%94%BB%E7%95%A5%E3%82%AC%E3%82%A4%E3%83%89/%E3%83%80%E3%83%8B%E3%82%A8%E3%83%AB.html)
 
 ## PS5版にセーブデータを引き継いでトロコンする方法
 
