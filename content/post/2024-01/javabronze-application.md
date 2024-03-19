@@ -7,11 +7,12 @@ categories:
 tags: 
 archives: 
   - 2024/01
-thumbnail: /images/java.png
+thumbnail: /images/java.webp
 ---
 
+今回はIT資格である**Java Bronze**（1Z0-818-JPN）の試験を割安価格で申し込む方法と試験結果を確認する方法についてまとめます。受験形式はテストセンターでCBT方式での受験を想定しています。
 
-今回はIT資格であるJava Bronze（1Z0-818-JPN）の試験を割安価格で申し込む方法と試験結果を確認する方法についてまとめます。受験形式はテストセンターでCBT方式での受験を想定しています。
+<!--more-->
 
 ## 必要なアカウントの登録（Oracle・ピアソンVUE）
 
@@ -68,3 +69,7 @@ CertViewのメニューから「Exam Results」の下にある「Latest PVUE Exa
 * * *
 
 今回はJava Bronzeを受験料を割安値段で申し込む方法を紹介しました。受験予定の方はぜひ利用してみて下さい。以上で記事を終わりにします。
+
+## 参考文献
+
+* [試験申し込みと受験 | オラクル認定資格制度](https://www.oracle.com/jp/education/certification/examinfo-172594-ja.html#take)
