@@ -6,13 +6,15 @@ categories:
   - 技術記事
 tags: 
   - Java
-  - C言語
+  - C
 archives: 
   - 2021/08
-thumbnail: /images/java.png
+thumbnail: /images/java.webp
 ---
 
 今回はプログラミングを始めたい人向けに**ブラウザ上でコードを書く方法**について紹介します。プログラミングサイトの**paiza.io**などについて紹介します。これからプログラミングをやってみたい人向けの記事になります。
+
+<!--more-->
 
 ## プログラミングの実行環境を作るのは大変
 
@@ -45,11 +47,11 @@ paiza.ioという名前ですが、paizaはIT系の就活・学習サイト名�
 
 実際にpaiza.ioを使って、Javaで「こんにちは」と出力するコードをコンパイルして実行してみます。
 
-{{< code lang="java" title="テストコード" >}}
+{{< code lang="java" title="Main.java" >}}
 public class Main {
-    public static void main(String args[]) {
-        System.out.println("こんにちは");
-    }
+  public static void main(String args[]) {
+    System.out.println("こんにちは");
+  }
 }
 {{< /code >}}
 
