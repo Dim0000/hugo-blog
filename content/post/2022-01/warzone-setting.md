@@ -2,7 +2,6 @@
 title: 【CoD:Warzone Pacific】おすすめ設定まとめ【MixAmp】
 description: 「CoD:Warzone Pacific」のおすすめのゲーム設定をまとめておこうと思います。また、MixAmpのイコライザ設定も併せて紹介していきます。デバイスはPS5・純正コントローラーを想定しています。
 date: 2022-01-31
-lastmod: 2023-11-02
 categories: 
   - 雑記
 tags: 
@@ -10,11 +9,12 @@ tags:
   - MixAmp
 archives: 
   - 2022/01
-thumbnail: /images/game.png
-# draft: false
+thumbnail: /images/game.webp
 ---
 
 「**CoD:Warzone Pacific**」のおすすめの**ゲーム設定**をまとめておこうと思います。また、MixAmpのイコライザ設定も併せて紹介していきます。デバイスはPS5・純正コントローラーを想定しています。
+
+<!--more-->
 
 なお、ゲーム内設定では紹介が必要なさそうな一部項目は飛ばしています。
 
