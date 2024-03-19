@@ -2,7 +2,6 @@
 title: 【CoD:MW2】おすすめ設定・イコライザまとめ【Warzone2】
 description: CoD:MW2及びWarzone 2のおすすめゲーム内設定をまとめました。また、MixAmpのイコライザ設定も載せておきます。
 date: 2022-11-03
-lastmod: 2023-10-26
 categories: 
   - 雑記
 tags: 
@@ -10,11 +9,12 @@ tags:
   - MixAmp
 archives: 
   - 2022/11
-thumbnail: /images/game.png
-# draft: false
+thumbnail: /images/game.webp
 ---
 
 **CoD:MW2**及び**Warzone 2**のおすすめゲーム内設定をまとめました。また、MixAmpのイコライザ設定も載せておきます。
+
+<!--more-->
 
 必須レベルの設定は**太字**で書いているので参考にしてみて下さい。一部、特に解説が必要なさそうな設定は割愛しています。
 
