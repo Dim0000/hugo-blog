@@ -2,18 +2,18 @@
 title: 【JavaScript】変数varは使わない方が良い理由【const・let】
 description: 今回はJavaScriptの変数型var・let・constについて、varの使用が非推奨とされる理由について、各変数宣言の特徴や巻き上げなどの観点からまとめていきます。
 date: 2022-09-05
-lastmod: 2023-10-27
 categories: 
   - 技術記事
 tags: 
   - JavaScript
 archives: 
   - 2022/09
-thumbnail: /images/javascript.png
-# draft: false
+thumbnail: /images/javascript.webp
 ---
 
 今回はJavaScriptの変数型`var`・`let`・`const`について、`var`の使用が非推奨とされる理由について、各変数宣言の特徴や巻き上げなどの観点からまとめていきます。
+
+<!--more-->
 
 ## JavaScriptの変数宣言の特徴
 
@@ -27,7 +27,7 @@ const c;
 
 それぞれの特徴について見てみましょう。
 
-||`var`|`let`|`const`|
+||var|let|const|
 | :---: | :---: | :---: | :---: |
 |再代入|○|○|×|
 |再宣言|○|×|×|
