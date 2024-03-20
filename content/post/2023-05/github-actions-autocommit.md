@@ -2,18 +2,18 @@
 title: 【GitHub Actions】定期的に自動コミット・プッシュを行う
 description: 今回はGitHub Actionsを使い、毎日自動でコミットとプッシュを行うように設定してみます。
 date: 2023-05-20
-lastmod: 2023-10-21
 categories: 
   - 技術記事
 tags: 
   - GitHub
 archives: 
   - 2023/05
-thumbnail: /images/github.png
-# draft: false
+thumbnail: /images/github.webp
 ---
 
 今回は`GitHub Actions`を使い、毎日自動でコミットとプッシュを行うように設定してみます。
+
+<!--more-->
 
 ## やりたいこと
 
