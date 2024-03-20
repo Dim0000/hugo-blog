@@ -2,18 +2,18 @@
 title: 【Java】ランダムな文字列（パスワード）を生成してみる
 description: 今回はJavaでランダムな文字列（パスワード）を生成するプログラムを書いてみたいと思います。
 date: 2022-05-18
-lastmod: 2023-11-01
 categories:
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/05
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回はJavaでランダムな文字列（パスワード）を生成するプログラムを書いてみたいと思います。
+
+<!--more-->
 
 ## 実装したいこと
 
@@ -37,7 +37,7 @@ thumbnail: /images/java.png
 </ul>
 {{< /box >}}
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="MakePassword.java" >}}
 import java.util.Random;
 
 public class MakePassword {
