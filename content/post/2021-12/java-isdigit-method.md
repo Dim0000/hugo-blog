@@ -2,25 +2,25 @@
 title: 【Java】isDigitメソッドで文字が数字かどうか判定する方法
 description: CharacterクラスのisDigitメソッドを使うことで、文字が数字かどうかの判定が出来ます。メソッドの書式・使用例の紹介と、String型文字列から全ての数字を抽出する方法についてまとめます。
 date: 2021-12-15
-lastmod: 2023-11-02
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/12
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 `Characterクラス`の`isDigitメソッド`を使うことで、文字が数字かどうかの判定が出来ます。メソッドの書式・使用例の紹介と、`String型文字列`から全ての数字を抽出する方法についてまとめます。
+
+<!--more-->
 
 ## isDigitメソッドの書式
 
 `isDigitメソッド`は、以下の様に記述します。
 
 {{< code lang="java" title="isDigitメソッドの書式例" >}}
-Character.isDigit(文字);
+Character.isDigit(char ch);
 {{< /code >}}
 
 引数の文字を比較して数字（0~9のみで構成される）であれば`ture`、そうでなければ`false`を返します。戻り値の型は`boolean型`です。
@@ -39,8 +39,8 @@ Character.isDigit(文字);
 
 `isDigitメソッド`の使用例をサンプルコードで紹介します。
 
-{{< code lang="java" title="サンプルコード" >}}
-public class IsDigitTest_1 {
+{{< code lang="java" title="IsDigitTest1.java" >}}
+public class IsDigitTest1 {
   public static void main(String[] args) {
 
     // 0,Aがそれぞれ数字かどうか判定する
@@ -79,8 +79,8 @@ Aの数値判定:false
 </ul>
 {{< /box >}}
 
-{{< code lang="java" title="サンプルコード" >}}
-public class IsDigitTest_2 {
+{{< code lang="java" title="IsDigitTest2.java" >}}
+public class IsDigitTest2 {
   public static void main(String[] args) {
     String str = "abc123def";
     char[] c = str.toCharArray();
