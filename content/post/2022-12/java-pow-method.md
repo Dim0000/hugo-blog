@@ -2,18 +2,18 @@
 title: 【Java】powメソッドでべき乗（累乗）を求める方法
 description: Javaでべき乗（累乗）を求めるには、Mathクラスのpowメソッドが便利です。 メソッドの使い方などを紹介していきます。
 date: 2022-12-20
-lastmod: 2023-10-19
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/12 
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 Javaで**べき乗**（累乗）を求めるには、`Mathクラス`の`powメソッド`が便利です。 メソッドの使い方などを紹介していきます。
+
+<!--more-->
 
 べき乗とは、\\(a^{n}\\)のような\\(a\\)の\\(n\\)乗で表せる数のことです。
 
@@ -28,10 +28,10 @@ Javaで**べき乗**（累乗）を求めるには、`Mathクラス`の`powメ�
 `powメソッド`は以下の様に記述します。
 
 {{< code lang="java" title="powメソッドの書式" >}}
-Math.pow(底, 指数);
+Math.pow(double a, double b);
 {{< /code >}}
 
-底を`10`、指数を`2`とすると、\\(10^{2}=100\\)なので、戻り値は`100.0`が返されます。また、戻り値は`double型`で返されます。
+`a`が底、`b`が指数になります。底を`10`、指数を`2`とすると、\\(10^{2}=100\\)なので、戻り値は`100.0`が返されます。また、戻り値は`double型`で返されます。
 
 底か指数が`NaN`の場合は`NaN`が返されます。指数が`0`の場合は`1.0`が返されます。
 
@@ -39,7 +39,7 @@ Math.pow(底, 指数);
 
 べき乗を求めるサンプルプログラムを、`for文`を使うパターンと`powメソッド`を使うパターンの両方でサンプルコードで示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="PowTest.java" >}}
 public class PowTest {
   public static void main(String[] args) {
     // for文で5の3乗を求める
