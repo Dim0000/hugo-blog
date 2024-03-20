@@ -2,18 +2,18 @@
 title: 【Java】LocalDateクラスで日付を加算・減算する方法
 description: 今回はJavaのLocalDateクラスで日付の加算と減算を行う方法について紹介します。
 date: 2022-04-07
-lastmod: 2023-11-01
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/04
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回はJavaの`LocalDateクラス`で**日付の加算と減算**を行う方法について紹介します。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -28,7 +28,7 @@ thumbnail: /images/java.png
 書式については、以下の様に記述します。`plusDaysメソッド`を例に紹介します。
 
 {{< code lang="java" title="plusDaysメソッドの記述例" >}}
-変数名.plusDays(数字);
+LocalDate localdate.plusDays(long l);
 {{< /code >}}
 
 上では、`LocalDateクラス`の変数に数字分の日にちを加算しています。
@@ -39,7 +39,7 @@ thumbnail: /images/java.png
 
 それぞれのメソッドの使用例をサンプルコードで紹介します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="LocalDateTest.java" >}}
 import java.time.LocalDate;
 
 public class LocalDateTest {
