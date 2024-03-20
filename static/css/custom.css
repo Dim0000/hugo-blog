@@ -193,3 +193,8 @@ input {
 th {
   background-color: #ecf5ff;
 }
+
+.ranking-pv {
+  font-size: smaller;
+  float: right;
+}
