@@ -1,28 +1,26 @@
 ---
 title: 【Java】isLowerCaseメソッドで小文字かどうか判定する
-description: CharacterクラスのisLowerCaseメソッドを使うことで、文字が小文字のアルファベットかどうかか判定することが出来ます。
+description: CharacterクラスのisLowerCaseメソッドを使うことで、文字が小文字のアルファベットかどうかか判定することが出来ます。メソッドの使い方を紹介していきます。
 date: 2022-05-04
-lastmod: 2023-11-01
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/05
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
-`Characterクラス`の`isLowerCaseメソッド`を使うことで、**文字が小文字のアルファベットかどうかか判定する**ことが出来ます。
+`Characterクラス`の`isLowerCaseメソッド`を使うことで、**文字が小文字のアルファベットかどうかか判定する**ことが出来ます。メソッドの使い方を紹介していきます。
 
-メソッドの使い方を紹介していきます。
+<!--more-->
 
 ## isLowerCaseメソッドの書式
 
 `isLowerCaseメソッド`は、以下の様に記述します。
 
 {{< code lang="java" title="isLowerCaseメソッドの書式例" >}}
-Character.isDigit(文字);
+Character c.isDigit(int i);
 {{< /code >}}
 
 戻り値の型は`boolean型`で、文字を比較して小文字であれば`ture`そうでなければ`false`を返します。
@@ -33,7 +31,7 @@ Character.isDigit(文字);
 
 実際に、メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="IsLowerCaseTest.java" >}}
 public class IsLowerCaseTest {
   public static void main(String[] args) {
     // それぞれ小文字かどうか判定する
