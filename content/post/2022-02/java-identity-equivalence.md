@@ -2,18 +2,18 @@
 title: 【Java】変数における同一性と同値性の違いを解説
 description: 今回はJavaの変数における同一性と同値性の違いについて、分かりやすくまとめてみたいと思います。
 date: 2022-02-25
-lastmod: 2023-11-02
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/02
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回はJavaの変数における**同一性**と**同値性**の違いについて、分かりやすくまとめてみたいと思います。
+
+<!--more-->
 
 ## 同一性とは
 
@@ -39,7 +39,7 @@ String str4 = "abc";
 
 同一性であるかを判定するのには、`==演算子`を使います。サンプルコードに同一性を判定するコードを書いてみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="IdentityTest.java" >}}
 public class IdentityTest {
   public static void main(String[] args) {
     // str1とstr2が同一であるか判定する
