@@ -2,18 +2,18 @@
 title: 【Java】int型⇔String型の変換方法まとめ【推奨方法】
 description: 今回はint型とString型の変換の方法について紹介します。方法は複数ありますが一番ノーマルで推奨されるやり方のみ取り上げます。
 date: 2022-06-30
-lastmod: 2023-10-31
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/06
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回は`int型`と`String型`の変換の方法について紹介します。方法は複数ありますが一番ノーマルで推奨されるやり方のみ取り上げます。
+
+<!--more-->
 
 ## int型→String型への変換方法
 
@@ -44,7 +44,7 @@ int num = Integer.parseInt("a");
 
 上記の2つのメソッドの使用例をサンプルコードで示します。変数の型は`Classオブジェクト`の`getSimpleNameメソッド`で確認します。このメソッドは参照型のみ扱われるため、`int型`の判定は`Object型`にキャストを行っています。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="IntStringTest.java" >}}
 public class IntStringTest {
   public static void main(String[] args) {
     String str1 = "123";
