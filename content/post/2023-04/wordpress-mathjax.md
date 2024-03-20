@@ -11,10 +11,12 @@ tags:
   - Hugo
 archives:
   - 2023/04 
-thumbnail: /images/mathjax.png
+thumbnail: /images/mathjax.webp
 ---
 
 JavaScriptプラグインである**MathJax**を使い、プラグイン無しでWordPressやHugoで簡単に数式を表示させる方法について解説していきます。
+
+<!--more-->
 
 ## WordPressでMathJaxを使う方法
 
