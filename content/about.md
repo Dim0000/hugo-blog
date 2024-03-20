@@ -7,10 +7,12 @@ categories:
   - 雑記
 tags: 
   - ブログ運営
-thumbnail: /images/blog.png
+thumbnail: /images/blog.webp
 ---
 
 このページでは当サイトについて、ブログの目的などを紹介したいと思います。
+
+<!--more-->
 
 ページのコンテンツに関しては随時更新していく予定です。
 
