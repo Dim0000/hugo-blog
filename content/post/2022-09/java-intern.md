@@ -2,18 +2,18 @@
 title: 【Java】internメソッドの仕組みをまとめる【コンスタントプール】
 description: 今回はStringクラスのinternメソッドについて、その機能と役割をまとめます。
 date: 2022-09-11
-lastmod: 2023-10-27
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/09
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回は`Stringクラス`の`internメソッド`について、その機能と役割をまとめます。
+
+<!--more-->
 
 ## internメソッドの機能と書式例
 
@@ -32,7 +32,7 @@ thumbnail: /images/java.png
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="InternTest.java" >}}
 public class InternTest {
   public static void main(String[] args) {
     String s1 = new String("123");
