@@ -2,18 +2,18 @@
 title: 【Java】toCharArrayメソッドで文字列を配列に分割する
 description: 今回はJavaのtoCharArrayメソッドを使って、String型の文字列をChar型の配列に変換する方法についてまとめていきます。
 date: 2021-11-13
-lastmod: 2023-11-02
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2021/11
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回はJavaの`toCharArrayメソッド`を使って、`String型`の文字列を`Char型`の配列に変換する方法についてまとめていきます。
+
+<!--more-->
 
 ## toCharArrayメソッドの書式
 
@@ -31,7 +31,7 @@ cArray = str.toCharArray();
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="ToCharArrayTest.java" >}}
 public class ToCharArrayTest {
   public static void main(String[] args) {
     String str1 = "hello";
@@ -47,6 +47,7 @@ public class ToCharArrayTest {
     for (char c : cArray) {
       System.out.print(c);
     }
+    System.out.println();
   }
 }
 {{< /code >}}
