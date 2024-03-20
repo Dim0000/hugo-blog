@@ -2,18 +2,18 @@
 title: 【Java】配列の中身を文字列で出力する方法【1次元・多次元配列】
 description: 配列の中身を文字列に置き換えるには、ArrayクラスのtoStringメソッドとdeeptoStringメソッドを使います。今回は配列の要素を文字列に置き換えて出力する方法について紹介します。
 date: 2022-07-01
-lastmod: 2023-10-31
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/07
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 配列の中身を文字列に置き換えるには、`Arrayクラス`の`toStringメソッド`と`deeptoStringメソッド`を使います。今回は配列の要素を文字列に置き換えて出力する方法について紹介します。
+
+<!--more-->
 
 ## メソッドの書式
 
@@ -21,9 +21,10 @@ thumbnail: /images/java.png
 
 {{< code lang="java" title="メソッドの書式" >}}
 // toStringメソッドの書式例
-Arrays.toString(配列);
+Arrays.toString(Object[] obj);
+
 // deepToStringメソッドの書式例
-Arrays.deepToString(配列);
+Arrays.deepToString(Object[] obj);
 {{< /code >}}
 
 `toStringメソッド`を使うことで配列を文字列に置き換えることができます。`deepToStringメソッド`では多次元配列（2次元以上の配列）を文字列に置き換えることができます。
@@ -33,6 +34,7 @@ Arrays.deepToString(配列);
 {{< code lang="java" title="メソッドの書式" >}}
 // 1次元配列
 String[] str1 = { "10", "20", "30" };
+
 // 2次元配列
 String[][] str2 = { { "10", "20", "30" }, { "40", "50", "60" } };
 {{< /code >}}
