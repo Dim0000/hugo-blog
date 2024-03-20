@@ -2,18 +2,18 @@
 title: 【Java】浮動小数点数のfloat型とdouble型の違いとは?
 description: 今回はJavaの小数を扱う変数型のfloat型とdouble型の違いについてまとめていきます。
 date: 2022-03-27
-lastmod: 2023-11-02
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/03
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回はJavaの小数を扱う変数型の`float型`と`double型`の違いについてまとめていきます。
+
+<!--more-->
 
 ## float型とdouble型の違い
 
@@ -44,7 +44,7 @@ float num = 1.0f;
 
 実際にそれぞれの値の範囲をサンプルコードで出力してみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="DoubleFloatMaxMinTest.java" >}}
 public class DoubleFloatMaxMinTest {
   public static void main(String[] args) {
     // double型の最大値と最小値
