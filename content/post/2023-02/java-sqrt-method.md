@@ -2,18 +2,18 @@
 title: 【Java】sqrtメソッドで平方根（ルート√）を求める方法
 description: Javaで平方根を求めるにはMathクラスのsqrtメソッドが便利です。今回はsqrtメソッドの使い方と、メソッドを使わず平方根を求める方法を紹介しています。
 date: 2023-02-11
-lastmod: 2023-10-25
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2023/02
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 Javaで**平方根**を求めるには`Mathクラス`の`sqrtメソッド`が便利です。今回は`sqrtメソッド`の使い方と、メソッドを使わず平方根を求める方法を紹介しています。
+
+<!--more-->
 
 平方根とは数\\(a\\)があるとき、2乗して\\(a\\)になるような数のことを指します。つまり\\(x^{2}=a\\)を満たす数\\(x\\)が\\(a\\)の平方根になります。
 
@@ -22,7 +22,7 @@ Javaで**平方根**を求めるには`Mathクラス`の`sqrtメソッド`が便
 `sqrtメソッド`は以下の様に記述します。
 
 {{< code lang="java" title="sqrtメソッドの書式" >}}
-Math.sqrt(数値);
+Math.sqrt(double a);
 Math.sqrt(4); // 2が返る
 {{< /code >}}
 
@@ -36,8 +36,8 @@ Math.sqrt(4); // 2が返る
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="サンプルコード" >}}
-public class SqrtTest_1 {
+{{< code lang="Java" title="SqrtTest1.java" >}}
+public class SqrtTest1 {
   public static void main(String[] args) {
     System.out.println("4の平方根:" + Math.sqrt(4));
     System.out.println("9.0の平方根:" + Math.sqrt(9.0));
@@ -78,8 +78,8 @@ NaNの平方根:NaN
 
 例として、10の平方根を求めるサンプルコードを以下に示します。近似の回数は最大1000回にしています。また、`double型`は誤差が発生するので、アルゴリズム2.の比較時は差がある程度の数値を下回るかどうかで判定します。
 
-{{< code lang="java" title="サンプルコード" >}}
-public class SqrtTest_2 {
+{{< code lang="java" title="SqrtTest2.java" >}}
+public class SqrtTest2 {
   public static void main(String[] args) {
     double x = 10;
     double num1 = 0;
