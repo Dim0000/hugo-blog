@@ -197,4 +197,11 @@ th {
 .ranking-pv {
   font-size: smaller;
   float: right;
+  background-color: #ecf5ff;
+  border-radius: 0.9375rem;
+  padding: 0.0625rem 0.3125rem;
+}
+
+.widget__item {
+  overflow: hidden;
 }
