@@ -20,7 +20,7 @@ thumbnail: /images/java.webp
 `isLowerCaseメソッド`は、以下の様に記述します。
 
 {{< code lang="java" title="isLowerCaseメソッドの書式例" >}}
-Character c.isDigit(int i);
+Character.isDigit(int i);
 {{< /code >}}
 
 戻り値の型は`boolean型`で、文字を比較して小文字であれば`ture`そうでなければ`false`を返します。

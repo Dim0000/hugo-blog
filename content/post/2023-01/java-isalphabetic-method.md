@@ -2,25 +2,25 @@
 title: 【Java】isAlphabeticメソッドで文字が英数字か調べる方法
 description: CharacterクラスのisAlphabeticメソッドを使うことで、文字がアルファベットかそうではないのか判定することが出来ます。メソッドの使い方についてまとめていきます。
 date: 2023-01-24
-lastmod: 2023-10-25
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2023/01
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 `Characterクラス`の`isAlphabeticメソッド`を使うことで、文字がアルファベットかそうではないのか判定することが出来ます。メソッドの使い方についてまとめていきます。
+
+<!--more-->
 
 ## isAlphabeticメソッドの書式
 
 `isAlphabeticメソッド`は、以下の様に記述します。
 
 {{< code lang="java" title="isAlphabeticメソッドの書式" >}}
-Character.isAlphabetic(文字);
+Character.isAlphabetic(int i);
 {{< /code >}}
 
 文字を比較してアルファベットであれば`ture`、そうでなければ`false`を返します。戻り値の型は`boolean型`です。
@@ -29,7 +29,7 @@ Character.isAlphabetic(文字);
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="IsAlphabeticTest.java" >}}
 public class IsAlphabeticTest {
   public static void main(String[] args) {
     // a,0をそれぞれアルファベットかどうか判定する
