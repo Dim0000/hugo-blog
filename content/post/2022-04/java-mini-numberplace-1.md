@@ -2,18 +2,18 @@
 title: 【Java】ランダムなミニナンプレをプログラムで作ってみる
 description: 今回はJavaを使って4×4のミニナンプレをランダムに生成するプログラムを書いてみます。
 date: 2022-04-02
-lastmod: 2023-11-02
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/04
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 今回はJavaを使って4×4の**ミニナンプレ**をランダムに生成するプログラムを書いてみます。
+
+<!--more-->
 
 {{< box "関連記事" >}}
 <ul>
@@ -75,7 +75,7 @@ $$
 
 実際にできたコードが下になります。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="MakeMiniNumberPlace.java" >}}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -173,6 +173,90 @@ public class MakeMiniNumberPlace {
 
 完成表が出力されました。`count`は5000～10000になることが多かったですね。前回よりシャッフル回数も格段に少ないことが分かります。こちらの方が条件が緩いので、完成表を求めるのに試行回数が少なく済んでいます。
 
+## ミニナンプレの問題を作るプログラム
+
+次は、今回得た表からどうやってミニナンプレを作るか検討していきます。完成表から10個穴を開けるやり方で実装してみます。
+
+実際にできたコードが下になります。
+
+{{< code lang="java" title="PunchMiniNumberPlace.java" >}}
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class PunchMiniNumberPlace {
+
+  /** 魔方陣の問題を格納する配列 */
+  int[][] originalArray;
+
+  /** 魔方陣の問題を格納する配列 */
+  int[][] probArray;
+
+  List<Integer> list = new ArrayList<Integer>();
+
+  /** 実行用mainメソッド */
+  public static void main(String[] args) {
+    PunchMiniNumberPlace pMiniNumberPlace = new PunchMiniNumberPlace();
+    pMiniNumberPlace.originalArray = new int[][] { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 4, 3, 2, 1 }, { 2, 1, 4, 3 } };
+    pMiniNumberPlace.probArray = new int[4][4];
+    pMiniNumberPlace.execute();
+    pMiniNumberPlace.showArray();
+  }
+
+  /** ミニナンプレの問題を作る */
+  private void execute() {
+    // 0に置き換える箇所を決める
+    for (int i = 0; i <= 15; i++) {
+      list.add(i);
+    }
+    Collections.shuffle(list);
+
+    for (int i = 0, x = 0; i < 4; i++) {
+      for (int j = 0; j < 4; j++) {
+        if (x == list.get(0) || x == list.get(1) || x == list.get(2) || x == list.get(3) || x == list.get(4)
+            || x == list.get(5)) {
+          probArray[i][j] = originalArray[i][j];
+        } else {
+          probArray[i][j] = 0;
+        }
+        x++;
+      }
+    }
+  }
+
+  /** 配列を数表形式で出力する */
+  private void showArray() {
+    for (int[] a : originalArray) {
+      for (int i : a) {
+        System.out.printf("%3d", i);
+      }
+      System.out.println();
+    }
+    System.out.println();
+    for (int[] a : probArray) {
+      for (int i : a) {
+        System.out.printf("%3d", i);
+      }
+      System.out.println();
+    }
+  }
+}
+{{< /code >}}
+
+{{< code lang="plaintext" title="出力結果（一例）" >}}
+  1  2  3  4
+  3  4  1  2
+  4  3  2  1
+  2  1  4  3
+
+  0  0  0  4
+  3  0  0  0
+  4  3  0  0
+  0  0  4  3
+{{< /code >}}
+
+完成表から10個のマスを0に変換した数表が出力されました。
+
 ## ミニナンプレの問題を解くプログラム
 
 次に、下の数表のように、ミニナンプレの空白の部分を0とした数列が与えられたとき、そこからミニナンプレを完成させるプログラムを完成させます。
@@ -186,7 +270,7 @@ public class MakeMiniNumberPlace {
 
 実際にできたコードが下になります。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="CalcMiniNumberPlace.java" >}}
 import java.util.HashSet;
 import java.util.Set;
 
@@ -307,89 +391,7 @@ public class CalcMiniNumberPlace {
   2  1  4  3
 {{< /code >}}
 
-## ミニナンプレの問題を作るプログラム
-
-次は、今回得た表からどうやってミニナンプレを作るか検討していきます。完成表から10個穴を開けるやり方で実装してみます。
-
-
-実際にできたコードが下になります。
-
-{{< code lang="java" title="サンプルコード" >}}
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-public class PunchMiniNumberPlace {
-
-  /** 魔方陣の問題を格納する配列 */
-  int[][] originalArray;
-
-  /** 魔方陣の問題を格納する配列 */
-  int[][] probArray;
-
-  List<Integer> list = new ArrayList<Integer>();
-
-  /** 実行用mainメソッド */
-  public static void main(String[] args) {
-    PunchMiniNumberPlace pMiniNumberPlace = new PunchMiniNumberPlace();
-    pMiniNumberPlace.originalArray = new int[][] { { 1, 2, 3, 4 }, { 3, 4, 1, 2 }, { 4, 3, 2, 1 }, { 2, 1, 4, 3 } };
-    pMiniNumberPlace.probArray = new int[4][4];
-    pMiniNumberPlace.execute();
-    pMiniNumberPlace.showArray();
-  }
-
-  /** ミニナンプレの問題を作る */
-  private void execute() {
-    // 0に置き換える箇所を決める
-    for (int i = 0; i <= 15; i++) {
-      list.add(i);
-    }
-    Collections.shuffle(list);
-
-    for (int i = 0, x = 0; i < 4; i++) {
-      for (int j = 0; j < 4; j++) {
-        if (x == list.get(0) || x == list.get(1) || x == list.get(2) || x == list.get(3) || x == list.get(4)
-            || x == list.get(5)) {
-          probArray[i][j] = originalArray[i][j];
-        } else {
-          probArray[i][j] = 0;
-        }
-        x++;
-      }
-    }
-  }
-
-  /** 配列を数表形式で出力する */
-  private void showArray() {
-    for (int[] a : originalArray) {
-      for (int i : a) {
-        System.out.printf("%3d", i);
-      }
-      System.out.println();
-    }
-    System.out.println();
-    for (int[] a : probArray) {
-      for (int i : a) {
-        System.out.printf("%3d", i);
-      }
-      System.out.println();
-    }
-  }
-}
-
-{{< /code >}}
-
-{{< code lang="plaintext" title="出力結果（一例）" >}}
-  1  2  3  4
-  3  4  1  2
-  4  3  2  1
-  2  1  4  3
-
-  0  0  0  4
-  3  0  0  0
-  4  3  0  0
-  0  0  4  3
-{{< /code >}}
+完成された数表が出力されました。
 
 * * *
 
