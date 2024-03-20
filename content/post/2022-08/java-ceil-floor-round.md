@@ -2,18 +2,18 @@
 title: 【Java】小数点の切り上げ・切り捨て・四捨五入をするメソッド
 description: double型などの変数で小数点以下を丸めて整数にする時は、Mathクラスのceil・floor・roundメソッドを使います。それぞれのメソッドの処理についてまとめていきます。
 date: 2022-08-04
-lastmod: 2023-10-29
 categories: 
   - 技術記事
 tags: 
   - Java
 archives: 
   - 2022/08
-thumbnail: /images/java.png
-# draft: false
+thumbnail: /images/java.webp
 ---
 
 `double型`などの変数で小数点以下を丸めて整数にする時は、`Mathクラス`の`ceil`・`floor`・`roundメソッド`を使います。それぞれのメソッドの処理についてまとめていきます。
+
+<!--more-->
 
 ## それぞれのメソッドの処理
 
@@ -24,7 +24,7 @@ thumbnail: /images/java.png
 `ceilメソッド`は小数の**切り上げ**（対象の数値以上の中で最も小さい整数値を返す）を行います。戻り値は`double型`で返されます。
 
 {{< code lang="java" title="ceilメソッドの書式例" >}}
-Math.ceil(1.5);// 2.0が返ってくる
+Math.ceil(1.5); // 2.0が返ってくる
 {{< /code >}}
 
 引数が`NaN`、無限大、正または負の0、の場合は、引数と同じ値が返されます。
@@ -34,7 +34,7 @@ Math.ceil(1.5);// 2.0が返ってくる
 `floorメソッド`は小数の**切り捨て**（対象の数値以下の中で最も大きい整数値を返す）を行います。戻り値は`double型`で返されます。
 
 {{< code lang="java" title="floorメソッドの書式例" >}}
-Math.floor(1.5);// 1.0が返ってくる
+Math.floor(1.5); // 1.0が返ってくる
 {{< /code >}}
 
 引数が`NaN`、無限大、正または負の0、の場合は、引数と同じ値が返されます。
@@ -44,7 +44,7 @@ Math.floor(1.5);// 1.0が返ってくる
 `roundメソッド`は小数を**小数第1位で四捨五入**します。戻り値は`int`・`long型`で返されます。`double型`の場合は`long型`で、`float型`の場合は`int型`の返り値になります。上2つのメソッドとは返り値の型が異なるので注意しましょう。
 
 {{< code lang="java" title="roundメソッドの書式例" >}}
-Math.round(1.5);// 2が返ってくる
+Math.round(1.5); // 2が返ってくる
 {{< /code >}}
 引数が`NaN`の場合は0が返されます。
 
@@ -52,7 +52,7 @@ Math.round(1.5);// 2が返ってくる
 
 それぞれのメソッドの使用例をサンプルコードで示します。小数第2位以下で四捨五入を行いたい時は、一度桁上げを行ってから四捨五入し、その後桁下げをする必要があります。
 
-{{< code lang="java" title="サンプルコード" >}}
+{{< code lang="java" title="RealNumTest.java" >}}
 public class RealNumTest {
   public static void main(String[] args) {
     double d1 = 0.5;
