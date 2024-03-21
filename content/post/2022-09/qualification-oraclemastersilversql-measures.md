@@ -116,67 +116,19 @@ ALTER SESSION SET <パラメータ名> = <設定値>;
 
 * 主なデータ型は以下
 
-{{< rawhtml >}}
-<table>
-<tr>
-<th>データ型名</th>
-<th>内容</th>
-</tr>
-<tbody>
-<tr>
-<td><code>NUMBER</code></td>
-<td>整数と小数
-</br>NUMBER(n)　n桁の整数（n:1~38）
-</br>NUMBER(n,m)　最大桁数n、小数点以下の最大桁数mの整数・小数</td>
-</tr>
-<tr>
-<td><code>CHAR(n)</code></td>
-<td>サイズがnバイト固定長の文字列（n:1~2000）
-</br>nは省略可能（省略時は1）
-</br>n未満の文字列を入れた場合、空白埋めされる</td>
-</tr>
-<tr>
-<td><code>VARCHAR2(n)</code></td>
-<td>最大サイズがnバイトの文字列（n:1~4000）
-</br>nの指定必須</td>
-</tr>
-<tr>
-<td><code>BLOB</code></td>
-<td>最大128テラバイトのバイナリデータ</td>
-</tr>
-<tr>
-<td><code>CLOB</code></td>
-<td>最大128テラバイトの文字列</td>
-</tr>
-<tr>
-<td><code>DATE</code></td>
-<td>日付と時刻（小数秒を含まない）
-</br>年・月・日・時・分・秒を格納できる</td>
-</tr>
-<tr>
-<td><code>TIMESTAMP</code></td>
-<td>日付と時刻（小数秒を含む）
-</br>年・月・日・時・分・秒・小数秒を格納できる</td>
-</tr>
-<tr>
-<td><code>TIMESTAMP WITH TIME ZONE</code></td>
-<td>日付と時刻（小数秒を含む）とタイムゾーン情報</td>
-</tr>
-<tr>
-<td><code>TIMESTAMP WITH LOCAL TIME ZONE</code></td>
-<td>正規化された日付と時刻（小数秒を含む）</td>
-</tr>
-<tr>
-<td><code>INTERVAL YEAR TO MONTH</code></td>
-<td>年月の時間間隔</td>
-</tr>
-<tr>
-<td><code>INTERVAL DAY TO SECOND</code></td>
-<td>日時分秒の時間間隔</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
+|データ型名|内容|
+| :---: | :---: |
+|`NUMBER`|整数と小数</br>NUMBER(n)　n桁の整数（n:1~38）</br>NUMBER(n,m)　最大桁数n、小数点以下の最大桁数mの整数・小数|
+|`CHAR(n)`|サイズがnバイト固定長の文字列（n:1~2000）</br>nは省略可能（省略時は1）</br>n未満の文字列を入れた場合、空白埋めされる|
+|`VARCHAR2(n)`|最大サイズがnバイトの文字列（n:1~4000）</br>nの指定必須|
+|`BLOB`|最大128テラバイトのバイナリデータ|
+|`CLOB`|最大128テラバイトの文字列|
+|`DATE`|日付と時刻（小数秒を含まない）</br>年・月・日・時・分・秒を格納できる|
+|`TIMESTAMP`|日付と時刻（小数秒を含む）</br>年・月・日・時・分・秒・小数秒を格納できる|
+|`TIMESTAMP WITH TIME ZONE`|日付と時刻（小数秒を含む）とタイムゾーン情報|
+|`TIMESTAMP WITH LOCAL TIME ZONE`|正規化された日付と時刻（小数秒を含む）|
+|`INTERVAL YEAR TO MONTH`|年月の時間間隔|
+|`INTERVAL DAY TO SECOND`|日時分秒の時間間隔|
 
 ### DESCRIBEコマンド
 
@@ -186,29 +138,11 @@ ALTER SESSION SET <パラメータ名> = <設定値>;
 
 * コマンドで確認できる要素は以下
 
-{{< rawhtml >}}
-<table>
-<tr>
-<th>列名</th>
-<th>内容</th>
-</tr>
-<tbody>
-<tr>
-<td>名前</td>
-<td>表にある列名</td>
-</tr>
-<tr>
-<td>NULL?</td>
-<td>空白の場合NULLが入力できる
-</br>NOT NULLの場合NULLが入力できない</td>
-</tr>
-<tr>
-<td>型</td>
-<td>データ型と文字サイズ・数値の精度</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
+|列名|内容|
+| :---: | :---: |
+|名前|表にある列名|
+|NULL?|空白の場合NULLが入力できる</br>NOT NULLの場合NULLが入力できない|
+|型|データ型と文字サイズ・数値の精度|
 
 ### 文字リテラル
 
@@ -651,34 +585,11 @@ MERGE INTO <ターゲット表>
 
 * トランザクションの開始・終了の条件は以下
 
-{{< rawhtml >}}
-<table>
-<tr>
-<th>トランザクションの開始</th>
-<th>条件</th>
-</tr>
-<tbody>
-<tr>
-<td>トランザクションの開始</td>
-<td>トランザクションが実行されていない時にDMLを実行
-</br><code>SET TRANSACTION文</code>を実行した時</td>
-</tr>
-<tr>
-<td>トランザクションの終了
-</br>（COMMIT）</td>
-<td><code>COMMIT文</code>を実行
-</br>接続を正常終了した時
-</br>DDLを実行した時</td>
-</tr>
-<tr>
-<td>トランザクションの終了
-</br>（ROLLBACK）</td>
-<td><code>ROLLBACK文</code>を実行
-</br>接続が異常終了した時</td>
-</tr>
-</tbody>
-</table>
-{{< /rawhtml >}}
+|トランザクションの開始|条件|
+| :---: | :---: |
+|トランザクションの開始|トランザクションが実行されていない時にDMLを実行</br>`SET TRANSACTION文`を実行した時|
+|トランザクションの終了</br>（COMMIT）|`COMMIT文`を実行</br>接続を正常終了した時</br>DDLを実行した時|
+|トランザクションの終了</br>（ROLLBACK）|`ROLLBACK文`を実行</br>接続が異常終了した時|
 
 * トランザクション中にセーブポイントを指定すると、トランザクション中にセーブポイントまで戻ることができる
 
