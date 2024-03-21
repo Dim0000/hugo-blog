@@ -38,7 +38,6 @@ thumbnail: /images/game.webp
 
 MixAmpは光デジタル端子を使わないと性能を発揮できません。しかし、PS5には光デジタル端子がありません。つまり、残念ながら**PS5にはそのままMixAmpは接続できない**ということです。一応USBだけで直刺し接続はできますが、ゲーム音とVC音を個別に調整出来ませんし、音質も悪くなってしまいます。
 
-{{< rawhtml >}}
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
   <script>mermaid.initialize({startOnLoad: true});</script>
   <figure>
@@ -53,7 +52,6 @@ MixAmpは光デジタル端子を使わないと性能を発揮できません�
       <p>PS5とMixAmpをそのまま繋げる場合の配線</p>
     </figcaption>
   </figure>
-{{< /rawhtml >}}
 
 僕自身、PS5でUSB接続でMixAmpを使ってみましたが、PS4で光デジタルケーブルを使ってプレイした時より音の聞こえ加減が悪いので、音質面での違和感が凄い。また、ゲーム音とVC音の個別の調整もできません。どのようにしたら使えるのか…。ちゃんと使えるようにするには、光デジタルをアダプターでHDMI接続に変換する必要があります。
 
@@ -75,7 +73,6 @@ HDMIアダプターは結構小さいです。MixAmpの半分もありません�
 
 実際に、PS5とMixAmpにHDMIアダプターを接続してみましょう。配線を分かりやすく図にするとこんな感じです。
 
-{{< rawhtml >}}
   <figure>
     <div class="mermaid">
     graph LR
@@ -90,7 +87,6 @@ HDMIアダプターは結構小さいです。MixAmpの半分もありません�
       <p>PS5とMixAmpをHDMIアダプターで繋げる場合の配線</p>
     </figcaption>
   </figure>
-{{< /rawhtml >}}
 
 HDMIアダプターに**PS5からのHDMIケーブル**と**MixAmpからのHDMIケーブル**を接続して、アダプターとモニターをHDMIケーブルで結ぶ感じです。
 
