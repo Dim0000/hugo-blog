@@ -6,6 +6,25 @@ This is a miscellaneous blog created with Hugo.
 
 Hugoで作成した雑記ブログです。
 
+## Technologies Used
+
+* Static Site Generator:
+  * Hugo
+
+* Frontend:
+  * HTML5
+  * CSS3
+  * JavaScript
+
+* Backend:
+  * Node.js
+
+* Deployment:
+  * AWS
+    * S3 for hosting
+    * CloudFront for CDN
+    * Route 53 for DNS management
+
 ## Docker command
 
 ### Build Docker images
