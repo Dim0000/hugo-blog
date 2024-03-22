@@ -25,7 +25,9 @@ Hugoで作成した雑記ブログです。
     * CloudFront for CDN
     * Route 53 for DNS management
 
-## Docker command
+* Docker
+
+## Docker Command
 
 ### Build Docker images
 
