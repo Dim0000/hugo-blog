@@ -45,7 +45,7 @@ Hugoで作成した雑記ブログです。
 
 * `docker compose exec hugo hugo new <file> # create new content file in Docker container`
 
-* `docker compose cp hugo:/src/content/<file> . # copy file from Docker container to local directory`
+* `docker compose cp hugo:/src/content/<file> ./<directory> # copy file from Docker container to local directory`
 
 ### Obtain PV ranking
 
