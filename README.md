@@ -1,6 +1,6 @@
 # Hugo-blog
 
-[![s3-upload](https://github.com/Dim0000/hugo-blog/actions/workflows/s3-upload.yml/badge.svg)](https://github.com/Dim0000/hugo-blog/actions/workflows/s3-upload.yml)
+[![deploy](https://github.com/Dim0000/hugo-blog/actions/workflows/deploy.yml/badge.svg)](https://github.com/Dim0000/hugo-blog/actions/workflows/deploy.yml)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Dim0000/hugo-blog/blob/main/LICENSE)
 
 [日本語版 README はこちら](https://github.com/Dim0000/hugo-blog/blob/main/README-ja.md)
