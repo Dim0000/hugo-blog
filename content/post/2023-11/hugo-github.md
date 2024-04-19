@@ -59,10 +59,10 @@ thumbnail: /images/hugo.webp
 
 ## Github Actionsの設定
 
-続いて、Github Actionsの設定です。GitHubリポジトリの`.github/workflows/`ディレクトリに`s3-upload.yml`を配置します。
+続いて、Github Actionsの設定です。GitHubリポジトリの`.github/workflows/`ディレクトリに`deploy.yml`を配置します。Hugoのビルドは「[peaceiris/actions-hugo](https://github.com/peaceiris/actions-hugo)」を使用します。
 
-{{< code lang="yml" title="s3-upload.yml" >}}
-name: s3-upload
+{{< code lang="yml" title="deploy.yml" >}}
+name: deploy
 
 on:
   push:
@@ -70,7 +70,7 @@ on:
       - main
 
 jobs:
-  build: # Hugoビルド
+  deploy:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -81,31 +81,12 @@ jobs:
           submodules: true
           fetch-depth: 0 # enableGitInfoでの取得用
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
           extended: true     
       - name: Build Hugo
         run: hugo --minify --buildFuture
-      - name: upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: public
-          retention-days: 1 # artifactsの保存期間
-  deploy: # S3にデプロイ
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - name: Download artifacts for build
-        uses: actions/download-artifact@v4
-        with:
-          name: my-artifact
-          path: public
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -126,7 +107,7 @@ jobs:
 
 これで設定は完了ですので、実際にGitHubにプッシュし、All workflowsの画面から処理が実行されているのを確認できたら成功です。
 
-{{< luminous src="/images/hugo-github-03.png" caption="GitHubのSecrets設定">}}
+{{< luminous src="/images/hugo-github-03.png" caption="GitHubのAll workflows画面">}}
 
 * * *
 
