@@ -9,7 +9,6 @@ on:
 
 jobs:
   deploy:
-    needs: create-ranking
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
