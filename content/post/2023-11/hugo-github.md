@@ -91,7 +91,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-northeast-1
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role  # ロール名
           role-session-name: GitHubActions-${{ github.run_id }}
           role-duration-seconds: 900
       - name: Upload files to the production website with the AWS CLI
@@ -101,13 +101,15 @@ jobs:
           aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 {{< /code >}}
 
+ここで、`blog_github_action_role`としてる箇所は今回作成したIAMのロール名になります。
+
 また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントID、`S3_BUCKET`にS3バケット名、`DISTRIBUTION_ID`にはディストリビューションIDを設定します。
 
 {{< luminous src="/images/hugo-github-02.png" caption="GitHubのSecrets設定">}}
 
-これで設定は完了ですので、実際にGitHubにプッシュし、All workflowsの画面から処理が実行されているのを確認できたら成功です。
+これで設定は完了ですので、実際にGitHubにプッシュし、GitHub Actionsの画面から処理が実行されているのを確認できたら成功です。
 
-{{< luminous src="/images/hugo-github-03.png" caption="GitHubのAll workflows画面">}}
+{{< luminous src="/images/hugo-github-03.png" caption="GitHub Actions画面">}}
 
 * * *
 
