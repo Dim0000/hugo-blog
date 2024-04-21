@@ -201,7 +201,7 @@ Hugo上では以下の様にしてPVデータを取得できます。例とし�
 
 ## Github Actionsの設定
 
-Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ランキング取得処理も行いたいので、`.github/workflows/`ディレクトリに`create-ranking.yml`を作成します。
+Github Actionsのプッシュ時の自動デプロイ処理の前にランキング取得処理を実行したいので、`deploy.yml`を以下の様に書き換えました。また、1週間に一度自動でランキング取得とデプロイ処理が実行されるように変更します。
 
 {{< box "関連記事" >}}
 <ul>
@@ -209,54 +209,8 @@ Github Actionsのプッシュ時の自動デプロイ処理と一緒に、ラン
 </ul>
 {{< /box >}}
 
-{{< code lang="yml" title="s3-upload.yml" >}}
-name: create-ranking
-
-on:
-  workflow_call:
-    secrets:
-      GOOGLE_ANALYTICS_CREDENTIALS:
-        required: true
-
-jobs:
-  create-ranking: # ランキング生成
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup npm
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-                        ${{ runner.os }}-node-
-      - name: npm Install
-        run: |
-                    npm ci
-      - name: Create Ranking
-        env:
-          GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
-        run: |
-          mkdir .gcp
-          echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
-          npm run create-ranking          
-      - name: Commit and Push
-        run: |
-          git branch
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Create Ranking"
-          git push origin HEAD
-{{< /code >}}
-
-自動デプロイ処理の前にランキング取得処理を実行したいので、併せて`s3-upload.yml`を以下の様に書き換えます。
-
-{{< code lang="yml" title="s3-upload.yml" >}}
-name: s3-upload
+{{< code lang="yml" title="deploy.yml" >}}
+name: deploy
 
 on:
   push:
@@ -266,17 +220,61 @@ on:
     - cron: '0 0 * * 0'
 
 jobs:
-  create-ranking: # ランキング生成
-    uses: ./.github/workflows/create-ranking.yml
-    secrets:
-      GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
-  build: # Hugoビルド
-    needs: create-ranking
+  deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       id-token: write
-      contents: read
-      ...（省略）
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0 # enableGitInfoでの取得用
+      - name: Setup npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+      - name: npm Install
+        run: npm ci
+      - name: Create Ranking
+        env:
+          GOOGLE_ANALYTICS_CREDENTIALS: ${{ secrets.GOOGLE_ANALYTICS_CREDENTIALS }}
+        run: |
+          mkdir .gcp
+          echo "$GOOGLE_ANALYTICS_CREDENTIALS" > .gcp/google-analytics_credentials.json
+          node scripts/create-ranking.js          
+      - name: Commit and Push
+        run: |
+          git branch
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Create Ranking"
+          git push origin HEAD
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "latest"
+          extended: true     
+      - name: Build Hugo
+        run: hugo --minify --buildFuture
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ap-northeast-1
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role # ロール名
+          role-session-name: GitHubActions-${{ github.run_id }}
+          role-duration-seconds: 900
+      - name: Upload files to the production website with the AWS CLI
+        run: |
+          echo "uploding to s3 ..."
+          aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
+          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 {{< /code >}}
 
 また、GitHubのSecrets設定で、`GOOGLE_ANALYTICS_CREDENTIALS`に先ほどダウンロードした鍵の内容を設定します。
