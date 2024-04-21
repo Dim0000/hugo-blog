@@ -277,9 +277,13 @@ jobs:
           aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 {{< /code >}}
 
-また、GitHubのSecrets設定で、`GOOGLE_ANALYTICS_CREDENTIALS`に先ほどダウンロードした鍵の内容を設定します。
+GitHubのSecrets設定で、`GOOGLE_ANALYTICS_CREDENTIALS`に先ほどダウンロードした鍵の内容を設定します。
 
-{{< luminous src="/images/hugo-github-02.png" caption="GitHubのSecrets設定">}}
+{{< luminous src="/images/hugo-github-02.png" caption="GitHub ActionsのSecrets設定">}}
+
+また、自動デプロイ処理中でコミットとプッシュができるように、Actionsの設定の「Workflow permissions」を「Read and write permissions」に設定しておきましょう。
+
+{{< luminous src="/images/hugo-ranking-12.png" caption="GitHub Actionsの書き込み設定">}}
 
 これで、GitHubへのプッシュ時にランキングを取得してからデプロイするようになります。
 
