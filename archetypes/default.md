@@ -6,6 +6,6 @@ categories:
 tags: 
 archives:
     - {{ now.Format "2006/01" }}
-thumbnail: /images/{{.File.BaseFileName}}.png
+thumbnail: /images/app.webp
 ---
 
