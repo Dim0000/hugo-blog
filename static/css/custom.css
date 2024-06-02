@@ -80,6 +80,7 @@ body {
   border-radius: 0.9375rem;
   margin: 1.25rem 0;
   display: flex;
+  overflow: hidden;
 }
 
 .product-link-info {
@@ -88,15 +89,31 @@ body {
 
 .product-link-image {
   text-align: center;
+  background-color: #ecf5ff;
   padding: 1.00rem;
 }
 
 .product-link-title {
   padding: 1.25rem;
+  margin: 0;
 }
 
 .product-link-title a {
   font-weight: normal;
+}
+
+.product-link-price {
+  padding: 0 1.25rem;
+  text-align: right;
+  margin: 0;
+  font-weight: bold;
+  color: red;
+  font-size: large;
+}
+
+.product-link-type {
+  padding: 0 1.25rem 1.25rem;
+  margin: 0;
 }
 
 .profile-icon {

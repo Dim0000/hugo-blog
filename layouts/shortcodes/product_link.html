@@ -21,11 +21,16 @@
       <a href="{{ .url }}" target="_blank">
         {{- .title -}}
       </a>
+    </p>
+    {{- if .price -}}
+    <p class="product-link-price">{{- .price -}}円</p>
+    {{- end -}}
+    <p class="product-link-type">
       {{- if eq .type "amazon" -}}
-      <br><img src="https://www.amazon.co.jp/favicon.ico" width="15px" />
+      <img src="https://www.amazon.co.jp/favicon.ico" width="15px" />
       amazon.co.jp
       {{- else if eq .type "rakuten" -}}
-      <br><img src="https://www.rakuten.co.jp/favicon.ico" width="15px" />
+      <img src="https://www.rakuten.co.jp/favicon.ico" width="15px" />
       rakuten.co.jp
       {{- end -}}
     </p>
