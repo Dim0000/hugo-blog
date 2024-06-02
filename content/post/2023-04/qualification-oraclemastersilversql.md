@@ -18,7 +18,6 @@ thumbnail: /images/oracle.webp
 
 {{< box "関連記事" >}}
 <ul>
-<li>{{< ref "/oraclemastersilver-sql-application" >}}</li>
 <li>{{< ref "/qualification-oraclemastersilversql-measures" >}}</li>
 </ul>
 {{< /box >}}
@@ -61,7 +60,7 @@ thumbnail: /images/oracle.webp
 
 {{< product_link id="it-test:10000192" >}}
 
-* {{< ref "/oraclemastersilver-sql-application" >}}
+* {{< ref "/javasilver-se11-application" >}}
 
 また、Oracleの再受験無料キャンペーンが毎年行われているので、それを利用するのも手ですね。
 
