@@ -1,12 +1,12 @@
 ---
 title: 【VMware Horizon】外部モニターでポインターがズレる時の解決策
 description: VMware Horizon Clientのマルチディスプレイでの使用時に、マウスのポインターの位置がずれる問題についての記事になります。
-date: 2024-03-26
+date: 2023-12-26
 categories: 
   - 技術記事
 tags: 
 archives:
-    - 2024/03
+    - 2023/12
 thumbnail: /images/app.webp
 ---
 
