@@ -10,6 +10,10 @@ tags:
 archives: 
   - 2021/10
 thumbnail: /images/oracle.webp
+aliases:
+    - /oraclemastersilver-sql-application
+    - /oraclemasterbronze-application
+    - /javabronze-application
 ---
 
 今回はIT資格である**Oracleマスター**と**Java**の資格試験を割安価格で申し込む方法と、試験結果を確認する方法についてまとめます。受験形式はテストセンターでCBT方式での受験を想定しています。
@@ -111,7 +115,7 @@ thumbnail: /images/oracle.webp
 
 試験終了時には結果（スコアレポート）が表示されます。また、スコアレポートが欲しい場合はWebで入手することができます。試験後にWebでスコアレポートを見るには「CertView」のサイトからアクセスすることができます。
 
-CertViewのメニューから「試験結果」の下にある「Latest PVUE Exam Results」をクリックするとスコアレポートを見ることができます。過去に受けた試験についても閲覧可能です。
+CertViewのメニューから「試験結果」の下にある「ピアソンVUEの試験結果」をクリックするとスコアレポートを見ることができます。過去に受けた試験についても閲覧可能です。
 
 ## 合格証明書の確認方法
 
