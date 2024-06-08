@@ -183,6 +183,14 @@
             "image": "https://m.media-amazon.com/images/I/51r2UQfBNcL._SL160_.jpg",
             "price": "2,420",
             "type": "amazon"
+        },
+        {
+            "itemid": "4295012564",
+            "title": "徹底攻略Java SE 11 Gold問題集[1Z0-816]対応",
+            "url": "https://www.amazon.co.jp/dp/4295012564?tag=dim08-22&linkCode=ogi&th=1&psc=1",
+            "image": "https://m.media-amazon.com/images/I/51IRfIxlTEL._SL160_.jpg",
+            "price": "4,400",
+            "type": "amazon"
         }
     ]
 }
