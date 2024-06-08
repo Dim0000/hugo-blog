@@ -11,6 +11,7 @@ tags:
   - 応用情報技術者試験
   - 情報処理安全確保支援士試験
   - Java Silver
+  - Java Gold
   - Oracle Silver
   - AWS CLF
   - AWS SAA
@@ -31,21 +32,22 @@ thumbnail: /images/qualification.webp
 
 情報処理推進機構（IPA）が実施する試験一覧になります。
 
-|資格名|受験時期|合格体験記|
+|資格名|受験時期|関連記事|
 | :---: | :---: | :---: |
-|[ITパスポート試験]({{< relref  "/tags/ITパスポート試験" >}})|2021/01|[合格体験記]({{< relref "/qualification-ip-pass" >}})|
-|[基本情報技術者試験]({{< relref  "/tags/基本情報技術者試験" >}})|2021/02|[合格体験記]({{< relref "/qualification-fe-pass" >}})|
-|[応用情報技術者試験]({{< relref  "/tags/応用情報技術者試験" >}})|2021/04|[合格体験記]({{< relref "/qualification-ap-pass" >}})|
-|[情報セキュリティマネジメント試験]({{< relref  "/tags/情報セキュリティマネジメント試験" >}})|2021/07|[合格体験記]({{< relref "/qualification-sg-pass" >}})|
-|[情報処理安全確保支援士試験]({{< relref  "/tags/情報処理安全確保支援士試験" >}})|2022/04|[合格体験記]({{< relref "/qualification-sc" >}})|
+|[ITパスポート試験]({{< relref  "/tags/ITパスポート試験" >}})|2021/01|{{< ref "/qualification-ip-pass" >}}|
+|[基本情報技術者試験]({{< relref  "/tags/基本情報技術者試験" >}})|2021/02|{{< ref "/qualification-fe-pass" >}}|
+|[応用情報技術者試験]({{< relref  "/tags/応用情報技術者試験" >}})|2021/04|{{< ref "/qualification-ap-pass" >}}|
+|[情報セキュリティマネジメント試験]({{< relref  "/tags/情報セキュリティマネジメント試験" >}})|2021/07|{{< ref "/qualification-sg-pass" >}}|
+|[情報処理安全確保支援士試験]({{< relref  "/tags/情報処理安全確保支援士試験" >}})|2022/04|{{< ref "/qualification-sc" >}}|
 
 ### ベンダー資格
 
 Oracle等のベンダー資格の一覧になります。
 
-|資格名|受験時期|合格体験記|
+|資格名|受験時期|関連記事|
 | :---: | :---: | :---: |
-|[Java Silver SE11]({{< relref  "/tags/java-silver/" >}})|2021/10|[合格体験記]({{< relref "/qualification-javasilverse11" >}})|
-|[Oracle MASTER Silver SQL]({{< relref  "/tags/oracle-silver" >}})|2023/03|[合格体験記]({{< relref "/qualification-oraclemastersilversql" >}})|
-|[AWS Certified Cloud Practitioner]({{< relref  "/tags/aws-clf" >}})|2023/06|[合格体験記]({{< relref "/qualification-aws-clf" >}})|
-|[AWS Solutions Architect Associate]({{< relref  "/tags/aws-saa" >}})|2023/08|[合格体験記]({{< relref "/qualification-aws-saa" >}})|
+|[Java Silver SE11]({{< relref  "/tags/java-silver/" >}})|2021/10|{{< ref "/qualification-javasilverse11" >}}|
+|[Oracle MASTER Silver SQL]({{< relref  "/tags/oracle-silver" >}})|2023/03|{{< ref "/qualification-oraclemastersilversql" >}}|
+|[AWS Certified Cloud Practitioner]({{< relref  "/tags/aws-clf" >}})|2023/06|{{< ref "/qualification-aws-clf" >}}|
+|[AWS Solutions Architect Associate]({{< relref  "/tags/aws-saa" >}})|2023/08|{{< ref "/qualification-aws-saa" >}}|
+|[Java Gold SE11]({{< relref  "/tags/java-gold" >}})|2024/06|{{< ref "/qualification-javagold-se11" >}}|
