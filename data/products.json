@@ -5,22 +5,23 @@
             "title": "【ピアソンVUE専用】OracleピアソンVUE配信監督付き試験用受験チケット(電子チケット)",
             "url": "https://af.moshimo.com/af/c/click?a_id=2758487&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fit-test%2F137327%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fit-test%2Fi%2F10000192%2F",
             "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/it-test/cabinet/bk_ora2.jpg?_ex=300x300",
-            "type": "rakuten",
-            "price": "35,200"
+            "price": "35,200",
+            "type": "rakuten"
         },
         {
             "itemid": "it-test:10000178",
             "title": "【ピアソンVUE専用】OracleピアソンVUE配信監督なし試験用受験チケット(電子チケット)",
             "url": "https://af.moshimo.com/af/c/click?a_id=2758487&p_id=54&pc_id=54&pl_id=616&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fit-test%2F137325%2F",
             "image": "https://thumbnail.image.rakuten.co.jp/@0_mall/it-test/cabinet/bk_ora2.jpg?_ex=300x300",
-            "type": "rakuten",
-            "price": "13,640"
+            "price": "13,640",
+            "type": "rakuten"
         },
         {
             "itemid": "B0CKYM15RJ",
             "title": "PlayStation 5(CFI-2000A01)",
             "url": "https://www.amazon.co.jp/dp/B0CKYM15RJ?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31XtxsyATEL._SL160_.jpg",
+            "price": "66,980",
             "type": "amazon"
         },
         {
@@ -28,6 +29,7 @@
             "title": "KontrolFreek FPSフリーク Vortex PlayStation 4 (PS4) and PlayStation 5 (PS5) | Performance Thumbsticks | （4つの爪つき）| ハイライズ凸タイプ1個、ミッドライズ凹タイプ1個 | オレンジ [並行輸入品]",
             "url": "https://www.amazon.co.jp/dp/B00ISW0TGW?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51YRVp20v0L._SL160_.jpg",
+            "price": null,
             "type": "amazon"
         },
         {
@@ -35,13 +37,15 @@
             "title": "【純正品】DualSense Edge ワイヤレスコントローラー(CFI-ZCP1J)",
             "url": "https://www.amazon.co.jp/dp/B0BJTJNQFD?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31fuoLNwlsL._SL160_.jpg",
+            "price": "27,569",
             "type": "amazon"
         },
         {
             "itemid": "B07SR8LZ12",
-            "title": "Logicool G ASTRO Gaming ミックスアンプ プロ PS5 PS4 PC MixAmp Pro TR ゲーミングヘッドセット用 Dolby Audio サラウンド 光デジタル端子 USB MAPTR-002 国内正規品",
+            "title": "Logicool G ASTRO Gaming MixAmp Pro ミックスアンプ ゲーミングアンプ MAPTR-002 ゲーミングヘッドセット 用 オーディオミキサー PS5 PS4 PC 対応 音声バランス調整 Dolby Audio 光デジタル端子 アンプ ゲーミングミキサー MAPTR 国内正規品",
             "url": "https://www.amazon.co.jp/dp/B07SR8LZ12?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31fTF3td5sL._SL160_.jpg",
+            "price": "15,036",
             "type": "amazon"
         },
         {
@@ -49,6 +53,7 @@
             "title": "Logicool G ASTRO Gaming HDMI アダプター for PS5 PS4 ミックスアンプ 用 オプティカル 光デジタル オーディオ SPDIF 音声分離 AHS-HDMIADP 国内正規品",
             "url": "https://www.amazon.co.jp/dp/B08LP8HRZQ?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/41G1BQgF+kL._SL160_.jpg",
+            "price": "5,900",
             "type": "amazon"
         },
         {
@@ -56,6 +61,7 @@
             "title": "SHURE シュア イヤホン AONIC 215 有線 マイク付き SE215DYWH+UNI-A ホワイト 高遮音性 ゲーム ゲーミング スペシャルエディション カナル型 ワイヤレス変換可(別売) MMCX リケーブル プロ仕様 低音強化 配信 音楽 オーディオリスニング レコーディング 録音 楽器 在宅勤務 リモートワーク ケーブル長127 cm 【国内正規品/メーカー保証2年】",
             "url": "https://www.amazon.co.jp/dp/B08G4KPZHQ?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31m781dC2rL._SL160_.jpg",
+            "price": "13,855",
             "type": "amazon"
         },
         {
@@ -63,6 +69,7 @@
             "title": "ロジクール ワイヤレスキーボード 無線 キーボード 薄型 小型 K380BK Bluetoothワイヤレス Windows Mac iOS Android Chrome K380 国内正規品",
             "url": "https://www.amazon.co.jp/dp/B016XLGJJA?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/41D2iHpd3TL._SL160_.jpg",
+            "price": "5,150",
             "type": "amazon"
         },
         {
@@ -70,6 +77,7 @@
             "title": "ロジクール ワイヤレスキーボード PEBBLE KEYS 2 K380sGR 薄型 軽量 415g 小型 Bluetooth Logi Bolt ワイヤレス 無線 キーボード Easy-Switch 日本語配列 電池寿命36ケ月 Windows Mac iPad iOS Android Chrome K380s グラファイト 国内正規品",
             "url": "https://www.amazon.co.jp/dp/B0CJR8Y56J?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31ejPJFvDUL._SL160_.jpg",
+            "price": "4,550",
             "type": "amazon"
         },
         {
@@ -77,6 +85,7 @@
             "title": "AVIOT TE-D01g Bluetooth イヤホン 完全ワイヤレスイヤホン iPhone Android 対応 Bluetooth Ver.5.0 防水 IPX7 通話 マイク ノイズキャンセリング (Black)",
             "url": "https://www.amazon.co.jp/dp/B07QXLMXD7?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31KvFJBoh5L._SL160_.jpg",
+            "price": "11,980",
             "type": "amazon"
         },
         {
@@ -84,13 +93,15 @@
             "title": "AVIOT TE-D01v ワイヤレスイヤホン ノイズキャンセリング イヤホン bluebooth 5.2 最大60時間 長時間再生 完全ワイヤレスイヤホン 重低音 IPX4防水 マルチポイント 外の音が聞こえる マイク付き 片耳モード タッチ操作 小型軽量 (ホワイト)",
             "url": "https://www.amazon.co.jp/dp/B0B3W52HQX?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/310D8BSxYUL._SL160_.jpg",
+            "price": "10,431",
             "type": "amazon"
         },
         {
             "itemid": "B07TK9JN5B",
-            "title": "エルゴトロン MXV デスク モニターアーム スリムタイプ マットブラック 34インチ(3.2~9.1kg)まで VESA規格対応 45-486-224",
+            "title": "ERGOTRON エルゴトロン MXV デスク モニターアーム スリムタイプ マットブラック 34インチ(3.2~9.1kg)まで VESA規格対応 45-486-224",
             "url": "https://www.amazon.co.jp/dp/B07TK9JN5B?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31sR9SWOMcL._SL160_.jpg",
+            "price": "21,000",
             "type": "amazon"
         },
         {
@@ -98,6 +109,7 @@
             "title": "突っ張り棒 強力 3m つっぱり棒 伸縮棒 強負荷 ものほし竿 ドリル不要 物干し竿 洗濯物干し 布団干し 室内 屋外 調節簡単 耐荷重30~10kg 直径32mm ブラック(130-320cm)",
             "url": "https://www.amazon.co.jp/dp/B08T97TMHL?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31iRXM0m6yL._SL160_.jpg",
+            "price": "3,128",
             "type": "amazon"
         },
         {
@@ -105,6 +117,7 @@
             "title": "イーサプライ モニターアーム ポール取付 4関節 支柱 32インチまで 耐荷重8kg 多関節 1画面 上下 左右 VESA 75 100 EEX-LAP07",
             "url": "https://www.amazon.co.jp/dp/B082XBG5QP?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/41pG+YRIV8L._SL160_.jpg",
+            "price": "3,280",
             "type": "amazon"
         },
         {
@@ -112,6 +125,7 @@
             "title": "AWS認定資格試験テキスト　AWS認定ソリューションアーキテクト - アソシエイト　改訂第3版 (ＡＷＳ認定資格試験テキスト)",
             "url": "https://www.amazon.co.jp/dp/4815617945?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/518XbFuIn9L._SL160_.jpg",
+            "price": "2,860",
             "type": "amazon"
         },
         {
@@ -119,6 +133,7 @@
             "title": "AWS認定資格試験テキスト　AWS認定 クラウドプラクティショナー　改訂第3版 (ＡＷＳ認定資格試験テキスト)",
             "url": "https://www.amazon.co.jp/dp/4815625387?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51mcXFkD2kL._SL160_.jpg",
+            "price": "2,970",
             "type": "amazon"
         },
         {
@@ -126,6 +141,7 @@
             "title": "2024　情報処理安全確保支援士「専門知識＋午後問題」の重点対策",
             "url": "https://www.amazon.co.jp/dp/4865753176?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/5156lRhZTiL._SL160_.jpg",
+            "price": "4,070",
             "type": "amazon"
         },
         {
@@ -133,6 +149,7 @@
             "title": "オラクルマスター教科書 Silver SQL Oracle Database SQL",
             "url": "https://www.amazon.co.jp/dp/4798172367?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51gLA8E15GL._SL160_.jpg",
+            "price": "5,280",
             "type": "amazon"
         },
         {
@@ -140,6 +157,7 @@
             "title": "徹底攻略Java SE 11 Silver問題集[1Z0-815]対応",
             "url": "https://www.amazon.co.jp/dp/4295007625?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/516G9d-lTgL._SL160_.jpg",
+            "price": "3,740",
             "type": "amazon"
         },
         {
@@ -147,6 +165,7 @@
             "title": "令和06年【春期】【秋期】 応用情報技術者 合格教本",
             "url": "https://www.amazon.co.jp/dp/4297138654?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51Q8E7qh7JL._SL160_.jpg",
+            "price": "3,278",
             "type": "amazon"
         },
         {
@@ -154,6 +173,7 @@
             "title": "令和06年 イメージ＆クレバー方式でよくわかる かやのき先生の基本情報技術者教室",
             "url": "https://www.amazon.co.jp/dp/4297138271?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51VMuTMGSPL._SL160_.jpg",
+            "price": "1,848",
             "type": "amazon"
         },
         {
@@ -161,6 +181,7 @@
             "title": "キタミ式イラストIT塾 基本情報技術者 令和06年 (情報処理技術者試験)",
             "url": "https://www.amazon.co.jp/dp/4297138077?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51r2UQfBNcL._SL160_.jpg",
+            "price": "2,420",
             "type": "amazon"
         }
     ]

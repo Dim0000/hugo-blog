@@ -88,7 +88,9 @@ body {
 }
 
 .product-link-image {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #ecf5ff;
   padding: 1.00rem;
 }

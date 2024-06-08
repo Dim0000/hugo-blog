@@ -33,6 +33,9 @@ function delayedGetItems(subArray, delay) {
                         title: itemData.ItemInfo.Title.DisplayValue,
                         url: itemData.DetailPageURL,
                         image: itemData.Images.Primary.Medium.URL,
+                        price: itemData.Offers?.Listings?.[0]?.Price?.Amount != null
+                            ? itemData.Offers.Listings[0].Price.Amount.toLocaleString()
+                            : null,
                         type: "amazon"
                     }));
                     resolve(items);
@@ -46,7 +49,7 @@ function delayedGetItems(subArray, delay) {
 }
 // すべてのPromiseを格納するための配列
 const promises = [];
-const delayBetweenCalls = 2000; // 2秒の遅延
+const delayBetweenCalls = 3000; // 3秒の遅延
 dividedAsinArrays.forEach((subArray, index) => {
     // 各export_function.getItemsの呼び出しに対するPromiseを生成し、遅延を追加してpromises配列に追加
     const promise = delayedGetItems(subArray, index * delayBetweenCalls);

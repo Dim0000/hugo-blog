@@ -25,6 +25,8 @@ exports.getItems = function (asin) {
         console.error('Error occurred:', error);
         reject(error); // エラー時の処理
       } else {
+        //const res = ProductAdvertisingAPIv1.GetItemsResponse.constructFromObject(data);
+        //console.log(JSON.stringify(res, null, 1));
         console.log('Successfully retrieved data');
         resolve(data); // 成功時の処理
       }
