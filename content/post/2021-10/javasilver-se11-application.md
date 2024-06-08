@@ -7,6 +7,7 @@ categories:
 tags: 
   - Oracle Silver
   - Java Silver
+  - Java Gold
 archives: 
   - 2021/10
 thumbnail: /images/oracle.webp
