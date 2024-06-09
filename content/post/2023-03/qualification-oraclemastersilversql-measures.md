@@ -1,6 +1,6 @@
 ---
-title: 【Oracle MASTER Silver SQL】試験対策用備忘録メモ
-description: ORACLE MASTER Silver SQL（1Z0-071-JPN）の試験対策用の個人的な忘備録として、暗記事項をまとめました。各章の構成は公式の出題範囲に依拠しています。
+title: 【Oracle Silver SQL】試験対策用備忘録メモ
+description: ORACLE MASTER Silver SQL（1Z0-071-JPN）の試験対策用の個人的な備忘録として、暗記事項をまとめました。
 date: 2023-03-19
 categories: 
   - IT資格
@@ -11,11 +11,13 @@ archives:
 thumbnail: /images/oracle.webp
 ---
 
-**ORACLE MASTER Silver SQL**（1Z0-071-JPN）の試験対策用の個人的な忘備録として、暗記事項をまとめました。各章の構成は公式[^a]の出題範囲に依拠しています。
-
-[^a]:[Oracle Database SQL | Oracle](https://education.oracle.com/ja/oracle-database-sql/pexam_1Z0-071)
+**ORACLE MASTER Silver SQL**（1Z0-071-JPN）の試験対策用の個人的な備忘録として、暗記事項をまとめました。
 
 <!--more-->
+
+なお、記事の構成は公式[^a]の出題範囲に依拠しました。
+
+[^a]:[Oracle Database SQL | Oracle](https://education.oracle.com/ja/oracle-database-sql/pexam_1Z0-071)
 
 {{< box "関連記事" >}}
 <ul>
