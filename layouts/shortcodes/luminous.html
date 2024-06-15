@@ -3,7 +3,7 @@
 {{- $image := resources.Get $src }}
 
 {{ with $image }}
-{{- $webp := .Process "webp" }}
+{{- $webp := .Process "webp q100" }}
 <a href="{{ $webp.RelPermalink  }}" class="luminous">
   <figure><img class="img" src="{{ $webp.RelPermalink  }}" alt="{{ $caption }}">
     <figcaption>
