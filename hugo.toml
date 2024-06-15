@@ -7,6 +7,7 @@ hasCJKLanguage = true
 summarylength = 120
 googleAnalytics = "G-YZ8ZTS9C8C" # アナリティクスのトラッキングID
 enableGitInfo = "true" # 最終更新日をgitから取得
+timeout = "60s"
 
 [permalinks]
   post = "/:filename/"
