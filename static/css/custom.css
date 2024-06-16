@@ -1,4 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../webfonts/NotoSansJP-Regular.woff2") format("woff2"),
+    url("../webfonts/NotoSansJP-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../webfonts/NotoSansJP-Bold.woff2") format("woff2"),
+    url("../webfonts/NotoSansJP-Bold.woff") format("woff");
+}
 
 :root {
   --border: #0095d9 solid 0.09375rem;
