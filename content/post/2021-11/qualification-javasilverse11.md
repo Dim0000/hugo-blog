@@ -1,5 +1,5 @@
 ---
-title: 【Java Silver】合格体験記【難易度・勉強時間】
+title: 【Java Silver】合格体験記【約100時間で合格した勉強方法】
 description: Oracle Certified Java Programmer Silver SE 11 認定資格（Java Silver）を2021年10月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2021-11-03
 categories: 
@@ -27,7 +27,7 @@ thumbnail: /images/java.webp
 
 まず、試験について軽く紹介します。
 
-Java Silver試験はOracle社が提供しているベンダー資格「Oracle Certified Java Programmer」の１つであり、3段階のレベル（Bronze・Silver・Gold）の真ん中の難易度の試験になっています。
+Java Silver試験はOracle社が提供しているベンダー資格「Oracle Certified Java Programmer」の1つであり、3段階のレベル（Bronze・Silver・Gold）の真ん中の難易度の試験になっています。
 
 |項目|詳細|
 | :---: | :---: |
@@ -105,7 +105,7 @@ Java Silver試験はOracle社が提供しているベンダー資格「Oracle Ce
 
 試験結果（スコアレポート）は試験終了時にPCの画面に出ます。またCertViewのサイトにログインすると同じ物を見ることができます。僕のスコアレポートを下に載せておきます。
 
-{{< luminous src="/images/qualification-javasilverse11-01.png" caption="Java Silverの試験結果">}}
+![Java Silverの試験結果](/images/qualification-javasilverse11-01.png)
 
 **正解率65%で合格**でした。試験の合格点が63%なので、かなりギリギリでした…。コンディションが万全で無かったのもそうですが、油断せずにもうちょっと集中して勉強しておけば良かったなって感じです。
 
