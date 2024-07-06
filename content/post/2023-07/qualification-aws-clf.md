@@ -1,5 +1,5 @@
 ---
-title: 【AWS CLF】合格体験記【難易度・勉強時間】
+title: 【AWS CLF】合格体験記【未経験で約1か月で合格】
 description: AWS Certified Cloud Practitioner（クラウドプラクティショナー）試験（CLF-C01）を2022年6月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2023-07-22
 categories: 
@@ -81,7 +81,7 @@ AWS CLF試験はAWS認定資格の中で入門レベルの資格に位置して�
 
 試験結果が以下になります。
 
-{{< luminous src="/images/qualification-aws-clf-01.png" caption="AWS CLFの試験結果">}}
+![AWS CLFの試験結果](/images/qualification-aws-clf-01.png)
 
 結果は**789点で合格**でした。正直、試験中は合格しているか半々くらいかなと感じていましたが、配点が非公開のせいか思ったより点が伸びていましたね。
 
@@ -100,6 +100,12 @@ AWSに慣れるため、ハンズオンで動かして学習するという対�
 * * *
 
 今回はAWS CLFの合格体験記についてまとめました。この調子でAWS SAA試験にも挑戦したいですね。以上で記事を終わりにします。
+
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/qualification-aws-saa" >}}</li>
+</ul>
+{{< /box >}}
 
 ## 参考文献
 
