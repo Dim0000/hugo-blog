@@ -1,5 +1,5 @@
 ---
-title:  【Java Gold】合格体験記【難易度・勉強時間】
+title:  【Java Gold】合格体験記【約3か月で合格した勉強方法】
 description: Oracle Certified Java Programmer Gold SE 11 認定資格（Java Gold）を2024年6月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2024-06-08
 categories: 
@@ -87,7 +87,7 @@ Javaを勉強して間もない頃にJava Silverを取得した時から、い�
 
 また、CertViewのサイトでも同じ物をダウンロードすることができます。スコアレポートは以下になります。
 
-{{< luminous src="/images/qualification-javagold-se11-01.png" caption="Java Goldの試験結果">}}
+![Java Goldの試験結果](/images/qualification-javagold-se11-01.png)
 
 **正解率80%で合格**でした。Java Silverの時とは違って、余裕を持って合格できたのでほっとしました。
 
