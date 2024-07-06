@@ -1,0 +1,17 @@
+{{ $src := .Destination }}
+
+{{ if resources.Get $src }}
+{{ $image := resources.Get $src }}
+{{ $width := $image.Width }}
+{{ $height := $image.Height }}
+{{ $webp := $image.Resize (print $width "x" $height " webp q100") }}
+<a href="{{ $webp.RelPermalink  }}" class="luminous">
+  <figure><img class="img" src="{{ $webp.RelPermalink  }}" alt="{{ .Text }}">
+    <figcaption>
+      <p>{{ .Text }}</p>
+    </figcaption>
+  </figure>
+</a>
+{{ else }}
+<p>No image found</p>
+{{ end }}
