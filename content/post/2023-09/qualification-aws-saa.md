@@ -1,5 +1,5 @@
 ---
-title: 【AWS SAA】合格体験記【難易度・勉強時間】
+title: 【AWS SAA】合格体験記【約1か月で合格した勉強方法】
 description: AWS Solutions Architect Associate（ソリューションアーキテクトアソシエイト）試験（SAA-C03）を2022年8月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2023-09-02
 categories: 
@@ -19,7 +19,6 @@ thumbnail: /images/aws.webp
 {{< box "関連記事" >}}
 <ul>
 <li>{{< ref "/aws-saa-measures" >}}</li>
-<li>{{< ref "/qualification-aws-clf" >}}</li>
 </ul>
 {{< /box >}}
 
@@ -51,6 +50,14 @@ AWS CLF試験はAWS認定資格の中で入門レベルの資格に位置して�
 </ul>
 {{< /box >}}
 
+AWS CLF（クラウドプラクティショナー）を持っていましたので、AWSに関しては基礎的な知識があるのみでした。
+
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/qualification-aws-clf" >}}</li>
+</ul>
+{{< /box >}}
+
 ### 受験のきっかけ・申し込み
 
 受験しようと決めた理由は、会社の査定のためというのが大きかったです。CLFとSAAを取得することで査定評価でプラスされるので、そこまで取得しようと思っていました。CLFに合格して、その勢いでSAAの受験へと進みました。
@@ -79,7 +86,7 @@ AWS CLF試験はAWS認定資格の中で入門レベルの資格に位置して�
 
 試験結果が以下になります。
 
-{{< luminous src="/images/qualification-aws-saa-01.png" caption="AWS CLFの試験結果">}}
+![AWS SAAの試験結果](/images/qualification-aws-saa-01.png)
 
 結果は**738点で合格**でした。予想通りかなりギリギリな得点になってしまいましたが、合格なので良しとします。
 
