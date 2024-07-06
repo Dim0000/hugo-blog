@@ -1,5 +1,5 @@
 ---
-title: 【Oracle Silver SQL】合格体験記【難易度・勉強時間】
+title: 【Oracle Silver SQL】合格体験記【約3か月で合格した勉強方法】
 description: Oracle MASTER Silver SQL（1Z0-071-JPN）を2023年3月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2023-04-08
 categories: 
@@ -74,7 +74,7 @@ thumbnail: /images/oracle.webp
 
 試験勉強の本腰を入れたのは2023年に入ってからになります。主に**黒本**と呼ばれる参考書と**Ping-t**というサイトにある問題集を使って勉強しました。
 
-本番1ヶ月前までは参考書を1日30分くらい学習しました。本番1ヶ月前からはPing-tを使い、平日は1時間～2時間、休日は1時間～3時間くらい勉強しました。掛けた勉強時間は80時間～100時間くらいだと思います。
+本番1ヶ月前までは参考書を1日30分くらい学習しました。本番1ヶ月前からはPing-tを使い、平日は1時間～2時間、休日は1時間～3時間くらい勉強しました。掛けた勉強時間は約3か月で80時間～100時間くらいだと思います。
 
 具体的な対策方法は下で詳しく書いていきたいと思います。
 
@@ -88,7 +88,7 @@ thumbnail: /images/oracle.webp
 
 試験結果が以下になります。
 
-{{< luminous src="/images/qualification-oraclemastersilversql-01.png" caption="Oracle MASTER Silver SQLの試験結果">}}
+![Oracle MASTER Silver SQLの試験結果](/images/qualification-oraclemastersilversql-01.png)
 
 **正解率84%で合格**でした。試験終了時は多分7割台で合格だろうとは思いましたが、予想より高得点でした。
 
