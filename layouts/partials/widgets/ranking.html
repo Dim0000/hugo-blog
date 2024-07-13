@@ -10,7 +10,7 @@
       {{ range first 5 $ranking }}
       {{ $url := replace .page "/" ""}}
       {{ $page := $.Site.GetPage $url }}
-      <li class="widget__item"><a class="widget__link" href="{{ $page.Permalink  }}" target="_blank">{{ $page.Title
+      <li class="widget__item"><a class="widget__link" href="{{ .page  }}" target="_blank">{{ $page.Title
           }}<span class="ranking-pv">{{ .pv }}PV</span></a></li>
       {{ end }}
     </ul>
