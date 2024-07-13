@@ -67,6 +67,7 @@ Javaを勉強して間もない頃にJava Silverを取得した時から、い�
 また、対象バージョンがSE8と古いものの、公式のサンプル問題がありましたのでそちらも勉強しました。
 
 * [1Z0_810_813_サンプル問題 | Oracle](https://www.oracle.com/jp/education/certification/ocjp-gold-se8-3305267-ja.html)
+
 * [1Z0-809 サンプル問題 | Oracle](https://www.oracle.com/jp/education/certification/java-809a-3516143-ja.html)
 
 受験した5月は、業務の関係で電車で1時間以上掛かる現場に出社していて、電車で座れたので行き帰りの時間で参考書を開いて勉強していました。
