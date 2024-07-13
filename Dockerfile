@@ -1,4 +1,4 @@
-FROM hugomods/hugo:0.128.0
+FROM hugomods/hugo:latest
 
 COPY . /src/
 
