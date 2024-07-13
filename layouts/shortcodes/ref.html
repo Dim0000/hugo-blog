@@ -1,5 +1,6 @@
 {{- $slug := .Get 0 -}}
-{{- $page := .Site.GetPage $slug -}}
+{{- $slugTrimmed := replaceRE "^/" "" $slug -}}
+{{- $page := .Site.GetPage $slugTrimmed -}}
 {{ if $page }}
   {{ $title := $page.Title }}
   {{ if $title }}
