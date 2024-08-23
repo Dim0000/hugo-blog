@@ -51,3 +51,4 @@ Oracle等のベンダー資格の一覧になります。
 |[AWS Certified Cloud Practitioner]({{< relref  "/tags/aws-clf" >}})|2023/06|{{< ref "/qualification-aws-clf" >}}|
 |[AWS Solutions Architect Associate]({{< relref  "/tags/aws-saa" >}})|2023/08|{{< ref "/qualification-aws-saa" >}}|
 |[Java Gold SE11]({{< relref  "/tags/java-gold" >}})|2024/06|{{< ref "/qualification-javagold-se11" >}}|
+|[Oracle MASTER Silver DBA]({{< relref  "/tags/oracle-silver" >}})|2024/08|{{< ref "/qualification-oraclemastersilverdba" >}}|
