@@ -37,7 +37,7 @@
             "title": "【純正品】DualSense Edge ワイヤレスコントローラー(CFI-ZCP1J)",
             "url": "https://www.amazon.co.jp/dp/B0BJTJNQFD?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31fuoLNwlsL._SL160_.jpg",
-            "price": "26,647",
+            "price": "27,329",
             "type": "amazon"
         },
         {
@@ -61,7 +61,7 @@
             "title": "SHURE シュア イヤホン AONIC 215 有線 マイク付き SE215DYWH+UNI-A ホワイト 高遮音性 ゲーム ゲーミング スペシャルエディション カナル型 ワイヤレス変換可(別売) MMCX リケーブル プロ仕様 低音強化 配信 音楽 オーディオリスニング レコーディング 録音 楽器 在宅勤務 リモートワーク ケーブル長127 cm 【国内正規品/メーカー保証2年】",
             "url": "https://www.amazon.co.jp/dp/B08G4KPZHQ?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31m781dC2rL._SL160_.jpg",
-            "price": "13,727",
+            "price": "13,591",
             "type": "amazon"
         },
         {
@@ -69,7 +69,7 @@
             "title": "ロジクール ワイヤレスキーボード 無線 キーボード 薄型 小型 K380BK Bluetoothワイヤレス Windows Mac iOS Android Chrome K380 国内正規品",
             "url": "https://www.amazon.co.jp/dp/B016XLGJJA?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/41D2iHpd3TL._SL160_.jpg",
-            "price": "5,000",
+            "price": "4,900",
             "type": "amazon"
         },
         {
@@ -85,7 +85,7 @@
             "title": "AVIOT TE-D01g Bluetooth イヤホン 完全ワイヤレスイヤホン iPhone Android 対応 Bluetooth Ver.5.0 防水 IPX7 通話 マイク ノイズキャンセリング (Black)",
             "url": "https://www.amazon.co.jp/dp/B07QXLMXD7?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/31KvFJBoh5L._SL160_.jpg",
-            "price": "9,380",
+            "price": "8,280",
             "type": "amazon"
         },
         {
@@ -141,7 +141,7 @@
             "title": "2024　情報処理安全確保支援士「専門知識＋午後問題」の重点対策",
             "url": "https://www.amazon.co.jp/dp/4865753176?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/5156lRhZTiL._SL160_.jpg",
-            "price": "4,070",
+            "price": "6,359",
             "type": "amazon"
         },
         {
@@ -198,6 +198,14 @@
             "url": "https://www.amazon.co.jp/dp/4866516704?tag=dim08-22&linkCode=ogi&th=1&psc=1",
             "image": "https://m.media-amazon.com/images/I/51FMabYMxDL._SL160_.jpg",
             "price": "1,738",
+            "type": "amazon"
+        },
+        {
+            "itemid": "4798166359",
+            "title": "オラクルマスター教科書 Silver DBA Oracle Database Administration I",
+            "url": "https://www.amazon.co.jp/dp/4798166359?tag=dim08-22&linkCode=ogi&th=1&psc=1",
+            "image": "https://m.media-amazon.com/images/I/51eMgMpBkeS._SL160_.jpg",
+            "price": "5,500",
             "type": "amazon"
         }
     ]
