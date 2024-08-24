@@ -1,0 +1,5 @@
+{{- $param := .Get 0 -}}
+
+{{ if eq $param "price1" }}
+  {{ $.Site.Params.price1 }}
+{{ end }}
