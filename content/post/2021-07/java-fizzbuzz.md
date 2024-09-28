@@ -1,13 +1,13 @@
 ---
 title: 【Java】FizzBuzzを色々な方法で書いてみる
 description: Javaでプログラムのアルゴリズム問題で有名なFizzBuzzを書いてみます。ノーマルな実装方法と、応用として拡張性を意識した実装方法を紹介します。
-date: 2021-07-27
+date: 2022-01-27
 categories:
   - 技術記事
 tags: 
   - Java
 archives: 
-  - 2021/07
+  - 2022/01
 thumbnail: /images/java.webp
 ---
 
