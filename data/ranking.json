@@ -1,111 +1,103 @@
 {
     "items": [
         {
-            "pagePath": "/eclipse-line-problem/",
-            "pv": "66"
-        },
-        {
             "pagePath": "/java-localdate-addition-subtraction/",
-            "pv": "62"
+            "pv": "69"
         },
         {
-            "pagePath": "/googlecalendar-end-of-month/",
-            "pv": "53"
+            "pagePath": "/eclipse-line-problem/",
+            "pv": "56"
         },
         {
             "pagePath": "/java-int-string-change/",
-            "pv": "43"
+            "pv": "38"
         },
         {
             "pagePath": "/java-tochararray/",
-            "pv": "43"
+            "pv": "37"
         },
         {
             "pagePath": "/java-isdigit-method/",
             "pv": "34"
         },
         {
-            "pagePath": "/product-review-monitor-arm-desk/",
-            "pv": "34"
-        },
-        {
-            "pagePath": "/qualification-oraclemastersilversql/",
-            "pv": "31"
-        },
-        {
             "pagePath": "/qualification-oraclemastersilversql-measures/",
-            "pv": "29"
+            "pv": "27"
         },
         {
-            "pagePath": "/game-codmw2-trophy/",
-            "pv": "22"
+            "pagePath": "/googlecalendar-end-of-month/",
+            "pv": "24"
+        },
+        {
+            "pagePath": "/closedxml-image/",
+            "pv": "23"
         },
         {
             "pagePath": "/java-isalphabetic-method/",
+            "pv": "22"
+        },
+        {
+            "pagePath": "/java-intern/",
             "pv": "21"
         },
         {
-            "pagePath": "/game-codmw2-warzone2-setting/",
-            "pv": "20"
+            "pagePath": "/product-review-monitor-arm-desk/",
+            "pv": "21"
         },
         {
-            "pagePath": "/java-shuffle-method/",
+            "pagePath": "/subversion-checksum-mismatch/",
+            "pv": "19"
+        },
+        {
+            "pagePath": "/qualification-oraclemastersilversql/",
             "pv": "18"
         },
         {
-            "pagePath": "/java-islowercase-method/",
+            "pagePath": "/game-codmw2-trophy/",
             "pv": "17"
         },
         {
             "pagePath": "/qualification-javasilverse11/",
-            "pv": "17"
-        },
-        {
-            "pagePath": "/contact",
             "pv": "16"
         },
         {
-            "pagePath": "/subversion-checksum-mismatch/",
-            "pv": "15"
-        },
-        {
-            "pagePath": "/closedxml-image/",
+            "pagePath": "/game-codmw2-warzone2-setting/",
             "pv": "14"
         },
         {
-            "pagePath": "/java-intern/",
+            "pagePath": "/java-shuffle-method/",
             "pv": "14"
         },
         {
-            "pagePath": "/game-biohazard-re2/",
-            "pv": "12"
-        },
-        {
-            "pagePath": "/java-deletecharat-method/",
+            "pagePath": "/",
             "pv": "11"
         },
         {
-            "pagePath": "/java-ceil-floor-round/",
-            "pv": "10"
+            "pagePath": "/game-biohazard-re2/",
+            "pv": "11"
         },
         {
-            "pagePath": "/java-magic-square-4-4/",
-            "pv": "10"
+            "pagePath": "/java-fibonacci-sequence/",
+            "pv": "11"
         },
         {
-            "pagePath": "/qualification-aws-clf/",
+            "pagePath": "/game-ps5-apex/",
             "pv": "10"
         },
         {
             "pagePath": "/java-mismatch-method/",
-            "pv": "9"
-        },
-        {
-            "pagePath": "/",
-            "pv": "8"
+            "pv": "10"
         },
         {
             "pagePath": "/blog-access-problem/",
+            "pv": "9"
+        },
+        {
+            "pagePath": "/game-trophy-2021-07-25/",
+            "pv": "9"
+        },
+        {
+            "pagePath": "/java-localdate-period/",
             "pv": "8"
         },
         {
@@ -117,63 +109,55 @@
             "pv": "8"
         },
         {
-            "pagePath": "/qualification-ip-fe-ap-pass/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/qualification-oraclemastersilverdba/",
-            "pv": "8"
-        },
-        {
-            "pagePath": "/c-language-compiler/",
+            "pagePath": "/java-deletecharat-method/",
             "pv": "7"
         },
         {
-            "pagePath": "/game-mixamp-apex-equalizer/",
+            "pagePath": "/java-islowercase-method/",
             "pv": "7"
         },
         {
-            "pagePath": "/game-ps5-apex/",
-            "pv": "7"
+            "pagePath": "/aws-saa-measures/",
+            "pv": "6"
         },
         {
-            "pagePath": "/github-actions-autocommit/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/java-fibonacci-sequence/",
-            "pv": "7"
+            "pagePath": "/java-ceil-floor-round/",
+            "pv": "6"
         },
         {
             "pagePath": "/java-float-double/",
-            "pv": "7"
-        },
-        {
-            "pagePath": "/java-localdate-period/",
-            "pv": "7"
+            "pv": "6"
         },
         {
             "pagePath": "/java-random-password/",
-            "pv": "7"
+            "pv": "6"
+        },
+        {
+            "pagePath": "/oracle-pearsonvue/",
+            "pv": "6"
+        },
+        {
+            "pagePath": "/qualification-fe-pass/",
+            "pv": "6"
         },
         {
             "pagePath": "/qualification-sg-pass/",
-            "pv": "7"
+            "pv": "6"
         },
         {
-            "pagePath": "/domain-to-route53/",
+            "pagePath": "/game-mixamp-apex-equalizer/",
             "pv": "5"
         },
         {
-            "pagePath": "/game-ps5-mixamp-hdmiadapter/",
+            "pagePath": "/qualification-aws-clf/",
             "pv": "5"
         },
         {
-            "pagePath": "/privacy-policy",
+            "pagePath": "/qualification-aws-saa/",
             "pv": "5"
         },
         {
-            "pagePath": "/qualification-ap-pm/",
+            "pagePath": "/qualification-ip-fe-ap-pass/",
             "pv": "5"
         },
         {
@@ -181,11 +165,23 @@
             "pv": "5"
         },
         {
-            "pagePath": "/archives/2024/02",
+            "pagePath": "/qualification-javasilverse11-measures/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/qualification-oraclemastersilverdba/",
+            "pv": "5"
+        },
+        {
+            "pagePath": "/domain-to-route53/",
             "pv": "4"
         },
         {
-            "pagePath": "/java-sqrt-method/",
+            "pagePath": "/game-ps5-mixamp-hdmiadapter/",
+            "pv": "4"
+        },
+        {
+            "pagePath": "/github-actions-autocommit/",
             "pv": "4"
         },
         {
@@ -193,19 +189,11 @@
             "pv": "4"
         },
         {
-            "pagePath": "/javasilver-se11-application/",
+            "pagePath": "/qualification-ip-merit/",
             "pv": "4"
         },
         {
-            "pagePath": "/oracle-pearsonvue/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/product-review-shure-aonic215/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/qualification-fe-cbt/",
+            "pagePath": "/qualification-javagold-se11/",
             "pv": "4"
         },
         {
@@ -213,11 +201,23 @@
             "pv": "4"
         },
         {
-            "pagePath": "/qualification-sc/",
-            "pv": "4"
+            "pagePath": "/c-language-compiler/",
+            "pv": "3"
         },
         {
-            "pagePath": "/aws-saa-measures/",
+            "pagePath": "/categories/it-qualification/page/2/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/it-qualification",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/java-browser-compile/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/java-fizzbuzz/",
             "pv": "3"
         },
         {
@@ -225,43 +225,79 @@
             "pv": "3"
         },
         {
-            "pagePath": "/javascript-var/",
+            "pagePath": "/java-pow-method/",
             "pv": "3"
         },
         {
-            "pagePath": "/oracle-pearsonvue",
+            "pagePath": "/javasilver-se11-application/",
             "pv": "3"
+        },
+        {
+            "pagePath": "/profile",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/qualification-ap-pm/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/qualification-sc/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/categories/it-qualification/page/3/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/java-identity-equivalence/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/java-magic-square-4-4/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/javascript-var/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/javasilver-se11-application",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/product-review-shure-aonic215/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/qualification-ap-book/",
+            "pv": "2"
         },
         {
             "pagePath": "/qualification-fe-cbt",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/qualification-ip-merit/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/qualification-javagold-se11/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/game-trophy-2021-07-25/",
             "pv": "2"
         },
         {
-            "pagePath": "/qualification-aws-saa/",
+            "pagePath": "/qualification-fe-kayanoki/",
             "pv": "2"
         },
         {
-            "pagePath": "/qualification-fe-pass/",
+            "pagePath": "/qualification-fe-pm-selection/",
             "pv": "2"
         },
         {
-            "pagePath": "/qualification-javagold-se11",
+            "pagePath": "/search",
             "pv": "2"
         },
         {
-            "pagePath": "/qualification-javasilverse11-measures/",
+            "pagePath": "/tags/fe",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/tags/game/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/tags/passing-experience/",
             "pv": "2"
         },
         {
@@ -269,11 +305,39 @@
             "pv": "2"
         },
         {
-            "pagePath": "/aws-clf-measures",
+            "pagePath": "/about",
             "pv": "1"
         },
         {
-            "pagePath": "/hugo-deploy/",
+            "pagePath": "/archives/2021/08",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/aws-clf-measures/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/blog-alt-setting/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/categories/it-qualification/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/develop-hugo",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/develop-hugo/",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/game-ps5-mixamp-hdmiadapter",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/hugo-docker/",
             "pv": "1"
         },
         {
@@ -281,27 +345,19 @@
             "pv": "1"
         },
         {
-            "pagePath": "/java-browser-compile",
+            "pagePath": "/java-cbrt-method/",
             "pv": "1"
         },
         {
-            "pagePath": "/java-browser-compile/",
+            "pagePath": "/java-mini-numberplace-1/",
             "pv": "1"
         },
         {
-            "pagePath": "/java-fizzbuzz/",
+            "pagePath": "/page/2/",
             "pv": "1"
         },
         {
-            "pagePath": "/java-identity-equivalence/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/java-islowercase-method",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/java-localdate-period",
+            "pagePath": "/product-review-aviot-te-d01v/",
             "pv": "1"
         },
         {
@@ -309,15 +365,11 @@
             "pv": "1"
         },
         {
-            "pagePath": "/qualification-ap-book",
+            "pagePath": "/product-review-logicool-k380/",
             "pv": "1"
         },
         {
-            "pagePath": "/qualification-ap-pass",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/qualification-fe-kayanoki/",
+            "pagePath": "/qualification-ap-pass/",
             "pv": "1"
         },
         {
@@ -325,7 +377,7 @@
             "pv": "1"
         },
         {
-            "pagePath": "/qualification-fe-pm-selection/",
+            "pagePath": "/qualification-ip-pass",
             "pv": "1"
         },
         {
@@ -337,13 +389,17 @@
             "pv": "1"
         },
         {
-            "pagePath": "/search",
+            "pagePath": "/qualification-sc",
             "pv": "1"
         },
         {
-            "pagePath": "/tags/fe",
+            "pagePath": "/qualification-sg-pass",
+            "pv": "1"
+        },
+        {
+            "pagePath": "/wordpress-mathjax/",
             "pv": "1"
         }
     ],
-    "createdAt": "2024-11-03T00:57:40.494Z"
+    "createdAt": "2024-11-10T00:56:12.402Z"
 }
