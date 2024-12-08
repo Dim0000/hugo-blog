@@ -1,17 +1,18 @@
 ---
-title: 【C#】ClosedXMLでExcelに画像を埋め込む方法【余白・縮尺】
-description: 今回はC#のClosedXMLでExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
+title: 【C#/VB】ClosedXMLでExcelに画像を埋め込む方法【余白・縮尺】
+description: 今回はC#/VBのライブラリであるClosedXMLでExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
 date: 2024-02-18
 categories: 
   - 技術記事
 tags: 
   - C#
+  - VB
 archives:
     - 2024/02
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は<strong>C#</strong>のライブラリである**ClosedXML**でExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
+今回は**C#**/**VB**のライブラリである**ClosedXML**でExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
 
 <!--more-->
 
@@ -90,6 +91,50 @@ image.ScaleWidth(2);
 等倍で0.5倍とすると、画像が小さくなったことが分かります。
 
 {{< luminous src="/images/closedxml-image-03.png" caption="画像の縮尺の調整">}}
+
+## VBの場合
+
+VisualBasicの場合では、以下のようになります。
+
+{{< code lang="vb" title="Program.vb" >}}
+Imports ClosedXML.Excel
+Imports ClosedXML.Excel.Drawings
+
+Class Program
+    Private Shared Sub Main(ByVal args As String())
+        Using wb As XLWorkbook = New XLWorkbook()
+            ' ワークシートの設定
+            Dim ws As IXLWorksheet = wb.AddWorksheet("Sheet1")
+            ' AddPictureメソッドで画像を貼り付け
+            Dim image As IXLPicture = ws.AddPicture("test.png")
+            ' 画像の位置をB2セルの左上に移動
+            image.MoveTo(ws.Cell(2, 2))
+            ' ワークブックを保存
+            wb.SaveAs("excel.xlsx")
+        End Using
+    End Sub
+End Class
+{{< /code >}}
+
+{{< code lang="vb" title="Program.vb" >}}
+Dim image As IXLPicture = ws.AddPicture("C:\test\image.jpg")
+
+' 画像を右・下に10ポイントずつずらす 
+image.MoveTo(ws.Cell(2, 2), 10, 10)
+{{< /code >}}
+
+{{< code lang="vb" title="Program.vb" >}}
+Dim image As IXLPicture = ws.AddPicture("C:\test\image.jpg")
+
+' 画像を等倍で0.5倍にする
+image.Scale(0.5)
+
+' 画像の高さを2倍にする
+image.ScaleHeight(2)
+
+' 画像の幅を2倍にする
+image.ScaleWidth(2)
+{{< /code >}}
 
 * * *
 
