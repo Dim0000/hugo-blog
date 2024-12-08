@@ -10,7 +10,7 @@
         },
         {
             "pagePath": "/product-review-monitor-arm-desk/",
-            "pv": "67"
+            "pv": "68"
         },
         {
             "pagePath": "/java-int-string-change/",
@@ -45,11 +45,11 @@
             "pv": "18"
         },
         {
-            "pagePath": "/qualification-javasilverse11/",
-            "pv": "18"
+            "pagePath": "/aws-saa-measures/",
+            "pv": "17"
         },
         {
-            "pagePath": "/aws-saa-measures/",
+            "pagePath": "/qualification-javasilverse11/",
             "pv": "17"
         },
         {
@@ -73,11 +73,11 @@
             "pv": "13"
         },
         {
-            "pagePath": "/java-ceil-floor-round/",
-            "pv": "12"
+            "pagePath": "/qualification-javasilverse11-measures/",
+            "pv": "13"
         },
         {
-            "pagePath": "/qualification-javasilverse11-measures/",
+            "pagePath": "/java-ceil-floor-round/",
             "pv": "12"
         },
         {
@@ -325,5 +325,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2024-12-08T01:02:52.600Z"
+    "createdAt": "2024-12-08T03:06:44.278Z"
 }
