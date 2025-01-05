@@ -6,7 +6,7 @@
         },
         {
             "pagePath": "/java-tochararray/",
-            "pv": "15"
+            "pv": "17"
         },
         {
             "pagePath": "/qualification-oraclemastersilversql/",
@@ -25,11 +25,11 @@
             "pv": "10"
         },
         {
-            "pagePath": "/it-qualification",
-            "pv": "9"
+            "pagePath": "/java-localdate-addition-subtraction/",
+            "pv": "10"
         },
         {
-            "pagePath": "/java-localdate-addition-subtraction/",
+            "pagePath": "/it-qualification",
             "pv": "9"
         },
         {
@@ -37,12 +37,12 @@
             "pv": "8"
         },
         {
-            "pagePath": "/java-isdigit-method/",
+            "pagePath": "/java-intern/",
             "pv": "8"
         },
         {
-            "pagePath": "/java-intern/",
-            "pv": "7"
+            "pagePath": "/java-isdigit-method/",
+            "pv": "8"
         },
         {
             "pagePath": "/qualification-sc/",
@@ -67,6 +67,10 @@
         {
             "pagePath": "/qualification-oraclemastersilversql-measures/",
             "pv": "6"
+        },
+        {
+            "pagePath": "/java-isalphabetic-method/",
+            "pv": "5"
         },
         {
             "pagePath": "/java-mismatch-method/",
@@ -97,15 +101,15 @@
             "pv": "4"
         },
         {
+            "pagePath": "/domain-to-route53/",
+            "pv": "4"
+        },
+        {
             "pagePath": "/eclipse-line-problem/",
             "pv": "4"
         },
         {
             "pagePath": "/game-trophy-2021-07-25/",
-            "pv": "4"
-        },
-        {
-            "pagePath": "/java-isalphabetic-method/",
             "pv": "4"
         },
         {
@@ -130,10 +134,6 @@
         },
         {
             "pagePath": "/closedxml-image-property/",
-            "pv": "3"
-        },
-        {
-            "pagePath": "/domain-to-route53/",
             "pv": "3"
         },
         {
@@ -182,6 +182,10 @@
         },
         {
             "pagePath": "/java-fibonacci-sequence/",
+            "pv": "2"
+        },
+        {
+            "pagePath": "/java-random-password/",
             "pv": "2"
         },
         {
@@ -241,6 +245,10 @@
             "pv": "1"
         },
         {
+            "pagePath": "/blog-alt-setting/",
+            "pv": "1"
+        },
+        {
             "pagePath": "/c-language-compiler/",
             "pv": "1"
         },
@@ -286,10 +294,6 @@
         },
         {
             "pagePath": "/java-random-number/",
-            "pv": "1"
-        },
-        {
-            "pagePath": "/java-random-password/",
             "pv": "1"
         },
         {
@@ -377,5 +381,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2025-01-05T00:58:26.423Z"
+    "createdAt": "2025-01-05T14:13:54.112Z"
 }
