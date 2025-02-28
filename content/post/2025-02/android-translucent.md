@@ -1,5 +1,5 @@
 ---
-title: Androidで背景が透明なアプリにする方法
+title: 【Android】背景が透明なアプリを作成する方法
 description: 今回はAndroidアプリの開発時に、背景を透明にする方法について紹介します。
 date: 2025-02-27
 categories: 
@@ -8,7 +8,7 @@ tags:
   - Android
 archives:
     - 2025/02
-thumbnail: /images/app.webp
+thumbnail: /images/android.webp
 ---
 
 今回はAndroidアプリの開発時に、背景を透明にする方法について紹介します。
