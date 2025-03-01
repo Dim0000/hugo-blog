@@ -4,6 +4,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Dim0000/hugo-blog/blob/main/LICENSE)
 
 This is a miscellaneous blog created with Hugo.
+
 Hugoで作成した雑記ブログです。
 
 ## URL
@@ -39,41 +40,47 @@ Hugoで作成した雑記ブログです。
 ### Build Docker images
 
 ```text
-`docker compose build`
+docker compose build
 ```
 
 ### Start Hugo server
 
 ```text
-`docker compose up -d # start Docker containers` 
+docker compose up -d # start Docker containers
+```
 
-`docker compose watch # hot reload`
+```text
+docker compose watch # hot reload
+```
 
-`docker compose down # stop and remove containers`
+```text
+docker compose down # stop and remove containers
 ```
 
 ### Create new content
 
 ```text
-`docker compose exec hugo hugo new <file> # create new content file in Docker container`
+docker compose exec hugo hugo new <file> # create new content file in Docker container
+```
 
-`docker compose cp hugo:/src/content/<file> ./<directory> # copy file from Docker container to local directory`
+```text
+docker compose cp hugo:/src/content/<file> ./<directory> # copy file from Docker container to local directory
 ```
 
 ### Obtain PV ranking
 
 ```text
-* `docker compose -f compose.create-ranking.yml run --rm node # create JSON data for PV ranking`
+docker compose -f compose.create-ranking.yml run --rm node # create JSON data for PV ranking
 ```
 
 ### Obtain product data
 
 ```text
-* `docker compose -f compose.create-products-json.yml run --rm node # create JSON data for product data`
+docker compose -f compose.create-products-json.yml run --rm node # create JSON data for product data
 ```
 
 ### Convert webp
 
 ```text
-* `docker compose -f compose.convert-webp.yml run node`
+docker compose -f compose.convert-webp.yml run node
 ```
