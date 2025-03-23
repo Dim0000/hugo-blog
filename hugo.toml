@@ -55,7 +55,7 @@ timeout = "60s"
   URL = "/profile"
   weight = 20
 [[Menus.main]]
-  Name = "IT資格の部屋"
+  Name = "IT資格一覧"
   URL = "/it-qualification"
   weight = 30
 [[Menus.main]]

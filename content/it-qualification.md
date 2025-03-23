@@ -1,5 +1,5 @@
 ---
-title: IT資格の部屋
+title: IT資格一覧
 description: こちらはIT資格に関する記事をまとめたページです。
 date: 2021-07-22
 categories: 
@@ -18,15 +18,17 @@ tags:
 thumbnail: /images/qualification.webp
 ---
 
-こちらは**IT資格**に関する記事をまとめたページです。
+こちらはIT資格に関する記事をまとめたページです。
 
 <!--more-->
 
-## 合格したIT資格一覧
+## 合格済IT資格一覧
 
-僕が受験し、合格した試験を、**情報処理技術者試験**と**各ベンダー資格**に分けて一覧表でまとめました（随時更新予定です）。
+2021年以降に受験し合格した試験を**情報処理技術者試験**と**ベンダー資格**に分けて一覧表でまとめました。
 
-表の資格は受験した日付で並べています。資格名のリンクはそれぞれタグページに飛びます。
+表の資格は受験した日付で並べています。資格名のリンクはタグページに遷移します。
+
+こちらのページは資格を取得し次第、随時更新予定になります。
 
 ### 情報処理技術者試験
 
@@ -53,3 +55,13 @@ Oracle・AWS等のベンダー資格の一覧になります。
 |[AWS Solutions Architect Associate]({{< relref  "/tags/aws-saa" >}})|2023/08|{{< ref "/qualification-aws-saa" >}}|
 |[Java Gold SE11]({{< relref  "/tags/java-gold" >}})|2024/06|{{< ref "/qualification-javagold-se11" >}}|
 |[Oracle MASTER Silver DBA]({{< relref  "/tags/oracle-silver" >}})|2024/08|{{< ref "/qualification-oraclemastersilverdba" >}}|
+
+### その他
+
+Oracleの試験を受験する際は、割引価格で申し込む方法があります。以下の記事を参考にしてみてください。
+
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/javasilver-se11-application" >}}</li>
+</ul>
+{{< /box >}}
