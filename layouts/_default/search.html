@@ -6,6 +6,10 @@
 <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
 
 <h1>{{ .Page.Title }}</h1>
+<hr>
+<p>このページでは、サイト内の記事を全文検索できます。</p>
+<p>検索ボックスにキーワードを入力してください。</p>
+<hr>
 <input onkeyup="search(this.value)" size="15" autocomplete="off" autofocus placeholder="検索ワード" />
 <span id="inputWord"></span> <span id="resultCount"></span>
 <div id="result"></div>
