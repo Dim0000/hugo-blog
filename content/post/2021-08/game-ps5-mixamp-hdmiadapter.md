@@ -1,19 +1,17 @@
 ---
 title: 【PS5】ASTRO HDMIアダプターでMixAmpを使う方法【解説】
-description: 今回はPS5とPS4とでのMixAmpの接続方法の違い（光デジタル端子の有無について）と、PS5にMixAmpをHDMIアダプターを使って接続する方法について紹介します。
+description: 今回は、PS5とPS4とでのMixAmpの接続方法の違い（光デジタル端子の有無について）と、PS5にMixAmpをHDMIアダプターを使って接続する方法について紹介します。
 date: 2021-08-19
 categories: 
   - 雑記
 tags: 
-  - ゲーム
   - 商品レビュー
-  - MixAmp
 archives: 
   - 2021/08
 thumbnail: /images/game.webp
 ---
 
-今回はPS5とPS4とでの**MixAmp**の接続方法の違い（光デジタル端子の有無について）と、PS5にMixAmpを**HDMIアダプター**を使って接続する方法について紹介します。
+今回は、PS5とPS4とでの**MixAmp**の接続方法の違い（光デジタル端子の有無について）と、PS5にMixAmpを**HDMIアダプター**を使って接続する方法について紹介します。
 
 <!--more-->
 
@@ -40,13 +38,13 @@ MixAmpは光デジタル端子を使わないと性能を発揮できません�
 
 {{< luminous src="/images/game-ps5-mixamp-hdmiadapter-01.png" caption="PS5とMixAmpをそのまま繋げる場合の配線">}}
 
-僕自身、PS5でUSB接続でMixAmpを使ってみましたが、PS4で光デジタルケーブルを使ってプレイした時より音の聞こえ加減が悪いので、音質面での違和感が凄い。また、ゲーム音とVC音の個別の調整もできません。どのようにしたら使えるのか…。ちゃんと使えるようにするには、光デジタルをアダプターでHDMI接続に変換する必要があります。
+実際に、PS5でUSB接続でMixAmpを使ってみましたが、PS4で光デジタルケーブルを使ってプレイした時より音の聞こえ加減が悪いので、音質面での違和感が凄い。また、ゲーム音とVC音の個別の調整もできません。どのようにしたら使えるのか…。ちゃんと使えるようにするには、光デジタルをアダプターでHDMI接続に変換する必要があります。
 
 どのように接続するかというと、「[Logicool G ASTRO Gaming HDMI アダプター]({{< product_link id="B08LP8HRZQ" type="url" >}})」と呼ばれる機器を使います。これ一つでMixAmpとPS5を接続できます。
 
 {{< product_link id="B08LP8HRZQ" >}}
 
-流石にMixAmpが使えないのはストレスなので、僕もHDMIアダプターを買ってみることにしました。
+流石にMixAmpが使えないのはストレスなので、HDMIアダプターを買ってみることにしました。
 
 ## HDMIアダプターを買って繋げてみた
 
