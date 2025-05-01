@@ -17,7 +17,6 @@ timeout = "60s"
   description = "ITエンジニアが運営する雑記ブログです"
   post_meta = ["date", "categories"]
   highlightColor = "#0095d9"
-  mathjax = true
   dateformat = "2006-01-02"
   customCSS = ["/css/custom.css"]
   toc = true
