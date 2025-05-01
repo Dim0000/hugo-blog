@@ -12,6 +12,7 @@ tags:
 archives:
   - 2023/04 
 thumbnail: /images/mathjax.webp
+mathjax: true
 ---
 
 JavaScriptプラグインである**MathJax**を使い、プラグイン無しでWordPressやHugoで簡単に数式を表示させる方法について解説していきます。
@@ -75,15 +76,15 @@ MathJaxでは`\\`で改行を行うことができますが、バージョン3�
 
 ## HugoでMathJaxを使う方法
 
-Hugoの場合でもWordPressと同様に、head要素内に上記のscript要素を追加することでMathJaxが有効になります。
+Hugoの場合、記事のフロントマターに`mathjax = true`を指定することで、MathJaxが有効化されます。
 
 Hugoでは`$$`もしくは`\\[`と`\\]`で囲むことでディスプレイ形式で数式が表示できます。`\\(`と`\\`で囲むことでインライン形式で表示ができます。
 
 {{< code lang="plaintext" title="インライン数式" >}}
-\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)
+数式：\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)
 {{< /code >}}
 
-\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)
+数式：\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)
 
 {{< code lang="plaintext" title="ディスプレイ数式" >}}
 $$
