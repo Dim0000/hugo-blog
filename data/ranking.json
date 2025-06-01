@@ -18,7 +18,7 @@
         },
         {
             "pagePath": "/java-tochararray/",
-            "pv": "62"
+            "pv": "63"
         },
         {
             "pagePath": "/qualification-oraclemastersilversql/",
@@ -57,11 +57,11 @@
             "pv": "21"
         },
         {
-            "pagePath": "/qualification-oraclemastersilversql-measures/",
-            "pv": "17"
+            "pagePath": "/qualification-sg-pass/",
+            "pv": "18"
         },
         {
-            "pagePath": "/qualification-sg-pass/",
+            "pagePath": "/qualification-oraclemastersilversql-measures/",
             "pv": "17"
         },
         {
@@ -161,6 +161,10 @@
             "pv": "5"
         },
         {
+            "pagePath": "/java-pow-method/",
+            "pv": "5"
+        },
+        {
             "pagePath": "/javasilver-se11-application/",
             "pv": "5"
         },
@@ -189,10 +193,6 @@
             "pv": "4"
         },
         {
-            "pagePath": "/java-pow-method/",
-            "pv": "4"
-        },
-        {
             "pagePath": "/java-random-password/",
             "pv": "4"
         },
@@ -214,6 +214,10 @@
         },
         {
             "pagePath": "/domain-to-route53/",
+            "pv": "3"
+        },
+        {
+            "pagePath": "/game-trophy-2021-07-25/",
             "pv": "3"
         },
         {
@@ -242,10 +246,6 @@
         },
         {
             "pagePath": "/c-language-compiler",
-            "pv": "2"
-        },
-        {
-            "pagePath": "/game-trophy-2021-07-25/",
             "pv": "2"
         },
         {
@@ -349,5 +349,5 @@
             "pv": "1"
         }
     ],
-    "createdAt": "2025-06-01T01:14:40.964Z"
+    "createdAt": "2025-06-01T13:16:25.799Z"
 }
