@@ -10,7 +10,7 @@ enableGitInfo = "true" # 最終更新日をgitから取得
 timeout = "60s"
 
 [permalinks]
-  post = "/:filename/"
+  post = "/:contentbasename/"
 
 [Params]
   Subtitle = "ITエンジニアが運営する雑記ブログです"
