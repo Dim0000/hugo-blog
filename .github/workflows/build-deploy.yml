@@ -1,0 +1,43 @@
+name: build-deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Get Latest Hugo Version
+        id: hugo_version
+        run: |
+          latest=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
+          echo "version=${latest#v}" >> $GITHUB_OUTPUT
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ steps.hugo_version.outputs.version }}/hugo_extended_${{ steps.hugo_version.outputs.version }}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0 # enableGitInfoでの取得用 
+      - name: Build Hugo
+        run: hugo --minify --buildFuture
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ap-northeast-1
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role # ロール名
+          role-session-name: GitHubActions-${{ github.run_id }}
+          role-duration-seconds: 900
+      - name: Upload files to the production website with the AWS CLI
+        run: |
+          echo "uploding to s3 ..."
+          aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
+          aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
