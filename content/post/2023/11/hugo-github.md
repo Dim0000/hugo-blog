@@ -1,5 +1,5 @@
 ---
-title: 【Hugo】Github ActionsでS3に自動でデプロイする【ブログ移行④】
+title: 【Hugo】Github ActionsでS3に自動でデプロイする【サイト構築③】
 description: 今回はHugoをGithubにプッシュした際に、自動でS3にデプロイする方法を紹介します。
 date: 2023-11-24
 categories: 
