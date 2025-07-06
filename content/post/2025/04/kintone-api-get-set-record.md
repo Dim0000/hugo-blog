@@ -6,9 +6,10 @@ categories:
   - 技術記事
 tags: 
   - JavaScript
+  - kintone API
 archives:
     - 2025/04
-thumbnail: /images/javascript.webp
+thumbnail: /images/kintone.webp
 ---
 
 今回は**kintone API**で、`kintone.app.record.get()`と`kintone.app.record.set()`を使用する時の注意点について書いていきます。
