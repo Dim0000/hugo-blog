@@ -1,6 +1,6 @@
 ---
-title: 【AWS】HugoをS3・CloudFrontにデプロイする【ブログ移行③】
-description: 今回はローカルで構築したHugoのブログサイトをAWS S3にデプロイし、CloudFrontで配信するまでの流れをまとめていきます。
+title: 【AWS】HugoをS3・CloudFrontにデプロイする【サイト構築②】
+description: 今回はローカルで構築したHugoのブログサイトをAWS S3にデプロイし、Amazon CloudFrontで配信するまでの流れをまとめていきます。
 date: 2023-10-15
 categories: 
   - 技術記事
@@ -13,11 +13,11 @@ archives:
 thumbnail: /images/aws.webp
 ---
 
-今回はローカルで構築した**Hugo**のブログサイトを**AWS S3**にデプロイし、**CloudFront**で配信するまでの流れをまとめていきます。
+今回はローカルで構築した**Hugo**のブログサイトを**AWS S3**にデプロイし、**Amazon CloudFront**で配信するまでの流れをまとめていきます。
 
 <!--more-->
 
-なお、Hugoサイトの作成と、Route 53での独自ドメイン取得が出来ている前提で話を進めていきます。
+なお、ローカルでのHugoサイトの作成と、Route 53での独自ドメイン取得が出来ている前提で話を進めていきます。
 
 {{< box "関連記事" >}}
 <ul>
@@ -34,11 +34,13 @@ thumbnail: /images/aws.webp
 
 {{< luminous src="/images/hugo-deploy-01.png" caption="バケットの作成1">}}
 
+サイトは独自ドメインで運用するので、最終的にはS3のパブリックアクセスはブロックしてホスティングします。その前にS3でホスティングしてサイトを確認したいので、一旦パブリックアクセスをすべてブロック」のチェックは外します。
+
 {{< luminous src="/images/hugo-deploy-02.png" caption="バケットの作成2">}}
 
-サイトは独自ドメインで運用するのでS3のパブリックアクセスはブロックしてホスティングしますが、その前にS3でホスティングしてサイトを確認したいので、一旦ブロックのチェックは外します。
+その他の設定はいじらなくて良いので、そのままバケットを作成します。
 
-その他の設定はいじらなくて良いので、そのままバケットを作成し、アップロードを行っていきます。
+続いて、ビルドしたファイルのアップロードを行っていきます。
 
 {{< luminous src="/images/hugo-deploy-03.png" caption="バケットの作成3">}}
 
@@ -46,7 +48,7 @@ Hugoのビルド時に生成されたファイルが`publicフォルダ`内に�
 
 {{< luminous src="/images/hugo-deploy-04.png" caption="バケットの作成4">}}
 
-続いて、プロパティからS3の静的ウェブサイトのホスティングを有効にしていきます。
+続いて、プロパティからS3の「静的ウェブサイトホスティング」を有効にしていきます。
 
 {{< luminous src="/images/hugo-deploy-05.png" caption="静的ウェブサイトホスティングの設定1">}}
 
@@ -83,7 +85,7 @@ Hugoのビルド時に生成されたファイルが`publicフォルダ`内に�
 
 ## ACMでSSL証明書を発行する
 
-S3へのデプロイが完了したので、S3へCloudFrontからでアクセスするように設定します。その前に**ACM**でSSL証明書を発行していきます。CloudFrontにACMのSSL証明書を適用するにはリージョンを**米国東部 (バージニア北部)　us-east-1**にする必要があります。[^1]
+S3へのデプロイが完了したので、S3へCloudFrontからでアクセスするように設定します。その前に**ACM**でSSL証明書を発行していきます。CloudFrontにACMのSSL証明書を適用するにはリージョンを「米国東部 (バージニア北部)　us-east-1」にする必要があります。[^1]
 
 [^1]:[CloudFront で SSL/TLS 証明書を使用するための要件 | Amazon CloudFront](https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html#https-requirements-aws-region)
 
