@@ -1,5 +1,5 @@
 ---
-title: 【Hugo】ローカルにHugo環境を構築する【ブログ移行②】
+title: 【Hugo】ローカルにHugo環境を構築する【サイト構築①】
 description: 今回はHugoのブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
 date: 2023-10-10
 categories: 
@@ -26,13 +26,11 @@ thumbnail: /images/hugo.webp
 </ul>
 {{< /box >}}
 
-## Hugoのインストール
+## Hugoのセットアップ
 
-公式のGitHubのリリースページからZIPファイルをダウンロードします。筆者はWindowsの`windows-amd64版`をダウンロードしました。
+GitHubのHugo公式リポジトリの[リリースページ](https://github.com/gohugoio/hugo/releases)から、ZIPファイルをダウンロードします。Windowsの場合、`windows-amd64.zip`か`windows-arm64.zip`の対応CPUのものを選択します。
 
-* [Releases · gohugoio/hugo | GitHub](https://github.com/gohugoio/hugo/releases)
-
-Hugoのフォルダは`C:\Hugo\bin`とします。ZIPファイルを解凍し、`hugo.exe`をbinフォルダに配置します。
+Hugoのフォルダは今回は`C:\Hugo\bin`とします。ZIPファイルを解凍し、`hugo.exe`をbinフォルダに配置します。
 
 続いて、環境変数のパスを通します。Windowsの設定から、「システム」→左側一番下の「詳細情報」→右側の「システムの詳細設定」→一番下の「環境変数」を開きます。そこから、「ユーザーの環境変数」→「Path」を編集し、`C:\Hugo\bin`を設定します。
 
@@ -48,18 +46,16 @@ Hugoのフォルダは`C:\Hugo\bin`とします。ZIPファイルを解凍し、
 
 {{< code lang="powershell" title="ターミナル" >}}
 $ cd C:\Hugo\
-$ hugo new site dimzakki.com
-$ cd C:\Hugo\dimzakki.com
+$ hugo new site <サイト名>
+$ cd C:\Hugo\<サイト名>
 $ git init
 {{< /code >}}
 
-サイト名は`dimzakki.com`としていますが、自分の好きな名前に変えて下さい。
+サイト名を自分の好きな名前に変えて下さい。
 
-続いてテーマを導入します。Hugoには豊富なテーマプラグインがあります。当サイトでは、シンプルかつ今までのブログに近かった**Mainroad**を採用しました。
+続いてテーマを導入します。Hugoには豊富なテーマプラグインがありますが、当サイトではシンプルかつ今までのブログのスタイルに近かった[Mainroad](https://github.com/vimux/mainroad)を採用しました。
 
-* [Mainroad | GitHub](https://github.com/vimux/mainroad)
-
-今回はgitのサブモジュールとしてインストールします。
+今回はGitのサブモジュールとして追加します。
 
 {{< code lang="powershell" title="ターミナル" >}}
 $ git submodule add https://github.com/vimux/mainroad themes/mainroad
@@ -85,11 +81,11 @@ $ hugo new test.md # 新規記事を作成する
 
 ## Hugoの設定
 
-Hugoの設定は`hugo.toml`（古いバージョンだと`config.toml`）で設定します。参考までに、当サイトでは以下の様な感じにしてます。
+Hugoの設定は`hugo.toml`（古いバージョンだと`config.toml`）で設定します。参考までに、以下が基本的な設定項目になります。
 
 {{< code lang="toml" title="hugo.toml" >}}
-baseURL = "https://dimzakki.com/"
-title = "Dim雑記"
+baseURL = "<サイトURL>"
+title = "<サイトタイトル>"
 DefaultContentLanguage = "ja"
 languageCode = "ja-JP"
 theme = "mainroad"
@@ -97,16 +93,16 @@ hasCJKLanguage = true
 summarylength = 120
 googleAnalytics = "G-XXXXXXXXXX" # アナリティクスのトラッキングID
 enableGitInfo = "true" # 最終更新日をgitから取得
+timeout = "60s"
 
 [permalinks]
-  post = "/:filename/"
+  post = "/:contentbasename/"
 
 [Params]
-  Subtitle = "ITエンジニアが運営する雑記ブログです"
-  description = "ITエンジニアが運営する雑記ブログです"
+  Subtitle = "<サイトサブタイトル>"
+  description = "<サイト説明文>"
   post_meta = ["date", "categories"]
   highlightColor = "#0095d9"
-  mathjax = true
   dateformat = "2006-01-02"
   customCSS = ["/css/custom.css"]
   toc = true
@@ -115,6 +111,7 @@ enableGitInfo = "true" # 最終更新日をgitから取得
   list = "right"
   single = "right"
   widgets = ["categories", "taglist", "recent", "archives", "social"]
+
 [Params.widgets]
   recent_num = 5
   categories_counter = true
@@ -135,25 +132,13 @@ enableGitInfo = "true" # 最終更新日をgitから取得
   weight = 60
 
 [[Menus.main]]
-  Name = "このサイトについて"
+  Name = "当サイトについて"
   URL = "/about"
   weight = 10
 [[Menus.main]]
   Name = "プロフィール"
   URL = "/profile"
   weight = 20
-[[Menus.main]]
-  Name = "IT資格の部屋"
-  URL = "/it-qualification"
-  weight = 30
-[[Menus.main]]
-  Name = "サイト内全文検索"
-  URL = "/search"
-  weight = 40
-[[Menus.main]]
-  Name = "お問い合わせ"
-  URL = "/contact"
-  weight = 50
 [[Menus.footer]]
   Name = "プライバシーポリシー"
   URL = "/privacy-policy"
@@ -164,13 +149,11 @@ enableGitInfo = "true" # 最終更新日をgitから取得
 
 ## 記事のデータの移行
 
-記事のデータ移行には**wordpress-to-hugo-exporter**というWordPressプラグインがあるので、それが使えれば簡単に移行ができると思います。
-
-* [wordpress-to-hugo-exporter | GitHub](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)
+記事のデータ移行には[wordpress-to-hugo-exporter](https://github.com/SchumacherFM/wordpress-to-hugo-exporter)というWordPressプラグインがあるので、それが使えれば簡単に移行ができると思います。
 
 GitHubの「Download ZIP」からダウンロードし、ZIPファイルをWordpressのプラグインページからアップロードすることで、WordPressのツールからエクスポートが可能になります。
 
-筆者の場合は「Export to Hugo」のエクスポートのZIPファイルが、何故かエラーでダウンロード出来なかったので、手動でコピペして記事を移しました…。
+当サイトの場合は「Export to Hugo」のエクスポートのZIPファイルが、何故かエラーで何回やってもダウンロード出来なかったので、手動でコピペして記事を移しました…。
 
 移行作業としては記事内容のコピペが主で、それをマークダウン形式に書き換える作業が殆どでした。
 
