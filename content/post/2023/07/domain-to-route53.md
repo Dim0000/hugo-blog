@@ -1,5 +1,5 @@
 ---
-title: 【AWS】Route 53に他サービスの独自ドメインを移管する【ブログ移行①】
+title: 【AWS】Amazon Route 53に他サービスの独自ドメインを移管する
 description: 今回、ムームードメインで取得した独自ドメインをAmazon Route 53へ移管しましたので、移管の流れを備忘録として残します。
 date: 2023-07-29
 categories: 
@@ -29,9 +29,9 @@ thumbnail: /images/aws.webp
 
 **Route 53**はAWSのDNS（ドメインネームシステム）サービスです。ドメインの管理やDNS権威サーバの役割を果たします。
 
-当サイトはムームードメインで取得した独自ドメイン（`dimzakki.com`）を使い、ロリポップのサーバーにWordPressをホストしてます。そのドメインを、Route 53へと移管しました。移管料金は13$（移管してから1年分の管理費）かかりました。
+当サイトはムームードメインで取得した独自ドメイン（`dimzakki.com`）を使い、ロリポップのサーバーにWordPressをホストしてます。そのドメインを、Route 53へと移管しました。移管料金は13ドル（移管してから1年分の管理費）かかりました。
 
-ドメインをRoute 53で管理するメリットとしては、S3・CloudFrontでホスティングする際にSSL対応ができる点が大きいです。その他、DNSサーバー自体が冗長化されており、高いSLA（サービス品質保証）が保証されていることなどが利点になります。
+ドメインをRoute 53で管理するメリットとしては、当サイトの様にS3・CloudFrontでホスティングする場合にSSL対応（HTTPS化）ができる点が大きいです。その他、DNSサーバー自体が冗長化されており、高いSLA（サービス品質保証）が保証されていることなどが利点になります。
 
 ## 作業の流れと必要な物
 
@@ -52,15 +52,15 @@ thumbnail: /images/aws.webp
 
 ### ロリポップのサーバーのIPアドレスの確認
 
-ロリポップの場合、ユーザーページの「ロリポップ！のドメイン」のIPがサーバーのIPアドレスになります。
+ロリポップの場合、ユーザーページの「ロリポップ！のドメイン」のIPアドレスがサーバーのIPアドレスになります。
 
 {{< luminous src="/images/domain-to-route53-01.png" caption="ロリポップのサーバーIPアドレス確認1">}}
 
-IPアドレス自体はロリポップには書いていないので、自分で調べる必要があります。`nslookupコマンド`や『[Google Admin Toolbox dig](https://toolbox.googleapps.com/apps/dig/)』などで調べ控えておきます。
+IPアドレス自体はロリポップには書いていないので、自分で調べる必要があります。`nslookupコマンド`や「[Google Admin Toolbox dig](https://toolbox.googleapps.com/apps/dig/)」などで調べ控えておきます。
 
 {{< luminous src="/images/domain-to-route53-02.png" caption="ロリポップのサーバーIPアドレス確認2">}}
 
-ここで調べたIPアドレスを後でRoute 53に設定します。
+ここで確認したIPアドレスを後でRoute 53に設定します。
 
 ## Route 53でホストゾーンの作成・ネームサーバ設定の変更
 
