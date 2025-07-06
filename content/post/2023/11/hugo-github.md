@@ -18,7 +18,7 @@ thumbnail: /images/hugo.webp
 
 <!--more-->
 
-必要な手順としては、IAMロールの設定と、Github Actionsの設定のみになります。
+必要な手順としては、AWS IAMロールの設定およびGithub Actionsの設定のみになります。
 
 {{< box "関連記事" >}}
 <ul>
@@ -31,13 +31,23 @@ thumbnail: /images/hugo.webp
 
 ## IAMロールの設定
 
-まずは、IAMコンソールのIDプロバイダから、OIDCプロバイダの設定を以下の様に行います。プロバイダのタイプは`OpenID Connect`で、プロバイダのURLは`https://token.actions.githubusercontent.com`、対象者は`sts.amazonaws.com`を入力します。
+まずは、AWS IAMコンソールの「IDプロバイダ」から、OIDCプロバイダの設定を以下の様に行います。
+
+OIDCプロバイダとは、AWSに信頼できる外部の認証元として登録するサービスのことです。AWSとGitHub Actionsを連携させるために設定するために必要になります。
+
+IDプロバイダーの追加画面で、以下の通りに設定します。 
+
+* プロバイダのタイプ：`OpenID Connect`
+* プロバイダのURL：`https://token.actions.githubusercontent.com`
+* 対象者：`sts.amazonaws.com`
 
 {{< luminous src="/images/hugo-github-01.png" caption="OIDCプロバイダの設定">}}
 
-続いてIAMロールを作成します。作成したロールの信頼ポリシーの編集で、ポリシーを以下の様に設定します。
+続いてIAMロールを作成します。ロール名は分かれば何でも良いですが、今回は`blog_github_action_role`とします。
 
-{{< code lang="json" title="信頼ポリシー" >}}
+作成したロールの信頼ポリシーの編集で、ポリシーを以下の通りに設定します。それぞれ、AWSアカウントIDとGitHubユーザー名・リポジトリ名を指定します。
+
+{{< code lang="json" title="信頼ポリシー" hl_lines="7 12" >}}
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -57,12 +67,16 @@ thumbnail: /images/hugo.webp
 }
 {{< /code >}}
 
+ここまででAWS側の設定は完了です。
+
 ## Github Actionsの設定
 
-続いて、Github Actionsの設定です。GitHubリポジトリの`.github/workflows/`ディレクトリに`deploy.yml`を配置します。Hugoのビルドは「[peaceiris/actions-hugo](https://github.com/peaceiris/actions-hugo)」を使用します。
+続いて、ワークフローを定義するファイルの作成と、Github Actionsの設定になります。
 
-{{< code lang="yml" title="deploy.yml" >}}
-name: deploy
+GitHubリポジトリの`.github/workflows`ディレクトリに`build-deploy.yml`を配置します。ファイルは以下の様にします。
+
+{{< code lang="yml" title="build-deploy.yml" hl_lines="29 36" >}}
+name: build-deploy
 
 on:
   push:
@@ -70,28 +84,34 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     permissions:
       id-token: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - name: Get Latest Hugo Version
+        id: hugo_version
+        run: |
+          latest=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
+          echo "version=${latest#v}" >> $GITHUB_OUTPUT
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ steps.hugo_version.outputs.version }}/hugo_extended_${{ steps.hugo_version.outputs.version }}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           submodules: true
-          fetch-depth: 0 # enableGitInfoでの取得用
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: "latest"
-          extended: true     
+          fetch-depth: 0 # enableGitInfoでの取得用 
       - name: Build Hugo
         run: hugo --minify --buildFuture
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-northeast-1
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role  # ロール名
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/blog_github_action_role # ロール名
           role-session-name: GitHubActions-${{ github.run_id }}
           role-duration-seconds: 900
       - name: Upload files to the production website with the AWS CLI
@@ -101,22 +121,32 @@ jobs:
           aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
 {{< /code >}}
 
-ここで、`blog_github_action_role`としてる箇所は今回作成したIAMのロール名になります。
+ここで、36行目に今回作成したIAMのロール名を指定します。
 
-また、GitHubのSecrets設定で、`AWS_ACCOUNT_ID`にAWSのアカウントID、`S3_BUCKET`にS3バケット名、`DISTRIBUTION_ID`にはディストリビューションIDを設定します。
+ワークフローの内容としては、`main`ブランチにプッシュされた時に、HugoのビルドとAWS S3へのデプロイを行います。Hugoは最新バージョンを取得しビルドするようにしています。
+
+また、36行目で`fetch-depth: 0`としているのは、記事の最終更新日を設定する際に、過去のコミットの日時も取得するためです。
+
+次に、GitHubのリポジトリ設定で、「Secrets and variables（Actions）」の設定画面で、`Repository secrets`に変数を以下の通りに設定します。 
+
+`AWS_ACCOUNT_ID`にAWSのアカウントID、`S3_BUCKET`にS3バケット名、`DISTRIBUTION_ID`にはディストリビューションIDを設定します。
+
+* `AWS_ACCOUNT_ID`：AWSのアカウントID
+* `S3_BUCKET`：AWS S3のバケット名
+* `DISTRIBUTION_ID`：Amazon CloudFrontのディストリビューションID
 
 {{< luminous src="/images/hugo-github-02.png" caption="GitHubのSecrets設定">}}
 
-これで設定は完了ですので、実際にGitHubにプッシュし、GitHub Actionsの画面から処理が実行されているのを確認できたら成功です。
+ここまでで、必要な設定は完了になります。これでプッシュ時に自動でS3にデプロイできるようになりました。
 
-{{< luminous src="/images/hugo-github-03.png" caption="GitHub Actions画面">}}
+実際にGitHubにプッシュし、GitHub Actionsの画面から処理が実行されること、処理実行後にサイトに更新が反映されていることが確認できたら成功です。
 
 * * *
 
-これでプッシュ時に自動でS3にデプロイできるようになりました。ここまでで、Hugoブログの構築が完了となります。以上で記事を終わりにします。
+ここまででHugoブログの構築が完了となります。以上で記事を終わりにします。
 
 ## 参考文献
 
-* [GitHub ActionsにAWSクレデンシャルを直接設定したくないのでIAMロールを利用したい | DevelopersIO](https://dev.classmethod.jp/articles/github-actions-aws-sts-credentials-iamrole/)
+* [Host on GitHub Pages | Hugo.io](https://gohugo.io/host-and-deploy/host-on-github-pages/)
 
-* [静的サイトジェネレータ「Hugo」でブログサイトを S3 + CloudFrontでホストするまで [第4回〜HugoをGithub Action でS3にプッシュする〜] | 犬と暮らすエンジニア日記](https://technowanko.com/posts/hugo/004_hugo_build_on_github/)
+* [GitHub ActionsにAWSクレデンシャルを直接設定したくないのでIAMロールを利用したい | DevelopersIO](https://dev.classmethod.jp/articles/github-actions-aws-sts-credentials-iamrole/)
