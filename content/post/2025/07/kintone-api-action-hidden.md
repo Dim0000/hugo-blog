@@ -1,14 +1,15 @@
 ---
-title: 【kintone API】レコードの値の取得・変更時の注意点
+title: 【kintone API】アクションボタンを非表示にする方法
 description: 今回はkintone APIで、アクションボタンを非表示にするカスタマイズについて紹介します。
 date: 2025-07-05
 categories: 
   - 技術記事
 tags: 
   - JavaScript
+  - kintone API
 archives:
     - 2025/07
-thumbnail: /images/javascript.webp
+thumbnail: /images/kintone.webp
 ---
 
 今回は**kintone API**で、アクションボタンを非表示にするカスタマイズについて紹介します。
@@ -22,6 +23,8 @@ thumbnail: /images/javascript.webp
 まず、レコード詳細画面の表示時のイベントで、ステータスアクションのDOMを`getElementsByClassName('gaia-app-statusbar-action-label')`で取得します。ここで、注意点としては、`'app.record.detail.show'`のイベント直後だと、ステータスアクションのDOMが取得できません。
 
 そこで、`setTimeout`で遅延させることでDOMを取得できるようにします。また、レコードのプロセス管理を行っている場合は、ステータスを変更されるDOMも一緒に取得されるので、その場合はボタンの表示名で条件に追加する必要があります。
+
+サンプルとして、下記のコードでボタンを非表示にできます。
 
 {{< code lang="javascript" title="" >}}
 (function () {
@@ -43,8 +46,7 @@ thumbnail: /images/javascript.webp
   });
 })();
 {{< /code >}}
-
-上記のコードでボタンを非表示にできます。適宜、レコードの条件などを追加することで、実践的な活性制御が実現できます。
+適宜、レコードの条件などを追加することで、より実践的な活性制御が実現できます。
 
 * * *
 
