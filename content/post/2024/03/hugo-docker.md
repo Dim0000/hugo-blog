@@ -23,11 +23,22 @@ thumbnail: /images/hugo.webp
 </ul>
 {{< /box >}}
 
-## DockerでHugo環境を構築する
+## HugoにDockerを使うメリット
 
-Dockerを使うことで、`hugo.exe`のダウンロードや環境変数の設定をしなくてもHugoを動かせます（Dockerの環境構築については割愛します）。
+HugoにDockerを使うメリットとしては、主に以下があります。
 
-ブログ用フォルダ内で`Dockerfile`と`docker-compose.yml`を配置します。ホットリロード機能を実現するために`Compose Watch`を利用しています。
+* `hugo.exe`のダウンロードや環境変数の設定が不要
+* どこでも同じ環境（バージョン）を再現できる
+
+ただし、起動がやや重く、Dockerのイメージサイズも大きいため、個人のブログ執筆のような小規模でやる場合だとあまり恩恵は受けられないかなと思います。
+
+## 構築手順
+
+Docker自体の環境構築についてはここでは割愛します。
+
+Hugoのフォルダ内で`Dockerfile`と`compose.yml`を配置します。Dockerイメージは公式が出しているものがありませんので、今回はサードパーティー製の「[hugomods](https://hub.docker.com/r/hugomods/hugo)」を使います。
+
+それぞれファイルを以下の通りにします。Hugoのバージョンは最新にします。
 
 {{< code lang="Dockerfile" title="Dockerfile" >}}
 FROM hugomods/hugo:latest
@@ -36,12 +47,9 @@ COPY . /src/
 
 EXPOSE 1313
 
-ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--port", "1313", "-D", "-F"]
-{{< /code >}}
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--port", "1313", "-D", "-F"]{{< /code >}}
 
 {{< code lang="yml" title="compose.yml" >}}
-version: '3'
-
 services:
   hugo:
     build: .
@@ -54,10 +62,10 @@ services:
           target: /src
 {{< /code >}}
 
-コンテナ起動時は、ターミナルで以下のコマンドを実行します。
+コンテナ起動時は、ターミナルで以下のコマンドを実行します。ホットリロード機能を実現するために`Compose Watch`を利用しています。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker compose up -d # コンテナ起動・ローカルでビルド
+$ docker compose up -d # コンテナ起動
 
 $ docker compose watch # ホットリロード
 {{< /code >}}
@@ -67,9 +75,9 @@ $ docker compose watch # ホットリロード
 新規記事を作成する際は以下のコマンドを実行します。
 
 {{< code lang="powershell" title="ターミナル" >}}
-$ docker compose exec hugo hugo new <file> # コンテナ内に新規ファイル作成
+$ docker compose exec hugo hugo new <file名> # コンテナ内に新規ファイル作成
 
-$ docker compose cp hugo:/src/content/<file> . # コンテナからローカルにコピー
+$ docker compose cp hugo:/src/content/<file名> . # コンテナからローカルにコピー
 {{< /code >}}
 
 * * *
