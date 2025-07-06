@@ -1,0 +1,24 @@
+{{- $tags := .Site.Taxonomies.tags }}
+{{- if gt (len $tags) 0 }}
+  {{- $sortedTags := slice }}
+  {{- range $name, $taxonomy := $tags }}
+    {{- $page := $.Site.GetPage (printf "/tags/%s" $name) }}
+    {{- if $page }}
+      {{- $weight := or $page.Weight 0 }} {{/* weight がない場合は大きな値を仮に設定 */}}
+      {{- $sortedTags = $sortedTags | append (dict "name" $name "count" $taxonomy.Count "weight" $weight "page" $page) }}
+    {{- end }}
+  {{- end }}
+  
+  {{- $sortedTags = sort $sortedTags "weight" "count" }}
+
+  <div class="widget-taglist widget">
+    <h4 class="widget__title">{{ T "tags_title" }}</h4>
+    <div class="widget__content">
+      {{- range $tag := $sortedTags }}
+        <a class="widget-taglist__link widget__link btn" href="{{ $tag.page.RelPermalink }}" title="{{ $tag.page.Title }}">
+          {{- $tag.page.Title -}}{{- if $.Site.Params.widgets.tags_counter }} ({{ $tag.count }}){{ end -}}
+        </a>
+      {{- end }}
+    </div>
+  </div>
+{{- end }}
