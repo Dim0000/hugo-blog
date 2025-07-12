@@ -1,5 +1,5 @@
 ---
-title: 【Hugo】ローカルにHugo環境を構築する【サイト構築①】
+title: 【Hugo】ローカルにサイト（Mainroadテーマ）を構築する【サイト構築①】
 description: 今回はHugoのブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
 date: 2023-10-10
 categories: 
@@ -91,9 +91,11 @@ languageCode = "ja-JP"
 theme = "mainroad"
 hasCJKLanguage = true
 summarylength = 120
-googleAnalytics = "G-XXXXXXXXXX" # アナリティクスのトラッキングID
 enableGitInfo = "true" # 最終更新日をgitから取得
 timeout = "60s"
+
+[services.googleAnalytics]
+  ID = "G-XXXXXXXXXX" # アナリティクスのトラッキングID
 
 [permalinks]
   post = "/:contentbasename/"
