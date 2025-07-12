@@ -170,18 +170,19 @@ body {
   padding: 0.3em 0.8em;
   background: #272822;
   color: white;
-  margin-left: 1px;
+  margin-left: 0.08em;
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .xCodeBlock_code {
-  margin-top: -1.9px;
+  margin-top: -0.3em;
 }
 
 .xCodeBlock_code pre {
   padding: 0.5em;
   margin-top: 0;
   border-top: 0;
+  border-radius: 0.3125rem;
 }
 
 summary {
