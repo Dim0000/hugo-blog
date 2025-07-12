@@ -1,26 +1,35 @@
 ---
-title: 【C#/VB】ClosedXMLでExcelに画像プロパティを指定する方法
-description: 今回はC#/VBのライブラリであるClosedXMLで、Excelの画像のプロパティを指定する方法を紹介します。
+title: 【C#・VB】ClosedXMLでExcelに画像プロパティを指定する方法
+description: 今回はC#・VBのライブラリであるClosedXMLで、Excelの画像のプロパティを指定する方法を紹介します。
 date: 2024-11-30
 categories: 
   - 技術記事
 tags: 
   - C#
   - VB
+  - ClosedXML
 archives:
     - 2024/11
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は**C#**/**VB**のライブラリである**ClosedXML**で、Excelの画像のプロパティを指定する方法を紹介します。
+今回は**C#**・**VB**のライブラリである**ClosedXML**で、Excelの画像のプロパティを指定する方法を紹介します。
 
 <!--more-->
+
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/closedxml-image" >}}</li>
+</ul>
+{{< /box >}}
 
 ## ClosedXMLでの画像の指定
 
 Excelでは、画像（図形）の動作をセルに関連付けるプロパティで、画像がセルの移動やサイズ変更にどう反応するかを指定することができます。
 
 ClosedXMLでは、そのプロパティを`XLPicturePlacement`で指定することができます。
+
+C#でのサンプルコードは以下になります。
 
 {{< code lang="c#" title="Program.cs" >}}
 // 画像を貼り付ける
@@ -40,9 +49,9 @@ image.Placement = XLPicturePlacement.FreeFloating;
 
 ## MoveAndSizeを指定する場合の注意点
 
-`MoveAndSize`（セルに合わせて移動やサイズ変更をする）を指定する際、`moveメソッド`は以下の形式で指定する必要があります。
+`MoveAndSize`（セルに合わせて移動やサイズ変更をする）を指定する際、`moveメソッド`は以下の形式で指定する必要があります。以下はC#の例になります。
 
-{{< code lang="c#" title="Program.cs" >}}
+{{< code lang="c#" title="" >}}
 image.MoveTo(IXLCell fromCell, Point fromOffset, IXLCell toCell, Point toOffset)
 {{< /code >}}
 
