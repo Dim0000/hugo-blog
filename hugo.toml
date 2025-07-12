@@ -5,9 +5,11 @@ languageCode = "ja-JP"
 theme = "mainroad"
 hasCJKLanguage = true
 summarylength = 120
-googleAnalytics = "G-YZ8ZTS9C8C" # アナリティクスのトラッキングID
 enableGitInfo = "true" # 最終更新日をgitから取得
 timeout = "60s"
+
+[services.googleAnalytics]
+  ID = "G-YZ8ZTS9C8C" # アナリティクスのトラッキングID
 
 [permalinks]
   post = "/:contentbasename/"
@@ -21,11 +23,13 @@ timeout = "60s"
   customCSS = ["/css/custom.css"]
   toc = true
   price1 = "税込37,730円（2024/08/23時点）"
+
 [Params.sidebar]
   home = "right"
   list = "right"
   single = "right"
   widgets = ["adsense", "profile", "ranking", "categories", "taglist", "recent", "archives", "related", "adsense2"]
+
 [Params.widgets]
   recent_num = 5
   categories_counter = true
