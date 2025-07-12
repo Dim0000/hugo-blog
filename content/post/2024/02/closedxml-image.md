@@ -1,31 +1,40 @@
 ---
-title: 【C#/VB】ClosedXMLでExcelに画像を埋め込む方法【余白・縮尺】
-description: 今回はC#/VBのライブラリであるClosedXMLでExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
+title: 【C#・VB】ClosedXMLでExcelに画像を埋め込む方法【余白・縮尺】
+description: 今回はC#・VBのライブラリであるClosedXMLでExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
 date: 2024-02-18
 categories: 
   - 技術記事
 tags: 
   - C#
   - VB
+  - ClosedXML
 archives:
     - 2024/02
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は**C#**/**VB**のライブラリである**ClosedXML**でExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
+今回は**C#**・**VB**のライブラリである**ClosedXML**でExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
 
 <!--more-->
+
+{{< box "関連記事" >}}
+<ul>
+<li>{{< ref "/closedxml-image-property" >}}</li>
+</ul>
+{{< /box >}}
 
 ## ClosedXMLでの画像の貼り付け
 
 ClosedXMLはExcelがインストールされていない環境でExcelファイルを操作できるライブラリです。まず、ClosedXMLを使うには、ClosedXMLライブラリの追加と、プログラム行頭の`using`の記述が必要になります。
 
-{{< code lang="c#" title="usingの記述" >}}
+{{< code lang="c#" title="" >}}
 using ClosedXML.Excel;
 using ClosedXML.Excel.Drawings;
 {{< /code >}}
 
 ClosedXMLでの画像の貼り付けには、`AddPictureメソッド`を使います。例として、ExcelファイルのA2セルに画像を貼り付けるサンプルコードを紹介します。
+
+C#でのサンプルコードは以下になります。
 
 {{< code lang="c#" title="Program.cs" >}}
 using ClosedXML.Excel;
@@ -60,7 +69,9 @@ class Program
 
 上記のサンプルコードでは`MoveTo`メソッドでセルを指定しており、セルの左上に合うように画像が移動されます。セル内で余白を持たせたい場合、引数を追加しxとyの余白をポイント単位で指定します。
 
-{{< code lang="c#" title="Program.cs" >}}
+C#でのサンプルコードは以下になります。
+
+{{< code lang="c#" title="" >}}
 IXLPicture image = ws.AddPicture(@"C:\test\image.jpg");
 
 // 画像を右・下に10ポイントずつずらす 
@@ -75,7 +86,9 @@ image.MoveTo(ws.Cell(2, 2), 10, 10);
 
 画像の縮尺を調整したい場合は、`Scale`メソッドを使います。引数に倍率を指定します。高さと幅を別々に調整したい場合は、それぞれ`ScaleHeight`メソッドと`ScaleWidth`メソッドを使います。
 
-{{< code lang="c#" title="Program.cs" >}}
+C#でのサンプルコードは以下になります。
+
+{{< code lang="c#" title="" >}}
 IXLPicture image = ws.AddPicture(@"C:\test\image.jpg");
 
 // 画像を等倍で0.5倍にする
@@ -88,13 +101,15 @@ image.ScaleHeight(2);
 image.ScaleWidth(2);
 {{< /code >}}
 
-等倍で0.5倍とすると、画像が小さくなったことが分かります。
-
 {{< luminous src="/images/closedxml-image-03.png" caption="画像の縮尺の調整">}}
+
+等倍で0.5倍とすると、画像が小さくなったことが分かります。
 
 ## VBの場合
 
 VisualBasicの場合では、以下のようになります。
+
+まず、画像の貼り付けのコードです。
 
 {{< code lang="vb" title="Program.vb" >}}
 Imports ClosedXML.Excel
@@ -116,14 +131,18 @@ Class Program
 End Class
 {{< /code >}}
 
-{{< code lang="vb" title="Program.vb" >}}
+次に、画像の位置をセル内で調整するコードになります。
+
+{{< code lang="vb" title="" >}}
 Dim image As IXLPicture = ws.AddPicture("C:\test\image.jpg")
 
 ' 画像を右・下に10ポイントずつずらす 
 image.MoveTo(ws.Cell(2, 2), 10, 10)
 {{< /code >}}
 
-{{< code lang="vb" title="Program.vb" >}}
+次に、画像の縮尺を調整するコードになります。
+
+{{< code lang="vb" title="" >}}
 Dim image As IXLPicture = ws.AddPicture("C:\test\image.jpg")
 
 ' 画像を等倍で0.5倍にする
