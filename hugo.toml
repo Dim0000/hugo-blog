@@ -17,6 +17,7 @@ timeout = "60s"
 [Params]
   Subtitle = "ITエンジニアが運営する雑記ブログです"
   description = "ITエンジニアが運営する雑記ブログです"
+  schema = true
   post_meta = ["date", "categories"]
   highlightColor = "#0095d9"
   dateformat = "2006-01-02"
