@@ -1,2 +1,22 @@
-<a href="{{ .Destination | safeURL }}" {{ with .Title}} title="{{ . }}" {{ end }}{{ if strings.HasPrefix
-  .Destination "http" }} target="_blank" {{ end }}>{{ .Text }}</a>
+{{- $baseurl := urls.Parse site.BaseURL -}}
+{{- $url := urls.Parse .Destination -}}
+{{- $getpage := site.GetPage .Destination -}}
+{{- $internal := lt (len $url.Host) 1 -}} {{/* NOTE: internal links will always have an empty $url.Host */}}
+
+{{- $fragment := $url.Fragment -}}
+{{- with $fragment -}}{{ $fragment = printf "#%s" $fragment }}{{- end -}}
+
+{{- $destination := "" -}}
+{{- if $internal -}}
+  {{- if (strings.HasPrefix $url.Path "./") -}}
+    {{- $urltrimmed := strings.TrimPrefix "./" $url -}}
+    {{- $destination = printf "%s://%s/%s%s" $baseurl.Scheme $baseurl.Host $urltrimmed $fragment -}}
+  {{- else -}}
+    {{- $destination = printf "%s%s" $getpage.RelPermalink $fragment -}}
+  {{- end -}}
+{{- else -}}
+  {{- $destination = .Destination -}}
+{{- end -}}
+
+<a href="{{ $destination | safeURL }}" {{ with or .Title $getpage.LinkTitle .Text }} title="{{ . }}" {{ end }}{{ if not
+  $internal }} rel="noopener external" target="_blank" {{ end }}>{{ or .Text .Title $getpage.LinkTitle | safeHTML }}</a>
