@@ -1,6 +1,6 @@
 ---
 title: 【AWS】Amazon Route 53に他サービスの独自ドメインを移管する
-description: 今回、ムームードメインで取得した独自ドメインをAmazon Route 53へ移管しましたので、移管の流れを備忘録として残します。
+description: ムームードメインで取得した独自ドメインをAmazon Route 53へ移管しましたので、移管の流れを備忘録として残します。
 date: 2023-07-29
 categories: 
   - 技術記事
@@ -12,17 +12,15 @@ archives:
 thumbnail: /images/aws.webp
 ---
 
-今回、ムームードメインで取得した**独自ドメイン**を**Amazon Route 53**へ移管しましたので、移管の流れを備忘録として残します。
+ムームードメインで取得した**独自ドメイン**を**Amazon Route 53**へ移管しましたので、移管の流れを備忘録として残します。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/wordpress-to-hugo" >}}</li>
-<li>{{< ref "/develop-hugo" >}}</li>
-<li>{{< ref "/hugo-deploy" >}}</li>
-<li>{{< ref "/hugo-github" >}}</li>
-</ul>
+* [](wordpress-to-hugo)
+* [](develop-hugo)
+* [](hugo-deploy)
+* [](hugo-github)
 {{< /box >}}
 
 ## ドメインをRoute 53で管理する利点
@@ -38,10 +36,8 @@ thumbnail: /images/aws.webp
 ドメイン移管の流れとしては、ざっくり分けると以下の2つになります。
 
 {{< box "ドメイン移管の流れ" >}}
-<ol>
-<li>ネームサーバー設定を移管元サービスからRoute 53へ変更する</li>
-<li>ドメインを移管元サービスからRoute 53に移管する</li>
-</ol>
+1. ネームサーバー設定を移管元サービスからRoute 53へ変更する
+2. ドメインを移管元サービスからRoute 53に移管する
 {{< /box >}}
 
 ドメインを移管する前にネームサーバー設定をRoute 53へ変更しているのは、これを行わないとドメインの移行時にDNSサービスが使えなくなり、サイトにアクセスできなくなる可能性があるからです。
@@ -54,11 +50,11 @@ thumbnail: /images/aws.webp
 
 ロリポップの場合、ユーザーページの「ロリポップ！のドメイン」のIPアドレスがサーバーのIPアドレスになります。
 
-{{< luminous src="/images/domain-to-route53-01.png" caption="ロリポップのサーバーIPアドレス確認1">}}
+![ロリポップのサーバーIPアドレス確認1](/images/domain-to-route53-01.png)
 
 IPアドレス自体はロリポップには書いていないので、自分で調べる必要があります。`nslookupコマンド`や「[Google Admin Toolbox dig](https://toolbox.googleapps.com/apps/dig/)」などで調べ控えておきます。
 
-{{< luminous src="/images/domain-to-route53-02.png" caption="ロリポップのサーバーIPアドレス確認2">}}
+![ロリポップのサーバーIPアドレス確認2](/images/domain-to-route53-02.png)
 
 ここで確認したIPアドレスを後でRoute 53に設定します。
 
@@ -68,37 +64,37 @@ IPアドレス自体はロリポップには書いていないので、自分で
 
 まず、Route 53のダッシュボードからホストゾーンの作成を行っていきます。
 
-{{< luminous src="/images/domain-to-route53-03.png" caption="ホストゾーンの作成1">}}
+![ホストゾーンの作成1](/images/domain-to-route53-03.png)
 
 **ドメイン名**は移管するドメイン名、**タイプ**は**パブリックホストゾーン**を選択します。
 
-{{< luminous src="/images/domain-to-route53-04.png" caption="ホストゾーンの作成2">}}
+![ホストゾーンの作成2](/images/domain-to-route53-04.png)
 
 ホストゾーンを作成すると、**NSレコード**が4つとSOAレコードが作成されます。ここのNSレコードを使って、ムームドメインでDNS設定を変更していきます。
 
-{{< luminous src="/images/domain-to-route53-05.png" caption="ホストゾーンの作成3">}}
+![ホストゾーンの作成3](/images/domain-to-route53-05.png)
 
 ムームドメインにログインし**ネームサーバ設定変更**から設定を変更していきます。今回の場合、変更前はロリポップのネームサーバーに設定されています。
 
-{{< luminous src="/images/domain-to-route53-06.png" caption="ネームサーバ設定変更1">}}
+![ネームサーバ設定変更1](/images/domain-to-route53-06.png)
 
 これを先ほどの4つのNSレコードに書き換えます。ここで、末尾の`.`は入力する必要はありません。
 
-{{< luminous src="/images/domain-to-route53-07.png" caption="ネームサーバ設定変更2">}}
+![ネームサーバ設定変更2](/images/domain-to-route53-07.png)
 
-{{< luminous src="/images/domain-to-route53-08.png" caption="ネームサーバ設定変更3">}}
+![ネームサーバ設定変更3](/images/domain-to-route53-08.png)
 
 これで、ネームサーバー設定はRoute 53になりましたが、ドメイン名とIPアドレスが紐づいていませんので、Aレコードの設定をしていきます。
 
 Route 53のホストゾーンからレコードの作成を行います。
 
-{{< luminous src="/images/domain-to-route53-09.png" caption="レコードの作成1">}}
+![レコードの作成1](/images/domain-to-route53-09.png)
 
 **レコードタイプ**を**A**、**値**を先ほど控えたIPアドレスを入力します。ここで、必須ではありませんがサブドメインの`www.dimzakki.com`でもアクセスさせたいので、もう1つAレコードを追加作成しています。
 
-{{< luminous src="/images/domain-to-route53-10.png" caption="レコードの作成2">}}
+![レコードの作成2](/images/domain-to-route53-10.png)
 
-{{< luminous src="/images/domain-to-route53-11.png" caption="レコードの作成3">}}
+![レコードの作成3](/images/domain-to-route53-11.png)
 
 これで、ネームサーバの設定変更が完了になります。`nslookup`等での疎通確認と、サイトへアクセスできるかも確認しておきましょう。設定が切り替わるまで、少し時間が掛かる可能性もあります。
 
@@ -110,43 +106,43 @@ Route 53のホストゾーンからレコードの作成を行います。
 
 また、**認証コード**（AuthCode）もドメイン移管時に必要となるので控えておきます。
 
-{{< luminous src="/images/domain-to-route53-12.png" caption="ドメインの移管1">}}
+![ドメインの移管1](/images/domain-to-route53-12.png)
 
 Route 53の**登録済みドメイン**から移管（イン）の**単一のドメイン**を選択します。
 
-{{< luminous src="/images/domain-to-route53-13.png" caption="ドメインの移管2">}}
+![ドメインの移管2](/images/domain-to-route53-13.png)
 
 移管ドメイン名と、確認のチェックを入力します。移管可否のステータスが「移管可能」になっていることも確認しましょう。
 
-{{< luminous src="/images/domain-to-route53-14.png" caption="ドメインの移管3">}}
+![ドメインの移管3](/images/domain-to-route53-14.png)
 
 DNSサービスは先程設定したネームサーバーを使うので、このままでOKです。
 
-{{< luminous src="/images/domain-to-route53-15.png" caption="ドメインの移管4">}}
+![ドメインの移管4](/images/domain-to-route53-15.png)
 
 ドメインの**認証コード**の入力を求められるので、控えておいた認証コードを入力します。
 
-{{< luminous src="/images/domain-to-route53-16.png" caption="ドメインの移管5">}}
+![ドメインの移管5](/images/domain-to-route53-16.png)
 
 ドメイン登録者（自分）の**連絡先情報**を入力します。管理者も技術者も同じなのでチェックを入れます。**プライバシーの保護**にもチェックを入れます。
 
-{{< luminous src="/images/domain-to-route53-17.png" caption="ドメインの移管6">}}
+![ドメインの移管6](/images/domain-to-route53-17.png)
 
 最終的な確認画面になりますので、確認のチェックを入れてリクエストを送信をクリックします。
 
-{{< luminous src="/images/domain-to-route53-18.png" caption="ドメインの移管7">}}
+![ドメインの移管7](/images/domain-to-route53-18.png)
 
 時間を少し置くと、移管元から確認のメールが来ますので、メール内のリンクから承認を行います。
 
-{{< luminous src="/images/domain-to-route53-19.png" caption="ドメインの移管8">}}
+![ドメインの移管8](/images/domain-to-route53-19.png)
 
-{{< luminous src="/images/domain-to-route53-20.png" caption="ドメインの移管9">}}
+![ドメインの移管9](/images/domain-to-route53-20.png)
 
 ここで、連絡先（メールアドレス）の検証を行っていないと、Route 53から「Verify your email address for ～」というメールが届くので、メール内のリンクをクリックしてメールアドレスの検証を行いましょう（これをしておかないと、ドメインが停止されてしまいますので注意）。
 
 ここまでドメインの移管作業は終わりです。登録済みドメインに、移管したドメインが載っていることを確認しましょう。
 
-{{< luminous src="/images/domain-to-route53-21.png" caption="ドメインの移管10">}}
+![ドメインの移管10](/images/domain-to-route53-21.png)
 
 * * *
 

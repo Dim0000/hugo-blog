@@ -1,6 +1,6 @@
 ---
-title: 【C#・VB】ClosedXMLでExcelに画像プロパティを指定する方法
-description: 今回はC#・VBのライブラリであるClosedXMLで、Excelの画像のプロパティを指定する方法を紹介します。
+title: 【C#・VB】ClosedXMLでExcelに画像プロパティを指定する
+description: C#・VBのライブラリであるClosedXMLで、Excelの画像のプロパティを指定する方法を紹介します。
 date: 2024-11-30
 categories: 
   - 技術記事
@@ -13,14 +13,12 @@ archives:
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は**C#**・**VB**のライブラリである**ClosedXML**で、Excelの画像のプロパティを指定する方法を紹介します。
+**C#**・**VB**のライブラリである**ClosedXML**で、Excelの画像のプロパティを指定する方法を紹介します。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/closedxml-image" >}}</li>
-</ul>
+* [](closedxml-image)
 {{< /box >}}
 
 ## ClosedXMLでの画像の指定
@@ -31,7 +29,7 @@ ClosedXMLでは、そのプロパティを`XLPicturePlacement`で指定するこ
 
 C#でのサンプルコードは以下になります。
 
-{{< code lang="c#" title="Program.cs" >}}
+```c# {lineNos="inline", name="Program.cs"}
 // 画像を貼り付ける
 IXLPicture image = ws.AddPicture(@"C:\test\image.jpg");
 
@@ -43,7 +41,7 @@ image.Placement = XLPicturePlacement.Move;
 
 // 画像のプロパティを「セルに合わせて移動やサイズ変更をしない」に指定する
 image.Placement = XLPicturePlacement.FreeFloating;
-{{< /code >}}
+```
 
 「セルに合わせて移動やサイズ変更をする」を指定すれば、セルの動作に画像が連動し、フィルター使用時も画像を連動させることができます。
 
@@ -51,9 +49,9 @@ image.Placement = XLPicturePlacement.FreeFloating;
 
 `MoveAndSize`（セルに合わせて移動やサイズ変更をする）を指定する際、`moveメソッド`は以下の形式で指定する必要があります。以下はC#の例になります。
 
-{{< code lang="c#" title="" >}}
+```c# {lineNos="inline", name=""}
 image.MoveTo(IXLCell fromCell, Point fromOffset, IXLCell toCell, Point toOffset)
-{{< /code >}}
+```
 
 異なる形式を使うと、エクセルの画像がおかしくなることがあるようです。
 

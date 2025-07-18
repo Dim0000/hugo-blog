@@ -1,6 +1,6 @@
 ---
 title: 【kintone API】アクションボタンを非表示にする方法
-description: 今回はkintone APIで、アクションボタンを非表示にするカスタマイズについて紹介します。
+description: kintone APIで、アクションボタンを非表示にするカスタマイズについて紹介します。
 date: 2025-07-05
 categories: 
   - 技術記事
@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/kintone.webp
 ---
 
-今回は**kintone API**で、アクションボタンを非表示にするカスタマイズについて紹介します。
+**kintone API**で、アクションボタンを非表示にするカスタマイズについて紹介します。
 
 <!--more-->
 
@@ -26,7 +26,7 @@ thumbnail: /images/kintone.webp
 
 サンプルとして、下記のコードでボタンを非表示にできます。
 
-{{< code lang="javascript" title="" >}}
+```js {lineNos="inline", name=""}
 (function () {
   "use strict";
 
@@ -45,7 +45,8 @@ thumbnail: /images/kintone.webp
     return event;
   });
 })();
-{{< /code >}}
+```
+
 適宜、レコードの条件などを追加することで、より実践的な活性制御が実現できます。
 
 * * *

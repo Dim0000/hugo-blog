@@ -1,18 +1,19 @@
 ---
 title: 【Visual Studio】Windowsフォームで画面スケールがおかしくなった時の対応
-description: 今回はVisual Studioでの、Windowsフォームのスケールについての記事になります。
+description: Visual Studioでの、Windowsフォームのスケールについての記事になります。
 date: 2024-12-27
 categories: 
   - 技術記事
 tags: 
   - C#
   - VB
+  - Windows Forms
 archives:
     - 2024/12
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は**Visual Studio**での、**Windowsフォーム**のスケールについての記事になります。
+**Visual Studio**での、**Windowsフォーム**のスケールについての記事になります。
 
 <!--more-->
 

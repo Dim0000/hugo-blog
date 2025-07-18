@@ -1,6 +1,6 @@
 ---
-title: 【Java】小数点の切り上げ・切り捨て・四捨五入をするメソッド
-description: double型などの変数で小数点以下を丸めて整数にする時は、Mathクラスのceil・floor・roundメソッドを使います。それぞれのメソッドの処理についてまとめていきます。
+title: 【Java】小数点の切り上げ・切り捨て・四捨五入をする
+description: JavaのMathクラスのceil・floor・roundメソッドでdouble型などの変数の小数点以下を丸めて整数にする方法を紹介します。
 date: 2022-08-04
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-`double型`などの変数で小数点以下を丸めて整数にする時は、`Mathクラス`の`ceil`・`floor`・`roundメソッド`を使います。それぞれのメソッドの処理についてまとめていきます。
+**Java**の`Mathクラス`の`ceil`・`floor`・`roundメソッド`で`double型`などの変数の小数点以下を丸めて整数にする方法を紹介します。
 
 <!--more-->
 
@@ -23,9 +23,9 @@ thumbnail: /images/java.webp
 
 `ceilメソッド`は小数の**切り上げ**（対象の数値以上の中で最も小さい整数値を返す）を行います。戻り値は`double型`で返されます。
 
-{{< code lang="java" title="ceilメソッドの書式例" >}}
+```java {lineNos="inline", name="ceilメソッドの書式例"}
 Math.ceil(1.5); // 2.0が返ってくる
-{{< /code >}}
+```
 
 引数が`NaN`、無限大、正または負の0、の場合は、引数と同じ値が返されます。
 
@@ -33,9 +33,9 @@ Math.ceil(1.5); // 2.0が返ってくる
 
 `floorメソッド`は小数の**切り捨て**（対象の数値以下の中で最も大きい整数値を返す）を行います。戻り値は`double型`で返されます。
 
-{{< code lang="java" title="floorメソッドの書式例" >}}
+```java {lineNos="inline", name="floorメソッドの書式例"}
 Math.floor(1.5); // 1.0が返ってくる
-{{< /code >}}
+```
 
 引数が`NaN`、無限大、正または負の0、の場合は、引数と同じ値が返されます。
 
@@ -43,16 +43,17 @@ Math.floor(1.5); // 1.0が返ってくる
 
 `roundメソッド`は小数を**小数第1位で四捨五入**します。戻り値は`int`・`long型`で返されます。`double型`の場合は`long型`で、`float型`の場合は`int型`の返り値になります。上2つのメソッドとは返り値の型が異なるので注意しましょう。
 
-{{< code lang="java" title="roundメソッドの書式例" >}}
+```java {lineNos="inline", name="roundメソッドの書式例"}
 Math.round(1.5); // 2が返ってくる
-{{< /code >}}
+```
+
 引数が`NaN`の場合は0が返されます。
 
 ## メソッドの使用例
 
 それぞれのメソッドの使用例をサンプルコードで示します。小数第2位以下で四捨五入を行いたい時は、一度桁上げを行ってから四捨五入し、その後桁下げをする必要があります。
 
-{{< code lang="java" title="RealNumTest.java" >}}
+```java {lineNos="inline", name="RealNumTest.java"}
 public class RealNumTest {
   public static void main(String[] args) {
     double d1 = 0.5;
@@ -78,9 +79,11 @@ public class RealNumTest {
     System.out.println(d4 + "の四捨五入(小数第2位):" + ((double) Math.round(d4 * 10)) / 10);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 0.5の切り上げ:1.0
 -0.5の切り上げ:-0.0
 0.5の切り上げ:0.0
@@ -90,7 +93,10 @@ public class RealNumTest {
 2.4の四捨五入:2
 -2.4の四捨五入:-2
 1.15の四捨五入(小数第2位):1.2
-{{< /code >}}
+```
+
+それぞれ小数点以下を丸めた整数に変換されました。
+
 * * *
 
 切り捨て・切り上げの覚え方ですが、ceilは「天井」という意味なので切り上げ、floorは「床」という意味なので切り捨てという風に覚えましょう。

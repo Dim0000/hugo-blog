@@ -1,6 +1,6 @@
 ---
 title: 【Java】浮動小数点数のfloat型とdouble型の違いとは?
-description: 今回はJavaの小数を扱う変数型のfloat型とdouble型の違いについてまとめていきます。
+description: Javaの小数を扱う変数型のfloat型とdouble型の違いについてまとめていきます。
 date: 2022-03-27
 categories: 
   - 技術記事
@@ -12,7 +12,7 @@ thumbnail: /images/java.webp
 mathjax: true
 ---
 
-今回はJavaの小数を扱う変数型の`float型`と`double型`の違いについてまとめていきます。
+**Java**の小数を扱う変数型の`float型`と`double型`の違いについてまとめていきます。
 
 <!--more-->
 
@@ -26,9 +26,9 @@ mathjax: true
 
 `float型`の変数を宣言する時は、末尾に`f`か`F`を付けて`float型`であることを示す必要があります。
 
-{{< code lang="java" title="float型の変数宣言" >}}
+```java {lineNos="inline", name="float型の変数宣言"}
 float num = 1.0f;
-{{< /code >}}
+```
 
 ## 2つの型の範囲
 
@@ -45,7 +45,7 @@ float num = 1.0f;
 
 実際にそれぞれの値の範囲をサンプルコードで出力してみます。
 
-{{< code lang="java" title="DoubleFloatMaxMinTest.java" >}}
+```java {lineNos="inline", name="DoubleFloatMaxMinTest.java"}
 public class DoubleFloatMaxMinTest {
   public static void main(String[] args) {
     // double型の最大値と最小値
@@ -56,14 +56,16 @@ public class DoubleFloatMaxMinTest {
     System.out.println("float型の最小値:" + Float.MIN_VALUE);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 double型の最大値:1.7976931348623157E308
 double型の最小値:4.9E-324   
 float型の最大値:3.4028235E38
 float型の最小値:1.4E-45
-{{< /code >}}
+```
 
 先ほどの表と同じ結果が出力されました。
 

@@ -1,6 +1,6 @@
 ---
-title: 【MathJax】サイトに簡単に数式を表示させる方法
-description: JavaScriptプラグインであるMathJaxを使い、プラグイン無しでWordPressやHugoで簡単に数式を表示させる方法について解説していきます。
+title: 【MathJax】サイトに数式を簡単に表示させる
+description: JavaScriptプラグインであるMathJaxを使い、プラグイン無しでWordPressやHugoで数式を表示させる方法を解説します。
 date: 2023-04-30
 categories: 
   - 技術記事
@@ -15,7 +15,7 @@ thumbnail: /images/mathjax.webp
 mathjax: true
 ---
 
-JavaScriptプラグインである**MathJax**を使い、プラグイン無しでWordPressやHugoで簡単に数式を表示させる方法について解説していきます。
+JavaScriptプラグインである**MathJax**を使い、プラグイン無しでWordPressやHugoで数式を表示させる方法を解説します。
 
 <!--more-->
 
@@ -23,28 +23,28 @@ JavaScriptプラグインである**MathJax**を使い、プラグイン無し�
 
 WordPressで数式を使うには、プラグインを導入する方法、テーマエディターでヘッダーにコードを記述する方法などがあります。ヘッダーにコードを記述すると、全てのページでそのコードが適用されてしまうので、意図しない表示になるページが発生する可能性があります。
 
-今回紹介する方法は、数式を表示させたいページ単体にMathJaxを読み込ませて数式を表示させたいと思います。当ブログのテーマはcocoonですが、cocoon以外のテーマを使用していても同じように使うことができます。
+今回紹介する方法は、数式を表示させたいページ単体にMathJaxを読み込ませて数式を表示させたいと思います。
 
 まず、表示させたいページで**カスタムHTMLブロック**に以下のコードを貼り付けます。
 
-{{< code lang="html" title="カスタムHTMLブロック" >}}
+```html {lineNos="inline", name="カスタムHTMLブロック"}
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-{{< /code >}}
+```
 
 上記コードを貼り付けることで、そのページではMathJax（バージョン3）が有効になります。そして、数式を`\(`と`\)`で囲むことで、数式を\\(TeX\\)で表示させることができます。試しにテーラー展開の公式を文中に表示させます。
 
-{{< code lang="plaintext" title="インライン数式" >}}
+```plaintext {lineNos="inline", name="インライン数式"}
 \( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \)
-{{< /code >}}
+```
 
 文章の途中でも、\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)のように数式を表示できます。
 
 数式を`\[`と`\]`で囲むことでディスプレイ数式も可能です。
 
-{{< code lang="plaintext" title="ディスプレイ数式" >}}
+```plaintext {lineNos="inline", name="ディスプレイ数式"}
 \[ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \]
-{{< /code >}}
+```
 
 \\[ f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\]
 
@@ -60,15 +60,15 @@ MathJaxでは`\\`で改行を行うことができますが、バージョン3�
 
 [^2]:[The line break(\) is not work | GitHub](https://github.com/mathjax/MathJax/issues/2312)
 
-{{< code lang="html" title="カスタムHTMLブロック" >}}
+```plaintext {lineNos="inline", name="カスタムHTMLブロック"}
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-alpha.1/es5/tex-mml-chtml.js">
 </script>
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="改行" >}}
+```plaintext {lineNos="inline", name="改行"}
 \[ 1 \\ 2 \\ 3 \]
-{{< /code >}}
+```
 
 \\[ 1 \\\\ 2 \\\\ 3 \\]
 
@@ -80,17 +80,17 @@ Hugoの場合、記事のフロントマターに`mathjax = true`を指定する
 
 Hugoでは`$$`もしくは`\\[`と`\\]`で囲むことでディスプレイ形式で数式が表示できます。`\\(`と`\\`で囲むことでインライン形式で表示ができます。
 
-{{< code lang="plaintext" title="インライン数式" >}}
+```plaintext {lineNos="inline", name="インライン数式"}
 数式：\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)
-{{< /code >}}
+```
 
 数式：\\( f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n} \\)
 
-{{< code lang="plaintext" title="ディスプレイ数式" >}}
+```plaintext {lineNos="inline", name="ディスプレイ数式"}
 $$
 f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n}
 $$
-{{< /code >}}
+```
 
 $$
 f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^{n}
@@ -98,9 +98,9 @@ $$
 
 改行は以下の様に書きます。
 
-{{< code lang="plaintext" title="改行" >}}
+```plaintext {lineNos="inline", name="改行"}
 \\[ 1 \\\\ 2 \\\\ 3 \\]
-{{< /code >}}
+```
 
 \\[ 1 \\\\ 2 \\\\ 3 \\]
 

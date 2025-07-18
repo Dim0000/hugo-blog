@@ -1,6 +1,6 @@
 ---
 title: 【Java】isLowerCaseメソッドで小文字かどうか判定する
-description: CharacterクラスのisLowerCaseメソッドを使うことで、文字が小文字のアルファベットかどうかか判定することが出来ます。メソッドの使い方を紹介していきます。
+description: JavaのCharacterクラスのisLowerCaseメソッドを使って、文字が小文字のアルファベットかどうかか判定する方法を紹介します。
 date: 2022-05-04
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-`Characterクラス`の`isLowerCaseメソッド`を使うことで、**文字が小文字のアルファベットかどうかか判定する**ことが出来ます。メソッドの使い方を紹介していきます。
+**Java**の`Characterクラス`の`isLowerCaseメソッド`を使って、文字が小文字のアルファベットかどうかか判定する方法を紹介します。
 
 <!--more-->
 
@@ -19,9 +19,9 @@ thumbnail: /images/java.webp
 
 `isLowerCaseメソッド`は、以下の様に記述します。
 
-{{< code lang="java" title="isLowerCaseメソッドの書式例" >}}
+```java {lineNos="inline", name="isLowerCaseメソッドの書式例"}
 Character.isDigit(int i);
-{{< /code >}}
+```
 
 戻り値の型は`boolean型`で、文字を比較して小文字であれば`ture`そうでなければ`false`を返します。
 
@@ -31,7 +31,7 @@ Character.isDigit(int i);
 
 実際に、メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="IsLowerCaseTest.java" >}}
+```java {lineNos="inline", name="IsLowerCaseTest.java"}
 public class IsLowerCaseTest {
   public static void main(String[] args) {
     // それぞれ小文字かどうか判定する
@@ -52,9 +52,11 @@ public class IsLowerCaseTest {
     System.out.println("あ のisLowerCase:" + Character.isLowerCase('あ'));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 LOWERCASE_LETTER:2
 a の汎用カテゴリ型:2
 a のisLowerCase:true
@@ -67,7 +69,7 @@ DECIMAL_DIGIT_NUMBER:9
 OTHER_LETTER:5
 あ の汎用カテゴリ型:5
 あ のisLowerCase:false
-{{< /code >}}
+```
 
 文字の汎用カテゴリ型が`LOWERCASE_LETTER`と一致した時に`true`が返ることが分かります。
 

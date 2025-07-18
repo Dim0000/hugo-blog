@@ -1,6 +1,6 @@
 ---
-title: 【SQL】DBMS_DEBUG_VC2COLLを使ってみる【Oracle】
-description: 
+title: 【SQL】DBMS_DEBUG_VC2COLLの使い方【Oracle】
+description: Oracle SQLでDBMS_DEBUG_VC2COLLの使い方を紹介します。
 date: 2024-07-19
 categories: 
   - 技術記事
@@ -10,7 +10,7 @@ archives:
 thumbnail: /images/oracle.webp
 ---
 
-今回は**Oracle SQL**で`DBMS_DEBUG_VC2COLL`を使ってみたいと思います。
+**Oracle SQL**で`DBMS_DEBUG_VC2COLL`の使い方を紹介します。
 
 <!--more-->
 

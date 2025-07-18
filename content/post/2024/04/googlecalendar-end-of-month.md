@@ -1,6 +1,6 @@
 ---
 title: 【Googleカレンダー】月末日の繰り返しタスクを追加する
-description: 今回はGoogleカレンダーで月末の繰り返しのタスクをGoogle ToDoリストを活用して追加する方法について紹介したいと思います。
+description: Googleカレンダーで月末の繰り返しタスクをGoogle ToDoリストを活用して追加する方法を紹介します。
 date: 2024-04-13
 categories: 
   - 技術記事
@@ -10,7 +10,7 @@ archives:
 thumbnail: /images/app.webp
 ---
 
-今回は**Googleカレンダー**で月末の繰り返しのタスクをGoogle ToDoリストを活用して追加する方法について紹介したいと思います。
+**Googleカレンダー**で月末の繰り返しタスクをGoogle ToDoリストを活用して追加する方法を紹介します。
 
 <!--more-->
 
@@ -18,7 +18,7 @@ thumbnail: /images/app.webp
 
 Googleカレンダーの予定の繰り返し設定では、毎週・毎月等の設定が可能で便利ですが、何故か月末日の繰り返しができない仕様となっています。Googleカレンダーで予定を「31日」に設定すると、31日が存在しない月はイベントを表示してくれません。
 
-{{< luminous src="/images/googlecalendar-end-of-month-01.png" caption="Googleカレンダーの予定の繰り返し設定">}}
+![Googleカレンダーの予定の繰り返し設定](/images/googlecalendar-end-of-month-01.png)
 
 毎月の月末に予定を入れたい人にとっては、地味に面倒な問題ですね。ネットでは、この問題に対しては`icsファイル`を変更して対応するというやり方がよく紹介されています。
 
@@ -31,15 +31,15 @@ Google ToDoリストとはタスクの作成・管理アプリで、Googleカレ
 * 繰り返し設定：「カスタム」
 * 繰り返す間隔：「1か月ごと」「末日」
 
-{{< luminous src="/images/googlecalendar-end-of-month-02.png" caption="月末にタスク設定1">}}
+![月末にタスク設定1](/images/googlecalendar-end-of-month-02.png)
 
-{{< luminous src="/images/googlecalendar-end-of-month-03.png" caption="月末にタスク設定2">}}
+![月末にタスク設定2](/images/googlecalendar-end-of-month-03.png)
 
 Googleカレンダーを確認すると、毎月の月末にタスクが設定されていることが分かります。
 
-{{< luminous src="/images/googlecalendar-end-of-month-04.png" caption="月末にタスク設定3">}}
+![月末にタスク設定3](/images/googlecalendar-end-of-month-04.png)
 
-{{< luminous src="/images/googlecalendar-end-of-month-05.png" caption="月末にタスク設定4">}}
+![月末にタスク設定4](/images/googlecalendar-end-of-month-05.png)
 
 ポイントとしましては、Googleカレンダーから直接タスクを追加するやり方だと末日を設定することができなかったので、Google ToDoリストのアプリからタスクを追加する必要がありそうです。
 

@@ -1,6 +1,6 @@
 ---
 title: 【初心者向け】ブラウザ上でプログラムを書く方法【環境構築不要】
-description: 今回はプログラミングを始めたい人向けにブラウザ上でコードを書く方法について紹介します。お手軽にプログラミングを始めてみたい人向けに、プログラミングサイトのpaiza.ioなどについて紹介します。
+description: プログラミングを始めたい人向けに、ブラウザ上でコードを書く方法についてpaiza.ioなどを紹介します。
 date: 2022-11-20
 categories: 
   - 技術記事
@@ -12,15 +12,15 @@ archives:
 thumbnail: /images/app.webp
 ---
 
-今回はプログラミングを始めたい人向けに**ブラウザ上でコードを書く方法**について紹介します。お手軽にプログラミングを始めてみたい人向けに、プログラミングサイトの**paiza.io**などについて紹介します。
+プログラミングを始めたい人向けに、**ブラウザ上でコードを書く方法**について**paiza.io**などを紹介します。
 
 <!--more-->
 
 ## プログラミングの実行環境を作るのは大変
 
-プログラミングを初めて学ぶ人が挫折しやすいのが、**統合開発環境（IDE）の構築**ですね。IDEは開発作業に必要な機能が最初から入っているソフトウェアのことで、**Eclipse**や**Microsoft Visual Studio**やなどが有名です。
+プログラミングを初めて学ぶ人が挫折しやすいのが、統合開発環境（IDE）の構築ですね。IDEは開発作業に必要な機能が最初から入っているソフトウェアのことで、**Eclipse**や**Microsoft Visual Studio**やなどが有名です。
 
-僕は仕事ではEclipseやVisual Studioを使うことが多いですが、IDEの構築はインストールや設定等やることが多くて面倒です。また使う言語やツールによって、必要な設定手順やインストールしないといけないものは変わります。
+私は仕事ではEclipseやVisual Studioを使うことが多いですが、IDEの構築はインストールや設定等やることが多くて面倒です。また使う言語やツールによって、必要な設定手順やインストールしないといけないものは変わります。
 
 また、コードエディタの**Visual Studio Code**（VS Code）も人気ですね。ある程度のことが出来て動作も軽いので、このサイトに関してはVS codeで管理しています。
 
@@ -37,12 +37,10 @@ paiza.ioという名前ですが、「paiza」はIT系の就活・学習サイ�
 このサイトの利点として以下の様な点があります。
 
 {{< box "paiza.ioの特徴" >}}
-<ul>
-<li>無料・会員登録無しでコードのコンパイルと実行ができる</li>
-<li>Java・C言語・Pythonなど主要な24言語に対応している</li>
-<li>日本語に対応している</li>
-<li>「GitHub」等の外部サイトと連携している</li>
-</ul>
+* 無料・会員登録無しでコードのコンパイルと実行ができる
+* Java・C言語・Pythonなど主要な24言語に対応している
+* 日本語に対応している
+* 「GitHub」等の外部サイトと連携している
 {{< /box >}}
 
 これほどの機能をブラウザ上で実行できるのは凄いですね！
@@ -51,17 +49,17 @@ paiza.ioという名前ですが、「paiza」はIT系の就活・学習サイ�
 
 実際にpaiza.ioを使って、Javaで「こんにちは」と出力するコードをコンパイルして実行してみます。
 
-{{< code lang="java" title="Main.java" >}}
+```java {lineNos="inline", name="Main.java"}
 public class Main {
   public static void main(String args[]) {
     System.out.println("こんにちは");
   }
 }
-{{< /code >}}
+```
 
 実行ボタンもしくは`ctrl + enter`で実行できます。こんな感じになりました。
 
-{{< luminous src="/images/java-browser-compile-01.png" caption="paiza.ioのコードエディタ画面">}}
+![paiza.ioのコードエディタ画面](/images/java-browser-compile-01.png)
 
 下の方に「こんにちは」と出力できてますね。設定等は必要無しでコードの実行もすぐできるので楽ちんです。
 
@@ -77,19 +75,17 @@ public class Main {
 
 ## その他のブラウザ上でコードを実行できるサイト
 
-C言語のコンパイルをしたい方は『[ブラウザで動く C言語実行環境](https://9cguide.appspot.com/web_picoc_em.html)』というサイトもあります。こちらはオフラインでも動作します。こちらはよりコンパクトに操作することが出来ます。
+C言語のコンパイルをしたい方は「[ブラウザで動く C言語実行環境](https://9cguide.appspot.com/web_picoc_em.html)」というサイトもあります。こちらはオフラインでも動作します。こちらはよりコンパクトに操作することが出来ます。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/c-language-compiler" >}}</li>
-</ul>
+* [](c-language-compiler)
 {{< /box >}}
 
 また、HTML、CSS、JavaScriptを実行できる「[JSFiddle](https://jsfiddle.net/)」や「[codepen](https://codepen.io/)」なんかもあります。
 
-{{< luminous src="/images/java-browser-compile-02.png" caption="JSFiddleのコードエディタ画面">}}
+![JSFiddleのコードエディタ画面](/images/java-browser-compile-02.png)
 
-{{< luminous src="/images/java-browser-compile-03.png" caption="codepenのコードエディタ画面">}}
+![codepenのコードエディタ画面](/images/java-browser-compile-03.png)
 
 どちらも簡単なWebページを作成することができます。画面レイアウトも似ているので、好みで選択すれば良さそうですね。
 
@@ -97,4 +93,4 @@ C言語のコンパイルをしたい方は『[ブラウザで動く C言語実�
 
 これからプログラミングをしたい人向けにpaiza.ioを紹介してみました。無料の会員登録なしでこの機能は充実してると思います。手軽にプログラムを書けるのは入門用として良いツールですね。
 
-「**とりあえずコードだけ書いてみたい！**」って人にはおすすめです。とりあえずpaiza.ioでプログラミングに触れてみて、もっとやりたくなったらIDEをインストールしてみるのもありです。以上で記事を終わりにします。
+「とりあえずコードだけ書いてみたい」といった人にはおすすめです。とりあえずpaiza.ioでプログラミングに触れてみて、もっとやりたくなったらIDEをインストールしてみるのもありです。以上で記事を終わりにします。

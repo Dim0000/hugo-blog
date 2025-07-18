@@ -1,6 +1,6 @@
 ---
-title: 【Java】メソッドと関数の違いについて考えてみる
-description: 今回はプログラミングにおけるメソッドと関数との違いについて考えたいと思います。例えば、C言語では特定の処理のことを関数と呼びますが、Javaではメソッドと言われていますね。関数、メソッドとは一体何なのか考えてみます。
+title: 【Java】メソッドと関数の違いについて考えてみる【C言語】
+description: プログラミングにおけるメソッドと関数との違いについて、JavaとC言語を例にして考えたいと思います。
 date: 2021-10-19
 categories: 
   - 技術記事
@@ -12,9 +12,11 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-今回はプログラミングにおける**メソッド**と**関数**との違いについて考えたいと思います。例えば、C言語では特定の処理のことを関数と呼びますが、Javaではメソッドと言われていますね。関数、メソッドとは一体何なのか考えてみます。
+プログラミングにおける**メソッド**と**関数**との違いについて、JavaとC言語を例にして考えたいと思います。
 
 <!--more-->
+
+例えば、C言語では特定の処理のことを関数と呼びますが、Javaではメソッドと言われていますね。関数、メソッドとは一体何なのか考えてみます。
 
 ## メソッドとは
 
@@ -30,7 +32,7 @@ Javaには様々なメソッドが用意されています。具体的な例を�
 
 また、メソッドを新しく作りたい時は以下のように記述します。Javaの`mainメソッド`もその名の通りメソッドの一部になります。
 
-{{< code lang="java" title="メソッド" >}}
+```java {lineNos="inline", name="メソッド"}
 アクセス修飾子 戻り値の型 メソッド名(引数の型 引数) {
 　// 処理
 }
@@ -38,7 +40,7 @@ Javaには様々なメソッドが用意されています。具体的な例を�
 public static void main(String[] args) {
 　// 処理
 }
-{{< /code >}}
+```
 
 ## 関数とは
 
@@ -52,7 +54,7 @@ public static void main(String[] args) {
 
 試しにJavaで例を挙げてみます。
 
-{{< code lang="java" title="FunctionTest.java" >}}
+```java {lineNos="inline", name="FunctionTest.java"}
 public class FunctionTest {
   public static void main(String[] args) {
     int i = square(5);
@@ -63,7 +65,7 @@ public class FunctionTest {
     return num * num;
   }
 }
-{{< /code >}}
+```
 
 上のコードの出力結果は`25`になります。
 

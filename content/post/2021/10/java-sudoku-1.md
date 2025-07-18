@@ -1,6 +1,6 @@
 ---
-title: 【Java】数独に使われる魔方陣をプログラミングで作る
-description: 今回はJavaで数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
+title: 【Java】数独に使われる魔方陣を出力する
+description: Javaで数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
 date: 2021-10-06
 categories: 
   - 技術記事
@@ -9,16 +9,15 @@ tags:
 archives: 
   - 2021/10
 thumbnail: /images/java.webp
+mathjax: true
 ---
 
-今回はJavaで数独に使われる9×9の魔方陣をランダムに出力するプログラムを作成してみます。
+**Java**で数独に使われる9×9の**魔方陣**をランダムに出力するプログラムを作成してみます。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-magic-square-4-4" >}}</li>
-</ul>
+* [](java-magic-square-4-4)
 {{< /box >}}
 
 ## 数独魔方陣の特徴
@@ -26,10 +25,8 @@ thumbnail: /images/java.webp
 作成する数独の9×9の魔方陣の特徴についてまとめます。
 
 {{< box "数独の魔方陣の特徴" >}}
-<ul>
-<li>縦と横の全ての列で1~9の数字が1つずつ使われる</li>
-<li>3×3のブロックに1~9の数字が1つずつ使われる</li>
-</ul>
+* 縦と横の全ての列で1~9の数字が1つずつ使われる
+* 3×3のブロックに1~9の数字が1つずつ使われる
 {{< /box >}}
 
 数独の魔方陣はこんな感じの数表です。
@@ -65,17 +62,15 @@ $$
 基本的な作り方のアルゴリズムは以下の通りです。重複のチェックはHashSetを使いました。
 
 {{< box "アルゴリズム" >}}
-<ol>
-<li>出来上がった数表を格納する配列<code>array</code>を宣言する</li>
-<li>1~9の数字が入った<code>ArrayList</code>を作りシャッフルし、<code>array</code>に格納する（これが横の行の1つになる）</li>
-<li>縦の列に重複しないように<code>ArrayList</code>を<code>array</code>に格納していく　重複したら格納せずもう一度シャッフルしていくを繰り返す</li>
-<li>同時に3×3のブロックも重複がないかチェックする　重複したらその都度やり直す</li>
-</ol>
+1. 出来上がった数表を格納する配列`array`を宣言する
+2. 1~9の数字が入った`ArrayList`を作りシャッフルし、`array`に格納する（これが横の行の1つになる）
+3. 縦の列に重複しないように`ArrayList`を`array`に格納していく　重複したら格納せずもう一度シャッフルしていくを繰り返す
+4. 同時に3×3のブロックも重複がないかチェックする　重複したらその都度やり直す
 {{< /box >}}
 
 サンプルコードを以下に示します。
 
-{{< code lang="java" title="MakeSudoku.java" >}}
+```java {lineNos="inline", name="MakeSudoku.java"}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -166,9 +161,11 @@ public class MakeSudoku {
     }
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果（一例）" >}}
+実行結果の一例が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果（一例）"}
   7  3  2  1  4  9  5  6  8
   5  1  6  3  8  2  9  7  4
   8  4  9  7  6  5  3  2  1
@@ -178,7 +175,7 @@ public class MakeSudoku {
   2  8  7  9  5  4  6  1  3
   9  6  4  2  3  1  7  8  5
   3  5  1  8  7  6  2  4  9
-{{< /code >}}
+```
 
 条件を満たす数表が出力されました。条件を満たすまでシャッフルを繰り返すので、出力されるまでちょっと時間がかかります。
 

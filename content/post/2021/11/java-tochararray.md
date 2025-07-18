@@ -1,6 +1,6 @@
 ---
 title: 【Java】toCharArrayメソッドで文字列を配列に分割する
-description: 今回はJavaのtoCharArrayメソッドを使って、String型の文字列をChar型の配列に変換する方法についてまとめていきます。
+description: JavaのtoCharArrayメソッドを使って、String型の文字列をChar型の配列に変換する方法についてまとめていきます。
 date: 2021-11-13
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-今回はJavaの`toCharArrayメソッド`を使って、`String型`の文字列を`Char型`の配列に変換する方法についてまとめていきます。
+**Java**の`toCharArrayメソッド`を使って、`String型`の文字列を`Char型`の配列に変換する方法についてまとめていきます。
 
 <!--more-->
 
@@ -19,11 +19,11 @@ thumbnail: /images/java.webp
 
 toCharArrayメソッドは以下のように記述します。
 
-{{< code lang="java" title="toCharArrayメソッドの書式例" >}}
+```java {lineNos="inline", name="toCharArrayメソッドの書式例"}
 String str = "hello";
 char[] cArray;
 cArray = str.toCharArray();
-{{< /code >}}
+```
 
 `変数str`の文字列が1文字ずつ分割され、`配列cArray`に代入されます。
 
@@ -31,7 +31,7 @@ cArray = str.toCharArray();
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="ToCharArrayTest.java" >}}
+```java {lineNos="inline", name="ToCharArrayTest.java"}
 public class ToCharArrayTest {
   public static void main(String[] args) {
     String str1 = "hello";
@@ -50,14 +50,16 @@ public class ToCharArrayTest {
     System.out.println();
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 hello
 あいうえおかきくけこ
-{{< /code >}}
+```
 
-`cArray`に`hello`・`あいうえおかきくけこ`が1文字ずつ分割され、順番に格納されていることが分かります。アルファベットでも日本語でも同様の処理を実行します。
+`変数cArray`に`hello`と`あいうえおかきくけこ`が1文字ずつ分割され、順番に格納されていることが分かります。アルファベットでも日本語でも同様の処理を実行します。
 
 * * *
 

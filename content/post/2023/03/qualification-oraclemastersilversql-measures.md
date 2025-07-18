@@ -20,9 +20,7 @@ thumbnail: /images/oracle.webp
 [^a]:[Oracle Database SQL | Oracle](https://education.oracle.com/ja/oracle-database-sql/pexam_1Z0-071)
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-oraclemastersilversql" >}}</li>
-</ul>
+* [](qualification-oraclemastersilversql)
 {{< /box >}}
 
 ## 第1章:リレーショナル・データベースの概要
@@ -87,9 +85,9 @@ thumbnail: /images/oracle.webp
 
 * `ALTER SESSION SET文`で初期化パラメータをセッションレベルで変更できる
 
-{{< code lang="sql" title="ALTER SESSION SET文" >}}
+```sql {lineNos="inline", name="ALTER SESSION SET文"}
 ALTER SESSION SET <パラメータ名> = <設定値>;
-{{< /code >}}
+```
 
 ## 第2章:SQL SELECT 文を使用したデータの取得
 
@@ -217,7 +215,7 @@ ALTER SESSION SET <パラメータ名> = <設定値>;
 
 * 文字列から文字を抜き出す
 
-{{< code lang="sql" title="SUBSTRファンクション" >}}
+```sql {lineNos="inline", name="SUBSTRファンクション"}
 --STRの先頭N文字目からL文字を抜き出す
 --lを省略したら最後まで抜き出す
 SUBSTR(<文字列STR>,<開始位置N>,<長さL>) 
@@ -225,36 +223,36 @@ SUBSTR(<文字列STR>,<開始位置N>,<長さL>)
 SUBSTR('ABCDE',2)   --BCDE
 SUBSTR('ABCDE',-2)  --DE マイナスは開始位置を後ろから数える
 SUBSTR('ABCDE',2,3) --BCD
-{{< /code >}}
+```
 
 #### REPLACEファンクション
 
 * 文字列を置換する
 
-{{< code lang="sql" title="SUBSTRファンクション" >}}
+```sql {lineNos="inline", name="REPLACEファンクション"}
 REPLACE(<文字列STR>,<開始位置N>,<長さL>) 
-{{< /code >}}
+```
 
 #### LPAD・RPADファンクション
 
 * 文字列に文字を埋め込む（0埋めなど）
 
-{{< code lang="sql" title="LPADファンクション" >}}
+```sql {lineNos="inline", name="LPADファンクション"}
 --STRの左側に、長さがLになるようにPADを埋め込む
 --PADを省略したら空白が埋め込まれる
 LPAD(<文字列STR>,<長さL>,<文字列PAD>) 
 
 LPAD('AB',5,'0') --000AB
 LPAD('AB',5)     --   AB
-{{< /code >}}
+```
 
-{{< code lang="sql" title="RPADファンクション" >}}
+```sql {lineNos="inline", name="RPADファンクション"}
 --STRの右側に、長さがLになるようにPADを埋め込む
 --PADを省略したら空白が埋め込まれる
 RPAD(<文字列STR>,<長さL>,<文字列PAD>) 
 
 RPAD('AB',5,'0') --AB000
-{{< /code >}}
+```
 
 #### TRIMファンクション
 
@@ -262,16 +260,16 @@ RPAD('AB',5,'0') --AB000
 
 * 指定する文字は1つのみ（複数はエラー）
 
-{{< code lang="sql" title="TRIMファンクション" >}}
+```sql {lineNos="inline", name="TRIMファンクション"}
 --STRの先頭と末尾から連続した文字CHARを削除
 --<文字CHAR FROM>を省略した場合は前後の空白文字を削除
 TRIM(<文字CHAR FROM> <文字列STR>) 
 
 TRIM('  AB  ')        --AB
 TRIM('A' FROM  'ABA') --B
-{{< /code >}}
+```
 
-{{< code lang="sql" title="TRIMファンクション" >}}
+```sql {lineNos="inline", name="TRIMファンクション"}
 --LEADINGを指定した場合STRの先頭の文字CHARを削除
 --TRAILINGを指定した場合STRの末尾の文字CHARを削除
 --BOTHを指定した場合STRの先頭・末尾の文字CHARを削除
@@ -281,7 +279,7 @@ TRIM(<LEADING | TRAILING | BOTH> <文字CHAR FROM> <文字列STR>)
 TRIM(LEADING '*' FROM '**AB**')  --AB**
 TRIM(TRAILING '*' FROM '**AB**') --**AB
 TRIM(BOTH '*' FROM '**AB**')     --AB
-{{< /code >}}
+```
 
 ### 数値を受け取るファンクション
 
@@ -289,7 +287,7 @@ TRIM(BOTH '*' FROM '**AB**')     --AB
 
 * 指定した文字列の出現した位置を返す
 
-{{< code lang="sql" title="INSTRファンクション" >}}
+```sql {lineNos="inline", name="INSTRファンクション"}
 --文字列STRのPOS文字目から文字列SEARCHを検索、N回目に出現する位置を返す
 --POSとNを省略した場合は1となる
 --SEARCHが無い場合0が戻る
@@ -297,13 +295,13 @@ INSTR(<文字列STR>, <文字列SEARCH>, <場所POS>, <回数N>)
 
 INSTR('ABCDE', 'C')            --3
 INSTR('ABCDEABCDE', 'C', 6, 1) --8（6文字目から数えて1回目に出現する位置）
-{{< /code >}}
+```
 
 #### ROUNDファンクション
 
 * 数値を四捨五入する
 
-{{< code lang="sql" title="ROUNDファンクション" >}}
+```sql {lineNos="inline", name="ROUNDファンクション"}
 --数値Nを小数点以下INT桁で四捨五入
 --INTが負の時は小数点左側INT桁で四捨五入
 --INTを省略した時は0扱いになり整数で四捨五入
@@ -312,7 +310,7 @@ ROUND(<数値N>, <桁INT>)
 ROUND(15.555)     --16
 ROUND(15.555, 1)  --15.6
 ROUND(15.555, -1) --20
-{{< /code >}}
+```
 
 #### TRUNCファンクション
 
@@ -336,14 +334,14 @@ ROUND(15.555, -1) --20
 
 * 指定した日付の後に来る、指定した曜日の日付を返す
 
-{{< code lang="sql" title="NEXT_DAYファンクション" >}}
+```sql {lineNos="inline", name="NEXT_DAYファンクション"}
 --日付DATEの後に来るSTRに指定した曜日で最初の日付を返す
 NEXT_DAY(<日付DATE>, <曜日STR>)
 
 --日付DATEの後に来るNUMに指定した曜日で最初の日付を返す
 --数値NUMは、1:日、2:月、3:火…のように定義される
 NEXT_DAY(<日付DATE>, <曜日NUM>) 
-{{< /code >}}
+```
 
 ## 第5章:変換関数と条件式の使用
 
@@ -365,21 +363,21 @@ NEXT_DAY(<日付DATE>, <曜日NUM>)
 
 * `NULL`を指定した値に置き換える
 
-{{< code lang="sql" title="NVLファンクション" >}}
+```sql {lineNos="inline", name="NVLファンクション"}
 --INがNULL以外の場合INをそのまま戻す
 --INがNULLの場合OUTを戻す（INとOUTの型が異なる場合は暗黙的な変換が行われる）
 NVL(<入力IN>, <出力OUT>)
-{{< /code >}}
+```
 
 #### NVL2ファンクション
 
 * 入力が`NULL`か`NULL`以外かで指定した値に置き換える
 
-{{< code lang="sql" title="NVL2ファンクション" >}}
+```sql {lineNos="inline", name="NVL2ファンクション"}
 --INがNULL以外の場合OUT1を戻す
 --INがNULLの場合OUT2を戻す（INとOUTの型が異なる場合は暗黙的な変換が行われる）
 NVL2(<入力IN>, <出力OUT1>, <出力OUT2>)
-{{< /code >}}
+```
 
 #### NULLIFファンクション
 
@@ -395,11 +393,11 @@ NVL2(<入力IN>, <出力OUT1>, <出力OUT2>)
 
   * 引数のデータ型は全て一致している必要がある
 
-{{< code lang="sql" title="COALESCEファンクション" >}}
+```sql {lineNos="inline", name="COALESCEファンクション"}
 --入力の中から最初の非NULL値を返す
 --全てNULLの時はNULLを返す
 COALESCE(<入力IN1>, <入力IN2>, ....)
-{{< /code >}}
+```
 
 ## 第6章:グループ関数を使用した集計データのレポート
 
@@ -568,7 +566,7 @@ COALESCE(<入力IN1>, <入力IN2>, ....)
 
 * `MERGE文`はある表から取得した行を元に、別の表の追加・更新を行う
 
-{{< code lang="sql" title="MERGE文" >}}
+```sql {lineNos="inline", name="MERGE文"}
 MERGE INTO <ターゲット表>
   USING <ソース表>
   ON (結合条件)
@@ -576,7 +574,7 @@ MERGE INTO <ターゲット表>
     UPDATE ...
   WHEN NOT MATCHED THEN
     INSERT ...
-{{< /code >}}
+```
 
 ### トランザクション
 
@@ -630,11 +628,11 @@ MERGE INTO <ターゲット表>
 
   * 使用することで読み取るデータ量を削減して処理を高速にする
 
-{{< code lang="sql" title="索引" >}}
+```sql {lineNos="inline", name="索引"}
 CREATE INDEX <索引名> ON <表名> (<列名> ... ) --索引の作成
 
 DROP INDEX --索引の削除
-{{< /code >}}
+```
 
 * 索引をUNUSABLE（使用不可）にすると索引のセグメントが削除される（索引の定義は削除されない）
 
@@ -644,13 +642,13 @@ DROP INDEX --索引の削除
 
 * **シーケンス**を使うことでデータベース全体で一意である連番を振る処理を行う
 
-{{< code lang="sql" title="索引" >}}
+```sql {lineNos="inline", name="索引"}
 CREATE SEQUENCE <シーケンス名> --シーケンスの作成
 
 <シーケンス名>.NEXTVAL         --シーケンスから新たに連番を振り出す
 
 <シーケンス名>.CURVAL          --振り出された連番の確認
-{{< /code >}}
+```
 
 ### シノニム
 

@@ -41,9 +41,9 @@ TE-D01gは長時間の再生時間が売りで、音質等のスペックもそ�
 
 外観はこんな感じです。色は白を購入しました。
 
-{{< luminous src="/images/product-review-aviot-te-d01v-01.jpg" caption="「AVIOT TE-D01v」の外観1">}}
+![「AVIOT TE-D01v」の外観1](/images/product-review-aviot-te-d01v-01.jpg)
 
-{{< luminous src="/images/product-review-aviot-te-d01v-02.jpg" caption="「AVIOT TE-D01v」の外観2">}}
+![「AVIOT TE-D01v」の外観1](/images/product-review-aviot-te-d01v-02.jpg)
 
 同梱品は以下のものになります。
 

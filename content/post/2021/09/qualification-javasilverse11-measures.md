@@ -1,6 +1,6 @@
 ---
 title: 【Java Silver SE11】試験対策用備忘録メモ【黒本ベース】
-description: この記事はJava Silver SE11の受験にあたって、自分用にややこしかった点を備忘録としてまとめたメモです。全ての事項を網羅してる訳では無く、個人的に分かりにくかったところをピックアップしています。
+description: Java Silver SE11の受験にあたって、ややこしかった点を備忘録としてまとめたメモです。個人的に分かりにくかったところをピックアップしています。
 date: 2021-09-23
 categories: 
   - IT資格
@@ -12,17 +12,15 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-この記事は**Java Silver SE11**の受験にあたって、自分用にややこしかった点を備忘録としてまとめたメモです。全ての事項を網羅してる訳では無く、個人的に分かりにくかったところをピックアップしています。
+**Java Silver SE11**の受験にあたって、ややこしかった点を備忘録としてまとめたメモです。個人的に分かりにくかったところをピックアップしています。
 
 <!--more-->
 
-なお、内容のカテゴライズは、Java Silverの参考書である「{{< product_link id="4295007625" type="text" >}}」（黒本）の章に準拠しまとめました。内容については、随時更新予定です。
+なお、内容のカテゴライズは、Java Silverの参考書である「{{< product_link id="4295007625" type="text" >}}」（黒本）の章に準拠しています。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-javasilverse11" >}}</li>
-<li>{{< ref "/javasilver-se11-application" >}}</li>
-</ul>
+* [](qualification-javasilverse11)
+* [](javasilver-se11-application)
 {{< /box >}}
 
 ## 第1章:Javaの特徴とJavaプログラムの作成
@@ -39,9 +37,9 @@ thumbnail: /images/java.webp
 
 ### クラスのインポート
 
-{{< code lang="java" title="import文" >}}
+```java {lineNos="inline", name="import文"}
 import パッケージ名.*;
-{{< /code >}}
+```
 
 * `import文`を使用してインポートが必要となるクラス
   * 自クラスとは異なるパッケージのクラス
@@ -49,9 +47,9 @@ import パッケージ名.*;
 
 ### パッケージ
 
-{{< code lang="java" title="パッケージ" >}}
+```java {lineNos="inline", name="パッケージ"}
 package パッケージ名;
-{{< /code >}}
+```
 
 * パッケージの目的は、**名前空間の提供**・**アクセス制御**・**クラスの分類**の3つ
 * 他パッケージのクラスを利用する場合、`import文`を定義し、利用するクラスのインポートを行うこと、利用するクラスが`publicクラス`であることが必要
@@ -63,20 +61,20 @@ package パッケージ名;
   * 引数名以外は変更できない
   * `public`と`static`をつける
 
-{{< code lang="java" title="mainメソッド" >}}
+```java {lineNos="inline", name="mainメソッド"}
 public static void main(String[] args) {// {String... args}も可能
   // 処理
 }
-{{< /code >}}
+```
 
 ### Javaコマンド
 
 * Javaプログラムを実行するには`Javaコマンド`を使う
 
-{{< code lang="bash" title="Javaコマンド" >}}
+```java {lineNos="inline", name="Javaコマンド"}
 java Sample
 java Sample.java
-{{< /code >}}
+```
 
 ## 第2章:基本データ型・文字列操作
 
@@ -91,10 +89,10 @@ java Sample.java
 
 * アンダースコア`_`は先頭と末尾と記号の前後にはつけられない
 
-{{< code lang="java" title="整数リテラル" >}}
+```java {lineNos="inline", name="整数リテラル"}
 int a = 123_456; // OK
 int b = _123; // NG
-{{< /code >}}
+```
 
 ### int型
 
@@ -111,18 +109,18 @@ int b = _123; // NG
 * `var型`では、データ型を特定できないものはコンパイルエラーになる
   * 配列の初期化式もエラーになる
 
-{{< code lang="java" title="var型" >}}
+```java {lineNos="inline", name="var型"}
 var a; // エラー
 var b = {1,2}; // エラー
-{{< /code >}}
+```
 
 * `var型`はローカル変数のみ使える
   * フィールド変数や引数変数には使えない
 * `var型`は変数を同時に宣言できない
 
-{{< code lang="java" title="var型" >}}
+```java {lineNos="inline", name="var型"}
 var a = 1, b = 2; // エラー
-{{< /code >}}
+```
 
 ### StringBuilderクラス
 
@@ -135,9 +133,9 @@ var a = 1, b = 2; // エラー
 * `byte型`は-128~127の範囲を扱う
 * 浮動小数点数は`double型`がデフォルト
 
-{{< code lang="java" title="float型" >}}
+```java {lineNos="inline", name="float型"}
 float f = 1.0; // floatだとコンパイルエラーになる
-{{< /code >}}
+```
 
 ### 同値性と同一性
 
@@ -279,10 +277,10 @@ float f = 1.0; // floatだとコンパイルエラーになる
 
 * 型が違う時は型変換をする必要がある
 
-{{< code lang="java" title="型変換" >}}
+```java {lineNos="inline", name="型変換"}
 A a = new B();
 B b = (B) a;
-{{< /code >}}
+```
 
 ## 第8章:関数インターフェース、ラムダ式
 
@@ -296,11 +294,11 @@ B b = (B) a;
 * `{}`で囲まれている時は複数処理が書けるが`return文`とセミコロン`;`が必要
   * `()`は省略できる
 
-{{< code lang="java" title="ラムダ式" >}}
+```java {lineNos="inline", name="ラムダ式"}
 Algo a = (name) -> { return "ABC"; };
 Algo a = (name) -> "ABC"; 
 Algo a = name -> "ABC";
-{{< /code >}}
+```
 
 * ラムダ式の外のローカル変数にアクセスするときには、変更されない変数（実質的に`final`な変数）である必要がある
 
@@ -369,25 +367,25 @@ Algo a = name -> "ABC";
 
 * `jdepsコマンド`はクラスファイルの依存関係をパッケージレベルかクラスレベルで表示することができるアナライザ
 
-{{< code lang="bash" title="jdepsコマンド" >}}
+```java {lineNos="inline", name="jdepsコマンド"}
 jdeps --check
-{{< /code >}}
+```
 
 ### モジュール型アプリケーション
 
 * モジュール化されたアプリケーションをコンパイルするには、モジュールの検索パスを指定するオプションが必要
 
-{{< code lang="bash" title="" >}}
+```java {lineNos="inline", name="モジュールの検索パスを指定するオプション"}
 -p
 
 --module-path
-{{< /code >}}
+```
 
 * 他にもディレクトリ配下のモジュールを一括してコンパイルするオプションがある
 
-{{< code lang="bash" title="" >}}
+```java {lineNos="inline", name="モジュールを一括してコンパイルするオプション"}
 --module-source-path
-{{< /code >}}
+```
 
 ### モジュールグラフ
 

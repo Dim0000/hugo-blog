@@ -1,17 +1,19 @@
 ---
 title: 【Android】背景が透明なアプリを作成する方法
-description: 今回はAndroidアプリの開発時に、背景を透明にする方法について紹介します。
+description: Androidアプリの開発時に、背景を透明にする方法について紹介します。
 date: 2025-02-27
 categories: 
   - 技術記事
 tags: 
   - Android
+  - Java
+  - Kotlin
 archives:
     - 2025/02
 thumbnail: /images/android.webp
 ---
 
-今回はAndroidアプリの開発時に、背景を透明にする方法について紹介します。
+Androidアプリの開発時に、背景を透明にする方法について紹介します。
 
 <!--more-->
 
@@ -19,10 +21,10 @@ thumbnail: /images/android.webp
 
 アプリの背景を透明にするには、アプリのテーマを定義するXMLファイルに、`android:windowIsTranslucent`と`android:windowBackground`を設定します。
 
-{{< code lang="xml" title="themes.xml" >}}
+```xml {lineNos="inline", name="themes.xml"}
 <item name="android:windowIsTranslucent">true</item>
 <item name="android:windowBackground">@android:color/transparent</item>
-{{< /code >}}
+```
 
 `android:windowIsTranslucent`を`true`にすると背後が透けるUIになります。また、`android:windowBackground`に`@android:color/transparent`を設定することで、ウィンドウの背景色を透明にすることができます。
 

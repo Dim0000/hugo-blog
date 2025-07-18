@@ -1,6 +1,6 @@
 ---
 title: 【Java】ランダムなミニナンプレをプログラムで作ってみる
-description: 今回はJavaを使って4×4のミニナンプレをランダムに生成するプログラムを書いてみます。
+description: Javaで4×4のミニナンプレをランダムに生成するプログラムを書いてみます。
 date: 2022-04-02
 categories: 
   - 技術記事
@@ -9,16 +9,15 @@ tags:
 archives: 
   - 2022/04
 thumbnail: /images/java.webp
+mathjax: true
 ---
 
-今回はJavaを使って4×4の**ミニナンプレ**をランダムに生成するプログラムを書いてみます。
+**Java**で4×4の**ミニナンプレ**をランダムに生成するプログラムを書いてみます。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-magic-square-4-4" >}}</li>
-</ul>
+* [](java-magic-square-4-4)
 {{< /box >}}
 
 ## ミニナンプレとは
@@ -60,22 +59,20 @@ $$
 前回の記事で書いたプログラムを改変して使います。アルゴリズムとしては以下のような流れになります。
 
 {{< box "アルゴリズム" >}}
-<ul>
-<li><code>ArrayList</code>に1～4の数字を格納し、<code>shuffleメソッド</code>でシャッフルしてから4×4の配列に4回分の<code>ArrayList</code>を格納して仮の表を作る</li>
-<li>仮の表が条件に一致するまで、その都度シャッフルを繰り返す</li>
-<li>条件に一致した仮表が出来たら完成表として出力する</li>
-</ul>
+1. `ArrayList`に1～4の数字を格納し、`shuffleメソッド`でシャッフルしてから4×4の配列に4回分の`ArrayList`を格納して仮の表を作る
+2. 仮の表が条件に一致するまで、その都度シャッフルを繰り返す
+3. 条件に一致した仮表が出来たら完成表として出力する
 {{< /box >}}
 
 アルゴリズムの詳細な部分は前回と被るところが多いので割愛します。
 
-前回の魔方陣の時と違うところは、「**全ての行・列・ボックスの合計が10である**」「**横の行については既にシャッフルによって完成しているので、縦の列とボックスのみ比較すれば良い**」の2点です。縦の行とボックスは`HashSet`を使って数字を格納し、`sizeメソッド`を使ってサイズが4である（1から4全て使ってる）かチェックしました。
+前回の魔方陣の時と違うところは、「全ての行・列・ボックスの合計が10である」「横の行については既にシャッフルによって完成しているので、縦の列とボックスのみ比較すれば良い」の2点です。縦の行とボックスは`HashSet`を使って数字を格納し、`sizeメソッド`を使ってサイズが4である（1から4全て使ってる）かチェックしました。
 
 なお、ボックスの比較については、縦横が揃っていてボックスの4つの内どれか一つっでも条件を満たしていれば他の3つも自動的に条件を満たすため、左上のみ判定しています。また、前回と同様シャッフル回数測定のために変数countを設置しています。
 
 実際にできたコードが下になります。
 
-{{< code lang="java" title="MakeMiniNumberPlace.java" >}}
+```java {lineNos="inline", name="MakeMiniNumberPlace.java"}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -161,15 +158,17 @@ public class MakeMiniNumberPlace {
     System.out.println("シャッフル回数:" + count);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果（一例）" >}}
+実行結果の一例が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果（一例）"}
   2  3  1  4
   4  1  3  2
   1  2  4  3
   3  4  2  1
 シャッフル回数:10688
-{{< /code >}}
+```
 
 完成表が出力されました。`count`は5000～10000になることが多かったですね。前回よりシャッフル回数も格段に少ないことが分かります。こちらの方が条件が緩いので、完成表を求めるのに試行回数が少なく済んでいます。
 
@@ -179,7 +178,7 @@ public class MakeMiniNumberPlace {
 
 実際にできたコードが下になります。
 
-{{< code lang="java" title="PunchMiniNumberPlace.java" >}}
+```java {lineNos="inline", name="PunchMiniNumberPlace.java"}
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -241,9 +240,11 @@ public class PunchMiniNumberPlace {
     }
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果（一例）" >}}
+実行結果の一例が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果（一例）"}
   1  2  3  4
   3  4  1  2
   4  3  2  1
@@ -253,7 +254,7 @@ public class PunchMiniNumberPlace {
   3  0  0  0
   4  3  0  0
   0  0  4  3
-{{< /code >}}
+```
 
 完成表から10個のマスを0に変換した数表が出力されました。
 
@@ -261,16 +262,16 @@ public class PunchMiniNumberPlace {
 
 次に、下の数表のように、ミニナンプレの空白の部分を0とした数列が与えられたとき、そこからミニナンプレを完成させるプログラムを完成させます。
 
-{{< code lang="plaintext" title="" >}}
+```plaintext {lineNos="inline", name=""}
 1 0 0 0      1 2 3 4
 3 0 1 2   →  3 4 1 2
 4 3 0 1      4 3 2 1
 0 0 0 0      2 1 4 3
-{{< /code >}}
+```
 
 実際にできたコードが下になります。
 
-{{< code lang="java" title="CalcMiniNumberPlace.java" >}}
+```java {lineNos="inline", name="CalcMiniNumberPlace.java"}
 import java.util.HashSet;
 import java.util.Set;
 
@@ -382,14 +383,16 @@ public class CalcMiniNumberPlace {
   }
 
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果（一例）" >}}
+実行結果の一例が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果（一例）"}
   1  2  3  4
   3  4  1  2
   4  3  2  1
   2  1  4  3
-{{< /code >}}
+```
 
 完成された数表が出力されました。
 

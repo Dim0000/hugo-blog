@@ -1,6 +1,6 @@
 ---
 title: 【Java】isAlphabeticメソッドで文字が英数字か調べる方法
-description: CharacterクラスのisAlphabeticメソッドを使うことで、文字がアルファベットかそうではないのか判定することが出来ます。メソッドの使い方についてまとめていきます。
+description: JavaのCharacterクラスのisAlphabeticメソッドで文字がアルファベットか判定する方法についてまとめます。
 date: 2023-01-24
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-`Characterクラス`の`isAlphabeticメソッド`を使うことで、文字がアルファベットかそうではないのか判定することが出来ます。メソッドの使い方についてまとめていきます。
+**Java**の`Characterクラス`の`isAlphabeticメソッド`で文字がアルファベットか判定する方法についてまとめます。
 
 <!--more-->
 
@@ -19,9 +19,9 @@ thumbnail: /images/java.webp
 
 `isAlphabeticメソッド`は、以下の様に記述します。
 
-{{< code lang="java" title="isAlphabeticメソッドの書式" >}}
+```java {lineNos="inline", name="isAlphabeticメソッドの書式"}
 Character.isAlphabetic(int i);
-{{< /code >}}
+```
 
 文字を比較してアルファベットであれば`ture`、そうでなければ`false`を返します。戻り値の型は`boolean型`です。
 
@@ -29,7 +29,7 @@ Character.isAlphabetic(int i);
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="IsAlphabeticTest.java" >}}
+```java {lineNos="inline", name="IsAlphabeticTest.java"}
 public class IsAlphabeticTest {
   public static void main(String[] args) {
     // a,0をそれぞれアルファベットかどうか判定する
@@ -37,12 +37,15 @@ public class IsAlphabeticTest {
     System.out.println(Character.isAlphabetic('0'));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 true // aのアルファベット判定
 false // 0のアルファベット判定
-{{< /code >}}
+```
+
 アルファベットの判定が出来ました。
 
 * * *

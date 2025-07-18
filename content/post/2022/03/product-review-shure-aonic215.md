@@ -1,6 +1,6 @@
 ---
 title: 【SHURE AONIC 215】FPSで使用した感想【ゲーミングイヤホン】
-description: ゲーミングイヤホンであるSHURE AONIC 215をゲーム（FPS）で使用した感想や、おすすめMixAmpのイコライザ設定などをレビューしていきます。
+description: ゲーミングイヤホンであるSHURE AONIC 215をゲーム（FPS）で使用した感想や、MixAmpのイコライザ設定などを紹介します。
 date: 2022-03-09
 categories: 
   - 雑記
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/review.webp
 ---
 
-ゲーミングイヤホンである**SHURE AONIC 215**をゲーム（FPS）で使用した感想や、おすすめMixAmpのイコライザ設定などをレビューしていきます。
+ゲーミングイヤホンである**SHURE AONIC 215**をゲーム（FPS）で使用した感想や、MixAmpのイコライザ設定などを紹介します。
 
 <!--more-->
 
@@ -39,9 +39,7 @@ thumbnail: /images/review.webp
 私がプレイしている環境はPS5で、MixAmpも使用しています。少し前に書いたMixAmpの記事でも紹介しましたが、これまでは安めのイヤホンを使っていました。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/game-mixamp-apex-equalizer" >}}</li>
-</ul>
+* [](game-mixamp-apex-equalizer)
 {{< /box >}}
 
 このイヤホンは2000円以下の値段で、足音もしっかり聞こえてかなりコスパに優れた製品でしたね。耐久性にも優れていて、かれこれ2年くらいはつかっていました（強いて言えば装着感がちょっと微妙で耳からたまに取れるのが欠点でした）。
@@ -52,13 +50,13 @@ thumbnail: /images/review.webp
 
 外箱とイヤホン本体の写真です。外箱が円柱型でデカい。イヤホンの長さは1.2m程でそれほど長くないです。
 
-{{< luminous src="/images/product-review-shure-aonic215-01.jpg" caption="「SHURE AONIC 215」の外箱">}}
+![「SHURE AONIC 215」の外箱](/images/product-review-shure-aonic215-01.jpg)
 
-{{< luminous src="/images/product-review-shure-aonic215-02.jpg" caption="「SHURE AONIC 215」の外観">}}
+![「SHURE AONIC 215」の外観](/images/product-review-shure-aonic215-02.jpg)
 
 専用ケースの写真です。
 
-{{< luminous src="/images/product-review-shure-aonic215-03.jpg" caption="「SHURE AONIC 215」の専用ケース">}}
+![「SHURE AONIC 215」の専用ケース](/images/product-review-shure-aonic215-03.jpg)
 
 実際に「SHURE AONIC 215」を使用してFPSの「CoD:WARZONE」と「Apex Legends」をプレイしてみたので、使用感を書いていきます。「G30」と比較しながら感想になります。
 

@@ -1,5 +1,5 @@
 ---
-title: 【Oracle Silver SQL】合格体験記【約3か月で合格した勉強方法】
+title: 【Oracle Silver SQL】合格体験記【約3か月で合格した方法】
 description: Oracle MASTER Silver SQL（1Z0-071-JPN）を2023年3月に受け合格しましたので、試験の対策・結果・感想などを合格体験記としてまとめたいと思います。
 date: 2023-04-08
 categories: 
@@ -17,9 +17,7 @@ thumbnail: /images/oracle.webp
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-oraclemastersilversql-measures" >}}</li>
-</ul>
+* [](qualification-oraclemastersilversql-measures)
 {{< /box >}}
 
 ## 試験概要
@@ -38,14 +36,12 @@ thumbnail: /images/oracle.webp
 
 ## 試験申し込み・試験対策
 
-僕が受験することを決めてから試験本番までの流れを書いていきます。
+実際に受験することを決めてから試験本番までの流れを書いていきます。
 
-{{< box "筆者のプロフィール" >}}
-<ul>
-<li>開発系のITエンジニア（2年目）</li>
-<li>Oracleはほぼ使ったこと無し（SQL自体は開発業務で使用経験有り）</li>
-<li>OracleやDBの資格試験を受けた経験は無し</li>
-</ul>
+{{< box "プロフィール" >}}
+* 開発系のITエンジニア（2年目）
+* Oracleはほぼ使ったこと無し（SQL自体は開発業務で使用経験有り）
+* OracleやDBの資格試験を受けた経験は無し
 {{< /box >}}
 
 ### 受験のきっかけ・申し込み
@@ -82,7 +78,7 @@ thumbnail: /images/oracle.webp
 
 試験は土曜日の午前に受けました。会場がビルの6階だかにあったんですが、時間が押してて急いでいたのと、エレベーターの場所が分からず階段で登ったらかなり大変でした…。帰りはエレベーター見つけたので使えました。土曜日だからか受験者はそこそこ多く、Oracle以外にもAWS試験を受けに来ている人もいました。
 
-受付の際は、**本人確認に身分証明書が2点必要**なので、ちゃんと確認しておきましょう。僕は確認不足で運転免許証があれば良いかと勘違いしていて当日焦りましたが、財布に保険証があったので事なきを得ました。
+受付の際は、**本人確認に身分証明書が2点必要**なので、ちゃんと確認しておきましょう。私の場合は確認不足で運転免許証があれば良いかと勘違いしていて当日焦りましたが、財布に保険証があったので事なきを得ました。
 
 試験は勉強した内容が聞かれるのでちゃんと覚えているかどうかです。全問自信を持って答えられた訳ではありませんが、30分くらい余らして退出しました。
 
@@ -140,6 +136,7 @@ thumbnail: /images/oracle.webp
 <ul>
 <li>{{< ref "/qualification-oraclemastersilverdba" >}}</li>
 </ul>
+* [](qualification-oraclemastersilverdba)
 {{< /box >}}
 
 ## 参考文献

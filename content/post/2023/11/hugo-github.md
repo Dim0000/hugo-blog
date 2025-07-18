@@ -1,6 +1,6 @@
 ---
 title: 【Hugo】Github ActionsでS3に自動でデプロイする【サイト構築③】
-description: 今回はHugoをGithubにプッシュした際に、自動でS3にデプロイする方法を紹介します。
+description: HugoをGithubにプッシュした際に、自動でAWS S3にデプロイする方法を紹介します。
 date: 2023-11-24
 categories: 
   - 技術記事
@@ -14,19 +14,17 @@ archives:
 thumbnail: /images/hugo.webp
 ---
 
-今回は**Hugo**を**Github**にプッシュした際に、自動でS3にデプロイする方法を紹介します。
+**Hugo**を**Github**にプッシュした際に、自動でAWS S3にデプロイする方法を紹介します。
 
 <!--more-->
 
 必要な手順としては、AWS IAMロールの設定およびGithub Actionsの設定のみになります。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/wordpress-to-hugo" >}}</li>
-<li>{{< ref "/domain-to-route53" >}}</li>
-<li>{{< ref "/develop-hugo" >}}</li>
-<li>{{< ref "/hugo-deploy" >}}</li>
-</ul>
+* [](wordpress-to-hugo)
+* [](domain-to-route53)
+* [](develop-hugo)
+* [](hugo-deploy)
 {{< /box >}}
 
 ## IAMロールの設定
@@ -41,13 +39,13 @@ IDプロバイダーの追加画面で、以下の通りに設定します。
 * プロバイダのURL：`https://token.actions.githubusercontent.com`
 * 対象者：`sts.amazonaws.com`
 
-{{< luminous src="/images/hugo-github-01.png" caption="OIDCプロバイダの設定">}}
+![OIDCプロバイダの設定](/images/hugo-github-01.png)
 
 続いてIAMロールを作成します。ロール名は分かれば何でも良いですが、今回は`blog_github_action_role`とします。
 
 作成したロールの信頼ポリシーの編集で、ポリシーを以下の通りに設定します。それぞれ、AWSアカウントIDとGitHubユーザー名・リポジトリ名を指定します。
 
-{{< code lang="json" title="信頼ポリシー" hl_lines="7 12" >}}
+```json {lineNos="inline", name="信頼ポリシー", hl_lines="7 12"}
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -65,7 +63,7 @@ IDプロバイダーの追加画面で、以下の通りに設定します。
     }
   ]
 }
-{{< /code >}}
+```
 
 ここまででAWS側の設定は完了です。
 
@@ -75,7 +73,7 @@ IDプロバイダーの追加画面で、以下の通りに設定します。
 
 GitHubリポジトリの`.github/workflows`ディレクトリに`build-deploy.yml`を配置します。ファイルは以下の様にします。
 
-{{< code lang="yml" title="build-deploy.yml" hl_lines="29 36" >}}
+```yml {lineNos="inline", name="build-deploy.yml", hl_lines="29 36"}
 name: build-deploy
 
 on:
@@ -119,7 +117,7 @@ jobs:
           echo "uploding to s3 ..."
           aws s3 sync public s3://${{ secrets.S3_BUCKET }}/ --size-only --delete
           aws cloudfront create-invalidation --region ap-northeast-1 --distribution-id ${{ secrets.DISTRIBUTION_ID }} --paths "/*"
-{{< /code >}}
+```
 
 ここで、36行目に今回作成したIAMのロール名を指定します。
 
@@ -135,7 +133,7 @@ jobs:
 * `S3_BUCKET`：AWS S3のバケット名
 * `DISTRIBUTION_ID`：Amazon CloudFrontのディストリビューションID
 
-{{< luminous src="/images/hugo-github-02.png" caption="GitHubのSecrets設定">}}
+![GitHubのSecrets設定](/images/hugo-github-02.png)
 
 ここまでで、必要な設定は完了になります。これでプッシュ時に自動でS3にデプロイできるようになりました。
 

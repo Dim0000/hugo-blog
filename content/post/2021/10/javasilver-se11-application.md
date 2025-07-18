@@ -1,6 +1,6 @@
 ---
-title: 【Oracleマスター・Java】試験の申し込みを格安で行う方法
-description: 今回はIT資格であるOracleマスターとJavaの資格試験を割安価格で申し込む方法と、試験結果を確認する方法についてまとめます。受験形式はテストセンターでCBT方式での受験を想定しています。
+title: 【ORACLE MASTER】試験の申し込みを格安で行う方法【OCJ-P】
+description: IT資格のORACLE MASTERとJava資格（OCJ-P）の試験を割引価格で申し込む方法と、試験結果を確認する方法についてまとめます。
 date: 2021-10-28
 categories: 
   - IT資格
@@ -11,24 +11,20 @@ tags:
 archives: 
   - 2021/10
 thumbnail: /images/oracle.webp
-aliases:
-    - /oraclemastersilver-sql-application
-    - /oraclemasterbronze-application
-    - /javabronze-application
 ---
 
-今回はIT資格である**Oracleマスター**と**Java**の資格試験を割安価格で申し込む方法と、試験結果を確認する方法についてまとめます。受験形式はテストセンターでCBT方式での受験を想定しています。
+IT資格の**ORACLE MASTER**と**Java資格**（OCJ-P）の試験を割引価格で申し込む方法と、試験結果を確認する方法についてまとめます。
 
 <!--more-->
+
+なお、受験形式はテストセンターでCBT方式での受験を想定しています。
 
 ## 必要なアカウント（Oracle・ピアソンVUE）の登録方法
 
 試験の申し込みと結果の確認をするには**Oracleアカウント**と**ピアソンVUEアカウント**の2つのアカウントに登録する必要があります。登録方法については別の記事で紹介しています。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/oracle-pearsonvue" >}}</li>
-</ul>
+* [](oracle-pearsonvue)
 {{< /box >}}
 
 ## 割引価格でチケットの購入をする方法
@@ -70,9 +66,9 @@ aliases:
 
 今回は、「Java Silver SE11」の申し込みを例として行ってみます。試験名は「1Z0-815-JPN: Java SE 11 Programmer I」になります。
 
-チケットを購入するとチケット番号が記載されたメールが来るので、その番号を使って試験の予約を行います。僕は購入後、1時間ほどでメールが届きました。
+チケットを購入するとチケット番号が記載されたメールが来るので、その番号を使って試験の予約を行います。私は購入後、1時間ほどでメールが届きました。
 
-{{< luminous src="/images/javasilver-se11-application-01.png" caption="チケット番号が記載されたメール">}}
+![チケット番号が記載されたメール](/images/javasilver-se11-application-01.png)
 
 次に試験の予約を行います。下記URLから予約を行いましょう。
 
@@ -80,35 +76,35 @@ aliases:
 
 「Login to CertView」をクリックし、先程作ったOracleアカウントでサインインしましょう。
 
-{{< luminous src="/images/javasilver-se11-application-02.png" caption="試験の予約方法1">}}
+![試験の予約方法1](/images/javasilver-se11-application-02.png)
 
 右側のメニューの「Language」から日本語に切り替えることができます。
 
-{{< luminous src="/images/javasilver-se11-application-03.png" caption="試験の予約方法2">}}
+![試験の予約方法2](/images/javasilver-se11-application-03.png)
 
 メニューから「ピアソンVUEサイト」をクリックすると、試験の予約サイトである「ピアソンVUE」へ遷移します。 
 
-{{< luminous src="/images/javasilver-se11-application-04.png" caption="試験の予約方法3">}}
+![試験の予約方法3](/images/javasilver-se11-application-04.png)
 
 こちらも、左側のメニューの「Language」から日本語に切り替えることができます。
 
-{{< luminous src="/images/javasilver-se11-application-05.png" caption="試験の予約画面4">}}
+![試験の予約方法4](/images/javasilver-se11-application-05.png)
 
 「試験の表示」から試験を検索します。
 
-{{< luminous src="/images/javasilver-se11-application-06.png" caption="試験の予約画面5">}}
+![試験の予約方法5](/images/javasilver-se11-application-06.png)
 
 「テストセンター」を選択すると、認定プログラムのポリシーの画面になります。「同意する」をクリックしましょう。試験会場の選択画面になります。
 
-{{< luminous src="/images/javasilver-se11-application-07.png" caption="試験の予約画面6">}}
+![試験の予約方法6](/images/javasilver-se11-application-07.png)
 
 会場と日時を選択すると受験コードの入力画面になります。ここに先ほどのコード（メールに記載されているチケット番号）を入力しましょう。
 
-{{< luminous src="/images/javasilver-se11-application-08.png" caption="試験の予約画面7">}}
+![試験の予約方法7](/images/javasilver-se11-application-08.png)
 
 コードを入力後代金の合計が0円になり、このような画面になるのを確認したら「次へ」をクリックします。
 
-{{< luminous src="/images/javasilver-se11-application-09.png" caption="試験の予約画面8">}}
+![試験の予約方法8](/images/javasilver-se11-application-09.png)
 
 最終確認画面になるので予約内容に間違いがないか確認して「予約内容の確定」をクリックします。これで試験の予約が完了しました。予約内容のメールが送られてきます。
 

@@ -1,6 +1,6 @@
 ---
 title: 【DualSense Edge】PS5でApexをプレイした感想【MixAmp】
-description: PlayStation 5（ノーマルエディション）で「Apex Legends」をプレイしてPS4と比較した感想と、DualSense Edgeを使用した感想について書いていきます。
+description: PlayStation 5で「Apex Legends」をプレイしてPS4と比較した感想と、DualSense Edgeを使用した感想について書いていきます。
 date: 2021-08-03
 categories: 
   - 雑記
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/game.webp
 ---
 
-**PlayStation 5**（ノーマルエディション）で「Apex Legends」をプレイしてPS4と比較した感想と、**DualSense Edge**を使用した感想について書いていきます。
+**PlayStation 5**で「Apex Legends」をプレイしてPS4と比較した感想と、**DualSense Edge**を使用した感想について書いていきます。
 
 <!--more-->
 
@@ -21,9 +21,9 @@ thumbnail: /images/game.webp
 
 まず、PS5の外箱と外観から紹介していきます。サイズは47×42×17cmとそこそこ大きいです。丁度PS4（CUH-1200A）の外箱も家にあったので、500mlペットボトルと並べて比較してみました。PS4の箱より一回り大きいですね。早速PS5本体を設置してみます。
 
-{{< luminous src="/images/game-ps5-apex-01.jpg" caption="PS5の外箱">}}
+![PS5の外箱](/images/game-ps5-apex-01.jpg)
 
-{{< luminous src="/images/game-ps5-apex-02.jpg" caption="PS5の外観">}}
+![PS5の外観](/images/game-ps5-apex-02.jpg)
 
 そして、本体の横と正面からの画像です。 配線とか汚いですがご了承ください。PS5はでかくて置き場所がないので縦置きの横向きにしました。ディスク挿入が出来なさそうな配置ではありますが、自分はソフトはダウンロード版しか買わないので問題なし。
 
@@ -70,9 +70,7 @@ PS5には光ケーブル端子が無いので、**HDMIアダプター**を買わ
 後日、実際にアダプターを購入してPS5に接続してみましたので別の記事にまとめました。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/game-ps5-mixamp-hdmiadapter" >}}</li>
-</ul>
+* [](game-ps5-mixamp-hdmiadapter)
 {{< /box >}}
 
 ## 感想まとめ
@@ -81,7 +79,7 @@ MixAmpの接続以外で特に不満に感じたことはありませんでし�
 
 かなり久しぶり（1ヶ月ぶりくらい？）にAPEXをやりましたが楽しかったですね。ランクマいったんですがそこそこ戦えました。糞エイムでも弾が敵に良く当たります。イイ感じに一位になれたので記念にスクショを撮りました。
 
-{{< luminous src="/images/game-ps5-apex-03.jpeg" caption="久しぶりのApexランクマッチ">}}
+![久しぶりのApexランクマッチ](/images/game-ps5-apex-03.jpeg)
 
 ランクと言っても復帰勢でプラチナランクではありますが、アンプが使えたらもっと上手く立ち回れそうですね。
 
@@ -91,9 +89,9 @@ MixAmpの接続以外で特に不満に感じたことはありませんでし�
 
 {{< product_link id="B0BJTJNQFD" >}}
 
-{{< luminous src="/images/game-ps5-apex-04.jpg" caption="DualSense Edgeの外箱">}}
+![DualSense Edgeの外箱](/images/game-ps5-apex-04.jpg)
 
-{{< luminous src="/images/game-ps5-apex-05.jpg" caption="DualSense Edgeの外観">}}
+![DualSense Edgeの外観](/images/game-ps5-apex-05.jpg)
 
 このコントローラーは純正品ながら、背面ボタンが使えることが一番の特徴ですね。また、ボタンのマッピングやトリガー・スティックの調整が設定できるのも大きな利点だと思います。スティックの交換ができる所もグッド。
 
@@ -106,4 +104,4 @@ MixAmpの接続以外で特に不満に感じたことはありませんでし�
 
 * * *
 
-要約すると「PS5とDualSense Edgeが凄すぎた！」という話でした。以上で記事を終わりにします。
+要約すると「PS5とDualSense Edgeが凄い！」という話でした。以上で記事を終わりにします。

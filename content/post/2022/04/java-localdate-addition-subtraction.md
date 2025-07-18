@@ -1,6 +1,6 @@
 ---
 title: 【Java】LocalDateクラスで日付を加算・減算する方法
-description: 今回はJavaのLocalDateクラスで日付の加算と減算を行う方法について紹介します。
+description: JavaのLocalDateクラスで日付の加算と減算を行う方法について紹介します。
 date: 2022-04-07
 categories: 
   - 技術記事
@@ -11,14 +11,12 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-今回はJavaの`LocalDateクラス`で**日付の加算と減算**を行う方法について紹介します。
+**Java**の`LocalDateクラス`で**日付の加算と減算**を行う方法について紹介します。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-localdate-period" >}}</li>
-</ul>
+* [](java-localdate-period)
 {{< /box >}}
 
 ## 日付を加算・減算する方法
@@ -27,9 +25,9 @@ thumbnail: /images/java.webp
 
 書式については、以下の様に記述します。`plusDaysメソッド`を例に紹介します。
 
-{{< code lang="java" title="plusDaysメソッドの記述例" >}}
+```java {lineNos="inline", name="plusDaysメソッドの記述例"}
 LocalDate localdate.plusDays(long l);
-{{< /code >}}
+```
 
 上では、`LocalDateクラス`の変数に数字分の日にちを加算しています。
 
@@ -39,7 +37,7 @@ LocalDate localdate.plusDays(long l);
 
 それぞれのメソッドの使用例をサンプルコードで紹介します。
 
-{{< code lang="java" title="LocalDateTest.java" >}}
+```java {lineNos="inline", name="LocalDateTest.java"}
 import java.time.LocalDate;
 
 public class LocalDateTest {
@@ -66,9 +64,11 @@ public class LocalDateTest {
 
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 localdate:2021-01-01
 localdateの2日後:2021-01-03
 localdateの3日前:2020-12-29
@@ -78,7 +78,7 @@ localdateの2月後:2021-03-01
 localdateの3月前:2020-10-01
 localdateの2年後:2023-01-01
 localdateの3年前:2018-01-01
-{{< /code >}}
+```
 
 それぞれ日付が加減されていることがわかります。
 

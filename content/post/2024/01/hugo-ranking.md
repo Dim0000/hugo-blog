@@ -1,6 +1,6 @@
 ---
-title: 【Hugo】PV数の人気記事のランキングを取得する
-description: 今回はHugoとGoogle Analyticsで各記事のPV数のランキングを取得する方法を紹介します。なお、ランキング取得スクリプトはNode.jsをDockerで動かす想定です。
+title: 【Hugo】PV数の人気記事のランキングを取得する【Node.js】
+description: HugoとGoogle Analyticsで各記事のPV数のランキングをNode.jsで取得する方法を紹介します。
 date: 2024-01-03
 categories: 
   - 技術記事
@@ -15,69 +15,68 @@ archives:
 thumbnail: /images/hugo.webp
 ---
 
-今回は**Hugo**と**Google Analytics**で各記事のPV数のランキングを取得する方法を紹介します。なお、ランキング取得スクリプトはNode.jsをDockerで動かす想定です。
+**Hugo**と**Google Analytics**で各記事のPV数のランキングを**Node.js**で取得する方法を紹介します。
 
 <!--more-->
 
+なお、Node.jsはDockerで動かす想定です。
+
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/wordpress-to-hugo" >}}</li>
-</ul>
+* [](wordpress-to-hugo)
 {{< /box >}}
 
 ## Google Analytics Data APIの設定
 
 まず、各記事のPV数を取得するためにGoogle Analytics Data APIを設定していきます。GCPにログインし、APIライブラリからAPIを有効にします。
 
-{{< luminous src="/images/hugo-ranking-01.png" caption="Google Analytics Data APIの設定1">}}
+![Google Analytics Data APIの設定1](/images/hugo-ranking-01.png)
 
-{{< luminous src="/images/hugo-ranking-02.png" caption="Google Analytics Data APIの設定2">}}
+![Google Analytics Data APIの設定2](/images/hugo-ranking-02.png)
 
 次に、サービスアカウントを作成していきます。
 
-{{< luminous src="/images/hugo-ranking-03.png" caption="Google Analytics Data APIの設定3">}}
+![Google Analytics Data APIの設定3](/images/hugo-ranking-03.png)
 
-{{< luminous src="/images/hugo-ranking-04.png" caption="Google Analytics Data APIの設定4">}}
+![Google Analytics Data APIの設定4](/images/hugo-ranking-04.png)
 
 「サービスアカウント名」と「サービスアカウントID」を入力し、完了ボタンをクリックします。
 
-{{< luminous src="/images/hugo-ranking-05.png" caption="Google Analytics Data APIの設定5">}}
+![Google Analytics Data APIの設定5](/images/hugo-ranking-05.png)
 
-{{< luminous src="/images/hugo-ranking-06.png" caption="Google Analytics Data APIの設定6">}}
+![Google Analytics Data APIの設定6](/images/hugo-ranking-06.png)
 
 サービスアカウントを作成後、秘密鍵のJSONファイルのダウンロードを行います。サービスアカウントの画面から鍵を追加していきます。
 
-{{< luminous src="/images/hugo-ranking-07.png" caption="Google Analytics Data APIの設定7">}}
+![Google Analytics Data APIの設定7](/images/hugo-ranking-07.png)
 
-{{< luminous src="/images/hugo-ranking-08.png" caption="Google Analytics Data APIの設定8">}}
+![Google Analytics Data APIの設定8](/images/hugo-ranking-08.png)
 
 ダウンロードしたファイルはデータ取得で使用するので、ブログフォルダ内の`.gcp`内に配置します。
 
 Gitで管理している場合は、間違って公開してしまわないよう`.gitignore`に追記しておく必要があります。
 
-{{< code lang="plaintext" title=".gitignore" >}}
+```plaintext {lineNos="inline", name=".gitignore"}
 .gcp
-{{< /code >}}
+```
 
 ## Google Analyticsの設定
 
 ここから、Google Analyticsでサービスアカウントの権限設定を行います。管理画面の「プロパティのアクセス管理」をクリックします。
 
-{{< luminous src="/images/hugo-ranking-09.png" caption="Google Analyticsの設定1">}}
-
+![Google Analyticsの設定1](/images/hugo-ranking-09.png)
 右上の「+」ボタンからユーザーを追加をクリックします。
 
-{{< luminous src="/images/hugo-ranking-10.png" caption="Google Analyticsの設定2">}}
+![Google Analyticsの設定2](/images/hugo-ranking-10.png)
 
 作成したサービスアカウントIDをメールアドレス欄に入力し、標準の役割は「閲覧者」に設定します。
 
-{{< luminous src="/images/hugo-ranking-11.png" caption="Google Analyticsの設定3">}}
+![Google Analyticsの設定3](/images/hugo-ranking-11.png)
 
 ## PVランキングを取得するスクリプトの作成
 
 ここからPVランキングを取得するスクリプトの作成していきます。今回はDockerを使用しますので、新たに`compose.create-ranking.yml`を作成します。
 
-{{< code lang="yml" title="compose.create-ranking.yml" >}}
+```yml {lineNos="inline", name="compose.create-ranking.yml"}
 volumes:
   node-modules:
 
@@ -95,11 +94,11 @@ services:
       bash -c "npm install &&
       npm install @google-analytics/data &&
       node scripts/create-ranking.js"
-{{< /code >}}
+```
 
 実際にPVデータを取得する`analytics-api.js`と、表示用にjsonファイルを作成する`create-ranking.js`を`scripts`フォルダ内に配置します。
 
-{{< code lang="JavaScript" title="scripts/analytics-api.js" >}}
+```js {lineNos="inline", name="scripts/analytics-api.js"}
 // Google Analytics 4 property ID
 propertyId = 'XXXXXXXXX'; //プロパティID
 
@@ -133,9 +132,9 @@ exports.runReport = async function () {
   });
   return response;
 }
-{{< /code >}}
+```
 
-{{< code lang="JavaScript" title="scripts/create-ranking.js" >}}
+```js {lineNos="inline", name="scripts/create-ranking.js"}
 const { runReport } = require('./analytics-api.js');
 
 const fs = require('fs');
@@ -169,19 +168,19 @@ async function main() {
 }
 
 main();
-{{< /code >}}
+```
 
 PVデータの取得は以下のコマンドで実行できます。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ docker compose -f compose.create-ranking.yml run --rm node # PVランキング取得
-{{< /code >}}
+```
 
 ## Hugoでランキングを表示
 
 Hugo上では以下の様にしてPVデータを取得できます。参考として、当サイトのメニューバーに表示させているpartialファイルを紹介します。
 
-{{< code lang="html" title="ranking.html" >}}
+```html {lineNos="inline", name="ranking.html"}
 {{ $ranking := slice }}
 {{ range $item := sort .Site.Data.ranking.items "pv" "desc" }}
   {{ $ranking = $ranking | append (dict "page" $item.pagePath) }}
@@ -199,13 +198,13 @@ Hugo上では以下の様にしてPVデータを取得できます。参考と�
     </ul>
   </div>
 </div>
-{{< /code >}}
+```
 
 ## Github Actionsの設定
 
 1週間に一度、自動でランキング取得処理とリポジトリへのプッシュを行えるよう、`.github/workflows`ディレクトリに`update-ranking.yml`を配置します。ついでに手動実行もできるようにしていおきます。
 
-{{< code lang="yml" title="update-ranking.yml" >}}
+```yml {lineNos="inline", name="update-ranking.yml"}
 name: update-ranking
 
 on:
@@ -252,23 +251,21 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -am "Create Ranking"
           git push origin HEAD
-{{< /code >}}
+```
 
 フローとしては、`update-ranking.yml`で`mainブランチ`に最新のランキングデータがプッシュされ、プッシュとトリガーとして、上の記事で設定した自動デプロイのフローが実行されるといった流れになります。以下の記事も参考にしてください。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/hugo-github" >}}</li>
-</ul>
+* [](hugo-github)
 {{< /box >}}
 
 続いて、GitHubのSecrets設定で、`GOOGLE_ANALYTICS_CREDENTIALS`に先ほどダウンロードした鍵の内容を設定します。
 
-{{< luminous src="/images/hugo-github-02.png" caption="GitHub ActionsのSecrets設定">}}
+![GitHub ActionsのSecrets設定](/images/hugo-github-02.png)
 
 また、自動デプロイ処理中でコミットとプッシュができるように、Actionsの設定の「Workflow permissions」を「Read and write permissions」に設定しておきましょう。
 
-{{< luminous src="/images/hugo-ranking-12.png" caption="GitHub Actionsの書き込み設定">}}
+![GitHub Actionsの書き込み設定](/images/hugo-ranking-12.png)
 
 これで、GitHubへのプッシュ時にランキングを取得してからデプロイするようになります。
 

@@ -1,6 +1,6 @@
 ---
 title: 【Java】LocalDateクラスで日付の期間を計算する方法
-description: 今回はLocalDateクラスの日付の期間を計算する方法について紹介します。
+description: JavaのLocalDateクラスで日付の期間を計算する方法について紹介します。
 date: 2022-04-23
 categories: 
   - 技術記事
@@ -11,23 +11,21 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-今回は`LocalDateクラス`の**日付の期間を計算する方法**について紹介します。
+Javaの`LocalDateクラス`で**日付の期間を計算する方法**について紹介します。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-localdate-addition-subtraction" >}}</li>
-</ul>
+* [](java-localdate-addition-subtraction)
 {{< /box >}}
 
 ## Periodクラスで日付の期間を計算する方法
 
 `Periodクラス`の`betweenメソッド`を使うことで2つの日付の期間を計算することができます。`betweenメソッド`は以下の様に記述します。
 
-{{< code lang="java" title="betweenメソッドの記述例" >}}
+```java {lineNos="inline", name="betweenメソッドの記述例"}
 Period period = Period.between(LocalDate date1, LocalDate date2);
-{{< /code >}}
+```
 
 変数に変数1と変数2の期間を代入しています。
 
@@ -37,7 +35,7 @@ Period period = Period.between(LocalDate date1, LocalDate date2);
 
 実際に、メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="LocalDateBetweenTest.java" >}}
+```java {lineNos="inline", name="LocalDateBetweenTest.java"}
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -58,16 +56,18 @@ public class LocalDateBetweenTest {
     System.out.println("periodの日:" + period.getDays());
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 date1:2020-01-01
 date2:2021-08-15
 period:P1Y7M14D
 periodの年:1
 periodの月:7
 periodの日:14
-{{< /code >}}
+```
 
 `date1`と`date2`の期間が出力されました。
 

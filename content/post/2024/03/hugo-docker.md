@@ -1,6 +1,6 @@
 ---
 title: 【Hugo】Docker上でHugo環境を構築する【Compose Watch】
-description: 今回は、Hugo環境をDocker上で構築・実行する手順についてまとめました。
+description: Hugo環境をDocker上で構築・実行する手順についてまとめます。
 date: 2024-03-10
 categories: 
   - 技術記事
@@ -13,14 +13,12 @@ archives:
 thumbnail: /images/hugo.webp
 ---
 
-今回は、**Hugo**環境を**Docker**上で構築・実行する手順についてまとめました。
+**Hugo**環境を**Docker**上で構築・実行する手順についてまとめます。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/develop-hugo" >}}</li>
-</ul>
+* [](develop-hugo)
 {{< /box >}}
 
 ## HugoにDockerを使うメリット
@@ -40,16 +38,16 @@ Hugoのフォルダ内で`Dockerfile`と`compose.yml`を配置します。Docker
 
 それぞれファイルを以下の通りにします。Hugoのバージョンは最新にします。
 
-{{< code lang="Dockerfile" title="Dockerfile" >}}
+```docker {lineNos="inline", name="Dockerfile"}
 FROM hugomods/hugo:latest
 
 COPY . /src/
 
 EXPOSE 1313
 
-ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--port", "1313", "-D", "-F"]{{< /code >}}
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0", "--port", "1313", "-D", "-F"]```
 
-{{< code lang="yml" title="compose.yml" >}}
+```yml {lineNos="inline", name="compose.yml"}
 services:
   hugo:
     build: .
@@ -60,25 +58,25 @@ services:
         - action: sync
           path: .
           target: /src
-{{< /code >}}
+```
 
 コンテナ起動時は、ターミナルで以下のコマンドを実行します。ホットリロード機能を実現するために`Compose Watch`を利用しています。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ docker compose up -d # コンテナ起動
 
 $ docker compose watch # ホットリロード
-{{< /code >}}
+```
 
 ローカルでの構築時と同様に、`http://localhost:1313/`を開くことでサイトプレビューを確認できます。
 
 新規記事を作成する際は以下のコマンドを実行します。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ docker compose exec hugo hugo new <file名> # コンテナ内に新規ファイル作成
 
 $ docker compose cp hugo:/src/content/<file名> . # コンテナからローカルにコピー
-{{< /code >}}
+```
 
 * * *
 

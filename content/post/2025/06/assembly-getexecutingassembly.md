@@ -1,6 +1,6 @@
 ---
 title: 【Visual Studio】ファイルを埋め込みリソースとして読み込む際の注意点
-description: 今回はVisual Studioでファイルを埋め込みリソースとして読み込む際の注意点についての記事になります。
+description: Visual Studioでファイルを埋め込みリソースとして読み込む際の注意点についての備忘録です。
 date: 2025-06-01
 categories: 
   - 技術記事
@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は**Visual Studio**でファイルを**埋め込みリソース**として読み込む際の注意点についての記事になります。
+**Visual Studio**でファイルを**埋め込みリソース**として読み込む際の注意点についての備忘録です。
 
 <!--more-->
 
@@ -22,7 +22,7 @@ thumbnail: /images/c-sharp.webp
 
 具体的には、`Assembly.GetExecutingAssembly()`を使ってアセンブリの情報を取得します。メソッドは以下の様に使うことができます。
 
-{{< code lang="c#" title="Program.cs" >}}
+```c# {lineNos="inline", name="Program.cs"}
 var assembly = Assembly.GetExecutingAssembly();
 var resourceName = "MyNamespace.folder.filename.txt";
 
@@ -31,7 +31,7 @@ using (StreamReader reader = new StreamReader(stream))
 {
     string content = reader.ReadToEnd();
 }
-{{< /code >}}
+```
 
 上記のコードではテキストファイルを読み込みこんでいます。
 

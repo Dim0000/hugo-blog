@@ -1,6 +1,6 @@
 ---
 title: 【Hugo】WordPressブログをHugo・AWSに移行した
-description: この度、レンタルサーバーで運営していたWordPressブログをHugoに乗り換え、サイトのホスティングもAWS（S3・CloudFront）に変更しました。移行の理由や感想等を書いていきます。
+description: レンタルサーバーで運営していたWordPressブログをHugoに乗り換え、サイトのホスティングもAWS（S3・CloudFront）に変更しました。移行の理由や感想等を書いていきます。
 date: 2023-07-16
 categories: 
   - 技術記事
@@ -15,7 +15,7 @@ archives:
 thumbnail: /images/hugo.webp
 ---
 
-この度、レンタルサーバーで運営していたWordPressブログを**Hugo**に乗り換え、サイトのホスティングも**AWS**（S3・CloudFront）に変更しました。移行の理由や感想等を書いていきます。
+レンタルサーバーで運営していたWordPressブログを**Hugo**に乗り換え、サイトのホスティングも**AWS**（S3・CloudFront）に変更しました。移行の理由や感想等を書いていきます。
 
 <!--more-->
 
@@ -23,7 +23,7 @@ thumbnail: /images/hugo.webp
 
 今回新サイトに移行するまでは、レンタルサーバーにWordPressをインストールし、ドメイン取得サービスで取得した独自ドメインの`dimzakki.com`でサイトを運営していました。
 
-{{< luminous src="/images/wordpress-to-hugo-01.png" caption="WordPress・レンタルサーバーの構成">}}
+![WordPress・レンタルサーバーの構成](/images/wordpress-to-hugo-01.png)
 
 WordPressでのブログ運営時から一貫していたことですが、あくまで趣味としてのブログ運営であることから、なるべく低コストで運営することを重視していました。レンタルサーバーは一番安いプランにし、ドメインは無料キャンペーンで取得したものを維持してきました。今まで運営で掛かっていた費用は**年間6,000円未満**のサーバー代のみでした。
 
@@ -35,7 +35,7 @@ WordPressでのブログ運営時から一貫していたことですが、あ�
 
 また、サイトのコンテンツはGit（Github）で管理しており、ブログ更新時のHugoのビルドとS3へのデプロイはGitHub ActionsによるCI/CDパイプラインを用いて自動的に行っています。
 
-{{< luminous src="/images/wordpress-to-hugo-02.png" caption="Hugo・AWS構成">}}
+![Hugo・AWS構成](/images/wordpress-to-hugo-02.png)
 
 ### 補足：SSGについて
 
@@ -106,25 +106,23 @@ Hugo上で人気記事ランキング・お問い合わせフォーム・コメ�
 WordPressからHugo・AWSに移行した際のメモを、備忘録として記事にまとめました。
 
 1. レンタルサーバーのドメインをRoute 53に移管する  
-{{< ref "/domain-to-route53" >}}
+[](domain-to-route53)
 
 2. Hugoをローカルに構築してコンテンツを移す  
-{{< ref "/develop-hugo" >}}
+[](develop-hugo)
 
 3. HugoをS3にデプロイし、CloudFrontで配信する  
-{{< ref "/hugo-deploy" >}}
+[](hugo-deploy)
 
 4. GitHubで自動デプロイを設定する  
-{{< ref "/hugo-github" >}}
+[](hugo-github)
 
 以上の4つのプロセスでサイトを運営することができました。
 
 また、必須の機能ではありませんが、人気記事ランキングも実装してみました。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/hugo-ranking" >}}</li>
-</ul>
+* [](hugo-ranking)
 {{< /box >}}
 
 ## 移行した感想
@@ -135,7 +133,7 @@ WordPressからHugo・AWSに移行した際のメモを、備忘録として記�
 
 運営コストについては、初月はドメイン代が掛かっているものの、以降の月は平均して1ヶ月で100円以下と非常に安く運用できています。
 
-{{< luminous src="/images/wordpress-to-hugo-03.png" caption="2023年6月以降のサイト運営コスト">}}
+![2023年6月以降のサイト運営コスト](/images/wordpress-to-hugo-03.png)
 
 悲しいことに、移行した後にロリポップの自動更新を切るのを忘れていて、結局プラス1年サーバー代を払うことになってしまいましたが…。
 

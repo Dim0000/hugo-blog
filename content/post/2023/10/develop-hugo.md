@@ -1,6 +1,6 @@
 ---
 title: 【Hugo】ローカルにサイト（Mainroadテーマ）を構築する【サイト構築①】
-description: 今回はHugoのブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
+description: Hugoのブログサイトをローカルに構築し、WordPressからブログ記事を移行する手順について書いていきます。
 date: 2023-10-10
 categories: 
   - 技術記事
@@ -13,17 +13,15 @@ archives:
 thumbnail: /images/hugo.webp
 ---
 
-今回は**Hugo**のブログサイトをローカルに構築し、WordPressからブログ記事を移行するまでの手順について書いていきます。
+**Hugo**のブログサイトをローカルに構築し、WordPressからブログ記事を移行する手順について書いていきます。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/wordpress-to-hugo" >}}</li>
-<li>{{< ref "/domain-to-route53" >}}</li>
-<li>{{< ref "/hugo-deploy" >}}</li>
-<li>{{< ref "/hugo-github" >}}</li>
-</ul>
+* [](wordpress-to-hugo)
+* [](domain-to-route53)
+* [](hugo-deploy)
+* [](hugo-github)
 {{< /box >}}
 
 ## Hugoのセットアップ
@@ -34,7 +32,7 @@ Hugoのフォルダは今回は`C:\Hugo\bin`とします。ZIPファイルを解
 
 続いて、環境変数のパスを通します。Windowsの設定から、「システム」→左側一番下の「詳細情報」→右側の「システムの詳細設定」→一番下の「環境変数」を開きます。そこから、「ユーザーの環境変数」→「Path」を編集し、`C:\Hugo\bin`を設定します。
 
-{{< luminous src="/images/develop-hugo-01.png" caption="Hugoの環境変数">}}
+![Hugoの環境変数](/images/develop-hugo-01.png)
 
 コマンドプロンプトで`hugo help`を実行し、ヘルプ一覧が表示されたらインストール完了です。
 
@@ -44,12 +42,12 @@ Hugoのフォルダは今回は`C:\Hugo\bin`とします。ZIPファイルを解
 
 `C:\Hugo`内にブログ用のフォルダを作成して初期サイトを構築します。サイトはGitHubで管理するので、Gitリポジトリの初期化もしておきます。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ cd C:\Hugo\
 $ hugo new site <サイト名>
 $ cd C:\Hugo\<サイト名>
 $ git init
-{{< /code >}}
+```
 
 サイト名を自分の好きな名前に変えて下さい。
 
@@ -57,33 +55,33 @@ $ git init
 
 今回はGitのサブモジュールとして追加します。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ git submodule add https://github.com/vimux/mainroad themes/mainroad
-{{< /code >}}
+```
 
 `hugo.toml`の設定ファイルの記述を追加してMainroadテーマを有効にします。
 
-{{< code lang="toml" title="hugo.toml" >}}
+```toml {lineNos="inline", name="hugo.toml"}
 theme = "mainroad"
-{{< /code >}}
+```
 
 ローカルでサイトを確認したい場合は`serverコマンド`を実行し、`http://localhost:1313/`でサイトプレビューを確認できます。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ hugo server -D # draft:trueの下書き記事も表示する
-{{< /code >}}
+```
 
 また、新規記事の作成については`newコマンド`で行います。
 
-{{< code lang="powershell" title="ターミナル" >}}
+```powershell {lineNos="inline", name="ターミナル"}
 $ hugo new test.md # 新規記事を作成する
-{{< /code >}}
+```
 
 ## Hugoの設定
 
 Hugoの設定は`hugo.toml`（古いバージョンだと`config.toml`）で設定します。参考までに、以下が基本的な設定項目になります。
 
-{{< code lang="toml" title="hugo.toml" >}}
+```toml {lineNos="inline", name="hugo.toml"}
 baseURL = "<サイトURL>"
 title = "<サイトタイトル>"
 DefaultContentLanguage = "ja"
@@ -147,7 +145,7 @@ timeout = "60s"
 
 [markup.goldmark.renderer]
   unsafe = true
-{{< /code >}}
+```
 
 ## 記事のデータの移行
 
@@ -164,9 +162,7 @@ GitHubの「Download ZIP」からダウンロードし、ZIPファイルをWordp
 今回は、ローカルでブログを構築する所まで紹介しました。また、Dockerで環境構築をする方法についても、別の記事にまとめていますので参考にしてみてください。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/hugo-docker" >}}</li>
-</ul>
+* [](hugo-docker)
 {{< /box >}}
 
 以上で記事を終わりにします。

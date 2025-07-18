@@ -1,6 +1,6 @@
 ---
 title: 【AWS】HugoをS3・CloudFrontにデプロイする【サイト構築②】
-description: 今回はローカルで構築したHugoのブログサイトをAWS S3にデプロイし、Amazon CloudFrontで配信するまでの流れをまとめていきます。
+description: ローカルで構築したHugoのブログサイトをAWS S3にデプロイし、Amazon CloudFrontで配信するまでの流れをまとめていきます。
 date: 2023-10-15
 categories: 
   - 技術記事
@@ -13,54 +13,52 @@ archives:
 thumbnail: /images/aws.webp
 ---
 
-今回はローカルで構築した**Hugo**のブログサイトを**AWS S3**にデプロイし、**Amazon CloudFront**で配信するまでの流れをまとめていきます。
+ローカルで構築した**Hugo**のブログサイトを**AWS S3**にデプロイし、**Amazon CloudFront**で配信するまでの流れをまとめていきます。
 
 <!--more-->
 
 なお、ローカルでのHugoサイトの作成と、Route 53での独自ドメイン取得が出来ている前提で話を進めていきます。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/wordpress-to-hugo" >}}</li>
-<li>{{< ref "/domain-to-route53" >}}</li>
-<li>{{< ref "/develop-hugo" >}}</li>
-<li>{{< ref "/hugo-github" >}}</li>
-</ul>
+* [](wordpress-to-hugo)
+* [](domain-to-route53)
+* [](develop-hugo)
+* [](hugo-github)
 {{< /box >}}
 
 ## HugoをS3にデプロイする
 
 まずは**S3**のバケットを作成していきます。
 
-{{< luminous src="/images/hugo-deploy-01.png" caption="バケットの作成1">}}
+![バケットの作成1](/images/hugo-deploy-01.png)
 
 サイトは独自ドメインで運用するので、最終的にはS3のパブリックアクセスはブロックしてホスティングします。その前にS3でホスティングしてサイトを確認したいので、一旦パブリックアクセスをすべてブロック」のチェックは外します。
 
-{{< luminous src="/images/hugo-deploy-02.png" caption="バケットの作成2">}}
+![バケットの作成2](/images/hugo-deploy-02.png)
 
 その他の設定はいじらなくて良いので、そのままバケットを作成します。
 
 続いて、ビルドしたファイルのアップロードを行っていきます。
 
-{{< luminous src="/images/hugo-deploy-03.png" caption="バケットの作成3">}}
+![バケットの作成3](/images/hugo-deploy-03.png)
 
 Hugoのビルド時に生成されたファイルが`publicフォルダ`内にあるので、それらを選択します。下にある「アップロード」をクリックすると選択されたファイルがバケットにアップロードされます。
 
-{{< luminous src="/images/hugo-deploy-04.png" caption="バケットの作成4">}}
+![バケットの作成4](/images/hugo-deploy-04.png)
 
 続いて、プロパティからS3の「静的ウェブサイトホスティング」を有効にしていきます。
 
-{{< luminous src="/images/hugo-deploy-05.png" caption="静的ウェブサイトホスティングの設定1">}}
+![静的ウェブサイトホスティングの設定1](/images/hugo-deploy-05.png)
 
-{{< luminous src="/images/hugo-deploy-06.png" caption="静的ウェブサイトホスティングの設定2">}}
+![静的ウェブサイトホスティングの設定2](/images/hugo-deploy-06.png)
 
 インデックスドキュメントには`index.html`を入力します。
 
-{{< luminous src="/images/hugo-deploy-07.png" caption="静的ウェブサイトホスティングの設定3">}}
+![静的ウェブサイトホスティングの設定3](/images/hugo-deploy-07.png)
 
 次に、「アクセス許可」からバケットポリシーを設定します。ポリシーに以下を記述します。
 
-{{< code lang="json" title="バケットポリシー" >}}
+```json {lineNos="inline", name="バケットポリシー"}
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -77,11 +75,11 @@ Hugoのビルド時に生成されたファイルが`publicフォルダ`内に�
         }
     ]
 }
-{{< /code >}}
+```
 
 ここまでで、静的ウェブサイトホスティングが完了するので、「プロパティ」で発行されたURLからアクセスし、サイトが表示されるかを確認しましょう。
 
-{{< luminous src="/images/hugo-deploy-09.png" caption="静的ウェブサイトホスティングの設定4">}}
+![静的ウェブサイトホスティングの設定4](/images/hugo-deploy-09.png)
 
 ## ACMでSSL証明書を発行する
 
@@ -89,61 +87,61 @@ S3へのデプロイが完了したので、S3へCloudFrontからでアクセス
 
 [^1]:[CloudFront で SSL/TLS 証明書を使用するための要件 | Amazon CloudFront](https://docs.aws.amazon.com/ja_jp/AmazonCloudFront/latest/DeveloperGuide/cnames-and-https-requirements.html#https-requirements-aws-region)
 
-{{< luminous src="/images/hugo-deploy-10.png" caption="SSL証明書の発行1">}}
+![SSL証明書の発行1](/images/hugo-deploy-10.png)
 
 「パブリック証明書をリクエスト」を選択します。
 
-{{< luminous src="/images/hugo-deploy-11.png" caption="SSL証明書の発行2">}}
+![SSL証明書の発行2](/images/hugo-deploy-11.png)
 
 ドメイン名に`取得ドメイン`を入力します。当サイトの場合、併せて`*.取得ドメイン`も追加しています。
 
-{{< luminous src="/images/hugo-deploy-12.png" caption="SSL証明書の発行3">}}
+![SSL証明書の発行3](/images/hugo-deploy-12.png)
 
 ここまでで証明書の発行手続きが完了するので、ドメインにCNAMEレコードを追加します。「Route53でのレコード作成」から作成を行います。
 
-{{< luminous src="/images/hugo-deploy-13.png" caption="SSL証明書の発行4">}}
+![SSL証明書の発行4](/images/hugo-deploy-13.png)
 
-{{< luminous src="/images/hugo-deploy-14.png" caption="SSL証明書の発行5">}}
+![SSL証明書の発行5](/images/hugo-deploy-14.png)
 
-{{< luminous src="/images/hugo-deploy-15.png" caption="SSL証明書の発行6">}}
+![SSL証明書の発行6](/images/hugo-deploy-15.png)
 
 証明書の「状況」ステータスが「発行済み」になれば成功です。
 
-{{< luminous src="/images/hugo-deploy-16.png" caption="SSL証明書の発行7">}}
+![SSL証明書の発行7](/images/hugo-deploy-16.png)
 
 ## CloudFrontからサイトにアクセスする
 
 証明書の発行まで完了したので、S3へ**CloudFront**からでアクセスするように設定します。まずディストリビューションの作成から行っていきます。「オリジンドメイン」とOACの「名前」はS3のバケット名を入力します。
 
-{{< luminous src="/images/hugo-deploy-17.png" caption="ディストリビューションの作成1">}}
+![ディストリビューションの作成1](/images/hugo-deploy-17.png)
 
-{{< luminous src="/images/hugo-deploy-18.png" caption="ディストリビューションの作成2">}}
+![ディストリビューションの作成2](/images/hugo-deploy-18.png)
 
 「カスタムSSL証明書」には先ほど作成した証明書を、「デフォルトルートオブジェクト」には`index.html`を入力し、ディストリビューションを作成します。
 
-{{< luminous src="/images/hugo-deploy-19.png" caption="ディストリビューションの作成3">}}
+![ディストリビューションの作成3](/images/hugo-deploy-19.png)
 
-{{< luminous src="/images/hugo-deploy-20.png" caption="ディストリビューションの作成4">}}
+![ディストリビューションの作成4](/images/hugo-deploy-20.png)
 
 続いて、S3バケットのアクセス許可設定を変更します。作成したディストリビューションの「編集」をクリックし、ポリシーをコピーしてバケットポリシーを変更します。
 
-{{< luminous src="/images/hugo-deploy-21.png" caption="ディストリビューションの作成5">}}
+![ディストリビューションの作成5](/images/hugo-deploy-21.png)
 
-{{< luminous src="/images/hugo-deploy-22.png" caption="ディストリビューションの作成6">}}
+![ディストリビューションの作成6](/images/hugo-deploy-22.png)
 
 バケットポリシーにはコピーしたものをそのまま差し替えればOKです。
 
-{{< luminous src="/images/hugo-deploy-23.png" caption="ディストリビューションの作成7">}}
+![ディストリビューションの作成7](/images/hugo-deploy-23.png)
 
 ここまでで一旦ディストリビューションの設定は終わりです。しかし、このままだとルートオブジェクト以外へのリクエストに`index.html`が付かないので、ルートオブジェクト以外にアクセスができない状態になってます。その為、CloudFrontの関数でリクエストを書き換える処理を設定します。
 
-{{< luminous src="/images/hugo-deploy-24.png" caption="CloudFront 関数の作成1">}}
+![関数の作成1](/images/hugo-deploy-24.png)
 
-{{< luminous src="/images/hugo-deploy-25.png" caption="CloudFront 関数の作成2">}}
+![関数の作成2](/images/hugo-deploy-25.png)
 
 関数名を適当に設定し、以下のコードを貼り付けます。「発行」タブから「関数の発行」をクリックします。
 
-{{< code lang="JavaScript" title="関数" >}}
+```js {lineNos="inline", name="関数"}
 function handler(event) {
     var request = event.request;
     var uri = request.uri;
@@ -155,21 +153,21 @@ function handler(event) {
     }
     return request;
 }
-{{< /code >}}
+```
 
-{{< luminous src="/images/hugo-deploy-26.png" caption="CloudFront 関数の作成3">}}
+![関数の作成3](/images/hugo-deploy-26.png)
 
-{{< luminous src="/images/hugo-deploy-27.png" caption="CloudFront 関数の作成4">}}
+![関数の作成4](/images/hugo-deploy-27.png)
 
-{{< luminous src="/images/hugo-deploy-28.png" caption="CloudFront 関数の作成5">}}
+![関数の作成5](/images/hugo-deploy-28.png)
 
 関数は作成しましたので、ディストリビューションの「ビヘイビア」から作成した関数を関連付けします。
 
-{{< luminous src="/images/hugo-deploy-29.png" caption="CloudFront 関数の作成6">}}
+![関数の作成6](/images/hugo-deploy-29.png)
 
 最後に、ドメインのAレコードをCloudFrontに変更します。
 
-{{< luminous src="/images/hugo-deploy-30.png" caption="CloudFront 関数の作成6">}}
+![関数の作成7](/images/hugo-deploy-30.png)
 
 これでCloudFrontでの配信の設定は終わりです。取得したドメインにアクセスし、サイトが表示されたら成功です。
 

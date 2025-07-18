@@ -1,6 +1,6 @@
 ---
 title: 【Java】変数における同一性と同値性の違いを解説
-description: 今回はJavaの変数における同一性と同値性の違いについて、分かりやすくまとめてみたいと思います。
+description: Javaの変数における同一性と同値性の違いについて、分かりやすくまとめてみたいと思います。
 date: 2022-02-25
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-今回はJavaの変数における**同一性**と**同値性**の違いについて、分かりやすくまとめてみたいと思います。
+**Java**の変数における**同一性**と**同値性**の違いについて、分かりやすくまとめてみたいと思います。
 
 <!--more-->
 
@@ -21,10 +21,10 @@ thumbnail: /images/java.webp
 
 例えば、下のような変数`str1`、`str2`がある時、2つの変数は同じインスタンスを共有して参照しています。
 
-{{< code lang="java" title="変数の同一性" >}}
+```java {lineNos="inline", name="変数の同一性"}
 String str1 = "ABC";
 String str2 = str1;
-{{< /code >}}
+```
 
 つまり、**この2つの変数は同一である**と言えます。
 
@@ -32,14 +32,14 @@ String str2 = str1;
 
 コンスタントプールにより下のような変数`str3`、`str4`は同じ参照先を参照しているので同一性を持ちます。
 
-{{< code lang="java" title="変数の同一性" >}}
+```java {lineNos="inline", name="変数の同一性"}
 String str3 = "abc";
 String str4 = "abc";
-{{< /code >}}
+```
 
 同一性であるかを判定するのには、`==演算子`を使います。サンプルコードに同一性を判定するコードを書いてみます。
 
-{{< code lang="java" title="IdentityTest.java" >}}
+```java {lineNos="inline", name="IdentityTest.java"}
 public class IdentityTest {
   public static void main(String[] args) {
     // str1とstr2が同一であるか判定する
@@ -52,12 +52,14 @@ public class IdentityTest {
     System.out.println("str3とstr4の同一性:" + (str3 == str4));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 str1とstr2の同一性:true
 str3とstr4の同一性:true
-{{< /code >}}
+```
 
 `str1`と`str2`、`str3`と`str4`は同一であることがわかります。
 
@@ -65,10 +67,10 @@ str3とstr4の同一性:true
 
 **同値性**とは、インスタンスが持つ値の内容が同じであることを意味します。
 
-{{< code lang="java" title="変数の同値性" >}}
+```java {lineNos="inline", name="変数の同値性"}
 String str1 = new String("ABC");
 String str2 = new String("ABC");
-{{< /code >}}
+```
 
 上の`str1`と`str2`は`new演算子`で異なるインスタンスを生成して、「ABC」を代入しています。値自体はそれぞれ同じ文字列を代入しています。
 
@@ -76,7 +78,7 @@ String str2 = new String("ABC");
 
 同値性を判定するには、`Objectクラス`の`equalsメソッド`を使います。サンプルコードに同値性を判定するコードを書いてみます。
 
-{{< code lang="java" title="サンプルコード" >}}
+```java {lineNos="inline", name="EquivalenceTest.java"}
 public class EquivalenceTest {
   public static void main(String[] args) {
     String str1 = new String("ABC");
@@ -87,12 +89,14 @@ public class EquivalenceTest {
     System.out.println("str1とstr2の同値性:" + str1.equals(str2));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 str1とstr2の同一性:false
 str1とstr2の同値性:true
-{{< /code >}}
+```
 
 上の通り、同一性判定は`false`ですが、同値性判定は`true`であることが分かります。
 

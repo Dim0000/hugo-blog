@@ -1,6 +1,6 @@
 ---
 title: 【MixAmp】FPSでのアンプの重要性【Apexのイコライザ設定など】
-description: 今回はゲーミングデバイスのMixAmpについて紹介します。元FPSガチ勢である立場から、FPSにおいての音の重要性と、強くなるためにおすすめなアンプやゲーミングイヤホンについて語りたいと思います。
+description: 今回はゲーミングデバイスのMixAmpについて紹介します。FPSでの音の重要性と、強くなるためにおすすめなアンプやゲーミングイヤホンについて元FPSガチ勢が語りたいと思います。
 date: 2021-08-14
 categories: 
   - 雑記
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/game.webp
 ---
 
-今回はゲーミングデバイスの**MixAmp**について紹介します。元FPSガチ勢である立場から、FPSにおいての音の重要性と、強くなるためにおすすめなアンプやゲーミングイヤホンについて語りたいと思います。
+今回はゲーミングデバイスの**MixAmp**について紹介します。FPSでの音の重要性と、強くなるためにおすすめなアンプやゲーミングイヤホンについて元FPSガチ勢が語りたいと思います。
 
 <!--more-->
 
@@ -29,15 +29,15 @@ FPS自体は中学生時代からやっていて、一番FPSをプレイして�
 
 ゲームの戦績がこんな感じです。とりあえず今起動できるのが「CoD:BOCW」と「Apex」くらいなのでそれらを貼ります。ちなみに使用デバイスはPS4（PS5）の純正コントローラーです（PS5でもPS4の純コン使ってます）。
 
-{{< luminous src="/images/game-mixamp-apex-equalizer-01.jpeg" caption="「COD:BOCW」の戦績">}}
+![「CoD:BOCW」の戦績](/images/game-mixamp-apex-equalizer-01.jpeg)
 
 BOCWの戦績です。キルレが2.7で平均よりそこそこ高いと思います。BOCWは野良か2~3パでやることが多かったです。BOCWは何故か人気無いみたいですが、個人的には普通に面白かったです。2月くらいになってAPEXやり始めてからこちらはやめちゃったので、今はやってませんが…。FPSをプレイして来ての戦績のピークがこの「CoD:BOCW」と1作前の「CoD:MW」に辺りになるかなと思います。
 
 次にApexの戦績紹介です。こちらは人気になった途中から参戦したことや、ソロで適当に遊んでることが多いのでApexのキルレは大したことないです。参考までに良かった時のマッチの戦績を貼ります。
 
-{{< luminous src="/images/game-mixamp-apex-equalizer-02.jpg" caption="「Apex」の戦績1">}}
+![「Apex」の戦績1](/images/game-mixamp-apex-equalizer-02.jpg)
 
-{{< luminous src="/images/game-mixamp-apex-equalizer-03.jpeg" caption="「Apex」の戦績2">}}
+![「Apex」の戦績2](/images/game-mixamp-apex-equalizer-03.jpeg)
 
 1枚目がジブラルタルで「爪痕（20キル以上）」と「ダブハン（4000ダメージ以上）」のバッジを同時に取った時の画像です。始めたてのシーズン8の頃はジブラルタルばっか使ってました。今たまにやる時はバンガロールとか使ってますかね。爪痕はジブだけですが、ダブハンはブラハ・バンガ・レブナントも持ってます。
 
@@ -109,7 +109,7 @@ BOCWの戦績です。キルレが2.7で平均よりそこそこ高いと思い�
 
 次に、私が使ってるおすすめのイコライザ設定を2種類紹介します。一応Apex用ですが、CoDをプレイしてる時も使用してた設定です。まず1つ目です。
 
-{{< luminous src="/images/game-mixamp-apex-equalizer-04.png" caption="MixAmpのイコライザ設定1">}}
+![MixAmpのイコライザ設定1](/images/game-mixamp-apex-equalizer-04.png)
 
 |中心周波数（Hz）|レベル|帯域幅（×CF）|
 | :---: | :---: | :---: |
@@ -123,7 +123,7 @@ Warzoneの時に設定してからそれ程変えてないはずですが、総�
 
 次に2つ目です。
 
-{{< luminous src="/images/game-mixamp-apex-equalizer-05.png" alt="MixAmpのイコライザ設定2" caption="MixAmpのイコライザ設定2">}}
+![MixAmpのイコライザ設定2](/images/game-mixamp-apex-equalizer-05.png)
 
 |中心周波数（Hz）|レベル|帯域幅（×CF）|
 | :---: | :---: | :---: |
@@ -140,9 +140,7 @@ Warzoneの時に設定してからそれ程変えてないはずですが、総�
 PS5やPS4 Slimを使っている方は、光デジタル端子がないので、別途光ケーブルを使うための**HDMIアダプター**が必要なので気を付けましょう。下の記事にアダプターを使う方法についてまとめています。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/game-ps5-mixamp-hdmiadapter" >}}</li>
-</ul>
+* [](game-ps5-mixamp-hdmiadapter)
 {{< /box >}}
 
 * * *
@@ -152,9 +150,7 @@ PS5やPS4 Slimを使っている方は、光デジタル端子がないので、
 余談ですが、私が使っているおすすめのマイク付きゲーミングイヤホンのレビュー記事を紹介します。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/product-review-shure-aonic215" >}}</li>
-</ul>
+* [](product-review-shure-aonic215)
 {{< /box >}}
 
 結構長々と書いてしまいましたが、参考になれば幸いです。以上で記事を終わりにします。

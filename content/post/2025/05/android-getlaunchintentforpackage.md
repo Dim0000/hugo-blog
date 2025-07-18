@@ -1,6 +1,6 @@
 ---
-title: 【Android】インストール済みの起動可能なアプリを取得する方法
-description: 今回はAndroidのPackageManagerクラスを使い、インストール済みの起動可能なアプリを取得する方法について紹介します。
+title: 【Android】インストール済みの起動可能なアプリを取得する
+description: KotlinでのAndroid開発でPackageManagerクラスを使い、インストール済みの起動可能なアプリを取得する方法を紹介します。
 date: 2025-05-31
 categories: 
   - 技術記事
@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/android.webp
 ---
 
-今回はAndroidの`PackageManagerクラス`を使い、インストール済みの起動可能なアプリを取得する方法について紹介します。
+**Kotlin**でのAndroid開発で`PackageManagerクラス`を使い、インストール済みの起動可能なアプリを取得する方法を紹介します。
 
 <!--more-->
 
@@ -22,9 +22,9 @@ thumbnail: /images/android.webp
 
 メソッドの書式は以下になります。
 
-{{< code lang="kotlin" title="" >}}
+```kotlin {lineNos="inline", name=""}
 val intent = packageManager.getLaunchIntentForPackage("com.example.app")
-{{< /code >}}
+```
 
 メソッドでは、指定したパッケージ名（アプリ）に対して、アプリがユーザーによって起動可能な場合は起動用インテントを返し、起動できない場合は`null`を返します。
 
@@ -32,7 +32,7 @@ val intent = packageManager.getLaunchIntentForPackage("com.example.app")
 
 例えば、起動可能なアプリ一覧を取得したい場合、以下のようにメソッドを活用することができます。
 
-{{< code lang="kotlin" title="" >}}
+```kotlin {lineNos="inline", name=""}
 val pm = context.packageManager
 val apps = pm.getInstalledApplications(PackageManager.GET_META_DATA)
 
@@ -45,7 +45,7 @@ launchableApps.forEach {
     val packageName = it.packageName
     Log.d("LaunchableApp", "$appName ($packageName)")
 }
-{{< /code >}}
+```
 
 上のようにすることで、起動可能なアプリ一覧を出力することができます。
 

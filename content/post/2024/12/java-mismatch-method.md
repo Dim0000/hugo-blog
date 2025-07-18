@@ -1,6 +1,6 @@
 ---
 title: 【Java】mismatchメソッドで2つの配列の違いを探す方法
-description: Javaで2つの配列の違いを探す時には、Arraysクラスのmismatchメソッドを使うことができます。今回はmismatchメソッドの使い方を解説します。
+description: JavaのArraysクラスのmismatchメソッドで2つの配列の違いを探す方法を紹介します。
 date: 2024-12-13
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-Javaで2つの配列の違いを探す時には、`Arraysクラス`の`mismatchメソッド`を使うことができます。今回は`mismatchメソッド`の使い方を解説します。
+**Java**の`Arraysクラス`の`mismatchメソッド`で2つの配列の違いを探す方法を紹介します。
 
 <!--more-->
 
@@ -19,9 +19,9 @@ Javaで2つの配列の違いを探す時には、`Arraysクラス`の`mismatch�
 
 `mismatchメソッド`は以下の様に記述します。
 
-{{< code lang="java" title="mismatchメソッドの書式例" >}}
+```java {lineNos="inline", name="mismatchメソッドの書式例"}
 Arrays.mismatch(Array a, Array b);
-{{< /code >}}
+```
 
 配列aと配列bを比較して、**最初に一致しなかった要素の添え字**を戻します。一致した場合は`‐1`を返します。また、配列の添え字は`int型`なので、返り値の型も`int型`になります。
 
@@ -33,7 +33,7 @@ Arrays.mismatch(Array a, Array b);
 
 使用例をサンプルコードによって紹介します。
 
-{{< code lang="java" title="MismatchTest1.java" >}}
+```java {lineNos="inline", name="MismatchTest1.java"}
 import java.util.Arrays;
 
 public class MismatchTest1 {
@@ -51,18 +51,20 @@ public class MismatchTest1 {
     System.out.println(Arrays.mismatch(num1, num3));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 3   // { 1, 2, 3, 4, 5, 6 }と{ 1, 2, 3, 5, 4, 6 }の比較
 -1　// 同じ配列の比較
-{{< /code >}}
+```
 
 ## 配列の全ての要素を検索する
 
 このメソッドを普通に使うと最初に出てきた文字の位置しか返ってきません。そこでfor文を使って全ての文字を検索する方法を作ってみます。以下にサンプルコードを示します。
 
-{{< code lang="java" title="MismatchTest2.java" >}}
+```java {lineNos="inline", name="MismatchTest2.java"}
 import java.util.Arrays;
 
 public class MismatchTest2 {
@@ -89,15 +91,17 @@ public class MismatchTest2 {
     System.out.println("該当個数:" + sum);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 [1, 2, 3, 4, 5, 6] // 元の配列1
 [1, 2, 3, 5, 4, 6] // 元の配列2
 1個目:4
 2個目:5
 該当個数:2
-{{< /code >}}
+```
 
 一応全ての要素を検索できるようになっていますが、元の配列の要素を変更しているため、出力後の配列`num1`と`num2`の中身は最初と異なってしまいます。
 

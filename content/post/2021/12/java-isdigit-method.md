@@ -1,6 +1,6 @@
 ---
-title: 【Java】isDigitメソッドで文字が数字かどうか判定する方法
-description: CharacterクラスのisDigitメソッドを使うことで、文字が数字かどうかの判定が出来ます。メソッドの書式・使用例の紹介と、String型文字列から全ての数字を抽出する方法についてまとめます。
+title: 【Java】isDigitメソッドで文字が数字かどうか判定する
+description: JavaのCharacterクラスのisDigitメソッドを使って文字が数字かどうかを判定する方法とString型の文字列から全ての数字を抽出する方法についてまとめます。
 date: 2021-12-15
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-`Characterクラス`の`isDigitメソッド`を使うことで、文字が数字かどうかの判定が出来ます。メソッドの書式・使用例の紹介と、`String型文字列`から全ての数字を抽出する方法についてまとめます。
+**Java**の`Characterクラス`の`isDigitメソッド`を使って文字が数字かどうかを判定する方法と`String型`の文字列から全ての数字を抽出する方法についてまとめます。
 
 <!--more-->
 
@@ -19,9 +19,9 @@ thumbnail: /images/java.webp
 
 `isDigitメソッド`は、以下の様に記述します。
 
-{{< code lang="java" title="isDigitメソッドの書式例" >}}
+```java {lineNos="inline", name="isDigitメソッドの書式例"}
 Character.isDigit(char ch);
-{{< /code >}}
+```
 
 引数の文字を比較して数字（0~9のみで構成される）であれば`ture`、そうでなければ`false`を返します。戻り値の型は`boolean型`です。
 
@@ -30,16 +30,14 @@ Character.isDigit(char ch);
 似たようなメソッドで、小文字のアルファベットかどうか判定する`isLowerCaseメソッド`があります。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-islowercase-method" >}}</li>
-</ul>
+* [](java-islowercase-method)
 {{< /box >}}
 
 ## メソッドの使用例
 
 `isDigitメソッド`の使用例をサンプルコードで紹介します。
 
-{{< code lang="java" title="IsDigitTest1.java" >}}
+```java {lineNos="inline", name="IsDigitTest1.java"}
 public class IsDigitTest1 {
   public static void main(String[] args) {
 
@@ -54,16 +52,18 @@ public class IsDigitTest1 {
     System.out.println(",の数値判定:" + Character.isDigit(','));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 0の数値判定:true
 Aの数値判定:false
 ０の数値判定:true
 あの数値判定:false
  の数値判定:false
 ,の数値判定:false
-{{< /code >}}
+```
 
 半角英数字の判定だけではなく、全角の数字や平仮名や空白文字に対しても数字かどうか判定されます。
 
@@ -74,12 +74,10 @@ Aの数値判定:false
 サンプルコードを以下に示します。`String型`を`char型`に分割するために、`toCharArrayメソッド`を使用しています。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-tochararray" >}}</li>
-</ul>
+* [](java-tochararray)
 {{< /box >}}
 
-{{< code lang="java" title="IsDigitTest2.java" >}}
+```java {lineNos="inline", name="IsDigitTest2.java"}
 public class IsDigitTest2 {
   public static void main(String[] args) {
     String str = "abc123def";
@@ -96,15 +94,17 @@ public class IsDigitTest2 {
     System.out.println("該当個数:" + sum);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 元の文字列:abc123def
 数字:1 場所:4
 数字:2 場所:5
 数字:3 場所:6
 該当個数:3
-{{< /code >}}
+```
 
 文字列から全ての数字を抽出することができました。ただ、文字列を1文字ずつに分割しているため、`123`は`1`・`2`・`3`として出力されてしまいます。
 

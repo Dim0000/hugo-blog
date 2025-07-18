@@ -1,6 +1,6 @@
 ---
 title: 【Java】joinメソッドで文字列を配列に分割する
-description: 今回はJavaのjoinメソッドを使って、文字列を結合する方法についてまとめていきます。
+description: Javaのjoinメソッドを使って、文字列を結合する方法をまとめます。
 date: 2024-09-28
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/java.webp
 ---
 
-今回はJavaの`joinメソッド`を使って、文字列を結合する方法についてまとめていきます。
+**Java**の`joinメソッド`を使って、文字列を結合する方法をまとめます。
 
 <!--more-->
 
@@ -19,9 +19,9 @@ thumbnail: /images/java.webp
 
 メソッドは以下のように記述します。
 
-{{< code lang="java" title="joinメソッドの書式例" >}}
+```java {lineNos="inline", name="joinメソッドの書式例"}
 String.join(デリミタ, 文字列1, 文字列2);
-{{< /code >}}
+```
 
 第1引数をデリミタになり、第2引数以降をデリミタで結合します。デリミタとは、要素と要素の区切りとなる文字のことです。
 
@@ -31,18 +31,18 @@ String.join(デリミタ, 文字列1, 文字列2);
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="java" title="JoinTest.java" >}}
+```java {lineNos="inline", name="JoinTest.java"}
 public class JoinTest {
   public static void main(String[] args) {
     String str = String.join(",", "a", "b", "c");
     System.out.println(str);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+```java {lineNos="inline", name="出力結果"}
 a,b,c
-{{< /code >}}
+```
 
 `,`をデリミタとして、`a`・`b`・`c`が結合されていることが分かります。
 

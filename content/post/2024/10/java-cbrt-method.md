@@ -1,6 +1,6 @@
 ---
-title: 【Java】cbrtメソッドで立方根を求める方法
-description: Javaで立方根を求めるにはMathクラスのcbrtメソッドが便利です。今回はメソッドの使い方などを紹介しています。
+title: 【Java】cbrtメソッドで立方根を求める
+description: JavaのMathクラスのcbrtメソッドで立方根を求める方法を紹介します。
 date: 2024-10-31
 categories: 
   - 技術記事
@@ -12,20 +12,20 @@ thumbnail: /images/java.webp
 mathjax: true
 ---
 
-Javaで**立方根**を求めるには`Mathクラス`の`cbrtメソッド`が便利です。今回はメソッドの使い方などを紹介しています。
+**Java**の`Mathクラス`の`cbrtメソッド`で**立方根**を求める方法を紹介します。
 
 <!--more-->
 
-ここで、立方根とは数 \\(a\\) があるとき、3乗して \\(a\\) になるような数のことを指します。つまり \\(x^{3}=a\\) を満たす数 \\(x\\) が \\(a\\) の立方根になります。
+なお、立方根とは数 \\(a\\) があるとき、3乗して \\(a\\) になるような数のことを指します。つまり \\(x^{3}=a\\) を満たす数 \\(x\\) が \\(a\\) の立方根になります。
 
 ## cbrtメソッドの書式
 
 メソッドの書式は以下になります。
 
-{{< code lang="java" title="cbrtメソッドの書式" >}}
+```java {lineNos="inline", name="cbrtメソッドの書式"}
 Math.cbrt(double a);
 Math.cbrt(8); // 2が返る
-{{< /code >}}
+```
 
 引数の立方根が返ってきます。戻り値の型は`double型`になります。
 
@@ -34,16 +34,14 @@ Math.cbrt(8); // 2が返る
 似た機能を持つメソッドに、平方根を計算する`sqrtメソッド`があるので注意しましょう。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-sqrt-method" >}}</li>
-</ul>
+* [](java-sqrt-method)
 {{< /box >}}
 
 ## メソッドの使用例
 
 メソッドの使用例をサンプルコードで示します。
 
-{{< code lang="Java" title="CbrtTest.java" >}}
+```java {lineNos="inline", name="CbrtTest.java"}
 public class CbrtTest {
   public static void main(String[] args) {
     System.out.println("8の立方根:" + Math.cbrt(8));
@@ -55,9 +53,11 @@ public class CbrtTest {
     System.out.println("NaNの立方根:" + Math.cbrt(Double.NaN));
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 8の立方根:1.5874010519681996
 27.0の立方根:3.0
 10の立方根:2.154434690031884
@@ -65,7 +65,7 @@ public class CbrtTest {
 0の立方根:0.0
 正の無限大の立方根:Infinity
 NaNの立方根:NaN
-{{< /code >}}
+```
 
 それぞれの数字の立方根が、`double型`で出力されていることが分かります。
 

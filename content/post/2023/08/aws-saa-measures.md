@@ -16,9 +16,7 @@ thumbnail: /images/aws.webp
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-aws-saa" >}}</li>
-</ul>
+* [](qualification-aws-saa)
 {{< /box >}}
 
 ## AWSの概要

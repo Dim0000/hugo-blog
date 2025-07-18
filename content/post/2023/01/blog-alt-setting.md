@@ -1,6 +1,6 @@
 ---
 title: 【WordPress】alt属性を自動で記事タイトルに設定する【プラグインなし】
-description: 今回はWordPressで画像のalt属性（代替テキスト）をプラグインを使わずに一括で記事タイトルに変更する方法を紹介します。
+description: WordPressで画像のalt属性（代替テキスト）をプラグインを使わずに一括で記事タイトルに変更する方法を紹介します。
 date: 2023-01-14
 categories:
   - 技術記事
@@ -13,7 +13,7 @@ archives:
 thumbnail: /images/wordpress.webp
 ---
 
-今回は**WordPress**で画像の**alt属性**（代替テキスト）をプラグインを使わずに一括で記事タイトルに変更する方法を紹介します。
+**WordPress**で画像の**alt属性**（代替テキスト）をプラグインを使わずに一括で記事タイトルに変更する方法を紹介します。
 
 <!--more-->
 
@@ -24,10 +24,8 @@ Webサイトの画像のalt属性は、設定することで検索エンジン�
 代替テキストを設定するには以下の2パターンの標準的な方法があります。
 
 {{< box "代替テキストを設定する方法" >}}
-<ul>
-<li>画像アップロード時に設定する</li>
-<li>各記事の画像ブロックで直接設定する</li>
-</ul>
+* 画像アップロード時に設定する
+* 各記事の画像ブロックで直接設定する
 {{< /box >}}
 
 ### 画像アップロード時に代替テキストを設定する方法
@@ -50,7 +48,7 @@ Webサイトの画像のalt属性は、設定することで検索エンジン�
 
 以下のコードを`functions.php`に貼り付けることで動作します。
 
-{{< code lang="php" title="functions.php" >}}
+```php {lineNos="inline", name="functions.php"}
 function my_set_img_alt_title( $content ) {
   global $wpdb;
   if ( preg_match_all( '/<img [^>]+alt=""[^>]+>/i', $content, $images ) ) {
@@ -73,7 +71,7 @@ function my_set_img_alt_title( $content ) {
   return $content;
 }
 add_filter( 'the_content', 'my_set_img_alt_title' );
-{{< /code >}}
+```
 
 画像のalt属性が空だった場合は、メディアライブラリの代替テキストを取得します。更に改良点として、メディアライブラリの代替テキストも空だった場合に記事のタイトルを取得しalt属性に設定するように手を加えました。
 

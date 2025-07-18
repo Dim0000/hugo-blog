@@ -1,6 +1,6 @@
 ---
 title: 【kintone API】レコードの値の取得・変更時の注意点
-description: 今回はkintone APIで、kintone.app.record.get()とkintone.app.record.set()を使用する時の注意点について書いていきます。
+description: kintone APIで、kintone.app.record.get()とkintone.app.record.set()を使用する時の注意点について書いていきます。
 date: 2025-04-12
 categories: 
   - 技術記事
@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/kintone.webp
 ---
 
-今回は**kintone API**で、`kintone.app.record.get()`と`kintone.app.record.set()`を使用する時の注意点について書いていきます。
+**kintone API**で、`kintone.app.record.get()`と`kintone.app.record.set()`を使用する時の注意点について書いていきます。
 
 <!--more-->
 
@@ -28,32 +28,32 @@ kintone APIには、レコードの値を取得する`kintone.app.record.get()`�
 
 以下の様に書いた場合、正常に動作しません。
 
-{{< code lang="javascript" title="" >}}
+```js {lineNos="inline", name=""}
 kintone.events.on('app.record.create.show', function(event) {
     const record = kintone.app.record.get(); // 使えない
     // ...
 });
-{{< /code >}}
+```
 
 `kintone.events.on`のイベントハンドラ内では、以下の様に引数のeventオブジェクトでレコード情報を取得し、オブジェクトをreturnすることで更新ができます。
 
-{{< code lang="javascript" title="" >}}
+```js {lineNos="inline", name=""}
 kintone.events.on('app.record.create.show', function(event) {
     const record = event.record;
     // ...
     return event;
 });
-{{< /code >}}
+```
 
 関数の使いどころとしては、以下のように、ボタンを押下した時の処理に使用することができます。
 
-{{< code lang="javascript" title="" >}}
+```js {lineNos="inline", name=""}
 // ボタンを押したときにレコード情報を取得
 document.getElementById('my-button').addEventListener('click', function() {
     const record = kintone.app.record.get();
     // ...
 });
-{{< /code >}}
+```
 
 * * *
 

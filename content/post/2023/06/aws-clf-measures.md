@@ -16,9 +16,7 @@ thumbnail: /images/aws.webp
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-aws-clf" >}}</li>
-</ul>
+* [](qualification-aws-clf)
 {{< /box >}}
 
 ## クラウドコンピューティング

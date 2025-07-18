@@ -5,6 +5,7 @@ date: 2023-12-26
 categories: 
   - 技術記事
 tags: 
+  - VMware
 archives:
     - 2023/12
 thumbnail: /images/app.webp

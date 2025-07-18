@@ -1,6 +1,6 @@
 ---
 title: 【C#・VB】ClosedXMLでExcelに画像を埋め込む方法【余白・縮尺】
-description: 今回はC#・VBのライブラリであるClosedXMLでExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
+description: C#・VBのライブラリであるClosedXMLでExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
 date: 2024-02-18
 categories: 
   - 技術記事
@@ -13,30 +13,28 @@ archives:
 thumbnail: /images/c-sharp.webp
 ---
 
-今回は**C#**・**VB**のライブラリである**ClosedXML**でExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
+**C#**・**VB**のライブラリである**ClosedXML**でExcelに画像を埋め込む方法と、画像の位置をセル内で調整する方法、画像の縮尺を調整する方法を紹介します。
 
 <!--more-->
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/closedxml-image-property" >}}</li>
-</ul>
+* [](closedxml-image-property)
 {{< /box >}}
 
 ## ClosedXMLでの画像の貼り付け
 
 ClosedXMLはExcelがインストールされていない環境でExcelファイルを操作できるライブラリです。まず、ClosedXMLを使うには、ClosedXMLライブラリの追加と、プログラム行頭の`using`の記述が必要になります。
 
-{{< code lang="c#" title="" >}}
+```c# {lineNos="inline", name=""}
 using ClosedXML.Excel;
 using ClosedXML.Excel.Drawings;
-{{< /code >}}
+```
 
 ClosedXMLでの画像の貼り付けには、`AddPictureメソッド`を使います。例として、ExcelファイルのA2セルに画像を貼り付けるサンプルコードを紹介します。
 
 C#でのサンプルコードは以下になります。
 
-{{< code lang="c#" title="Program.cs" >}}
+```c# {lineNos="inline", name="Program.cs"}
 using ClosedXML.Excel;
 using ClosedXML.Excel.Drawings;
 
@@ -59,11 +57,11 @@ class Program
     }
   }
 }   
-{{< /code >}}
+```
 
 コードを実行し、作成したエクセルのスクリーンショットになります。
 
-{{< luminous src="/images/closedxml-image-01.png" caption="ClosedXMLでの画像貼り付け">}}
+![ClosedXMLでの画像貼り付け](/images/qclosedxml-image-01.png)
 
 ### 画像の位置をセル内で調整する方法
 
@@ -71,14 +69,14 @@ class Program
 
 C#でのサンプルコードは以下になります。
 
-{{< code lang="c#" title="" >}}
+```c# {lineNos="inline", name=""}
 IXLPicture image = ws.AddPicture(@"C:\test\image.jpg");
 
 // 画像を右・下に10ポイントずつずらす 
 image.MoveTo(ws.Cell(2, 2), 10, 10);
-{{< /code >}}
+```
 
-{{< luminous src="/images/closedxml-image-02.png" caption="画像の位置の調整">}}
+![画像の位置の調整](/images/qclosedxml-image-02.png)
 
 最初と比べ、画像の位置が微妙に変化したことが分かります。
 
@@ -88,7 +86,7 @@ image.MoveTo(ws.Cell(2, 2), 10, 10);
 
 C#でのサンプルコードは以下になります。
 
-{{< code lang="c#" title="" >}}
+```c# {lineNos="inline", name=""}
 IXLPicture image = ws.AddPicture(@"C:\test\image.jpg");
 
 // 画像を等倍で0.5倍にする
@@ -99,9 +97,9 @@ image.ScaleHeight(2);
 
 // 画像の幅を2倍にする
 image.ScaleWidth(2);
-{{< /code >}}
+```
 
-{{< luminous src="/images/closedxml-image-03.png" caption="画像の縮尺の調整">}}
+![画像の縮尺の調整](/images/qclosedxml-image-03.png)
 
 等倍で0.5倍とすると、画像が小さくなったことが分かります。
 
@@ -111,7 +109,7 @@ VisualBasicの場合では、以下のようになります。
 
 まず、画像の貼り付けのコードです。
 
-{{< code lang="vb" title="Program.vb" >}}
+```vb {lineNos="inline", name="Program.vb"}
 Imports ClosedXML.Excel
 Imports ClosedXML.Excel.Drawings
 
@@ -129,20 +127,20 @@ Class Program
         End Using
     End Sub
 End Class
-{{< /code >}}
+```
 
 次に、画像の位置をセル内で調整するコードになります。
 
-{{< code lang="vb" title="" >}}
+```vb {lineNos="inline", name=""}
 Dim image As IXLPicture = ws.AddPicture("C:\test\image.jpg")
 
 ' 画像を右・下に10ポイントずつずらす 
 image.MoveTo(ws.Cell(2, 2), 10, 10)
-{{< /code >}}
+```
 
 次に、画像の縮尺を調整するコードになります。
 
-{{< code lang="vb" title="" >}}
+```vb {lineNos="inline", name=""}
 Dim image As IXLPicture = ws.AddPicture("C:\test\image.jpg")
 
 ' 画像を等倍で0.5倍にする
@@ -153,7 +151,7 @@ image.ScaleHeight(2)
 
 ' 画像の幅を2倍にする
 image.ScaleWidth(2)
-{{< /code >}}
+```
 
 * * *
 

@@ -19,15 +19,13 @@ thumbnail: /images/java.webp
 
 FizzBuzzプログラムは、プログラミングを始めたばかりの人に出されることが多いアルゴリズムの問題です。初級者にとってはアルゴリズムの登竜門ですね。
 
-僕も、大学の頃C言語の授業で出されたような記憶があります。プログラミングを勉強している人は「見たことがある」という人が多いのではないでしょうか。
+私も、大学の頃C言語の授業で出された記憶があります。プログラミングを勉強している人は知っている人が多いのではないでしょうか。
 
 {{< box "FizzBuzzのルール" >}}
-<ul>
-<li>1から100までの数字を画面に表示する</li>
-<li>3の倍数のときは数字の代わりに<strong>Fizz</strong>と表示する</li>
-<li>5の倍数のときは数字の代わりに<strong>Buzz</strong>と表示する</li>
-<li>15の倍数のときは数字の代わりに<strong>FizzBuzz</strong>と表示する</li>
-</ul>
+* 1から100までの数字を画面に表示する
+* 3の倍数のときは数字の代わりに「Fizz」と表示する
+* 5の倍数のときは数字の代わりに「Buzz」と表示する
+* 15の倍数のときは数字の代わりに「FizzBuzz」と表示する
 {{< /box >}}
 
 今回は100まで表示させると出力結果が長くなってしまうので、20まで出力させてみます。
@@ -36,7 +34,7 @@ FizzBuzzプログラムは、プログラミングを始めたばかりの人に
 
 色々と解答方法があるかと思いますが、一番ノーマルな書き方で実装してみます。
 
-{{< code lang="java" title="FizzBuzzTest1.java" >}}
+```java {lineNos="inline", name="FizzBuzzTest1.java"}
 public class FizzBuzzTest1 {
   public static void main(String[] args) {
     for (int num = 1; num <= 20; num++) {
@@ -59,9 +57,11 @@ public class FizzBuzzTest1 {
     }
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 1
 2   
 Fizz
@@ -82,7 +82,7 @@ FizzBuzz
 Fizz
 19
 Buzz
-{{< /code >}}
+```
 
 このアルゴリズムでは`if文`と`%演算子`を使って**倍数の判定**ができるかがポイントになります。その他、注意する点として**倍数の判定の順番**があります。最初に15の倍数判定をしないと、3もしくは5の倍数判定に通ってしまうため、ルールを満たさない結果が返ってきます。
 
@@ -94,7 +94,7 @@ Buzz
 
 コードの書き換えが簡単になるような実装にしてみます。
 
-{{< code lang="java" title="FizzBuzzTest2.java" >}}
+```java {lineNos="inline", name="FizzBuzzTest2.java"}
 import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
@@ -123,9 +123,11 @@ public class FizzBuzzTest2 {
     return str;
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+実行結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 1
 2   
 Fizz
@@ -146,9 +148,9 @@ FizzBuzz
 Fizz
 19
 Buzz
-{{< /code >}}
+```
 
-このコードでは`getStringメソッド`で倍数判定を行い、引数の`TreeMap`に倍数と表示したい文字列を格納しています。`Collections.reverseOrder()`を指定することで、`TreeMap`を自動でキーの降順に並び替えられます。ここでキーの降順に並び替えているのは、数字の大きい順に倍数判定を行わないと正しい判定がされないからです（15の判定時に3の倍数判定がされて「fizz」が戻ってくるなど）。
+このコードでは`getStringメソッド`で倍数判定を行い、引数の`TreeMap`に倍数と表示したい文字列を格納しています。`Collections.reverseOrder()`を指定することで、`TreeMap`を自動でキーの降順に並び替えられます。ここでキーの降順に並び替えているのは、数字の大きい順に倍数判定を行わないと正しい判定がされないからです（15の判定時に3の倍数判定がされて「Fizz」が戻ってくるなど）。
 
 条件を変えたい時は`putメソッド`の所を好きな物に書き換えるだけで良いので、最初のコードよりかはルール変更に強い実装にすることができました。
 

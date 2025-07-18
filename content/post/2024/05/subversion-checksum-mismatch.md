@@ -1,6 +1,6 @@
 ---
 title: 【SVN】更新時に「Checksum mismatch～」となるエラーを解決する
-description: 今回はSVNで更新時に「Checksum mismatch～」のエラーが出る問題についての記事になります。
+description: SVN（Subversion）で更新時に「Checksum mismatch～」のエラーが出る問題の対処方法をまとめます。
 date: 2024-05-26
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/app.webp
 ---
 
-今回は**SVN**で更新時に`Checksum mismatch～`のエラーが出る問題についての記事になります。
+**SVN**（Subversion）で更新時に`Checksum mismatch～`のエラーが出る問題の対処方法をまとめます。
 
 <!--more-->
 
@@ -33,7 +33,7 @@ thumbnail: /images/app.webp
 2. チェックアウトしてきた`.svn`フォルダをエラーになるフォルダへ差し替える
 3. 再度、リポジトリの更新を行う
 
-僕の場合、以上の手順でエラーが解消されました。チェックアウトし直したので、少し時間が掛かりましたが…。
+私は以上の手順でエラーが解消されました。チェックアウトし直したので、少し時間が掛かりましたが…。
 
 * * *
 

@@ -1,6 +1,6 @@
 ---
 title: 【Android】Roomの主キーを複数設定する方法
-description: 今回はAndroidでRoomの主キーを複数設定する方法について紹介します。
+description: KotlinでのAndroid開発でRoomの主キーを複数設定する方法について紹介します。
 date: 2025-03-01
 categories: 
   - 技術記事
@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/android.webp
 ---
 
-今回はAndroidで`Room`の主キーを複数設定する方法について紹介します。
+**Kotlin**でのAndroid開発で`Room`の主キーを複数設定する方法について紹介します。
 
 <!--more-->
 
@@ -24,7 +24,7 @@ thumbnail: /images/android.webp
 
 ここで、複合主キーを設定したい場合、`@Entity`アノテーションの引数で、`primaryKeys = []`に設定します。
 
-{{< code lang="kotlin" title="Entity.㏏" >}}
+```kotlin {lineNos="inline", name="Entity.㏏"}
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 
@@ -36,7 +36,7 @@ data class Entity(
     val subId: Int,
     val name: String
 )
-{{< /code >}}
+```
 
 上のようにすることで、`main_id`と`sub_id`を主キーに設定できます。
 

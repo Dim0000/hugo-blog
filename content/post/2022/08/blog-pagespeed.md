@@ -1,6 +1,6 @@
 ---
-title: 【WordPress】PageSpeed Insightsで90点以上取る方法解説
-description: 今回はWordPress（cocoonテーマ使用）でPageSpeed Insightsの測定をモバイル・デスクトップ共に90点以上を取る方法について紹介します。
+title: 【WordPress】PageSpeed Insightsで90点以上取る方法を解説
+description: 今回はWordPress（cocoonテーマ）でPageSpeed Insightsの測定をモバイル・デスクトップ共に90点以上を取る方法を紹介します。
 date: 2022-08-21
 categories: 
   - 雑記
@@ -12,7 +12,7 @@ archives:
 thumbnail: /images/wordpress.webp
 ---
 
-今回はWordPress（cocoonテーマ使用）で**PageSpeed Insights**の測定をモバイル・デスクトップ共に90点以上を取る方法について紹介します。
+今回はWordPress（cocoonテーマ）で**PageSpeed Insights**の測定をモバイル・デスクトップ共に90点以上を取る方法を紹介します。
 
 <!--more-->
 
@@ -21,9 +21,7 @@ thumbnail: /images/wordpress.webp
 なお、現在は更なる速度向上と運営コストを下げるために、WordPressからHugoに移行しました。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/wordpress-to-hugo" >}}</li>
-</ul>
+* [](wordpress-to-hugo)
 {{< /box >}}
 
 ## 当サイトのPageSpeed Insightsでの速度
@@ -32,9 +30,9 @@ Webサイト運営において、サイトの読み込み速度はSEO面で重�
 
 「[PageSpeed Insights](https://pagespeed.web.dev/?hl=ja)」で当サイトトップページの速度を計測した結果、スマホは94点、デスクトップは99点でした。
 
-{{< luminous src="/images/blog-pagespeed-01.png" caption="PageSpeed Insightsの計測結果（スマホ）">}}
+![PageSpeed Insightsの計測結果（スマホ）](/images/blog-pagespeed-01.png)
 
-{{< luminous src="/images/blog-pagespeed-02.png" caption="PageSpeed Insightsの計測結果（PC）">}}
+![PageSpeed Insightsの計測結果（デスクトップ）](/images/blog-pagespeed-02.png)
 
 ちなみに、当サイトはレンタルサーバーの「ロリポップ」の一番安いプランで運営しています。単に読み込み速度を向上させるには、お高いレンタルサーバーの高額プランを契約することが単純かつ大きな効果を挙げます。しかし、それだと元も子もないので、お金を掛けずに高速化を目指す方法を取り上げたいと思います。
 
@@ -52,36 +50,34 @@ Webサイト運営において、サイトの読み込み速度はSEO面で重�
 
 実際に、現在このブログで使用しているプラグインは以下の4つです。
 
-{{< luminous src="/images/blog-pagespeed-03.png" caption="インストールしているプラグイン一覧">}}
+![インストールしているプラグイン一覧](/images/blog-pagespeed-03.png)
 
 {{< box "インストールしているプラグイン一覧" >}}
-<ul>
-<li>Category Order and Taxonomy Terms Order</li>
-<li>EWWW Image Optimizer</li>
-<li>Flying Scripts</li>
-<li>Google XML Sitemaps</li>
-</ul>
+* Category Order and Taxonomy Terms Order
+* EWWW Image Optimizer
+* Flying Scripts
+* Google XML Sitemaps
 {{< /box >}}
 
 プラグインを導入しないと実現できない、もしくは非常に手間が掛かるという機能に関してのみ厳選してインストールしています。例えば、今まで使っていたソースコードをハイライト表示させる「SyntaxHighlighter」系のプラグインはかなり重く、cocoonに搭載されているハイライト機能で充分だったのでアンインストールしました。
 
 残ったのはスタンダードで有名なプラグインばかりになりました。一応各プラグインについてさらっと紹介します。
 
-#### Ⅰ. Category Order and Taxonomy Terms Order
+#### Category Order and Taxonomy Terms Order
 
 カテゴリー・タグを並び替える機能を追加できます。これらの並べ替え機能はcocoonには無い機能なので導入しています。機能的に特に必要なければインストールする必要はありません。
 
-#### Ⅱ. EWWW Image Optimizer
+#### EWWW Image Optimizer
 
 自動でアップロードした画像をwebp形式に変換してくれます（要設定）。画像のwebp形式は軽くてほぼ全てのブラウザで対応しているため効果が大きく導入推奨になります。
 
-#### Ⅲ. Flying Scripts
+#### Flying Scripts
 
 こちらは「PageSpeed Insights」の「改善できる項目」→「使用していないJavaScriptの削減」の指摘の対策用プラグインになります。指定したJavaScriptを遅延読み込みさせることで、指摘の改善を見込めます。Google AdSenseやGoogle Analyticsを導入している方は導入推奨です。
 
 プラグインの設定で、「使用していないJavaScriptの削減」で指摘されたURLを貼り付けましょう。Timeoutは「4s」辺りに設定すると丁度いいと思います。
 
-#### Ⅳ. Google XML Sitemaps
+#### Google XML Sitemaps
 
 XMLサイトマップ用のプラグインです。XMLサイトマップ作成はSEO面で効果があるので、基本的に導入推奨です。
 

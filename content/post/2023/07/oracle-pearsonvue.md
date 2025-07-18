@@ -1,6 +1,6 @@
 ---
 title: 【IT資格】OracleアカウントとCertViewアカウントの登録方法
-description: 今回はOracleの認定資格を初めて受験する際に必要なアカウントの登録方法について解説していきます。
+description: Oracleの認定資格を受験する際に、必要なアカウントの登録方法についてまとめます。
 date: 2023-07-05
 categories: 
   - IT資格
@@ -10,7 +10,7 @@ archives:
 thumbnail: /images/oracle.webp
 ---
 
-今回は**Oracle**の認定資格を初めて受験する際に必要なアカウントの登録方法について解説していきます。
+**Oracle**の認定資格を受験する際に、必要なアカウントの登録方法についてまとめます。
 
 <!--more-->
 
@@ -26,7 +26,7 @@ thumbnail: /images/oracle.webp
 
 * [Oracle \| プロファイルの作成](https://profile.oracle.com/myprofile/account/create-account.jspx)
 
-{{< luminous src="/images/oracle-pearsonvue-01.png" caption="Oracleアカウントの登録">}}
+![Oracleアカウントの登録](/images/oracle-pearsonvue-01.png)
 
 ## CertViewアカウントの登録
 
@@ -34,11 +34,11 @@ thumbnail: /images/oracle.webp
 
 * [Certview へのログイン | Oracle University](https://catalog-education.oracle.com/pls/apex/f?p=1010:26:103513069969122)
 
-{{< luminous src="/images/oracle-pearsonvue-02.png" caption="CertViewアカウントの登録1">}}
+![CertViewアカウントの登録1](/images/oracle-pearsonvue-02.png)
 
 Oracleアカウントのログイン画面になるので、先ほど作成したアカウントでログインします。
 
-{{< luminous src="/images/oracle-pearsonvue-03.png" caption="CertViewアカウントの登録2">}}
+![CertViewアカウントの登録2](/images/oracle-pearsonvue-03.png)
 
 その後、初回ログイン時のみ認証を行う必要があります。やり方は公式に乗っている通り[^a]になります。
 

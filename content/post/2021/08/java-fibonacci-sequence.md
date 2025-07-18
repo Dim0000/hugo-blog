@@ -1,6 +1,6 @@
 ---
-title: 【Java】フィボナッチ数列をプログラミングで表現してみる【JavaScript】
-description: 今回はJavaとJavaScriptを使って、数学的に有名な数列であるフィボナッチ数列をプログラミングで作りたいと思います。また、フィボナッチ数列と黄金比との比較もプログラミングで行ってみます。
+title: 【Java・JavaScript】フィボナッチ数列を出力する
+description: JavaとJavaScriptでフィボナッチ数列を出力してみます。また、フィボナッチ数列と黄金比との比較もしてみます。
 date: 2021-08-07
 categories: 
   - 技術記事
@@ -13,7 +13,7 @@ thumbnail: /images/java.webp
 mathjax: true
 ---
 
-今回はJavaとJavaScriptを使って、数学的に有名な数列である**フィボナッチ数列**をプログラミングで作りたいと思います。また、フィボナッチ数列と黄金比との比較もプログラミングで行ってみます。
+**Java**と**JavaScript**で**フィボナッチ数列**を出力してみます。また、フィボナッチ数列と黄金比との比較もしてみます。
 
 <!--more-->
 
@@ -38,12 +38,12 @@ $$ F_{n+2}=F_{n}+F_{n+1}\ \small(n\ge0) $$
 フィボナッチ数列の比と黄金比との差も求めてみましょう。`sqrtメソッド`を使って黄金比を出し、指定した数列の項の比との差を求めます。メソッドについては以下の記事にまとめています。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/java-sqrt-method" >}}</li>
-</ul>
+* [](java-sqrt-method)
 {{< /box >}}
 
-{{< code lang="java" title="FibonacciSequence.java" >}}
+実際のコードが以下になります。
+
+```java {lineNos="inline", name="FibonacciSequence.java"}
 import java.util.Arrays;
 
 public class FibonacciSequence {
@@ -88,22 +88,24 @@ public class FibonacciSequence {
     difference = gold - ((double) array[num - 1] / (double) array[num - 2]);
   }
 }
-{{< /code >}}
+```
 
-{{< code lang="plaintext" title="出力結果" >}}
+出力結果が以下になります。
+
+```plaintext {lineNos="inline", name="出力結果"}
 [0, 1, 1, 2, 3]
 黄金比との差:0.1180339887498949
 [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 黄金比との差:-0.0010136302977241662
-{{< /code >}}
+```
 
 プログラム上でも、先ほど説明した数列と同じものが出力されたことがわかります。今回は比較のため引数は「5」、「10」の2回出力結果を出しました。出力結果を見ると、数字が大きい程、黄金比との差が小さくなることがわかります。
 
 ## JavaScriptでフィボナッチ数列を出力する
 
-`JavaScript`で書いた場合だと以下の様になります。あまり違いはありませんね。
+`JavaScript`で書いた場合だと以下の様になります。
 
-{{< code lang="javascript" title="fibonacciSequence.js" >}}
+```js {lineNos="inline", name="fibonacciSequence.js"}
 function fibonacciSequence(num) {
   let array = new Array(num);
   array[0] = 0;
@@ -114,7 +116,7 @@ function fibonacciSequence(num) {
   const gold = (1 + Math.sqrt(5)) / 2
   const difference = gold - array[num - 1] / array[num - 2];
 }
-{{< /code >}}
+```
 
 入力した数値の長さのフィボナッチ数列と黄金比との差を返すツールのようなものを作成してみました。入力可能数値は最大50となっており、それ以上の数値を入力した場合でも50として計算させています。
 
@@ -145,10 +147,17 @@ function fibonacciSequence(num) {
     elem2.innerText = difference;
   }
 </script>
-<p>数列の長さを入力（最大50まで）:<input id="num" type="number" max="50" />
-<button onclick="onButtonClick()">計算処理実行</button></p>
-<p><nobr>数列:</nobr><span id="array"></span></p>
-<p>黄金比との差:<span id="difference"></span></p>
+<p>数列の長さを入力（最大50まで）:
+  <input id="num" type="number" max="50" />
+  <button onclick="onButtonClick()">計算処理実行</button>
+</p>
+<p>
+  <nobr>数列:</nobr>
+  <span id="array"></span>
+</p>
+<p>黄金比との差:
+  <span id="difference"></span>
+</p>
 {{< /box >}}
 
 実行結果はJavaのものと同じになることも分かります。

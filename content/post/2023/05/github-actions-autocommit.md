@@ -1,6 +1,6 @@
 ---
 title: 【GitHub Actions】定期的に自動commit・pushを行う
-description: 今回はGitHub Actionsを使い、自動でcommitとpushを行うように設定してみます。
+description: GitHub Actionsを使い、自動でcommitとpushを行うように設定してみます。
 date: 2023-05-20
 categories: 
   - 技術記事
@@ -11,7 +11,7 @@ archives:
 thumbnail: /images/github.webp
 ---
 
-今回は**GitHub Actions**を使い、自動でcommitとpushを行うように設定してみます。
+**GitHub Actions**を使い、自動でcommitとpushを行うように設定してみます。
 
 <!--more-->
 
@@ -25,23 +25,23 @@ GitHubのリポジトリ内のテキストファイルを、GitHub Actionsのワ
 
 必要なファイルは以下の2つになります。
 
-{{< code lang="plaintext" title="リポジトリ構成" >}}
+```plaintext {lineNos="inline", name="リポジトリ構成"}
 <リポジトリ>
  ├ commit_log.txt
  └ .github
   └ workflows
    └ auto-commit.yml
-{{< /code >}}
+```
 
 GitHubのリポジトリ直下にコミットログを追加するための`commit_log.txt`と、自動コミット・プッシュのワークフローの設定ファイルである`auto-commit.yml`を`/.github/workflows`直下に配置します。
 
 ymlファイルはリポジトリの「Actionsタブ「の「set up a workflow yourself」からでも作成することができます。
 
-{{< luminous src="/images/github-actions-autocommit-01.png" caption="Actionsの設定ページ">}}
+![Actionsの設定ページ](/images/github-actions-autocommit-01.png)
 
 `auto-commit.yml`の内容は以下になります。
 
-{{< code lang="yml" title="auto-commit.yml" >}}
+```yml {lineNos="inline", name="auto-commit.yml"}
 name: auto-commit
 
 on:
@@ -70,7 +70,9 @@ jobs:
           git add commit_log.txt
           git commit -m "[add] 自動コミット:${{ env.CURRENT_DATETIME }}"
           git push origin main
-{{< /code >}}
+```
+
+ワークフローの手動実行と毎日の自動実行を設定しています。
 
 ## レポジトリの設定
 
@@ -80,21 +82,21 @@ jobs:
 
 環境変数はそれぞれ、`USER_EMAIL`は登録しているメールアドレス、`USER_NAME`はGitHubのIDになります。設定すると以下の様な画面になります。
 
-{{< luminous src="/images/github-actions-autocommit-02.png" caption="レポジトリの設定ページ1">}}
+![レポジトリの設定ページ1](/images/github-actions-autocommit-02.png)
 
 また、設定の「Actions」→「General」で「Workflow permissions」の設定が「Read and write permissions」になっているか確認しましょう。これが設定されていないとActionの書き込み権限が無いので上手く動作しません。
 
-{{< luminous src="/images/github-actions-autocommit-03.png" caption="レポジトリの設定ページ2">}}
+![レポジトリの設定ページ2](/images/github-actions-autocommit-03.png)
 
 ## Actionの実行
 
 ここまでで準備が終わったので、Actionを実行します。
 
-{{< luminous src="/images/github-actions-autocommit-04.png" caption="Actionの実行ページ" >}}
+![Actionの実行ページ](/images/github-actions-autocommit-04.png)
 
 これで、自動で設定したActionが実行されるようになりました。画像から設定したActionが毎日実行されていることが分かります。
 
-{{< luminous src="/images/github-actions-autocommit-05.png" caption="Actionの実行履歴">}}
+![Actionの実行履歴](/images/github-actions-autocommit-05.png)
 
 * * *
 
