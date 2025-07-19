@@ -16,9 +16,7 @@ thumbnail: /images/ipa.webp
 <!--more-->
   
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-fe-pass" >}}</li>
-</ul>
+* [](qualification-fe-pass)
 {{< /box >}}
 
 ## 合格率の高さについて

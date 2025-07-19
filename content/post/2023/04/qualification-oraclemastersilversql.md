@@ -59,9 +59,7 @@ thumbnail: /images/oracle.webp
 試験の申し込みについてはこちらの記事にまとめてあります。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/javasilver-se11-application" >}}</li>
-</ul>
+* [](javasilver-se11-application)
 {{< /box >}}
 
 また、Oracleの再受験無料キャンペーンが毎年行われているので、それを利用するのも手ですね。
@@ -133,9 +131,6 @@ thumbnail: /images/oracle.webp
 以上で記事を終わりにします。
 
 {{< box "関連記事" >}}
-<ul>
-<li>{{< ref "/qualification-oraclemastersilverdba" >}}</li>
-</ul>
 * [](qualification-oraclemastersilverdba)
 {{< /box >}}
 
