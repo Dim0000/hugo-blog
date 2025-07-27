@@ -1,0 +1,12 @@
+.btn {
+  padding: 0.0625rem 0.3125rem;
+  color: $sub-font-color;
+  white-space: pre-line;
+  background: $background-base-color;
+  border-radius: 0.9375rem;
+
+  &:hover {
+    color: $background-surface-color;
+    background: $highlight-color;
+  }
+}

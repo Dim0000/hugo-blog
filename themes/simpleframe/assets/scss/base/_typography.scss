@@ -1,0 +1,93 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1.25rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin: 0 0 1.25rem;
+}
+
+a {
+  color: $font-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $highlight-color;
+  }
+}
+
+hr {
+  margin: 0 0 1.25rem;
+  border: 0;
+  border-top: $border;
+}
+
+pre,
+code {
+  background-color: #EBEBEB;
+  border-radius: 0.25rem;
+}
+
+pre {
+  display: block;
+  margin-bottom: 1.25rem;
+  overflow: auto;
+  padding: 0.5em;
+  margin-top: 0;
+  border-top: 0;
+
+  code {
+    padding: 0;
+    color: inherit;
+    white-space: inherit;
+    background: inherit;
+    border: 0;
+  }
+}
+
+code {
+  padding: 0.0625rem 0.3125rem;
+}
+
+article,
+aside,
+dialog,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}

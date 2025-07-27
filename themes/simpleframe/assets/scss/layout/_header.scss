@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  background: $background-surface-color;
+  border-bottom: 0.1875rem solid $highlight-color;
+}
+
+.logo {
+  padding: 1.5625rem;
+}
+
+.logo__link {
+  display: inline-block;
+}
+
+.logo__item {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo__title {
+  color: $font-color;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.logo__tagline {
+  display: inline-block;
+  margin-top: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+  color: $highlight-color;
+}
+
+.menu__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.menu__link {
+  display: block;
+  color: $font-color;
+  padding: 0.625rem 0.9375rem;
+  font-weight: 700;
+}

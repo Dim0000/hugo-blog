@@ -1,0 +1,48 @@
+{{- define "escape" }}
+  {{- trim (replace . "\n" " ") " " | replaceRE " +" " " -}}
+{{- end }}
+{{ define "main" }}
+<title>{{ .Page.Title }} | {{ .Site.Title }}</title>
+
+<h1>{{ .Page.Title }}</h1>
+<hr>
+<div class="searchInput">
+  <input id="searchInput" onkeyup="search(this.value)" size="15" autocomplete="off" autofocus placeholder="Search..." />
+  <span id="inputWord"></span> <span id="searchResultCount"></span>
+</div>
+
+<template id="search-item-template">
+  <div class="search__item">
+    <a class="search__item__title" href=""></a>
+    <div class="search__item__excerpt"></div>
+  </div>
+</template>
+<div id="searchResult"></div>
+
+<script src="\js\search.js"></script>
+
+<script>
+<!--
+const data = [
+  {{- range $index, $page := .Site.Pages }}
+    {{- if not (or (eq $page.Kind "taxonomy") (eq $page.Kind "term")) }}
+      {
+        url: {{ $page.RelPermalink }},
+        title: {{ $page.Title }},
+        date: {{ $page.Date }},
+        body: {{ template "escape" (printf "%s %s" $page.Title $page.Plain) }}
+      },
+    {{- end }}
+  {{- end }}
+];
+-->
+
+const params = new URLSearchParams(window.location.search);
+const keyword = params.get('keyword');
+
+const input = document.getElementById("searchInput");
+input.value = keyword;
+search(keyword);
+</script>
+
+{{- end }}

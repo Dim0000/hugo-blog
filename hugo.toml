@@ -2,7 +2,7 @@ baseURL = "https://dimzakki.com/"
 title = "Dim雑記"
 DefaultContentLanguage = "ja"
 languageCode = "ja-JP"
-theme = "mainroad"
+theme = "simpleframe"
 hasCJKLanguage = true
 summarylength = 120
 enableGitInfo = "true" # 最終更新日をgitから取得
@@ -15,21 +15,23 @@ timeout = "60s"
   post = "/:contentbasename/"
 
 [Params]
-  Subtitle = "ITエンジニアが運営する雑記ブログです"
-  description = "ITエンジニアが運営する雑記ブログです"
+  Subtitle = "ITエンジニアの雑記ブログ"
+  description = "ITエンジニアの雑記ブログ"
   schema = true
-  post_meta = ["date", "categories"]
+  post_meta = ["date", "categories", "taglist"]
   highlightColor = "#0095d9"
   dateformat = "2006-01-02"
   customCSS = ["/css/custom.css"]
   toc = true
   price1 = "税込37,730円（2024/08/23時点）"
+  pager = true
 
 [Params.sidebar]
   home = "right"
   list = "right"
   single = "right"
-  widgets = ["adsense", "profile", "ranking", "categories", "taglist", "recent", "archives", "related", "adsense2"]
+  # widgets = ["adsense", "profile", "ranking", "categories", "taglist", "recent", "archives", "related", "adsense2"]
+  widgets = ["adsense", "search", "ranking", "categories", "taglist", "recent", "archives", "adsense2"]
 
 [Params.widgets]
   recent_num = 5
@@ -62,17 +64,13 @@ timeout = "60s"
   Name = "IT資格一覧"
   URL = "/it-qualification"
   weight = 30
-[[Menus.main]]
-  Name = "サイト内全文検索"
-  URL = "/search"
-  weight = 40
-[[Menus.main]]
-  Name = "お問い合わせ"
-  URL = "/contact"
-  weight = 50
+
 [[Menus.footer]]
   Name = "プライバシーポリシー"
   URL = "/privacy-policy"
+[[Menus.footer]]
+  Name = "お問い合わせ"
+  URL = "/contact"
 
 [markup.goldmark.renderer]
   unsafe = true

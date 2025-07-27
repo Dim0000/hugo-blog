@@ -1,0 +1,20 @@
+{{ if and (.Params.categories) }}
+  {{ $category := index .Params.categories 0 }}
+  {{ $related := index .Site.Taxonomies.categories (lower $category) | first 4 }}
+  {{ $current := .RelPermalink }}
+  {{ with $related }}
+
+  {{ if ne (len .) 1 }}
+<div class="related">
+    <h4 class="related__title">Related Posts</h4>
+    <ul class="related__list">
+      {{ range .}}
+        {{ if ne ($current) (.RelPermalink) }}
+          <li class="related__item"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+       {{ end }}
+      {{ end }}
+    </ul>
+    {{ end }}
+	</div>
+  {{ end }}
+{{ end }}

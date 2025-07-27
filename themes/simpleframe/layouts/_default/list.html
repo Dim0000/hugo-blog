@@ -1,0 +1,35 @@
+{{ define "main" }}
+	<main class="main list" role="main">
+		{{- if not .IsHome }}
+			{{- with .Title }}
+				<header class="main__header">
+		  		<h1 class="main__title">{{ . }}</h1>
+  			</header>
+ 			{{- end }}
+  		{{- with .Content }}
+				<div class="content main__content clearfix">
+  				{{ . }}
+  		  </div>
+			{{- end }}
+	  {{- end }}
+    {{- range .Paginator.Pages }}
+			<article class="list__item">
+				{{ partial "post_thumbnail.html" (dict "class" "list" "page" .) }}
+				<header class="list__header">
+					<h2 class="list__title post__title">
+						<a href="{{ .RelPermalink }}" rel="bookmark">
+							{{ .Title }}
+						</a>
+					</h2>
+					{{ with partial "post_meta.html" . -}}
+						<div class="list__meta meta">{{ . }}</div>
+					{{- end }}
+				</header>
+				<div class="content list__content clearfix">
+					{{ .Summary }}
+				</div>
+			</article>
+ 		{{- end }}
+  </main>
+  {{ partial "pagination.html" . }}
+{{ end }}

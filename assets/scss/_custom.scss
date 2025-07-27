@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../webfonts/NotoSansJP-Regular.woff2") format("woff2"),
+    url("../webfonts/NotoSansJP-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../webfonts/NotoSansJP-Bold.woff2") format("woff2"),
+    url("../webfonts/NotoSansJP-Bold.woff") format("woff");
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.widget__ranking__counter {
+  float: right;
+}
+
+.codeblock {
+  border-radius: 0.5rem;
+}
+
+.codeblock__title {
+  font-size: smaller;
+  padding: 0.3rem 0.8rem;
+  background: #EBEBEB;
+  border-radius: 0.5rem 0.5rem 0 0;
+}

@@ -1,0 +1,34 @@
+{{- $logoTitle := .Site.Params.logo.title | default .Site.Title -}}
+{{- $logoSubtitle := .Site.Params.logo.subtitle | default .Site.Params.subtitle -}}
+
+<header class="header">
+	{{- with $logoTitle}}
+	  <div class="logo">
+  		<a class="logo__link" href="{{ "" | relLangURL }}" title="{{ . }}" rel="home">
+  			<div class="logo__item logo__text">
+	  			<div class="logo__title">{{ . }}</div>
+	  			{{ with $logoSubtitle }}<div class="logo__tagline">{{ . }}</div>{{ end }}
+				</div>
+		  </a>
+	  </div>
+	{{- end }}
+
+	{{- if .Site.Menus.main }}
+		<nav class="menu">
+			<ul class="menu__list">
+				{{- $currentNode := . }}
+				{{- range .Site.Menus.main }}
+					{{- if .Name }}
+						<li class="menu__item">
+							<a class="menu__link" href="{{ .URL }}">
+								{{ .Pre }}
+								<span class="menu__text">{{ .Name }}</span>
+								{{ .Post }}
+							</a>
+						</li>
+					{{- end }}
+				{{- end }}
+			</ul>
+		</nav>
+	{{- end }}
+</header>

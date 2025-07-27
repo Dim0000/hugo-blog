@@ -1,7 +1,9 @@
-<div class="xCodeBlock">
+<div class="codeblock">
   {{- $name := .Attributes.name -}}
-  {{ with $name }}<div class="xCodeBlock_title">{{ . }}</div>{{ end }}
-  <div class="xCodeBlock_code">
+  {{ with $name }}
+    <div class="codeblock__title">{{ . }}</div>
+  {{ end }}
+  <div class="codeblock__code">
     {{- highlight (.Inner | safeHTML) .Type .Options }}
   </div>
 </div>

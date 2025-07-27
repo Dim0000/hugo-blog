@@ -1,0 +1,32 @@
+.post__meta {
+  margin-bottom: 1rem;
+  padding: 0.3125rem 0;
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.meta {
+  font-size: 0.8rem;
+  vertical-align: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.meta__link {
+  color: $sub-font-color;
+}
+
+.meta__item {
+  display: inline;
+  margin: 0 0.3125rem 0.3125rem 0;
+}
+
+.meta__icon {
+  margin-right: 0.3125rem;
+  vertical-align: middle;
+  fill: $border-color;
+}
+
+.meta__text {
+  color: $sub-font-color;
+}

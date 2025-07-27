@@ -1,0 +1,15 @@
+.toc {
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  border-top: $border;
+  border-bottom: $border;
+}
+
+.toc__menu a {
+  display: block;
+  color: $highlight-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
