@@ -20,6 +20,10 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+img {
+  border: solid 0.00625rem rgb(214, 214, 214);
+}
+
 .widget__ranking__counter {
   float: right;
 }
@@ -33,4 +37,64 @@ body {
   padding: 0.3rem 0.8rem;
   background: #EBEBEB;
   border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.box {
+  position: relative;
+  top: 0.625rem;
+  padding: 0 1rem;
+  border: #0095d9 solid 1px;
+  border-radius: 0.3125rem;
+  margin: 0 0 1.875rem;
+}
+
+.box .title {
+  position: absolute;
+  padding: 0 0.3125rem;
+  top: -0.700rem;
+  background-color: $background-surface-color;
+}
+
+.product-link-box {
+  border: $sub-border;
+  border-radius: 0.9375rem;
+  margin: 1.25rem 0;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .1);
+}
+
+.product-link-info {
+  border-left: $sub-border;
+}
+
+.product-link-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-base-color;
+  padding: 1.00rem;
+}
+
+.product-link-title {
+  padding: 1.25rem;
+  margin: 0;
+}
+
+.product-link-title a {
+  font-weight: normal;
+}
+
+.product-link-price {
+  padding: 0 1.25rem;
+  text-align: right;
+  margin: 0;
+  font-weight: bold;
+  color: red;
+  font-size: large;
+}
+
+.product-link-type {
+  padding: 0 1.25rem 1.25rem;
+  margin: 0;
 }

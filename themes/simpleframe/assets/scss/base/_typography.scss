@@ -91,3 +91,16 @@ nav,
 section {
   display: block;
 }
+
+figcaption {
+  margin-top: 0.25rem;
+  color: $sub-font-color;
+  font-size: x-small;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
