@@ -56,12 +56,17 @@
 }
 
 .pagination__item {
-  border-radius: 0.9375rem;
   display: inline-block;
   padding: 0.625rem 0.9375rem;
+  margin: 0 0.3125em;
   font-weight: 700;
   color: $font-color;
   background: $background-base-color;
+
+  &:hover {
+    color: $background-surface-color;
+    background: $highlight-color;
+  }
 }
 
 .pagination__item--current {

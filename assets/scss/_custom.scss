@@ -20,7 +20,7 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-img {
+.post__content img {
   border: solid 0.00625rem rgb(214, 214, 214);
 }
 
@@ -56,16 +56,11 @@ img {
 }
 
 .product-link-box {
-  border: $sub-border;
   border-radius: 0.9375rem;
   margin: 1.25rem 0;
   display: flex;
   overflow: hidden;
   box-shadow: 0 .125rem .5rem rgba(0, 0, 0, .1);
-}
-
-.product-link-info {
-  border-left: $sub-border;
 }
 
 .product-link-image {
