@@ -1,1 +1,3 @@
-{{ partial "google-adsense.html" }}
+{{ if not hugo.IsServer }}
+  {{ partial "google-adsense.html" . }}
+{{ end }}

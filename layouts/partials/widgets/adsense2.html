@@ -1,7 +1,9 @@
-{{ partial "google-adsense.html" }}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css">
-<script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js"></script>
-<script>
-  new LuminousGallery(document.querySelectorAll('.luminous'));
-</script>
-<script src="/js/adsense.js"></script>
+{{ if not hugo.IsServer }}
+  {{ partial "google-adsense.html" }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous-basic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/luminous-lightbox@2.4.0/dist/luminous.min.js"></script>
+  <script>
+    new LuminousGallery(document.querySelectorAll('.luminous'));
+  </script>
+  <script src="/js/adsense.js"></script>
+{{ end }}

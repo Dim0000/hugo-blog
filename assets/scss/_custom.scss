@@ -28,15 +28,19 @@ body {
   float: right;
 }
 
-.codeblock {
-  border-radius: 0.5rem;
-}
-
 .codeblock__title {
   font-size: smaller;
   padding: 0.3rem 0.8rem;
   background: #EBEBEB;
   border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.codeblock pre {
+  border-radius: 0.5rem;
+}
+
+.codeblock .has-title pre {
+  border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .box {

@@ -3,7 +3,7 @@
   {{ with $name }}
     <div class="codeblock__title">{{ . }}</div>
   {{ end }}
-  <div class="codeblock__code">
+  <div class="codeblock__code{{ with $name }} has-title{{ end }}">
     {{- highlight (.Inner | safeHTML) .Type .Options }}
   </div>
 </div>
