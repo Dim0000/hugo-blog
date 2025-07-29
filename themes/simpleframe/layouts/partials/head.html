@@ -16,7 +16,7 @@
   {{ template "_internal/twitter_cards.html" . }}
 {{- end }}
 
-{{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
+{{ $style := resources.Get "scss/style.scss" | toCSS | minify }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
 {{- with .OutputFormats.Get "rss" }}
