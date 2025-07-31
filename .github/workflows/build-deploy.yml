@@ -28,7 +28,7 @@ jobs:
           submodules: true
           fetch-depth: 0 # enableGitInfoでの取得用 
       - name: Build Hugo
-        run: hugo --minify --buildFuture
+        run: hugo --gc --minify --cleanDestinationDir --buildFuture
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
